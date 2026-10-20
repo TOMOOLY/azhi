@@ -3,298 +3,271 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="阿志 — 品牌视觉工作室。品牌全案、字体、IP 与插画；合作咨询与精选案例。" />
-  <title>阿志 · 品牌视觉 · 合作</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="造物社 — 餐饮与消费品牌的视觉全案。品牌识别、字体、平面包装、IP 与插画。案例：椰知卿、龍面馆、伽乐酸奶、龍尊轩。" />
+  <title>造物社 · 品牌视觉 × 字体 × 餐饮全案</title>
+  <link rel="stylesheet" href="studio.css" />
 </head>
-<body class="face-coop">
+<body class="studio" id="top">
   <a class="skip-link" href="#main">跳到主要内容</a>
 
-  <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="brand" href="#top" aria-label="阿志 — 回到顶部">阿志<span class="brand-mark">∞</span></a>
-      <nav class="nav" aria-label="主导航">
-        <a href="#services">服务</a>
-        <a href="#works">案例</a>
-        <a href="#process">合作方式</a>
-        <a class="nav-cta" href="#contact">合作咨询</a>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="wordmark" href="#top" aria-label="造物社，回到顶部">
+        <span class="wordmark-cn">造物社</span>
+      </a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span class="sr-only">菜单</span>
+      </button>
+      <nav class="topnav" id="site-nav" data-nav aria-label="主导航">
+        <a href="#works" data-spy="works"><span class="en">Work</span><span class="cn">案例</span></a>
+        <a href="#services" data-spy="services"><span class="en">Service</span><span class="cn">业务</span></a>
+        <a href="#process" data-spy="process"><span class="en">Process</span><span class="cn">合作</span></a>
+        <a href="#contact" data-spy="contact"><span class="en">Contact</span><span class="cn">联系</span></a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section id="top" class="hero-stage hero-campaign">
-      <div class="wrap hero-grid">
+    <h1 class="sr-only">造物社 — 品牌视觉、字体与餐饮全案</h1>
+
+    <section class="hero" data-carousel aria-roledescription="carousel" aria-label="精选案例">
+      <a class="hero-slide is-active" data-slide href="works/yezhiqing.html" aria-label="椰知卿">
+        <img src="assets/w-09.jpg" alt="" width="1575" height="886" />
         <div class="hero-copy">
-          <p class="eyebrow">Studio &nbsp;·&nbsp; Brand &amp; Visual</p>
-          <h1 class="hero-display">阿志</h1>
-          <p class="hero-promise">让品牌被看见、被记住、被延展。</p>
-          <p class="motif" aria-hidden="true">+ &nbsp; − &nbsp; × &nbsp; ÷ &nbsp; = &nbsp; ∞</p>
-          <p class="lead">
-            从策略定位到超级符号，再到包装、空间与场景应用——<br />
-            以一套视觉系统，讲清品牌是谁。
-          </p>
-          <p class="hero-mood">餐饮 · 消费品牌 · 东方美学 · 当代视觉语言</p>
-          <p class="hero-actions">
-            <a class="btn btn-primary" href="#contact">合作咨询</a>
-            <a class="btn btn-ghost" href="#works">浏览案例</a>
-          </p>
-          <p class="hero-tagline">Open for collaboration</p>
+          <h2>椰知卿</h2>
+          <p class="hero-story">都市里的椰子，如何变成一套可被日常使用的生活方式？</p>
+          <ul class="hero-proof">
+            <li>自然美学食研所</li>
+            <li>识别系统延展到包装与场景</li>
+            <li>餐饮全案 · 2024</li>
+          </ul>
         </div>
-        <figure class="hero-visual-large">
-          <img
-            src="assets/p-02.jpg"
-            alt="品牌视觉概念画面"
-            width="720"
-            height="960"
-            loading="eager"
-            decoding="async"
-          />
-        </figure>
+      </a>
+      <a class="hero-slide" data-slide href="works/longmianguan.html" aria-hidden="true" tabindex="-1" aria-label="龍面馆">
+        <img src="assets/w-13.jpg" alt="" width="1575" height="886" />
+        <div class="hero-copy">
+          <h2>龍面馆</h2>
+          <p class="hero-story">一碗香港私房面，怎样在传统中菜里重新被记住？</p>
+          <ul class="hero-proof">
+            <li>鲜熬，即叫即拉</li>
+            <li>开放式厨房的视觉秩序</li>
+            <li>餐饮识别 · 2025</li>
+          </ul>
+        </div>
+      </a>
+      <a class="hero-slide" data-slide href="works/galayogurt.html" aria-hidden="true" tabindex="-1" aria-label="伽乐酸奶">
+        <img src="assets/w-14.jpg" alt="" width="1575" height="886" />
+        <div class="hero-copy">
+          <h2>伽乐酸奶</h2>
+          <p class="hero-story">高蛋白酸奶，能不能长成手里的一种生活态度？</p>
+          <ul class="hero-proof">
+            <li>面向 Z 世代的希腊酸奶</li>
+            <li>几何色块包装系统</li>
+            <li>消费品牌 · 2024</li>
+          </ul>
+        </div>
+      </a>
+      <a class="hero-slide" data-slide href="works/longzunxuan.html" aria-hidden="true" tabindex="-1" aria-label="龍尊轩">
+        <img src="assets/w-19.jpg" alt="" width="1575" height="886" />
+        <div class="hero-copy">
+          <h2>龍尊轩</h2>
+          <p class="hero-story">粤宴的精奢，如何用宋式骨骼讲成当代语言？</p>
+          <ul class="hero-proof">
+            <li>纤细宋体与超级符号</li>
+            <li>器皿、菜单与空间物料</li>
+            <li>高端餐饮 · 2024</li>
+          </ul>
+        </div>
+      </a>
+      <button class="hero-arrow prev" type="button" data-prev aria-label="上一则案例"><i></i></button>
+      <button class="hero-arrow next" type="button" data-next aria-label="下一则案例"><i></i></button>
+      <div class="hero-dots" role="tablist" aria-label="案例分页">
+        <button type="button" role="tab" data-dot aria-label="椰知卿" aria-selected="true"></button>
+        <button type="button" role="tab" data-dot aria-label="龍面馆" aria-selected="false" tabindex="-1"></button>
+        <button type="button" role="tab" data-dot aria-label="伽乐酸奶" aria-selected="false" tabindex="-1"></button>
+        <button type="button" role="tab" data-dot aria-label="龍尊轩" aria-selected="false" tabindex="-1"></button>
       </div>
     </section>
 
-    <section class="statement-band" aria-hidden="false">
-      <div class="wrap">
-        <p class="statement-line">品牌不是一张 Logo——是一整套被持续使用的视觉语言。</p>
+    <section class="formula" aria-labelledby="formula-heading">
+      <h2 id="formula-heading">造物社 = 品牌视觉 × 字体 × 餐饮全案</h2>
+      <div class="formula-body">
+        <p>做餐饮，也做需要被记住的消费品牌。从定位和超级符号开始，把字体、包装、IP 与插画收成一套可以反复使用的视觉语言。</p>
+        <p>不按固定套餐来。先对齐品类、人群和要解决的问题，再决定识别、字体、物料和场景各自走到哪一步。</p>
+        <p>椰知卿、龍面馆、伽乐酸奶、龍尊轩，是这套方法在不同餐桌上的四个样本：有的把一种食材写成生活方式，有的让一碗面重新被记住，有的把功能食品做成态度，有的用宋式骨骼托起粤宴。</p>
       </div>
     </section>
 
-    <section id="services" class="section wrap" aria-labelledby="services-heading">
-      <div class="section-head">
-        <p class="section-kicker">Capabilities</p>
-        <h2 id="services-heading">服务能力</h2>
-        <p class="section-desc">以品牌全案为核心，覆盖字体、平面、IP 与插画——按 brief 组合，而非固定套餐。</p>
+    <section id="works" aria-label="案例">
+      <div class="work-grid">
+        <a href="works/yezhiqing.html">
+          <img src="assets/p-07.jpg" alt="椰知卿生活方式画面" width="1890" height="1063" />
+          <div class="tile-cap">
+            <h3>椰知卿</h3>
+            <p>椰子，如何成为都市里的一种生活方式？</p>
+          </div>
+        </a>
+        <a href="works/longmianguan.html">
+          <img src="assets/w-10.jpg" alt="龍面馆识别系统" width="1575" height="886" />
+          <div class="tile-cap">
+            <h3>龍面馆</h3>
+            <p>私房面馆，怎样重写传统中菜的记忆？</p>
+          </div>
+        </a>
+        <a href="works/galayogurt.html">
+          <img src="assets/w-16.jpg" alt="伽乐酸奶包装图形" width="1575" height="886" />
+          <div class="tile-cap">
+            <h3>伽乐酸奶</h3>
+            <p>功能性酸奶，能否成为手里的生活态度？</p>
+          </div>
+        </a>
+        <a href="works/longzunxuan.html">
+          <img src="assets/w-20.jpg" alt="龍尊轩粤菜主视觉" width="1575" height="886" />
+          <div class="tile-cap">
+            <h3>龍尊轩</h3>
+            <p>粤宴精奢，如何落成宋式的当代字体？</p>
+          </div>
+        </a>
       </div>
-      <ul class="service-grid">
-        <li class="service-card">
-          <p class="service-num">01</p>
-          <h3>品牌全案</h3>
-          <p>策略定位、命名辅助、超级符号、识别系统与应用规范——从 0 到 1，或既有品牌升级。</p>
-        </li>
-        <li class="service-card">
-          <p class="service-num">02</p>
-          <h3>字体设计</h3>
-          <p>标题字、品牌专用字与排印气质；让文字本身成为品牌资产。</p>
-        </li>
-        <li class="service-card">
-          <p class="service-num">03</p>
-          <h3>平面与包装</h3>
-          <p>主视觉、包装结构延展、物料与空间视觉——让识别落地到货架与现场。</p>
-        </li>
-        <li class="service-card">
-          <p class="service-num">04</p>
-          <h3>IP / 插画</h3>
-          <p>角色与图形语言、插画叙事与场景延展，为品牌增加可传播的情绪面。</p>
-        </li>
-      </ul>
-    </section>
-
-    <section id="works" class="section wrap" aria-labelledby="works-heading">
-      <div class="section-head">
-        <p class="section-kicker">Lookbook</p>
-        <h2 id="works-heading">精选案例</h2>
-        <p class="section-desc">
-          近年合作项目，以案例叙事呈现。点击进入独立项目页；更多品牌与专题位持续更新。
-        </p>
+      <div class="more-wrap">
+        <button class="more-btn" type="button" data-more aria-expanded="false" aria-controls="more-works">MORE</button>
       </div>
-
-      <ul class="work-grid is-magazine is-lookbook">
-        <li class="work-card">
-          <a class="work-card-link" href="works/yezhiqing.html">
-            <div class="work-card-media">
-              <img src="assets/w-09.jpg" alt="" width="800" height="600" loading="lazy" decoding="async" />
-            </div>
-            <div class="work-card-overlay">
-              <p class="card-meta">Case Study · 2024</p>
-              <h3>椰知卿</h3>
-              <p class="work-card-excerpt">
-                自然美学主义食研所。以椰为经纬编织都市诗意栖居；「椰细胞再生计划」传递有温度的生活方式。
-              </p>
-              <p class="card-tags"><span>品牌识别</span><span>餐饮</span><span>视觉系统</span></p>
-              <p class="work-card-cta">进入案例 →</p>
-            </div>
-          </a>
-        </li>
-        <li class="work-card">
-          <a class="work-card-link" href="works/longmianguan.html">
-            <div class="work-card-media">
-              <img src="assets/w-10.jpg" alt="" width="800" height="600" loading="lazy" decoding="async" />
-            </div>
-            <div class="work-card-overlay">
-              <p class="card-meta">Case Study · 2025</p>
-              <h3>龍面馆</h3>
-              <p class="work-card-excerpt">
-                香港鲜熬私房面。新鲜制作、开放式厨房；在传统中菜中融入创意，重新演绎经典。
-              </p>
-              <p class="card-tags"><span>品牌识别</span><span>包装延展</span><span>餐饮</span></p>
-              <p class="work-card-cta">进入案例 →</p>
-            </div>
-          </a>
-        </li>
-        <li class="work-card">
-          <a class="work-card-link" href="works/galayogurt.html">
-            <div class="work-card-media">
-              <img src="assets/w-14.jpg" alt="" width="800" height="600" loading="lazy" decoding="async" />
-            </div>
-            <div class="work-card-overlay">
-              <p class="card-meta">Case Study · 2024</p>
-              <h3>伽乐酸奶</h3>
-              <p class="work-card-excerpt">
-                Z 世代高蛋白希腊酸奶。莫兰迪与荧光色块碰撞，解构几何跃动于极简包装。
-              </p>
-              <p class="card-tags"><span>包装</span><span>消费品牌</span><span>视觉系统</span></p>
-              <p class="work-card-cta">进入案例 →</p>
-            </div>
-          </a>
-        </li>
-        <li class="work-card">
-          <a class="work-card-link" href="works/longzunxuan.html">
-            <div class="work-card-media">
-              <img src="assets/w-19.jpg" alt="" width="800" height="600" loading="lazy" decoding="async" />
-            </div>
-            <div class="work-card-overlay">
-              <p class="card-meta">Case Study · 2024</p>
-              <h3>龍尊轩</h3>
-              <p class="work-card-excerpt">
-                新派东方美学粤宴。「宋式极简骨骼 × 粤派精奢肌理」，纤细宋体构筑古典叙事。
-              </p>
-              <p class="card-tags"><span>字体</span><span>高端餐饮</span><span>超级符号</span></p>
-              <p class="work-card-cta">进入案例 →</p>
-            </div>
-          </a>
-        </li>
-      </ul>
-
-      <div class="works-upcoming">
-        <h3>更多项目 · 待上传</h3>
-        <p class="section-desc" style="margin-bottom: 1.1rem">
-          以下条目已建独立页占位，画面与文案就绪后即可替换（见 README）。
-        </p>
-        <ul class="upcoming-grid">
-          <li>
-            <a class="upcoming-card" href="works/hera.html">
-              <span class="uc-meta">品牌识别 · 2025</span>
-              <h4>HERA 赫她</h4>
-              <span class="uc-note">待上传</span>
-            </a>
-          </li>
-          <li>
-            <a class="upcoming-card" href="works/liufang.html">
-              <span class="uc-meta">品牌识别 · 2025</span>
-              <h4>留芳茶社</h4>
-              <span class="uc-note">待上传</span>
-            </a>
-          </li>
-          <li>
-            <a class="upcoming-card" href="works/meiweimeiguo.html">
-              <span class="uc-meta">品牌识别 · 2022</span>
-              <h4>美味美锅</h4>
-              <span class="uc-note">待上传</span>
-            </a>
-          </li>
-          <li>
-            <a class="upcoming-card" href="works/font-design.html">
-              <span class="uc-meta">Font Design</span>
-              <h4>字体设计</h4>
-              <span class="uc-note">待上传</span>
-            </a>
-          </li>
-          <li>
-            <a class="upcoming-card" href="works/layout-design.html">
-              <span class="uc-meta">Layout Design</span>
-              <h4>版式设计</h4>
-              <span class="uc-note">待上传</span>
-            </a>
-          </li>
-          <li>
-            <a class="upcoming-card" href="works/illustration.html">
-              <span class="uc-meta">Illustration / IP</span>
-              <h4>插画 / IP</h4>
-              <span class="uc-note">待上传</span>
-            </a>
-          </li>
+      <div class="more-panel" id="more-works" hidden>
+        <p>以下项目页已留出位置，画面与正文待补。不作为已完成案例展示。</p>
+        <ul>
+          <li><a href="works/hera.html">HERA 赫她<em>待上传</em></a></li>
+          <li><a href="works/liufang.html">留芳茶社<em>待上传</em></a></li>
+          <li><a href="works/meiweimeiguo.html">美味美锅<em>待上传</em></a></li>
+          <li><a href="works/font-design.html">字体设计<em>待上传</em></a></li>
+          <li><a href="works/layout-design.html">版式设计<em>待上传</em></a></li>
+          <li><a href="works/illustration.html">插画 / IP<em>待上传</em></a></li>
         </ul>
       </div>
     </section>
 
-    <section id="process" class="section section-band" aria-labelledby="process-heading">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="section-kicker">How we work</p>
-          <h2 id="process-heading">合作方式</h2>
-          <p class="section-desc">流程简写——先对齐问题，再交付系统，最后落地延展。</p>
+    <section class="services" id="services" aria-labelledby="services-heading">
+      <div class="services-head">
+        <h2 id="services-heading">业务</h2>
+        <div>
+          <p class="lede-en">Brand, type, packaging, and illustration — assembled around a commercial problem, not a fixed menu of deliverables.</p>
+          <p>以餐饮与消费品牌为主。定位、字体、平面、IP 收成一套视觉语言，用在菜单、包装和门店里。</p>
         </div>
-        <ol class="process-grid">
+      </div>
+      <div class="services-split">
+        <figure>
+          <img src="assets/p-06.jpg" alt="品牌识别系统画面" width="1890" height="1063" />
+        </figure>
+        <ol class="svc-list">
           <li>
-            <span class="process-step">01</span>
-            <h3>沟通 brief</h3>
-            <p>品类、受众、时间与预算区间；可先发参考链接。</p>
+            <span>01</span>
+            <div>
+              <h3>品牌全案</h3>
+              <p>策略辅助、超级符号、识别系统与应用规范。从零开始，或把已有品牌升级成能被持续使用的系统。</p>
+            </div>
           </li>
           <li>
-            <span class="process-step">02</span>
-            <h3>策略与方向</h3>
-            <p>定位关键词、视觉母题与符号方向，确认再深入。</p>
+            <span>02</span>
+            <div>
+              <h3>字体设计</h3>
+              <p>标题字、品牌专用字与排印气质。文字本身成为资产，而不是事后贴上去的标准字。</p>
+            </div>
           </li>
           <li>
-            <span class="process-step">03</span>
-            <h3>系统落地</h3>
-            <p>识别、字体、包装与应用规范；按场景延展交付。</p>
+            <span>03</span>
+            <div>
+              <h3>平面与包装</h3>
+              <p>主视觉、包装结构、菜单与空间物料。让识别落到货架、杯套和门店现场。</p>
+            </div>
           </li>
           <li>
-            <span class="process-step">04</span>
-            <h3>跟进与微调</h3>
-            <p>印刷与现场落地反馈，必要时迭代一版。</p>
+            <span>04</span>
+            <div>
+              <h3>IP / 插画</h3>
+              <p>角色、图形语言与场景叙事。给餐饮品牌一个可以被记住的情绪面。</p>
+            </div>
           </li>
         </ol>
-        <p class="process-cta">
-          <a class="btn btn-on-dark" href="#contact">开始合作咨询</a>
-          <a class="btn btn-ghost-on-dark" href="mailto:shiqiangqiang96@163.com">发邮件</a>
+      </div>
+      <p class="services-more"><a href="service.html">查看业务</a></p>
+    </section>
+
+    <section class="process" id="process" aria-labelledby="process-heading">
+      <div class="process-head">
+        <h2 id="process-heading">合作</h2>
+        <p>先把问题说清，再交付系统，最后看它在印刷和现场里是否站得住。</p>
+      </div>
+      <ol>
+        <li>
+          <div class="process-no">01</div>
+          <h3>对齐问题</h3>
+          <p>品类、受众、时间和预算。可以先发参考，再决定要不要往下做。</p>
+        </li>
+        <li>
+          <div class="process-no">02</div>
+          <h3>方向确认</h3>
+          <p>定位关键词、视觉母题和符号方向。确认之后再进入系统。</p>
+        </li>
+        <li>
+          <div class="process-no">03</div>
+          <h3>系统交付</h3>
+          <p>识别、字体、包装和应用规范，按真实场景延展，而不是只交一张主视觉。</p>
+        </li>
+        <li>
+          <div class="process-no">04</div>
+          <h3>落地跟进</h3>
+          <p>印刷、门店和上架时的反馈。需要的话，再迭代一版。</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="names" aria-label="近期案例">
+      <p class="names-kicker">Selected</p>
+      <ul>
+        <li><a href="works/yezhiqing.html">椰知卿</a></li>
+        <li><a href="works/longmianguan.html">龍面馆</a></li>
+        <li><a href="works/galayogurt.html">伽乐酸奶</a></li>
+        <li><a href="works/longzunxuan.html">龍尊轩</a></li>
+      </ul>
+    </section>
+
+    <section class="cta" id="contact">
+      <img src="assets/w-13.jpg" alt="" width="1575" height="886" />
+      <div class="cta-inner">
+        <p>下一道品牌问题，可以从一次合作咨询开始。</p>
+        <a class="pill" href="mailto:shiqiangqiang96@163.com?subject=%E5%90%88%E4%BD%9C%E5%92%A8%E8%AF%A2">合作咨询 <span aria-hidden="true">→</span></a>
+        <p class="cta-meta">
+          <a href="mailto:shiqiangqiang96@163.com">shiqiangqiang96@163.com</a>
+          ·
+          <a href="tel:+8617621419257">17621419257</a>
         </p>
       </div>
     </section>
-
-    <section id="contact" class="section wrap contact" aria-labelledby="contact-heading">
-      <div class="section-head">
-        <p class="section-kicker">Contact</p>
-        <h2 id="contact-heading">联系</h2>
-        <p class="section-desc">品牌全案、识别升级、包装与视觉延展——欢迎来信来电。</p>
-      </div>
-      <p class="contact-intro">
-        有项目意向可直接邮件说明品类、时间与预算区间；也可先发参考，再约细聊。
-      </p>
-      <ul class="contact-list">
-        <li>
-          <span class="contact-label">邮箱</span>
-          <a href="mailto:shiqiangqiang96@163.com">shiqiangqiang96@163.com</a>
-        </li>
-        <li>
-          <span class="contact-label">电话</span>
-          <a href="tel:+8617621419257">176 2141 9257</a>
-        </li>
-      </ul>
-      <p class="contact-soft-name">阿志 · 偶尔亦称石强强</p>
-      <p class="contact-cta-row">
-        <a class="btn btn-primary" href="mailto:shiqiangqiang96@163.com?subject=品牌合作咨询-阿志">发送合作邮件</a>
-        <a class="btn btn-ghost" href="#works">再看案例</a>
-      </p>
-    </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap footer-inner">
-      <p>© <span id="year"></span> 阿志</p>
-      <nav class="face-switch" aria-label="站点版本切换">
-        <span class="face-switch-current" aria-current="page">合作版</span>
-        <span class="face-switch-sep" aria-hidden="true">/</span>
-        <a href="job.html">求职版</a>
+  <footer class="sitefoot">
+    <div class="sitefoot-grid">
+      <div>
+        <p class="sitefoot-name">造物社</p>
+        <p class="sitefoot-tag">品牌视觉 × 字体 × 餐饮全案</p>
+      </div>
+      <nav aria-label="页脚">
+        <a href="#works">案例</a>
+        <a href="#services">业务</a>
+        <a href="#process">合作</a>
+        <a href="#contact">联系</a>
       </nav>
-      <p class="footer-motif" aria-hidden="true">+ − × ÷ = ∞</p>
+      <div class="sitefoot-contact">
+        <a href="mailto:shiqiangqiang96@163.com">shiqiangqiang96@163.com</a>
+        <a href="tel:+8617621419257">17621419257</a>
+      </div>
+    </div>
+    <div class="sitefoot-base">
+      <p>© <span data-year></span> 造物社</p>
+      <p>联络 · 阿志</p>
+      <a class="sitefoot-job" href="job.html">求职</a>
     </div>
   </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <script src="studio.js"></script>
 </body>
 </html>
