@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="字体设计 — 阿志作品占位页，完整内容待上传。" />
+  <title>字体设计 · 阿志</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body class="page-project page-stub">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../index.html#top">阿志<span class="brand-mark">∞</span></a>
+      <nav class="nav" aria-label="主导航">
+        <a href="../index.html#works">作品</a>
+        <a href="../index.html#about">关于</a>
+        <a href="../index.html#experience">经历</a>
+        <a class="nav-cta" href="../index.html#contact">合作咨询</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="project-hero wrap">
+      <a class="project-back" href="../index.html#works">返回作品</a>
+      <div class="stub-banner">
+        <strong>待上传</strong>
+        FONT DESIGN 专题页。字体结构与案例待上传。复制 <code>works/_template.html</code> 的结构，替换图片与文案即可升级为本完整页。亦请同步更新 <code>works/projects.json</code> 与首页卡片。
+      </div>
+      <p class="project-meta-row">
+        <span>作品专题</span>
+        <span>—</span>
+        <span>个人 · 全案</span>
+      </p>
+      <h1>字体设计</h1>
+      <p class="project-subtitle">Font Design</p>
+      <div class="project-brief">
+        <p>FONT DESIGN 专题页。字体结构与案例待上传。</p>
+      </div>
+    </section>
+
+    <p class="motif-rule wrap" aria-hidden="true">+ &nbsp; − &nbsp; × &nbsp; ÷ &nbsp; = &nbsp; ∞</p>
+
+    <section class="project-gallery wrap" aria-labelledby="gallery-heading">
+      <div class="section-head">
+        <p class="section-kicker">Gallery</p>
+        <h2 id="gallery-heading">项目画面</h2>
+        <p class="section-desc">上传图片至 <code>assets/</code> 后，用下方槽位替换为 <code>&lt;figure&gt;</code> 即可。</p>
+      </div>
+      <ul class="gallery-grid has-slots">
+        <li aria-hidden="true"><div class="gallery-slot-empty">待上传主视觉</div></li>
+        <li aria-hidden="true"><div class="gallery-slot-empty">待上传画面</div></li>
+        <li aria-hidden="true"><div class="gallery-slot-empty">待上传画面</div></li>
+        <li aria-hidden="true"><div class="gallery-slot-empty">待上传画面</div></li>
+      </ul>
+    </section>
+
+    <section class="section wrap" aria-labelledby="more-heading">
+      <div class="section-head">
+        <p class="section-kicker">To complete</p>
+        <h2 id="more-heading">待补全</h2>
+        <p class="section-desc">以下区块供后续填写，不影响现有排版。</p>
+      </div>
+      <div class="placeholder-block">
+        <span class="placeholder-label">占位</span>
+        <h3>更多说明</h3>
+        <p>策略洞察、设计方法、落地场景与反馈等长文说明放这里。</p>
+      </div>
+      <div class="placeholder-block">
+        <span class="placeholder-label">占位</span>
+        <h3>交付物清单</h3>
+        <p>Logo / 标准字 / 色彩规范 / 包装 / 空间导视 / 菜单物料 / 社交视觉……按实际补充。</p>
+      </div>
+    </section>
+
+
+    <div class="wrap project-nav-footer">
+      <a href="../index.html#works">← 全部作品</a>
+      <a href="../index.html#contact">合作咨询 →</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© <span class="js-year"></span> 阿志 · 石强强</p>
+      <p class="footer-motif" aria-hidden="true">+ − × ÷ = ∞</p>
+    </div>
+  </footer>
+  <script>
+    document.querySelectorAll(".js-year").forEach(function (el) {
+      el.textContent = new Date().getFullYear();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+{
+  "$schema_note": "Registry of work projects. Add an entry here, copy _template.html to <slug>.html, put images in ../assets/, then add/update the card on index.html.",
+  "featured": [
+    {
+      "slug": "yezhiqing",
+      "title": "椰知卿",
+      "en": "Coconut Flavor",
+      "year": "2024",
+      "role": "个人 · 全案",
+      "category": "品牌识别",
+      "status": "ready",
+      "cover": "../assets/w-09.jpg",
+      "images": ["../assets/p-06.jpg", "../assets/p-07.jpg", "../assets/p-08.jpg", "../assets/w-09.jpg"],
+      "tags": ["品牌设计", "餐饮", "识别系统"]
+    },
+    {
+      "slug": "longmianguan",
+      "title": "龍面馆",
+      "en": "Dragon Noodles Academy",
+      "year": "2025",
+      "role": "个人 · 全案",
+      "category": "品牌识别",
+      "status": "ready",
+      "cover": "../assets/w-10.jpg",
+      "images": ["../assets/w-10.jpg", "../assets/w-11.jpg", "../assets/w-12.jpg", "../assets/w-13.jpg"],
+      "tags": ["品牌设计", "餐饮", "包装延展"]
+    },
+    {
+      "slug": "galayogurt",
+      "title": "伽乐酸奶",
+      "en": "gála yogurt",
+      "year": "2024",
+      "role": "个人 · 全案",
+      "category": "品牌识别",
+      "status": "ready",
+      "cover": "../assets/w-14.jpg",
+      "images": ["../assets/w-14.jpg", "../assets/w-15.jpg", "../assets/w-16.jpg", "../assets/w-17.jpg"],
+      "tags": ["包装设计", "消费品牌", "视觉系统"]
+    },
+    {
+      "slug": "longzunxuan",
+      "title": "龍尊轩",
+      "en": "Noble Dragon",
+      "year": "2024",
+      "role": "个人 · 全案",
+      "category": "品牌识别",
+      "status": "ready",
+      "cover": "../assets/w-19.jpg",
+      "images": ["../assets/w-18.jpg", "../assets/w-19.jpg", "../assets/w-20.jpg"],
+      "tags": ["字体设计", "高端餐饮", "超级符号"]
+    }
+  ],
+  "upcoming": [
+    {
+      "slug": "hera",
+      "title": "HERA 赫她",
+      "en": "HERA",
+      "year": "2025",
+      "role": "个人 · 全案",
+      "category": "品牌识别",
+      "status": "pending",
+      "note": "科技美肤塑形中心 · 待上传完整作品"
+    },
+    {
+      "slug": "liufang",
+      "title": "留芳茶社",
+      "en": "Liufang Tea House",
+      "year": "2025",
+      "role": "个人 · 全案",
+      "category": "品牌识别",
+      "status": "pending",
+      "note": "泰州早茶文化 · 待上传完整作品"
+    },
+    {
+      "slug": "meiweimeiguo",
+      "title": "美味美锅",
+      "en": "Meiwei Meiguo",
+      "year": "2022",
+      "role": "个人 · 全案",
+      "category": "品牌识别",
+      "status": "pending",
+      "note": "「辣面熊猫」超级符号 · 待上传完整作品"
+    },
+    {
+      "slug": "font-design",
+      "title": "字体设计",
+      "en": "Font Design",
+      "year": "—",
+      "role": "个人",
+      "category": "字体设计",
+      "status": "pending",
+      "note": "FONT DESIGN 专题 · 待上传"
+    },
+    {
+      "slug": "layout-design",
+      "title": "版式设计",
+      "en": "Layout Design",
+      "year": "—",
+      "role": "个人",
+      "category": "版式设计",
+      "status": "pending",
+      "note": "LAYOUT DESIGN 专题 · 待上传"
+    },
+    {
+      "slug": "illustration",
+      "title": "插画 / IP",
+      "en": "Illustration & IP",
+      "year": "—",
+      "role": "个人",
+      "category": "插画设计",
+      "status": "pending",
+      "note": "ILLUSTRATION / IP 专题 · 待上传"
+    }
+  ]
+}
