@@ -4,8 +4,8 @@
 
 | 入口 | 面向 | 说明 |
 |------|------|------|
-| `index.html` | **合作 / 私活**（主页） | 品牌合作咨询、案例、软简介；完整经历链到求职版 |
-| `job.html` | **求职** | 能力 / 工具 / 教育、完整经历、作品佐证；联系面向 HR |
+| `index.html` | **合作**（主页） | 品牌营销站：服务能力、精选案例 lookbook、合作流程、合作咨询 |
+| `job.html` | **求职** | 炫技作品集：作品先行、能力工具、完整经历与教育；联系面向 HR |
 
 页脚可切换「合作版」/「求职版」。纯 HTML + CSS，无构建步骤。相对路径部署于 `/azhi/`。
 
@@ -16,7 +16,7 @@ GitHub Pages（仓库 `TOMOOLY/azhi`，分支 `main`，目录 `/`）：
 - 合作版：<https://TOMOOLY.github.io/azhi/>
 - 求职版：<https://TOMOOLY.github.io/azhi/job.html>
 
-站内链接使用相对路径（`styles.css`、`job.html`、`works/…`、`assets/…`、`../index.html`、`../job.html`）。仓库根目录有 `.nojekyll`，避免 Jekyll 忽略 `works/_template.html`。
+站内链接使用相对路径。仓库根目录有 `.nojekyll`，避免 Jekyll 忽略 `works/_template.html`。
 
 ## 本地预览
 
@@ -33,7 +33,7 @@ python3 -m http.server 8765 --bind 127.0.0.1
 
 | 路径 | 作用 |
 |------|------|
-| `index.html` | 合作 / 私活主页 |
+| `index.html` | 品牌营销合作主页 |
 | `job.html` | 求职向主页 |
 | `styles.css` | 共享设计系统（含 `.face-coop` / `.face-job`、`.face-switch`） |
 | `assets/` | 项目图片（JPG） |

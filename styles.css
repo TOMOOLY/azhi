@@ -1552,3 +1552,214 @@ a:focus-visible,
 .face-job .hero-coop {
   display: none;
 }
+
+/* —— Dual-face refine: campaign (coop) + craft (job) —— */
+
+.hero-promise {
+  margin: 0 0 1.1rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2.8vw, 1.55rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.45;
+  color: var(--fg);
+  max-width: 18em;
+}
+
+.hero-mood {
+  margin: 0 0 1.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  color: var(--muted-2);
+}
+
+.hero-campaign .lead {
+  margin-bottom: 0.75rem;
+}
+
+.hero-display-name {
+  letter-spacing: 0.12em;
+  font-size: clamp(2.8rem, 9vw, 5.2rem);
+}
+
+.craft-line {
+  font-size: 1.08rem;
+  color: var(--fg);
+}
+
+.face-job .hero-role {
+  margin-bottom: 0.85rem;
+}
+
+.statement-band {
+  background: var(--bg-warm);
+  border-bottom: var(--rule);
+  padding: 2.25rem 0;
+}
+
+.statement-line {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 3.2vw, 1.85rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.45;
+  text-align: center;
+  max-width: 22em;
+  margin-inline: auto;
+}
+
+/* Services */
+.service-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 720px) {
+  .service-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+}
+
+.service-card {
+  margin: 0;
+  padding: 1.5rem 1.4rem 1.6rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: var(--bg);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-card:hover {
+  border-color: var(--accent-soft);
+  box-shadow: var(--shadow-hover);
+}
+
+.service-num {
+  margin: 0 0 0.65rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  color: var(--accent-soft-deep);
+}
+
+.service-card h3 {
+  margin: 0 0 0.55rem;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  letter-spacing: 0.1em;
+}
+
+.service-card p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* Process (coop dark band) */
+.process-grid {
+  list-style: none;
+  margin: 0 0 2rem;
+  padding: 0;
+  display: grid;
+  gap: 1.25rem;
+  counter-reset: none;
+}
+
+@media (min-width: 720px) {
+  .process-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+.process-grid li {
+  margin: 0;
+  padding: 0;
+}
+
+.process-step {
+  display: block;
+  margin-bottom: 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  color: var(--accent-soft);
+}
+
+.process-grid h3 {
+  margin: 0 0 0.45rem;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  color: var(--on-dark);
+}
+
+.process-grid p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: rgba(250, 249, 247, 0.68);
+}
+
+.process-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin: 0;
+  padding-top: 0.5rem;
+}
+
+.section-band .section-head {
+  margin-bottom: 2rem;
+}
+
+.section-band .section-head h2 {
+  color: var(--on-dark);
+}
+
+.contact-soft-name {
+  margin: 1.25rem 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  color: var(--muted-2);
+}
+
+/* Lookbook / craft gallery density */
+.face-coop .work-grid.is-lookbook .work-card-overlay h3 {
+  font-size: clamp(1.45rem, 2.8vw, 1.85rem);
+}
+
+@media (min-width: 720px) {
+  .face-job .work-grid.is-craft .work-card:nth-child(1),
+  .face-job .work-grid.is-craft .work-card:nth-child(4) {
+    min-height: 30rem;
+  }
+
+  .face-job .work-grid.is-craft .work-card:nth-child(1) .work-card-link,
+  .face-job .work-grid.is-craft .work-card:nth-child(4) .work-card-link {
+    min-height: 30rem;
+  }
+
+  .face-job .work-grid.is-craft .work-card:nth-child(2),
+  .face-job .work-grid.is-craft .work-card:nth-child(3) {
+    min-height: 26rem;
+  }
+
+  .face-job .work-grid.is-craft .work-card:nth-child(2) .work-card-link,
+  .face-job .work-grid.is-craft .work-card:nth-child(3) .work-card-link {
+    min-height: 26rem;
+  }
+}
+
+.section-craft-gallery {
+  padding-top: 3.5rem;
+}
+
