@@ -1464,3 +1464,91 @@ a:focus-visible,
   display: block;
   margin-bottom: 0.25rem;
 }
+
+/* —— Dual face: 合作 / 求职 —— */
+
+.face-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+}
+
+.face-switch a {
+  color: var(--muted-2);
+  text-decoration: none;
+}
+
+.face-switch a:hover {
+  color: var(--fg);
+}
+
+.face-switch-current {
+  color: var(--fg);
+  font-weight: 550;
+}
+
+.face-switch-sep {
+  color: var(--border-strong);
+  user-select: none;
+}
+
+.footer-inner {
+  align-items: center;
+}
+
+.footer-inner .face-switch {
+  order: 0;
+}
+
+@media (min-width: 640px) {
+  .footer-inner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+  }
+
+  .footer-inner > p:first-child {
+    justify-self: start;
+  }
+
+  .footer-inner .face-switch {
+    justify-self: center;
+  }
+
+  .footer-inner .footer-motif {
+    justify-self: end;
+  }
+}
+
+.path-short-meta {
+  margin: 0 0 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--fg);
+}
+
+.path-short-link {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.path-short-link a {
+  color: var(--accent-soft-deep);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+
+.path-short-link a:hover {
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+/* Soft distinction: job face has no coop callout in hero */
+.face-job .hero-coop {
+  display: none;
+}

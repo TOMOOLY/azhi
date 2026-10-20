@@ -1,14 +1,22 @@
 # 阿志 · 品牌视觉架构师
 
-石强强（阿志）个人站点：**作品展示 + 品牌合作 / 私活咨询**。纯 HTML + CSS，无构建步骤。
+石强强（阿志）个人静态站：同一 GitHub Pages 仓库，**两张面孔**共享设计系统与作品页。
+
+| 入口 | 面向 | 说明 |
+|------|------|------|
+| `index.html` | **合作 / 私活**（主页） | 品牌合作咨询、案例、软简介；完整经历链到求职版 |
+| `job.html` | **求职** | 能力 / 工具 / 教育、完整经历、作品佐证；联系面向 HR |
+
+页脚可切换「合作版」/「求职版」。纯 HTML + CSS，无构建步骤。相对路径部署于 `/azhi/`。
 
 ## 线上地址
 
 GitHub Pages（仓库 `TOMOOLY/azhi`，分支 `main`，目录 `/`）：
 
-<https://TOMOOLY.github.io/azhi/>
+- 合作版：<https://TOMOOLY.github.io/azhi/>
+- 求职版：<https://TOMOOLY.github.io/azhi/job.html>
 
-站内链接全部使用相对路径（`styles.css`、`works/…`、`assets/…`、`../index.html`），以便挂在 `/azhi/` 子路径下。仓库根目录有 `.nojekyll`，避免 Jekyll 忽略 `works/_template.html`。
+站内链接使用相对路径（`styles.css`、`job.html`、`works/…`、`assets/…`、`../index.html`、`../job.html`）。仓库根目录有 `.nojekyll`，避免 Jekyll 忽略 `works/_template.html`。
 
 ## 本地预览
 
@@ -18,42 +26,31 @@ GitHub Pages（仓库 `TOMOOLY/azhi`，分支 `main`，目录 `/`）：
 python3 -m http.server 8765 --bind 127.0.0.1
 ```
 
-浏览器打开：<http://127.0.0.1:8765/>
+- 合作版：<http://127.0.0.1:8765/>
+- 求职版：<http://127.0.0.1:8765/job.html>
 
 ## 文件结构
 
 | 路径 | 作用 |
 |------|------|
-| `index.html` | 首页（精选作品卡片 + 待上传槽位 + 关于 / 经历 / 联系） |
-| `styles.css` | 共享设计系统（首页与项目页共用） |
+| `index.html` | 合作 / 私活主页 |
+| `job.html` | 求职向主页 |
+| `styles.css` | 共享设计系统（含 `.face-coop` / `.face-job`、`.face-switch`） |
 | `assets/` | 项目图片（JPG） |
-| `works/projects.json` | **作品注册表**（featured / upcoming，加项目先改这里） |
-| `works/_template.html` | **新项目页模板**（复制改名即可） |
-| `works/*.html` | 各项目独立页（含「待上传」占位页） |
+| `works/projects.json` | 作品注册表（featured / upcoming） |
+| `works/_template.html` | 新项目页模板 |
+| `works/*.html` | 各项目独立页（共享，两面孔均可进入） |
 | `README.md` | 本说明 |
 
 ## 如何新增一个完整项目
 
-1. **注册**  
-   在 `works/projects.json` 增加一条（或把 `upcoming` 里对应项的 `status` 改为 `"ready"`），填写 `slug`、`title`、`year`、`cover`、`images`、`tags` 等。
+1. **注册** — 在 `works/projects.json` 增加或把 `upcoming` 项 `status` 改为 `"ready"`。
+2. **建页** — `cp works/_template.html works/<slug>.html`，填标题 / 画面。
+3. **放图** — `assets/`，项目页用 `../assets/…`，首页封面用 `assets/…`。
+4. **挂卡** — 在 `index.html` 与 `job.html` 的 `.work-grid`（及 upcoming）同步加卡，或从 upcoming 升级。
+5. **清占位** — 去掉 `stub-banner` / `.gallery-slot-empty`。
 
-2. **建页**  
-   ```bash
-   cp works/_template.html works/<slug>.html
-   ```
-   编辑标题、年份、角色、简介、关键词；把 gallery 里的空槽换成真实 `<figure><img …>`。
-
-3. **放图**  
-   图片放入 `assets/`（建议命名清晰，如 `hera-01.jpg`），路径在项目页里写 `../assets/…`，首页封面写 `assets/…`。
-
-4. **挂到首页**  
-   - 精选：在 `index.html` 的 `.work-grid` 里加一张 `.work-card`（可复制现有四张之一）。  
-   - 或从「更多项目 · 待上传」的 `.upcoming-card` 升级为精选卡片，并删掉对应 upcoming 项。
-
-5. **清占位**  
-   删除项目页上的 `stub-banner`、多余的 `.gallery-slot-empty`，按需填写「更多说明 / 交付物清单」。
-
-现成占位页（已标「待上传」）：`hera`、`liufang`、`meiweimeiguo`、`font-design`、`layout-design`、`illustration`。上传完整作品时直接改对应 HTML 即可，不必从零建文件。
+现成占位：`hera`、`liufang`、`meiweimeiguo`、`font-design`、`layout-design`、`illustration`。
 
 ## 设计 tokens（摘要）
 
@@ -61,16 +58,12 @@ python3 -m http.server 8765 --bind 127.0.0.1
 |-------|-----|------|
 | `--bg` | `#ffffff` | 主背景 |
 | `--bg-warm` | `#f7f5f2` | 暖灰区块 |
-| `--fg` | `#0a0a0a` | 正文 / 强对比 |
-| `--muted` / `--muted-2` | `#5a5a5a` / `#8a8a8a` | 次级文字 |
-| `--accent-soft` | `#c4a090` | PDF 粉米色点缀 |
-| `--accent-soft-deep` | `#9a7468` | 点缀悬停 |
-| `--font-display` | Songti SC / Noto Serif SC / Georgia… | 大标题 |
-| `--font-sans` | system-ui + PingFang / YaHei… | 正文 |
-| `--font-mono` | ui-monospace… | 元信息、母题 |
-| 母题 | `+ − × ÷ = ∞` | 页眉点缀、分隔线 |
+| `--fg` | `#0a0a0a` | 正文 |
+| `--accent-soft` | `#c4a090` | 粉米色点缀 |
+| `--font-display` | Songti SC / Noto Serif SC… | 大标题 |
+| 母题 | `+ − × ÷ = ∞` | 页眉 / 页脚 |
 
-视觉取向：白底高对比、杂志感全出血作品卡、悬停揭示文案、偶发深色合作条；非暗色主题站。
+视觉：白底高对比、杂志感作品卡、深色合作条（合作版）；非暗色主题站。
 
 ## 内容来源
 
