@@ -233,118 +233,128 @@ a {
 /* —— Hero carousel —— */
 
 .hero {
+  --hero-img: clamp(13.5rem, 34vh, 20rem);
   position: relative;
-  height: calc(100svh - var(--header-h));
-  min-height: 34rem;
-  background: #111;
-  overflow: hidden;
-  color: #fff;
+  height: auto;
+  background: #fff;
+  color: #161616;
 }
 
 .hero-slide {
   position: absolute;
   inset: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(16.5rem, 0.8fr);
+  align-items: stretch;
+  background: #fff;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.55s ease;
+  pointer-events: none;
+  transition: opacity 0.45s ease;
 }
 
 .hero-slide.is-active {
+  position: relative;
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
   z-index: 1;
 }
 
 .hero-slide img {
   width: 100%;
-  height: 100%;
+  height: var(--hero-img);
   object-fit: cover;
-}
-
-.hero-slide::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.22) 46%, rgba(0, 0, 0, 0.08) 100%),
-    linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 46%);
-  pointer-events: none;
+  display: block;
+  background: #111;
 }
 
 .hero-copy {
-  position: absolute;
-  z-index: 1;
-  left: 7vw;
-  right: 16vw;
-  bottom: 11vh;
-  max-width: 16em;
+  position: static;
+  width: auto;
+  max-width: none;
+  margin: 0;
+  padding: 1.35rem 2rem 2.7rem 1.7rem;
+  background: #fff;
+  color: #161616;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hero-copy h2 {
-  margin: 0 0 0.55rem;
+  margin: 0 0 0.45rem;
   font-family: var(--serif);
   font-weight: 650;
-  font-size: clamp(3rem, 6.6vw, 6.4rem);
-  line-height: 1.02;
+  font-size: clamp(1.7rem, 2.5vw, 2.35rem);
+  line-height: 1.2;
   letter-spacing: 0.06em;
+  color: #111;
 }
 
 .hero-story {
-  margin: 0 0 1.1rem;
-  max-width: 22em;
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  margin: 0 0 0.7rem;
+  max-width: 28em;
+  font-size: 0.98rem;
   line-height: 1.65;
-  color: rgba(255, 255, 255, 0.92);
+  color: #333;
 }
 
 .hero-proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.85rem;
   margin: 0;
   padding: 0;
   list-style: none;
-  font-size: 0.92rem;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  letter-spacing: 0.04em;
+  color: #6a6a6a;
 }
 
 .hero-arrow {
   position: absolute;
-  top: 18%;
-  bottom: 18%;
-  width: 9%;
-  min-width: 3.2rem;
-  border: 0;
-  background: transparent;
+  top: calc(var(--hero-img) / 2);
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-top: -1.375rem;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.48);
   color: #fff;
   cursor: pointer;
   z-index: 3;
 }
 
 .hero-arrow.prev {
-  left: 0;
+  left: 0.85rem;
 }
 
 .hero-arrow.next {
-  right: 0;
+  right: auto;
+  left: calc(60% - 3.6rem);
 }
 
 .hero-arrow i {
   position: absolute;
   top: 50%;
-  width: 1.35rem;
-  height: 1.35rem;
+  left: 50%;
+  width: 0.55rem;
+  height: 0.55rem;
+  margin-top: -0.28rem;
   border-top: 1.5px solid #fff;
   border-right: 1.5px solid #fff;
-  opacity: 0.8;
 }
 
 .hero-arrow.prev i {
-  left: 42%;
-  transform: translateY(-50%) rotate(-135deg);
+  margin-left: -0.18rem;
+  transform: rotate(-135deg);
 }
 
 .hero-arrow.next i {
-  right: 42%;
-  transform: translateY(-50%) rotate(45deg);
+  margin-left: -0.38rem;
+  transform: rotate(45deg);
 }
 
 .hero-arrow:hover i {
@@ -358,22 +368,29 @@ a {
 .hero-dots {
   position: absolute;
   z-index: 3;
-  left: 0;
-  right: 0;
-  bottom: 1.35rem;
+  left: calc(60% + 1.7rem);
+  right: auto;
+  bottom: 1.05rem;
   display: flex;
-  justify-content: center;
-  gap: 0.45rem;
+  gap: 0.5rem;
 }
 
 .hero-dots button {
-  width: 9px;
-  height: 9px;
+  position: relative;
+  width: 10px;
+  height: 10px;
   padding: 0;
   border: 0;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.85);
+  background: #cfcfcf;
+  box-shadow: none;
   cursor: pointer;
+}
+
+.hero-dots button::before {
+  content: "";
+  position: absolute;
+  inset: -7px;
 }
 
 .hero-dots button[aria-selected="true"] {
@@ -381,18 +398,18 @@ a {
 }
 
 .hero-dots button:focus-visible {
-  outline-color: #fff;
+  outline-color: #111;
 }
 
 /* —— Formula —— */
 
 .formula {
-  padding: 8.5rem 1.5rem 7.5rem;
+  padding: 3.6rem 1.5rem 3.2rem;
   text-align: center;
 }
 
 .formula h2 {
-  margin: 0 auto 2.6rem;
+  margin: 0 auto 1.35rem;
   max-width: 16em;
   font-family: var(--serif);
   font-weight: 600;
@@ -423,105 +440,55 @@ a {
   color: #2a2a2a;
 }
 
-/* —— Work masonry —— */
+/* —— Work grid —— */
 
 .work-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-auto-rows: minmax(15rem, 32vh);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.75rem 2.25rem;
+  padding: 0 6vw 0.75rem;
 }
 
 .work-grid a {
-  position: relative;
-  display: block;
-  overflow: hidden;
-  color: #fff;
-  background: #111;
-  min-height: 0;
-}
-
-.work-grid a:nth-child(1) {
-  grid-column: 1;
-  grid-row: 1 / span 2;
-}
-
-.work-grid a:nth-child(2) {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-.work-grid a:nth-child(3) {
-  grid-column: 3;
-  grid-row: 1;
-}
-
-.work-grid a:nth-child(4) {
-  grid-column: 2 / span 2;
-  grid-row: 2;
-}
-
-.work-grid a:nth-child(5) {
-  grid-column: 1;
-  grid-row: 3;
-}
-
-.work-grid a:nth-child(6) {
-  grid-column: 2;
-  grid-row: 3;
-}
-
-.work-grid a:nth-child(7) {
-  grid-column: 3;
-  grid-row: 3;
-}
-
-.work-grid a:nth-child(8) {
-  grid-column: 1 / -1;
-  grid-row: 4;
-  min-height: 46vh;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  color: inherit;
+  background: transparent;
 }
 
 .work-grid img {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
-  transition: transform 0.7s ease;
-}
-
-.work-grid a:hover img,
-.work-grid a:focus-visible img {
-  transform: scale(1.045);
+  background: #111;
 }
 
 .tile-cap {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 4.2rem 1.25rem 1.15rem;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0));
+  padding: 0.85rem 0.1rem 0;
+  color: #161616;
 }
 
 .tile-cap h3 {
   margin: 0 0 0.3rem;
   font-family: var(--serif);
-  font-size: clamp(1.35rem, 1.8vw, 1.85rem);
+  font-size: 1.35rem;
   font-weight: 650;
   letter-spacing: 0.08em;
 }
 
 .tile-cap p {
   margin: 0;
-  max-width: 24em;
-  font-size: 0.92rem;
-  line-height: 1.55;
-  color: rgba(255, 255, 255, 0.88);
+  max-width: 36em;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
 }
 
 .more-wrap {
   display: flex;
   justify-content: center;
-  padding: 5.5rem 1rem 5rem;
+  padding: 3.4rem 1rem 4.2rem;
 }
 
 .more-btn {
@@ -597,7 +564,7 @@ a {
   display: grid;
   grid-template-columns: minmax(8rem, 0.7fr) minmax(0, 1.4fr);
   gap: 2rem 4rem;
-  padding: 6.5rem 6vw 3rem;
+  padding: 3.6rem 6vw 1.6rem;
   align-items: start;
 }
 
@@ -637,18 +604,19 @@ a {
 .services-split {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
-  min-height: 36rem;
+  min-height: 0;
 }
 
 .services-split figure {
   margin: 0;
   background: #111;
-  min-height: 28rem;
+  min-height: 0;
+  max-height: 20rem;
 }
 
 .services-split img {
   width: 100%;
-  height: 100%;
+  height: 20rem;
   object-fit: cover;
 }
 
@@ -723,7 +691,7 @@ a {
   display: grid;
   grid-template-columns: minmax(8rem, 0.7fr) minmax(0, 1.4fr);
   gap: 2rem 4rem;
-  padding: 6.5rem 6vw 4rem;
+  padding: 3.6rem 6vw 2.2rem;
 }
 
 .svc-page-head h1 {
@@ -733,7 +701,7 @@ a {
 .svc-row {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
-  min-height: 26rem;
+  min-height: 0;
   border-top: 1px solid var(--line);
 }
 
@@ -744,9 +712,8 @@ a {
 
 .svc-row img {
   width: 100%;
-  height: 100%;
+  height: 16rem;
   object-fit: cover;
-  min-height: 22rem;
 }
 
 .svc-row-copy {
@@ -793,7 +760,7 @@ a {
 .process ol {
   list-style: none;
   margin: 0;
-  padding: 0 6vw 5.5rem;
+  padding: 0 6vw 3.2rem;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 2rem 1.75rem;
@@ -822,7 +789,7 @@ a {
 /* —— Name grid (no logos) —— */
 
 .names {
-  padding: 2rem 6vw 5.5rem;
+  padding: 1.2rem 6vw 3.2rem;
 }
 
 .names-kicker {
@@ -861,7 +828,7 @@ a {
 
 .cta {
   position: relative;
-  min-height: 78vh;
+  min-height: 16rem;
   display: grid;
   place-items: center;
   color: #fff;
@@ -1022,18 +989,19 @@ a {
   color: #f4f4f4;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem 4.5rem;
-  min-height: calc(100svh - var(--header-h));
-  padding: 5.5rem 6vw 4.5rem;
-  align-items: end;
+  gap: 2rem 4rem;
+  padding: 3.2rem 6vw 3rem;
+  align-items: start;
 }
 
 .case-back {
   display: inline-block;
-  margin-bottom: 1.6rem;
-  color: #8d8d8d;
-  font-size: 0.82rem;
-  letter-spacing: 0.14em;
+  margin-bottom: 1.15rem;
+  color: #f2f2f2;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.55);
+  padding-bottom: 0.12rem;
 }
 
 .case-back:hover {
@@ -1041,26 +1009,27 @@ a {
 }
 
 .case-split h1 {
-  margin: 0 0 1rem;
-  font-size: clamp(3rem, 6vw, 5.6rem);
-  line-height: 1.05;
+  margin: 0 0 0.85rem;
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  line-height: 1.15;
+  letter-spacing: 0.06em;
   color: #fff;
 }
 
 .case-lead {
   margin: 0;
-  max-width: 12em;
-  color: #d5d5d5;
-  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
-  line-height: 1.65;
+  max-width: 24em;
+  color: #e4e4e4;
+  font-size: 1.05rem;
+  line-height: 1.75;
 }
 
 .case-copy p {
   margin: 0 0 1rem;
-  color: #bdbdbd;
+  color: #d2d2d2;
   font-size: 1rem;
-  line-height: 1.9;
-  max-width: 36em;
+  line-height: 1.85;
+  max-width: 38em;
 }
 
 .case-meta {
@@ -1084,12 +1053,16 @@ a {
 }
 
 .case-boards {
-  background: #0a0a0a;
+  display: grid;
+  gap: 1.25rem;
+  padding: 1.25rem 6vw 2.25rem;
+  background: #fff;
 }
 
 .case-board {
-  margin: 0;
-  background: #111;
+  margin: 0 auto;
+  width: min(960px, 100%);
+  background: #f2f2f2;
 }
 
 .case-board img {
@@ -1098,8 +1071,9 @@ a {
 }
 
 .case-pending {
-  margin: 0;
-  min-height: 42vh;
+  margin: 0 auto;
+  width: min(960px, 100%);
+  min-height: 12rem;
   display: grid;
   place-items: center;
   color: #6a6a6a;
@@ -1133,9 +1107,11 @@ a {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  padding: 2rem 6vw 3.5rem;
-  font-size: 0.92rem;
-  color: #444;
+  margin: 0 6vw 3rem;
+  padding: 1.15rem 0;
+  border-top: 1px solid var(--line);
+  font-size: 0.95rem;
+  color: #222;
 }
 
 .case-turn a:hover {
@@ -1179,35 +1155,52 @@ a {
   }
 
   .hero {
-    min-height: 32rem;
-    height: calc(100svh - var(--header-h));
+    --hero-img: clamp(11rem, 42vw, 14rem);
+    height: auto;
+  }
+
+  .hero-slide {
+    grid-template-columns: 1fr;
   }
 
   .hero-copy {
-    left: 1.25rem;
-    right: 1.25rem;
-    bottom: 4.2rem;
-    max-width: none;
+    padding: 1rem 1.15rem 2.5rem;
   }
 
   .hero-copy h2 {
-    font-size: clamp(2.5rem, 12vw, 3.6rem);
+    font-size: clamp(1.55rem, 6vw, 2rem);
+  }
+
+  .hero-story {
+    font-size: 0.92rem;
+    margin-bottom: 0.45rem;
+  }
+
+  .hero-dots {
+    left: 1.15rem;
+    right: auto;
+    bottom: 0.85rem;
+    justify-content: flex-start;
+  }
+
+  .hero-arrow {
+    width: 2.35rem;
+    height: 2.35rem;
+    margin-top: -1.175rem;
+  }
+
+  .hero-arrow.next {
+    left: auto;
+    right: 0.7rem;
   }
 
   .formula {
-    padding: 5rem 1.25rem 4.2rem;
+    padding: 2.6rem 1.15rem 2.2rem;
   }
 
-  .work-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: none;
-  }
-
-  .work-grid a:nth-child(n) {
-    grid-column: auto;
-    grid-row: auto;
-    aspect-ratio: 4 / 5;
-    min-height: 18rem;
+  .services-split img,
+  .svc-row img {
+    height: 13rem;
   }
 
   .services-head,
@@ -1225,8 +1218,8 @@ a {
   .services-head,
   .process-head,
   .svc-page-head {
-    padding: 4.2rem 1.25rem 1.5rem;
-    gap: 1rem;
+    padding: 2.4rem 1.15rem 1.1rem;
+    gap: 0.8rem;
   }
 
   .svc-list,
@@ -1268,14 +1261,21 @@ a {
     max-width: none;
   }
 
+  .case-boards {
+    gap: 0.75rem;
+    padding: 0.85rem 1.1rem 1.6rem;
+  }
+
   .case-turn,
   .case-note {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .cta {
-    min-height: 70vh;
+    min-height: 14rem;
   }
 }
 
@@ -1284,8 +1284,10 @@ a {
     display: none;
   }
 
-  .hero-proof {
-    font-size: 0.84rem;
+  .work-grid {
+    grid-template-columns: 1fr;
+    gap: 1.85rem;
+    padding: 0 1.15rem 0.5rem;
   }
 
   .names ul {
