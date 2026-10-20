@@ -62,7 +62,7 @@
       if (reduce || slides.length < 2) return;
       timer = setInterval(function () {
         show(index + 1);
-      }, 6800);
+      }, 9000);
     };
 
     var prev = root.querySelector("[data-prev]");
