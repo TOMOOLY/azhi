@@ -8,7 +8,7 @@
 |------|------|
 | `index.html` | 营销首页：案例轮播、定位句、三列作品、业务、合作、咨询 |
 | `service.html` | 业务：品牌全案 / 字体 / 平面包装 / IP 插画 |
-| `works/*.html` | 案例页。四个已完成项目为深色开场 + 通栏画面 |
+| `works/*.html` | 案例页。八个主案例为深色开场 + 通栏预览 |
 | `job.html` | 求职页（保留，不在合作站主路径上） |
 
 ## 线上地址
@@ -53,7 +53,7 @@ python3 -m http.server 8765 --bind 127.0.0.1
 
 现成占位：`hera`、`liufang`、`meiweimeiguo`、`font-design`、`layout-design`、`illustration`。
 
-精选案例：椰知卿、龍面馆、伽乐酸奶、龍尊轩。合作联系：shiqiangqiang96@163.com / 17621419257。
+主案例：稻成酸菜魚、牛小丫、百老汇小镇、空杯计划、灵感杯子、留芳茶社、龍麵館、龍尊軒。预览图在 `assets/works/<slug>/`。椰知卿、伽乐酸奶仍保留页面。合作联系：shiqiangqiang96@163.com / 17621419257。
 
 ## 许可
 

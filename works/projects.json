@@ -1,82 +1,169 @@
 {
-  "$schema_note": "Registry of work projects. Add an entry here, copy _template.html to <slug>.html, put images in ../assets/, then add/update the card on index.html.",
+  "$schema_note": "Registry of work projects. Featured entries are the primary lookbook. Older ready cases and pending stubs stay available.",
   "featured": [
     {
-      "slug": "yezhiqing",
-      "title": "椰知卿",
-      "en": "Coconut Flavor",
+      "slug": "dao-cheng-suan-cai-yu",
+      "title": "稻成酸菜魚",
       "year": "2024",
-      "role": "个人 · 全案",
-      "category": "品牌识别",
+      "category": "餐饮品牌 · 酸菜鱼",
       "status": "ready",
-      "cover": "../assets/w-09.jpg",
-      "images": ["../assets/p-06.jpg", "../assets/p-07.jpg", "../assets/p-08.jpg", "../assets/w-09.jpg"],
-      "tags": ["品牌设计", "餐饮", "识别系统"]
+      "story_line": "阿成在稻城亚丁旅途中爱上酸菜鱼，辞去都市工作开店，用黄黑配色与猫鱼吉祥物带来片刻治愈。",
+      "cover": "../assets/works/dao-cheng-suan-cai-yu/01.jpg",
+      "images": [
+        "../assets/works/dao-cheng-suan-cai-yu/01.jpg",
+        "../assets/works/dao-cheng-suan-cai-yu/02.jpg",
+        "../assets/works/dao-cheng-suan-cai-yu/03.jpg",
+        "../assets/works/dao-cheng-suan-cai-yu/04.jpg",
+        "../assets/works/dao-cheng-suan-cai-yu/05.jpg",
+        "../assets/works/dao-cheng-suan-cai-yu/06.jpg"
+      ]
+    },
+    {
+      "slug": "niu-xiao-ya",
+      "title": "牛小丫",
+      "year": "2022",
+      "category": "餐饮品牌 · 潮汕鲜牛肉火锅",
+      "status": "ready",
+      "story_line": "诸暨根源的潮汕鲜牛肉火锅品牌，礼帽牛头吉祥物与酒红金调，强调三浸三晾的鲜与骨汤养胃。",
+      "cover": "../assets/works/niu-xiao-ya/01.jpg",
+      "images": [
+        "../assets/works/niu-xiao-ya/01.jpg",
+        "../assets/works/niu-xiao-ya/02.jpg",
+        "../assets/works/niu-xiao-ya/03.jpg",
+        "../assets/works/niu-xiao-ya/04.jpg",
+        "../assets/works/niu-xiao-ya/05.jpg"
+      ]
+    },
+    {
+      "slug": "broadway-town",
+      "title": "百老汇小镇",
+      "year": "2023",
+      "category": "商业地产 · 度假小镇",
+      "status": "ready",
+      "story_line": "以欧式城堡建筑为图形原型，打造度假、欢乐气质的小镇品牌视觉与环境导视。",
+      "cover": "../assets/works/broadway-town/01.jpg",
+      "images": [
+        "../assets/works/broadway-town/01.jpg",
+        "../assets/works/broadway-town/02.jpg",
+        "../assets/works/broadway-town/03.jpg",
+        "../assets/works/broadway-town/04.jpg",
+        "../assets/works/broadway-town/05.jpg",
+        "../assets/works/broadway-town/06.jpg"
+      ]
+    },
+    {
+      "slug": "kong-bei-ji-hua",
+      "title": "空杯计划",
+      "year": "2023",
+      "category": "餐饮品牌 · 校园快咖啡",
+      "status": "ready",
+      "story_line": "面向18–20岁大学生的校园现磨快咖啡：人均约15元、带走为主，口号「课程一堆，先喝咖啡」。",
+      "cover": "../assets/works/kong-bei-ji-hua/01.jpg",
+      "images": [
+        "../assets/works/kong-bei-ji-hua/01.jpg",
+        "../assets/works/kong-bei-ji-hua/02.jpg",
+        "../assets/works/kong-bei-ji-hua/03.jpg",
+        "../assets/works/kong-bei-ji-hua/04.jpg",
+        "../assets/works/kong-bei-ji-hua/05.jpg"
+      ]
+    },
+    {
+      "slug": "muse-cup",
+      "title": "灵感杯子",
+      "year": "2025",
+      "category": "餐饮品牌 · 咖啡饮品艺术",
+      "status": "ready",
+      "story_line": "Muse Cup Drink Art——调色盘与咖啡杯合体的吉祥物，主张「浓缩的是灵感」。",
+      "cover": "../assets/works/muse-cup/01.jpg",
+      "images": [
+        "../assets/works/muse-cup/01.jpg",
+        "../assets/works/muse-cup/02.jpg",
+        "../assets/works/muse-cup/03.jpg",
+        "../assets/works/muse-cup/04.jpg",
+        "../assets/works/muse-cup/05.jpg"
+      ]
+    },
+    {
+      "slug": "liu-fang-cha-she",
+      "title": "留芳茶社",
+      "year": "2024",
+      "category": "餐饮品牌 · 泰州早茶",
+      "status": "ready",
+      "story_line": "泰州早茶非遗手作：闻芳如故，用戏曲与城市对照的画面留住时间的味道。",
+      "cover": "../assets/works/liu-fang-cha-she/01.jpg",
+      "images": [
+        "../assets/works/liu-fang-cha-she/01.jpg",
+        "../assets/works/liu-fang-cha-she/02.jpg",
+        "../assets/works/liu-fang-cha-she/03.jpg",
+        "../assets/works/liu-fang-cha-she/04.jpg",
+        "../assets/works/liu-fang-cha-she/05.jpg"
+      ]
     },
     {
       "slug": "longmianguan",
-      "title": "龍面馆",
-      "en": "Dragon Noodles Academy",
+      "title": "龍麵館",
       "year": "2025",
-      "role": "个人 · 全案",
+      "category": "餐饮品牌 · 鲜熬私房面",
+      "status": "ready",
+      "story_line": "香港风私房面馆：即叫即拉、鲜熬汤底，招牌波士顿龙虾功夫面，书法字融入功夫笔势。",
+      "cover": "../assets/works/long-mian-guan/01.jpg",
+      "images": [
+        "../assets/works/long-mian-guan/01.jpg",
+        "../assets/works/long-mian-guan/02.jpg",
+        "../assets/works/long-mian-guan/03.jpg",
+        "../assets/works/long-mian-guan/04.jpg",
+        "../assets/works/long-mian-guan/05.jpg"
+      ]
+    },
+    {
+      "slug": "longzunxuan",
+      "title": "龍尊軒",
+      "year": "2023",
+      "category": "餐饮品牌 · 精品粤菜",
+      "status": "ready",
+      "story_line": "新中式精品粤菜：满洲窗棂与龙纹图形，主张经典粤菜的摩登传承。",
+      "cover": "../assets/works/long-zun-xuan/01.jpg",
+      "images": [
+        "../assets/works/long-zun-xuan/01.jpg",
+        "../assets/works/long-zun-xuan/02.jpg",
+        "../assets/works/long-zun-xuan/03.jpg",
+        "../assets/works/long-zun-xuan/04.jpg",
+        "../assets/works/long-zun-xuan/05.jpg",
+        "../assets/works/long-zun-xuan/06.jpg"
+      ]
+    }
+  ],
+  "also": [
+    {
+      "slug": "yezhiqing",
+      "title": "椰知卿",
+      "year": "2024",
       "category": "品牌识别",
       "status": "ready",
-      "cover": "../assets/w-10.jpg",
-      "images": ["../assets/w-10.jpg", "../assets/w-11.jpg", "../assets/w-12.jpg", "../assets/w-13.jpg"],
-      "tags": ["品牌设计", "餐饮", "包装延展"]
+      "cover": "../assets/w-09.jpg"
     },
     {
       "slug": "galayogurt",
       "title": "伽乐酸奶",
-      "en": "gála yogurt",
       "year": "2024",
-      "role": "个人 · 全案",
-      "category": "品牌识别",
+      "category": "包装设计",
       "status": "ready",
-      "cover": "../assets/w-14.jpg",
-      "images": ["../assets/w-14.jpg", "../assets/w-15.jpg", "../assets/w-16.jpg", "../assets/w-17.jpg"],
-      "tags": ["包装设计", "消费品牌", "视觉系统"]
-    },
-    {
-      "slug": "longzunxuan",
-      "title": "龍尊轩",
-      "en": "Noble Dragon",
-      "year": "2024",
-      "role": "个人 · 全案",
-      "category": "品牌识别",
-      "status": "ready",
-      "cover": "../assets/w-19.jpg",
-      "images": ["../assets/w-18.jpg", "../assets/w-19.jpg", "../assets/w-20.jpg"],
-      "tags": ["字体设计", "高端餐饮", "超级符号"]
+      "cover": "../assets/w-14.jpg"
     }
   ],
   "upcoming": [
     {
       "slug": "hera",
       "title": "HERA 赫她",
-      "en": "HERA",
       "year": "2025",
-      "role": "个人 · 全案",
       "category": "品牌识别",
       "status": "pending",
       "note": "科技美肤塑形中心 · 待上传完整作品"
     },
     {
-      "slug": "liufang",
-      "title": "留芳茶社",
-      "en": "Liufang Tea House",
-      "year": "2025",
-      "role": "个人 · 全案",
-      "category": "品牌识别",
-      "status": "pending",
-      "note": "泰州早茶文化 · 待上传完整作品"
-    },
-    {
       "slug": "meiweimeiguo",
       "title": "美味美锅",
-      "en": "Meiwei Meiguo",
       "year": "2022",
-      "role": "个人 · 全案",
       "category": "品牌识别",
       "status": "pending",
       "note": "「辣面熊猫」超级符号 · 待上传完整作品"
@@ -84,9 +171,7 @@
     {
       "slug": "font-design",
       "title": "字体设计",
-      "en": "Font Design",
       "year": "—",
-      "role": "个人",
       "category": "字体设计",
       "status": "pending",
       "note": "FONT DESIGN 专题 · 待上传"
@@ -94,9 +179,7 @@
     {
       "slug": "layout-design",
       "title": "版式设计",
-      "en": "Layout Design",
       "year": "—",
-      "role": "个人",
       "category": "版式设计",
       "status": "pending",
       "note": "LAYOUT DESIGN 专题 · 待上传"
@@ -104,9 +187,7 @@
     {
       "slug": "illustration",
       "title": "插画 / IP",
-      "en": "Illustration & IP",
       "year": "—",
-      "role": "个人",
       "category": "插画设计",
       "status": "pending",
       "note": "ILLUSTRATION / IP 专题 · 待上传"

@@ -428,7 +428,7 @@ a {
 .work-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-template-rows: minmax(17rem, 36vh) minmax(17rem, 36vh);
+  grid-auto-rows: minmax(15rem, 32vh);
 }
 
 .work-grid a {
@@ -458,6 +458,27 @@ a {
 .work-grid a:nth-child(4) {
   grid-column: 2 / span 2;
   grid-row: 2;
+}
+
+.work-grid a:nth-child(5) {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.work-grid a:nth-child(6) {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.work-grid a:nth-child(7) {
+  grid-column: 3;
+  grid-row: 3;
+}
+
+.work-grid a:nth-child(8) {
+  grid-column: 1 / -1;
+  grid-row: 4;
+  min-height: 46vh;
 }
 
 .work-grid img {
@@ -1182,11 +1203,7 @@ a {
     grid-template-rows: none;
   }
 
-  .work-grid a,
-  .work-grid a:nth-child(1),
-  .work-grid a:nth-child(2),
-  .work-grid a:nth-child(3),
-  .work-grid a:nth-child(4) {
+  .work-grid a:nth-child(n) {
     grid-column: auto;
     grid-row: auto;
     aspect-ratio: 4 / 5;
