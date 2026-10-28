@@ -248,23 +248,28 @@
       return;
     }
 
+    var stage = section.querySelector(".ed-light-world-stage") || section;
     var lit = false;
+    function reveal() {
+      if (lit) return;
+      lit = true;
+      ioLight.disconnect();
+      // Paint the black frame first, then let the CSS transition run on screen.
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          light();
+        });
+      });
+    }
     var ioLight = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
-          if (!lit && entry.isIntersecting && entry.intersectionRatio >= 0.18) {
-            lit = true;
-            // slight delay so the stage is framed before light spreads
-            requestAnimationFrame(function () {
-              light();
-            });
-            ioLight.unobserve(section);
-          }
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.45) reveal();
         });
       },
-      { rootMargin: "0px 0px -12% 0px", threshold: [0.12, 0.22, 0.35] }
+      { threshold: [0, 0.25, 0.45, 0.65] }
     );
-    ioLight.observe(section);
+    ioLight.observe(stage);
   })();
 
   /* —— Reveal on scroll —— */

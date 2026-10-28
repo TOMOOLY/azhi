@@ -259,7 +259,7 @@ body.editorial.is-entering {
 .ed-hero {
   min-height: 100vh;
   min-height: 100dvh;
-  background: var(--ink);
+  background: #000;
   color: var(--paper);
   position: relative;
   display: flex;
@@ -1202,7 +1202,7 @@ body.editorial.is-entering {
 /* —— Contact light-world closer (black → lit reveal) —— */
 .ed-light-world {
   position: relative;
-  background: #261d1d;
+  background: #000;
   color: var(--paper);
   overflow: hidden;
 }
@@ -1212,31 +1212,32 @@ body.editorial.is-entering {
   height: min(72vh, 720px);
   min-height: 420px;
   overflow: hidden;
-  background: #261d1d;
+  background: #000;
 }
 .ed-light-world-bg {
   position: absolute;
   inset: -4%;
-  background-color: #261d1d;
+  z-index: 0;
+  background-color: #000;
   background-position: center 58%;
   background-size: cover;
   background-repeat: no-repeat;
-  transform: scale(1.1);
-  filter: brightness(0) blur(28px) saturate(1.2);
+  transform: scale(1.12);
+  filter: brightness(0) blur(22px) saturate(1);
   transform-origin: center 62%;
   transition:
-    transform 2s cubic-bezier(0.22, 1, 0.36, 1),
-    filter 2s cubic-bezier(0.22, 1, 0.36, 1);
+    transform 2.4s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 2.4s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: transform, filter;
 }
 .ed-light-world-veil {
   position: absolute;
   inset: 0;
-  background: #261d1d;
+  background: #000;
   opacity: 1;
-  transition: opacity 1.85s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 2.1s cubic-bezier(0.22, 1, 0.36, 1);
   pointer-events: none;
-  z-index: 2;
+  z-index: 3;
 }
 .ed-light-world-bloom {
   position: absolute;
@@ -1269,7 +1270,7 @@ body.editorial.is-entering {
 .ed-light-world-grain {
   position: absolute;
   inset: 0;
-  z-index: 3;
+  z-index: 4;
   pointer-events: none;
   opacity: 0;
   background-image:
@@ -1279,8 +1280,8 @@ body.editorial.is-entering {
   transition: opacity 1.2s ease 0.6s;
 }
 .ed-light-world.is-lit .ed-light-world-bg {
-  transform: scale(1.04);
-  filter: brightness(1.05) blur(7px) saturate(1.25);
+  transform: scale(1.02);
+  filter: brightness(1.05) blur(4px) saturate(1.12);
 }
 .ed-light-world.is-lit .ed-light-world-veil {
   opacity: 0;
@@ -1291,12 +1292,12 @@ body.editorial.is-entering {
   mask-size: 220% 220%;
 }
  .ed-light-world.is-lit .ed-light-world-grain {
-  opacity: 0.72;
+  opacity: 0.88;
   animation: ed-light-grain-pulse 6.5s ease-in-out 2.2s infinite;
 }
 @keyframes ed-light-grain-pulse {
-  0%, 100% { opacity: 0.62; }
-  50% { opacity: 0.78; }
+  0%, 100% { opacity: 0.78; }
+  50% { opacity: 0.95; }
 }
 
 .ed-light-footer {
@@ -1599,8 +1600,7 @@ body.editorial.is-entering {
   }
 }
 
-/* soft-focus haze + bleed into footer */
+/* bottom fade into the footer; no extra blur, so the lit reveal stays readable */
 .ed-light-world-stage::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
-  background:linear-gradient(180deg,rgba(38,29,29,0) 55%,rgba(16,12,14,.85) 100%);
-  backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);}
+  background:linear-gradient(180deg,rgba(0,0,0,0) 62%,rgba(16,12,14,.88) 100%);}
 .ed-light-footer{background:linear-gradient(180deg,#100c0e 0%,#0d0a0c 100%);}
