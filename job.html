@@ -1,325 +1,1157 @@
-<!DOCTYPE html>
-<html lang="zh-Hans">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="石强强（阿志）— 品牌视觉架构师。求职向作品集：以作品证明能力；品牌 / 字体 / 平面 / IP / 插画。" />
-  <title>石强强 · 品牌视觉架构师 · 求职</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body class="face-job">
-  <a class="skip-link" href="#main">跳到主要内容</a>
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>石强强 · 品牌视觉架构师 · 作品集</title>
+    <meta name="description" content="石强强，品牌视觉架构师。全案品牌视觉：策略定位、超级符号、应用延展，深耕餐饮行业。" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&family=Syne:wght@700;800&display=swap"
+    />
+    <link rel="stylesheet" href="job/hark.css" />
+    <link rel="stylesheet" href="job/hark-hero.css" />
+    <script>document.documentElement.classList.add("js");</script>
+    <style>
+      :root {
+        --x-bg: #000; --x-raise: #0e0e0e; --x-ink: #f4f4ef; --x-dim: #a3a39c; --x-line: rgba(244,244,239,.16);
+        --x-green: #c6ff3d; --x-pink: #ff2e88;
+        --x-display: "Syne", var(--sans), "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        --x-text: var(--sans), "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        --x-mono: "Geist Mono", ui-monospace, monospace;
+        --x-out: cubic-bezier(0.23, 1, 0.32, 1);
+        --x-inout: cubic-bezier(0.77, 0, 0.175, 1);
+        --x-spring: cubic-bezier(0.34, 1.3, 0.64, 1);
+        --x-pad: clamp(20px, 4vw, 64px);
+        --x-vw: 100vw;
+      }
+      @supports (transition-timing-function: linear(0, 1)) {
+        :root { --x-spring: linear(0, 0.035, 0.123, 0.244, 0.378, 0.515, 0.643, 0.757, 0.854, 0.932, 0.991, 1.034, 1.062, 1.077, 1.083, 1.082, 1.076, 1.066, 1.055, 1.044, 1.033, 1.023, 1.014, 1.007, 1.002, 0.998, 0.995, 0.994, 1); }
+      }
+      html { overflow-x: hidden; overflow-x: clip; background: var(--x-bg); }
+      body { background: var(--x-bg); color: var(--x-ink); font-family: var(--x-text); overflow-x: visible; overflow-x: clip; font-synthesis: none; -webkit-font-smoothing: antialiased; }
+      ::selection { background: var(--x-green); color: #000; }
+      .x-site { width: var(--x-vw); margin-left: calc(50% - var(--x-vw) / 2); margin-top: -12px; margin-bottom: -40px; position: relative; overflow-x: clip; }
+      .x-wrap { padding-inline: var(--x-pad); }
+      .x-site a:focus-visible, .x-site button:focus-visible { outline: 2px solid var(--x-green); outline-offset: 4px; border-radius: 2px; }
+      .x-skip { position: fixed; left: 16px; top: 16px; z-index: 200; display: inline-flex; align-items: center; min-height: 48px; min-width: 96px; padding: 0 18px; background: var(--x-green); color: #000; font-weight: 600; text-decoration: none; transform: translateY(-160%); transition: transform .2s var(--x-out); }
+      .x-skip:focus-visible { transform: none; }
+      .x-label { font-size: 13px; line-height: 1.4; color: var(--x-dim); letter-spacing: .01em; }
+      .x-num { font-family: var(--x-mono); font-variant-numeric: tabular-nums; }
 
-  <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="brand" href="#top" aria-label="阿志 — 回到顶部">阿志<span class="brand-mark">∞</span></a>
-      <nav class="nav" aria-label="主导航">
-        <a href="#works">作品</a>
-        <a href="#skills">能力</a>
-        <a href="#experience">经历</a>
-        <a class="nav-cta" href="#contact">联系</a>
-      </nav>
+      /* bar */
+      .x-bar { position: fixed; inset: 0 0 auto 0; z-index: 60; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px var(--x-pad); mix-blend-mode: difference; color: #fff; }
+      .x-bar a { text-decoration: none; min-height: var(--tap); display: inline-flex; align-items: center; }
+      .x-bar__logo { font-family: var(--x-display); font-weight: 800; font-size: 18px; letter-spacing: -.01em; gap: 10px; }
+      .x-bar__logo span { font-family: var(--x-text); font-weight: 600; }
+      .x-bar nav { display: flex; gap: clamp(14px, 2.4vw, 32px); }
+      .x-bar nav a { font-size: 14px; font-weight: 500; position: relative; }
+      .x-bar nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 10px; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: 100% 50%; transition: transform .25s var(--x-out); }
+      @media (hover: hover) and (pointer: fine) { .x-bar nav a:hover::after { transform: scaleX(1); transform-origin: 0 50%; } }
+      .x-bar nav a[aria-current="true"]::after { transform: scaleX(1); }
+      @media (max-width: 760px) { .x-bar nav a:not(.x-bar__cta) { display: none; } }
+
+      /* hero */
+      .x-hero { position: relative; min-height: 100svh; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; padding-block: 112px clamp(28px, 4vw, 48px); isolation: isolate; }
+      .x-hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; z-index: -2; opacity: 0; transition: opacity 1.2s ease; }
+      .x-hero canvas.is-live { opacity: 1; }
+      .x-hero::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(to top, rgba(0,0,0,.92) 0%, rgba(0,0,0,.55) 38%, rgba(0,0,0,0) 70%); }
+      .x-hero__inner { position: relative; transform-origin: 0 100%; }
+      .x-status { display: inline-flex; align-items: center; gap: 10px; min-height: 36px; padding: 0 16px; border-radius: 999px; background: var(--x-green); color: #000; font-size: 14px; font-weight: 600; }
+      .x-status i { width: 8px; height: 8px; border-radius: 50%; background: #000; animation: x-pulse 1.6s ease-in-out infinite; }
+      @keyframes x-pulse { 50% { opacity: .25; } }
+      .x-giant { font-family: var(--x-display); font-weight: 800; font-size: clamp(48px, 12vw, 248px); line-height: .84; letter-spacing: -.045em; text-transform: uppercase; margin: 24px 0 0; text-wrap: nowrap; }
+      .x-line { display: block; width: max-content; max-width: none; overflow: clip; padding-block: .02em .06em; margin-bottom: -.06em; }
+      .x-line--pink { color: var(--x-pink); padding-left: .9em; }
+      .x-ch { display: inline-block; will-change: transform; }
+      .js .x-ch { transform: translate3d(0, 105%, 0) rotate(10deg); opacity: 0; transition: transform .9s var(--x-spring), opacity .4s ease-out; transition-delay: calc(var(--i, 0) * 38ms + 120ms); }
+      .js .is-loaded .x-ch { transform: none; opacity: 1; }
+      .is-settled .x-ch { transition-delay: 0s; transition-duration: .5s, .2s; will-change: auto; }
+      @media (hover: hover) and (pointer: fine) { .is-settled .x-ch:hover { transform: translate3d(0, -.07em, 0) rotate(-4deg); color: var(--x-green); transition-property: transform, color; } .is-settled .x-line--pink .x-ch:hover { color: var(--x-ink); } }
+      .x-hero__row { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 24px clamp(24px, 4vw, 64px); align-items: end; margin-top: clamp(24px, 3vw, 40px); }
+      .x-cn { font-size: clamp(44px, 6.4vw, 104px); font-weight: 600; line-height: 1; letter-spacing: .02em; color: var(--x-ink); }
+      .x-hero__sub { font-size: clamp(16px, 1.35vw, 19px); line-height: 1.55; max-width: 44ch; }
+      .x-hero__sub b { display: block; font-size: clamp(20px, 1.9vw, 28px); font-weight: 600; line-height: 1.25; margin-bottom: 8px; color: var(--x-green); }
+      .x-hero__sub span { color: var(--x-dim); }
+      .x-hero__cta { display: grid; justify-items: end; gap: 14px; }
+      .x-motif { font-family: var(--x-mono); font-size: clamp(18px, 2vw, 28px); color: var(--x-pink); letter-spacing: .18em; white-space: nowrap; }
+      @media (max-width: 900px) { .x-hero__row { grid-template-columns: 1fr; } .x-hero__cta { justify-items: start; } .x-line--pink { padding-left: 0; } }
+      @supports (animation-timeline: view()) {
+        @media (prefers-reduced-motion: no-preference) {
+          .x-hero__inner { animation: x-heroout linear both; animation-timeline: view(); animation-range: exit 0% exit 100%; }
+          @keyframes x-heroout { to { transform: translate3d(0, -14vh, 0) scale(.92); opacity: 0; } }
+        }
+      }
+
+      /* buttons */
+      .x-btn { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 999px; font-weight: 600; font-size: 16px; text-decoration: none; background: var(--x-green); color: #000; overflow: hidden; isolation: isolate; transition: transform .16s var(--x-out), color .2s ease; }
+      .x-btn::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--x-pink); border-radius: inherit; transform: translate3d(0, 101%, 0); transition: transform .3s var(--x-out); }
+      .x-btn--ghost { background: transparent; color: var(--x-ink); box-shadow: inset 0 0 0 1.5px var(--x-ink); }
+      .x-btn:active { transform: scale(.97); }
+      @media (hover: hover) and (pointer: fine) { .x-btn:hover::before { transform: none; } .x-btn:hover { color: #000; } }
+
+      /* glitch */
+      .x-glitch { position: relative; display: inline-block; }
+      .x-glitch::before, .x-glitch::after { content: attr(data-text); content: attr(data-text) / ""; position: absolute; inset: 0; pointer-events: none; opacity: 0; }
+      .x-glitch::before { color: var(--x-green); transform: translate3d(-.04em, 0, 0); }
+      .x-glitch::after { color: var(--x-pink); transform: translate3d(.04em, 0, 0); }
+      .x-glitch.is-glitch::before { animation: x-s1 .42s steps(1) 1; }
+      .x-glitch.is-glitch::after { animation: x-s2 .42s steps(1) 1; }
+      @keyframes x-s1 { 0% { opacity: .9; clip-path: inset(12% 0 58% 0); } 25% { opacity: .9; clip-path: inset(66% 0 6% 0); } 50% { opacity: .9; clip-path: inset(32% 0 40% 0); } 75% { opacity: .9; clip-path: inset(4% 0 82% 0); } 100% { opacity: 0; } }
+      @keyframes x-s2 { 0% { opacity: .9; clip-path: inset(60% 0 12% 0); } 25% { opacity: .9; clip-path: inset(8% 0 70% 0); } 50% { opacity: .9; clip-path: inset(78% 0 4% 0); } 75% { opacity: .9; clip-path: inset(40% 0 34% 0); } 100% { opacity: 0; } }
+      .x-glitch--loop::before { animation: x-g1 5.5s steps(1) infinite; }
+      .x-glitch--loop::after { animation: x-g2 5.5s steps(1) infinite; }
+      .is-paused .x-glitch--loop::before, .is-paused .x-glitch--loop::after { animation-play-state: paused; }
+      @media (hover: hover) and (pointer: fine) { .x-glitch:hover::before { animation: x-s1 .5s steps(1) infinite; } .x-glitch:hover::after { animation: x-s2 .5s steps(1) infinite; } }
+      @keyframes x-g1 { 0%, 100% { opacity: 0; } 92% { opacity: .9; clip-path: inset(12% 0 58% 0); } 95% { opacity: .9; clip-path: inset(66% 0 6% 0); } 98% { opacity: .9; clip-path: inset(32% 0 40% 0); } }
+      @keyframes x-g2 { 0%, 100% { opacity: 0; } 92% { opacity: .9; clip-path: inset(60% 0 12% 0); } 95% { opacity: .9; clip-path: inset(8% 0 70% 0); } 98% { opacity: .9; clip-path: inset(78% 0 4% 0); } }
+
+      /* marquee */
+      .x-marquees { position: relative; padding-block: clamp(40px, 6vw, 80px); }
+      .x-marquee { overflow: hidden; padding-block: clamp(14px, 1.6vw, 22px); background: var(--x-green); color: #000; transform: rotate(-2deg); margin-inline: -4vw; position: relative; z-index: 2; }
+      .x-marquee--pink { background: var(--x-pink); transform: rotate(2.2deg); margin-top: -1.2em; z-index: 1; }
+      .x-marquee__track { display: flex; width: max-content; animation: x-scroll 32s linear infinite; }
+      .x-marquee--pink .x-marquee__track { animation-direction: reverse; animation-duration: 40s; }
+      .x-marquees.is-paused .x-marquee__track { animation-play-state: paused; }
+      .x-marquee__track span { font-family: var(--x-display); font-weight: 800; font-size: clamp(32px, 5.2vw, 76px); line-height: 1; white-space: nowrap; padding-right: .3em; letter-spacing: -.02em; text-transform: uppercase; }
+      @keyframes x-scroll { to { transform: translate3d(-50%, 0, 0); } }
+
+      /* section heads */
+      .x-sec { padding-block: clamp(96px, 12vw, 200px) 0; }
+      .x-head { display: flex; justify-content: space-between; align-items: end; gap: 16px 32px; margin-bottom: clamp(32px, 4vw, 56px); flex-wrap: wrap; }
+      .x-h2 { font-family: var(--x-display); font-weight: 800; font-size: clamp(40px, 8.4vw, 140px); line-height: .88; letter-spacing: -.04em; text-transform: uppercase; }
+      .x-head .x-label { max-width: 32ch; text-align: right; }
+      @media (max-width: 640px) { .x-head .x-label { text-align: left; } }
+
+      /* pinned horizontal gallery */
+      .x-hs { position: relative; }
+      .x-hs__pin { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; display: flex; flex-direction: column; justify-content: center; padding-block: 80px 32px; }
+      .x-hs__track { display: flex; gap: clamp(20px, 3vw, 48px); padding-inline: var(--x-pad); width: max-content; }
+      .x-hs__foot { display: flex; align-items: center; gap: 20px; margin: clamp(20px, 3vh, 36px) var(--x-pad) 0; }
+      .x-hs__bar { flex: 1; height: 2px; background: var(--x-line); position: relative; overflow: hidden; }
+      .x-hs__bar i { position: absolute; inset: 0; background: var(--x-green); transform-origin: 0 50%; transform: scaleX(0); }
+      .x-hs__count { font-size: 14px; color: var(--x-ink); min-width: 5ch; text-align: right; }
+      .x-hs--native .x-hs__pin { position: static; height: auto; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-padding-inline: var(--x-pad); padding-block: 0 8px; scrollbar-width: none; }
+      .x-hs--native .x-hs__pin::-webkit-scrollbar { display: none; }
+      .x-hs--native .x-hs__foot { display: none; }
+      .x-hs__pin .x-head { margin-bottom: clamp(20px, 3vh, 40px); }
+      .x-hs--native .x-head { position: sticky; left: 0; }
+      .x-card { width: min(62vw, 980px, calc((100svh - 460px) * 16 / 9)); min-width: 420px; flex: none; scroll-snap-align: start; }
+      .x-card__media { position: relative; overflow: hidden; aspect-ratio: 16 / 9; background: var(--x-raise); }
+      .x-card__media > img:first-child { width: 100%; height: 100%; object-fit: cover; transform: scale(1.06); transition: transform 1.1s var(--x-out); }
+      .x-card.is-near .x-card__media > img:first-child { transform: none; }
+      @media (hover: hover) and (pointer: fine) { .x-card:hover .x-card__media > img:first-child { transform: scale(1.03); } }
+      .x-card__inset { position: absolute; right: 16px; bottom: 16px; width: 32%; aspect-ratio: 16 / 9; object-fit: cover; box-shadow: 0 0 0 3px var(--x-green); }
+      .x-card__meta { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 24px; margin-top: 18px; }
+      .x-card__meta h3 { font-size: clamp(22px, 2.2vw, 34px); font-weight: 600; letter-spacing: -.01em; line-height: 1.15; }
+      .x-card__meta h3 small { display: block; font-family: var(--x-display); font-weight: 700; font-size: max(14px, .48em); letter-spacing: .01em; color: var(--x-dim); margin-top: 6px; }
+      .x-card__meta p { color: var(--x-ink); font-size: 16px; line-height: 1.55; grid-column: 1 / -1; max-width: 52ch; }
+      .x-tag { font-size: 13px; font-weight: 600; color: #000; background: var(--x-green); padding: 6px 12px; border-radius: 999px; justify-self: end; align-self: start; white-space: nowrap; }
+      .x-tag--pink { background: var(--x-pink); }
+      @media (max-width: 799px) { .x-card { width: 84vw; min-width: 0; } }
+
+      /* index with cursor reveal */
+      .x-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--x-line); }
+      .x-row { position: relative; border-bottom: 1px solid var(--x-line); isolation: isolate; }
+      .x-row::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--x-green); transform: scaleY(0); transform-origin: 50% 100%; transition: transform .28s var(--x-out); }
+      .x-row__in { display: grid; grid-template-columns: minmax(0, 1fr) auto 64px; gap: 8px 24px; align-items: center; padding: clamp(18px, 2vw, 26px) 12px; text-decoration: none; color: inherit; transition: color .2s ease; }
+      .x-row__name { font-size: clamp(24px, 3.6vw, 56px); font-weight: 600; letter-spacing: -.02em; line-height: 1.1; transition: transform .45s var(--x-spring); }
+      .x-row__name small { font-family: var(--x-display); font-weight: 700; font-size: max(14px, .36em); letter-spacing: .01em; margin-left: .7em; color: var(--x-dim); transition: color .2s ease; }
+      .x-row__kind { font-size: 15px; color: var(--x-dim); transition: color .2s ease; }
+      .x-row__year { font-size: 14px; text-align: right; color: var(--x-dim); transition: color .2s ease; }
+      .x-row.is-on::before, .x-row:focus-within::before { transform: none; }
+      .x-row.is-on .x-row__in, .x-row:focus-within .x-row__in, .x-row.is-on .x-row__name small, .x-row.is-on .x-row__kind, .x-row.is-on .x-row__year, .x-row:focus-within .x-row__name small, .x-row:focus-within .x-row__kind, .x-row:focus-within .x-row__year { color: #000; }
+      .x-row.is-on .x-row__name, .x-row:focus-within .x-row__name { transform: translate3d(20px, 0, 0); }
+      .x-row__pv { display: block; padding: 0 12px 20px; }
+      .x-row__pv img { width: 100%; max-width: 480px; aspect-ratio: 16 / 9; object-fit: cover; }
+      .has-reveal .x-row__pv { position: fixed; left: 0; top: 0; z-index: 40; width: clamp(280px, 26vw, 420px); padding: 0; pointer-events: none; }
+      .has-reveal .x-row__pv img { max-width: none; opacity: 0; transform: scale(.9); clip-path: inset(10% 10% 10% 10%); transition: opacity .2s ease, transform .4s var(--x-out), clip-path .4s var(--x-out); }
+      .has-reveal .x-row.is-on .x-row__pv img, .has-reveal .x-row:focus-within .x-row__pv img { opacity: 1; transform: none; clip-path: inset(0 0 0 0); }
+      @media (max-width: 640px) { .x-row__in { grid-template-columns: minmax(0, 1fr) auto; } .x-row__kind { grid-row: 2; } .x-row__name small { display: block; margin: 4px 0 0; } }
+
+      /* about */
+      .x-about { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(40px, 6vw, 112px); align-items: start; }
+      .x-lead { font-size: clamp(24px, 2.6vw, 36px); line-height: 1.35; font-weight: 500; letter-spacing: -.005em; max-width: 26em; }
+      .x-skills { display: flex; flex-wrap: wrap; gap: 10px; margin: 36px 0 0; padding: 0; list-style: none; }
+      .x-skills li { display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: 999px; font-size: 17px; font-weight: 500; background: var(--x-raise); box-shadow: inset 0 0 0 1px var(--x-line); transition: background-color .2s ease, color .2s ease, transform .35s var(--x-spring); }
+      @media (hover: hover) and (pointer: fine) { .x-skills li:hover { background: var(--x-pink); color: #000; transform: translate3d(0, -4px, 0) rotate(-2deg); } }
+      .x-soft { margin: 0; background: var(--x-raise); padding: clamp(20px, 2.4vw, 36px); }
+      .x-soft div { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 16px; padding-block: 18px; align-items: baseline; }
+      .x-soft div + div { border-top: 1px solid var(--x-line); }
+      .x-soft dt { font-size: 15px; color: var(--x-dim); }
+      .x-soft dd { margin: 0; font-family: var(--x-display); font-weight: 800; font-size: clamp(26px, 2.8vw, 42px); line-height: 1.05; letter-spacing: -.01em; }
+      .x-soft dd span { color: var(--x-green); }
+      @media (max-width: 860px) { .x-about { grid-template-columns: 1fr; } }
+
+      /* experience */
+      .x-exp { list-style: none; margin: 0; padding: 0; position: relative; }
+      .x-exp li { display: grid; grid-template-columns: 220px minmax(0, 1fr) auto; gap: 6px 40px; padding: clamp(22px, 2.4vw, 32px) 0; border-bottom: 1px solid var(--x-line); align-items: baseline; }
+      .x-exp li:first-child { border-top: 1px solid var(--x-line); }
+      .x-exp time, .x-exp .x-when { font-size: 15px; color: var(--x-green); }
+      .x-exp h3 { font-size: clamp(20px, 2.1vw, 30px); font-weight: 500; line-height: 1.25; }
+      .x-exp p { color: var(--x-dim); font-size: 16px; text-align: right; }
+      .x-exp li.is-edu .x-when { color: var(--x-pink); }
+      @media (max-width: 760px) { .x-exp li { grid-template-columns: 1fr; } .x-exp p { text-align: left; } }
+
+      /* counts */
+      .x-counts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; }
+      .x-count { padding: clamp(28px, 4vw, 56px) clamp(16px, 2vw, 32px); background: var(--x-raise); }
+      .x-count:nth-child(2) { background: var(--x-green); color: #000; }
+      .x-count__fig { font-family: var(--x-display); font-weight: 800; font-size: clamp(80px, 12vw, 210px); line-height: .85; letter-spacing: -.05em; display: flex; align-items: baseline; font-variant-numeric: tabular-nums; }
+      .x-count__fig small { font-family: var(--x-text); font-size: max(18px, .2em); font-weight: 600; letter-spacing: 0; margin-left: .25em; }
+      .x-count p:last-child { margin-top: 18px; font-size: 17px; font-weight: 500; }
+      @media (max-width: 760px) { .x-counts { grid-template-columns: 1fr; } }
+
+      /* contact */
+      .x-contact { padding-block: clamp(110px, 14vw, 220px) 0; }
+      .x-big { display: inline-flex; align-items: baseline; gap: .12em; font-family: var(--x-display); font-weight: 800; font-size: clamp(40px, 10.5vw, 270px); line-height: .88; letter-spacing: -.05em; text-decoration: none; color: var(--x-ink); text-transform: uppercase; margin-top: 20px; white-space: nowrap; min-height: 48px; align-items: center; padding-block: 8px; transition: color .2s ease; }
+      .x-big .x-arrow { display: inline-block; color: var(--x-pink); transition: transform .5s var(--x-spring); }
+      @media (hover: hover) and (pointer: fine) { .x-big:hover { color: var(--x-green); } .x-big:hover .x-arrow { transform: translate3d(.1em, -.08em, 0) rotate(-45deg); } }
+      .x-contact__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto; gap: 24px 40px; margin-top: clamp(40px, 5vw, 72px); align-items: end; }
+      .x-plain { display: grid; gap: 6px; text-decoration: none; min-height: var(--tap); }
+      .x-plain b { font-size: clamp(20px, 2.3vw, 34px); font-weight: 500; overflow-wrap: anywhere; background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat; padding-bottom: 4px; transition: color .2s ease; }
+      @media (hover: hover) and (pointer: fine) { .x-plain:hover b { color: var(--x-green); } }
+      .x-btns { display: flex; flex-wrap: wrap; gap: 12px; }
+      @media (max-width: 900px) { .x-contact__grid { grid-template-columns: 1fr; } }
+      .x-foot { margin-top: clamp(80px, 10vw, 160px); padding-bottom: 24px; }
+      .x-foot__name { font-family: var(--x-display); font-weight: 800; font-size: 8.6vw; line-height: .82; letter-spacing: -.05em; text-transform: uppercase; white-space: nowrap; color: var(--x-ink); width: max-content; }
+      .x-foot__row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px 24px; margin-top: 24px; }
+      .x-foot__row a { display: inline-flex; align-items: center; min-height: var(--tap); text-decoration: none; }
+      .x-foot__row .x-motif { font-size: 16px; }
+
+      /* reveals: content stays visible without script */
+      .js .x-rv { opacity: 0; transform: translate3d(0, 28px, 0); transition: opacity .7s var(--x-out), transform .9s var(--x-out); transition-delay: calc(var(--d, 0) * 70ms); }
+      .js .x-rv.is-in { opacity: 1; transform: none; }
+      .js .x-fade { opacity: 0; transition: opacity .6s ease; transition-delay: calc(var(--d, 0) * 40ms); }
+      .js .x-fade.is-in { opacity: 1; }
+
+      /* cursor */
+      .x-cursor, .x-ring { position: fixed; left: 0; top: 0; pointer-events: none; z-index: 100; opacity: 0; transition: opacity .2s ease; }
+      .x-cursor { width: 8px; height: 8px; margin: -4px 0 0 -4px; border-radius: 50%; background: var(--x-green); }
+      .x-ring { width: 44px; height: 44px; margin: -22px 0 0 -22px; }
+      .x-ring__in { position: absolute; inset: 0; border-radius: 50%; box-shadow: inset 0 0 0 1.5px var(--x-ink); display: grid; place-items: center; transition: transform .35s var(--x-spring), background-color .2s ease, box-shadow .2s ease; mix-blend-mode: difference; }
+      .x-ring__in span { font-size: 12px; font-weight: 600; color: #000; opacity: 0; transform: scale(.6); transition: opacity .15s ease, transform .3s var(--x-spring); white-space: nowrap; }
+      .x-ring.is-link .x-ring__in { transform: scale(1.5); background: var(--x-ink); }
+      .x-ring.is-label .x-ring__in { transform: scale(2.1); background: var(--x-green); box-shadow: none; mix-blend-mode: normal; }
+      .x-ring.is-label .x-ring__in span { opacity: 1; transform: scale(.48); }
+      .has-cursor .x-cursor, .has-cursor .x-ring { opacity: 1; }
+      .has-cursor .x-cursor.is-gone, .has-cursor .x-ring.is-gone { opacity: 0; }
+      .has-cursor, .has-cursor a, .has-cursor button { cursor: none; }
+      .x-site button { font: inherit; border: 0; cursor: pointer; }
+      .has-cursor .x-site button { cursor: none; }
+
+      /* preloader + curtain */
+      .x-pre { display: none; }
+      .js .x-pre { display: block; position: fixed; inset: 0; z-index: 150; }
+      .x-pre__panel { position: absolute; left: 0; right: 0; height: 50.5%; background: var(--x-bg); transition: transform 1s var(--x-inout); }
+      .x-pre__panel:first-child { top: 0; box-shadow: inset 0 -1px 0 var(--x-green); }
+      .x-pre__panel:nth-child(2) { bottom: 0; }
+      .x-pre__in { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: space-between; padding: 20px var(--x-pad) 28px; transition: opacity .35s ease, transform .5s var(--x-inout); }
+      .x-pre__name { font-family: var(--x-display); font-weight: 800; font-size: 18px; color: var(--x-ink); }
+      .x-pre__n { font-family: var(--x-mono); font-size: clamp(96px, 24vw, 380px); line-height: .8; color: var(--x-ink); letter-spacing: -.04em; align-self: flex-end; }
+      .x-pre__bar { height: 2px; background: var(--x-line); position: relative; overflow: hidden; }
+      .x-pre__bar i { position: absolute; inset: 0; background: var(--x-green); transform-origin: 0 50%; transform: scaleX(0); }
+      .x-pre.is-done { pointer-events: none; }
+      .x-pre.is-done .x-pre__in { opacity: 0; transform: translate3d(0, -4vh, 0); }
+      .x-pre.is-done .x-pre__panel:first-child { transform: translate3d(0, -101%, 0); transition-delay: .2s; }
+      .x-pre.is-done .x-pre__panel:nth-child(2) { transform: translate3d(0, 101%, 0); transition-delay: .2s; }
+      .x-pre.is-gone { display: none; }
+
+      /* masked reveals */
+      .x-mk { display: inline-block; overflow: clip; vertical-align: top; padding-bottom: .08em; margin-bottom: -.08em; }
+      .x-mk > span { display: inline-block; }
+      .js .x-mk > span { transform: translate3d(0, 112%, 0); transition: transform 1s var(--x-out); transition-delay: calc(var(--k, 0) * 90ms); }
+      .js .is-in .x-mk > span { transform: none; }
+      .x-mk--line { display: block; }
+      .js .x-lines:not(.is-split) { visibility: hidden; }
+
+      /* pinned, scrubbed section numerals */
+      .x-numsec { position: relative; }
+      .x-numsec > :not(.x-numeral) { position: relative; }
+      .x-numeral { position: sticky; top: 14vh; height: 0; pointer-events: none; z-index: 0; }
+      .x-numeral span, .x-hs__num { position: absolute; right: 0; top: 0; font-family: var(--x-display); font-weight: 800; font-size: clamp(120px, 24vw, 400px); line-height: .8; letter-spacing: -.05em; color: #67675f; -webkit-text-fill-color: transparent; -webkit-text-stroke: 1.5px #67675f; transform: translate3d(0, calc((1 - var(--p, 0)) * 8vh), 0) rotate(calc((var(--p, 0) - .5) * -6deg)); }
+      .x-numeral span::after, .x-hs__num::after { content: attr(data-n); position: absolute; inset: 0; -webkit-text-stroke: 1.5px var(--x-green); clip-path: inset(calc((1 - var(--p, 0)) * 100%) 0 0 0); }
+      .x-hs__num { right: var(--x-pad); top: 64px; font-size: clamp(100px, 16vw, 260px); z-index: 0; pointer-events: none; }
+      .x-hs:not(.x-hs--native) .x-hs__pin > :not(.x-hs__num) { position: relative; z-index: 1; }
+      .x-hs--native .x-hs__num { display: none; }
+
+      /* gallery: drag, distortion */
+      .x-hs__track img { -webkit-user-drag: none; user-select: none; }
+      .x-hs.is-drag .x-hs__track { user-select: none; }
+      .x-card__media { cursor: zoom-in; }
+      .x-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+      /* magnetic */
+      .x-mag { transition: transform .16s var(--x-out), color .2s ease, translate .6s var(--x-spring); }
+      .x-mag.is-mag { transition: transform .16s var(--x-out), color .2s ease, translate .12s linear; }
+
+      /* case overlay */
+      .x-case { position: fixed; inset: 0; z-index: 90; background: var(--x-bg); color: var(--x-ink); display: grid; grid-template-rows: auto minmax(0, 1fr) auto; gap: 16px; padding: 14px var(--x-pad) 20px; clip-path: inset(100% 0 0 0); transition: clip-path .7s var(--x-inout); overscroll-behavior: contain; }
+      .x-case[hidden] { display: none; }
+      .x-case.is-open { clip-path: inset(0 0 0 0); }
+      .x-case__bar, .x-case__foot { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+      .x-case__stage { position: relative; display: grid; place-items: center; min-height: 0; overflow: hidden; }
+      .x-case__stage img { grid-area: 1 / 1; max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; transition: transform .7s var(--x-out), opacity .4s ease; }
+      .x-case__stage .x-card__inset { position: static; grid-area: 1 / 1; width: 24%; max-height: none; justify-self: end; align-self: end; margin: 0 16px 16px 0; z-index: 1; }
+      .x-case__stage.is-in-r img { transform: translate3d(8%, 0, 0); opacity: 0; }
+      .x-case__stage.is-in-l img { transform: translate3d(-8%, 0, 0); opacity: 0; }
+      .x-case__meta h2 { font-size: clamp(24px, 3vw, 44px); font-weight: 600; line-height: 1.1; }
+      .x-case__meta h2 small { font-family: var(--x-display); font-weight: 700; font-size: max(14px, .42em); color: var(--x-dim); margin-left: .6em; }
+      .x-case__meta p { color: var(--x-dim); font-size: 16px; margin-top: 6px; }
+      .x-case__btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; min-width: 48px; padding: 0 20px; border-radius: 999px; background: transparent; color: var(--x-ink); box-shadow: inset 0 0 0 1.5px var(--x-line); font-size: 15px; font-weight: 600; transition: background-color .2s ease, color .2s ease, translate .6s var(--x-spring); }
+      @media (hover: hover) and (pointer: fine) { .x-case__btn:hover { background: var(--x-green); color: #000; box-shadow: none; } }
+      .x-case__nav { display: flex; gap: 10px; }
+      @media (max-width: 640px) { .x-case__foot { flex-direction: column; align-items: stretch; } .x-case__nav .x-case__btn { flex: 1; } }
+
+      /* stretch + toast */
+      .x-big { margin-top: .35em; }
+      .x-st-w { display: inline-block; white-space: nowrap; }
+      .x-st { display: inline-block; transform-origin: 50% 100%; }
+      .x-toast { position: fixed; left: 50%; bottom: 24px; z-index: 120; translate: -50% 0; padding: 14px 22px; border-radius: 999px; background: var(--x-green); color: #000; font-size: 15px; font-weight: 600; white-space: nowrap; opacity: 0; transform: translate3d(0, 16px, 0) scale(.96); transition: opacity .25s ease, transform .4s var(--x-spring); pointer-events: none; }
+      .x-toast.is-on { opacity: 1; transform: none; }
+      .x-marquees.is-js .x-marquee__track { animation: none; }
+
+      @media (prefers-reduced-motion: reduce) {
+        .js .x-ch { transform: none; transition: opacity .4s ease; transition-delay: calc(var(--i, 0) * 20ms); }
+        .is-settled .x-ch:hover { transform: none !important; }
+        .x-marquee__track { animation: none; }
+        .js .x-rv { transform: none; transition: opacity .4s ease; }
+        .x-status i { animation: none; }
+        .x-glitch::before, .x-glitch::after { display: none; }
+        .x-card__media > img:first-child { transform: none; transition: none; }
+        .x-row__name, .x-skills li, .x-big .x-arrow { transition-property: color, background-color; }
+        .x-row.is-on .x-row__name, .x-row:focus-within .x-row__name { transform: none; }
+        .has-reveal .x-row__pv img { transform: none; clip-path: none; transition: opacity .2s ease; }
+        .x-skip { transition: none; }
+        .x-pre__panel, .x-pre__in { transition: opacity .3s ease; }
+        .x-pre.is-done .x-pre__panel, .x-pre.is-done .x-pre__in { transform: none; opacity: 0; }
+        .js .x-mk > span { transform: none; }
+        .x-numeral span, .x-hs__num { transform: none; }
+        .x-case { transition: none; clip-path: none; }
+        .x-case__stage img, .x-toast { transition: opacity .2s ease; transform: none; }
+        .x-case__stage.is-in-r img, .x-case__stage.is-in-l img { transform: none; }
+        .x-mag, .x-mag.is-mag { translate: none !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page" id="top">
+      <div class="x-site" id="x-site">
+        <div class="x-pre" id="x-pre" aria-hidden="true">
+          <div class="x-pre__panel"></div>
+          <div class="x-pre__panel"></div>
+          <div class="x-pre__in">
+            <span class="x-pre__name">SQQ · 石强强</span>
+            <span class="x-pre__n" id="x-pre-n">000</span>
+            <span class="x-pre__bar"><i id="x-pre-bar"></i></span>
+          </div>
+        </div>
+        <svg class="x-defs" aria-hidden="true" focusable="false">
+          <filter id="x-rgb" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+            <feTurbulence id="x-rgb-n" type="fractalNoise" baseFrequency="0.008 0.03" numOctaves="2" seed="3" result="n" />
+            <feDisplacementMap id="x-rgb-d" in="SourceGraphic" in2="n" scale="0" xChannelSelector="R" yChannelSelector="G" result="d" />
+            <feColorMatrix in="d" type="matrix" values="1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0" result="r" />
+            <feOffset id="x-rgb-r" in="r" dx="0" dy="0" result="ro" />
+            <feColorMatrix in="d" type="matrix" values="0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0" result="g" />
+            <feColorMatrix in="d" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0" result="b" />
+            <feOffset id="x-rgb-b" in="b" dx="0" dy="0" result="bo" />
+            <feBlend in="ro" in2="g" mode="screen" result="rg" />
+            <feBlend in="rg" in2="bo" mode="screen" />
+          </filter>
+        </svg>
+        <a class="x-skip" href="#works">跳到作品</a>
+        <header class="x-bar">
+          <a class="x-bar__logo" href="#top" aria-label="石强强，回到顶部">SQQ <span>石强强</span></a>
+          <nav aria-label="主导航">
+            <a href="#works">Works</a>
+            <a href="#index">Index</a>
+            <a href="#about">About</a>
+            <a href="#exp">Experience</a>
+            <a class="x-bar__cta" href="#contact">Contact</a>
+          </nav>
+        </header>
+
+        <main id="main">
+          <section class="x-hero" id="x-hero" aria-labelledby="hero-h">
+            <canvas id="x-shader" aria-hidden="true"></canvas>
+            <div class="x-hero__inner x-wrap">
+              <p class="x-status"><i aria-hidden="true"></i>Open to work · 上海</p>
+              <h1 class="x-giant" id="hero-h" aria-label="石强强 Shi Qiangqiang，品牌视觉架构师">
+                <span class="x-line" data-split aria-hidden="true">SHI QIANG</span>
+                <span class="x-line x-line--pink" data-split aria-hidden="true">QIANG</span>
+              </h1>
+              <div class="x-hero__row">
+                <p class="x-cn x-glitch x-glitch--loop" data-text="石强强" aria-hidden="true">石强强</p>
+                <p class="x-hero__sub">
+                  <b>品牌视觉架构师 Brand Visual Architect</b>
+                  全案品牌视觉：策略定位 / 超级符号 / 应用延展<br /><span>餐饮行业垂直解决方案</span>
+                </p>
+                <div class="x-hero__cta">
+                  <p class="x-motif" aria-label="作品集符号：加减乘除等于无穷">+-×÷=∞</p>
+                  <a class="x-btn" href="mailto:shiqiangqiang96@163.com?subject=面试邀约%20—%20石强强">邮件联系</a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="x-marquees" id="x-marquees" role="img" aria-label="Brand, Font, Graphic, IP, Illustration">
+            <div class="x-marquee" aria-hidden="true">
+              <div class="x-marquee__track">
+                <span>Brand · Font · Graphic · IP · Illustration · +-×÷=∞ · </span>
+                <span>Brand · Font · Graphic · IP · Illustration · +-×÷=∞ · </span>
+              </div>
+            </div>
+            <div class="x-marquee x-marquee--pink" aria-hidden="true">
+              <div class="x-marquee__track">
+                <span>品牌 · 字体 · 平面 · IP · 插画 · 品牌 · 字体 · 平面 · IP · 插画 · </span>
+                <span>品牌 · 字体 · 平面 · IP · 插画 · 品牌 · 字体 · 平面 · IP · 插画 · </span>
+              </div>
+            </div>
+          </div>
+
+          <section class="x-sec" id="works" aria-labelledby="works-h" style="padding-top: clamp(40px, 6vw, 96px)">
+            <div class="x-hs" id="x-hs">
+              <div class="x-hs__pin" id="x-pin">
+                <span class="x-hs__num" id="x-hs-num" data-n="01" aria-hidden="true">01</span>
+                <div class="x-head x-wrap">
+                  <h2 class="x-h2 x-glitch" id="works-h" data-text="Selected Works">Selected Works</h2>
+                  <p class="x-label">7 个品牌全案，2024 — 2025，均为个人负责项目</p>
+                </div>
+                <div class="x-hs__track" id="x-track">
+                  <article class="x-card" id="w1">
+                    <div class="x-card__media">
+                      <img src="job/p6.jpg" alt="椰知卿 品牌标志与介绍" width="1733" height="975" />
+                      <img class="x-card__inset" src="job/p8.jpg" alt="椰知卿 包装设计" width="1733" height="975" loading="lazy" />
+                    </div>
+                    <div class="x-card__meta">
+                      <h3>椰知卿 <small>Coconut Flavor · 2024</small></h3>
+                      <span class="x-tag">个人负责项目</span>
+                      <p>自然美学主义食研所，以椰为经纬。</p>
+                    </div>
+                  </article>
+                  <article class="x-card" id="w2">
+                    <div class="x-card__media"><img src="job/p11.jpg" alt="龍面馆 品牌应用延展" width="1733" height="975" loading="lazy" /></div>
+                    <div class="x-card__meta">
+                      <h3>龍面馆 <small>Dragon Noodles Academy · 2025</small></h3>
+                      <span class="x-tag">个人负责项目</span>
+                      <p>香港鲜熬私房面。</p>
+                    </div>
+                  </article>
+                  <article class="x-card" id="w3">
+                    <div class="x-card__media"><img src="job/p15.jpg" alt="伽乐酸奶 杯体设计" width="1733" height="975" loading="lazy" /></div>
+                    <div class="x-card__meta">
+                      <h3>伽乐酸奶 <small>GALA Yogurt · 2024</small></h3>
+                      <span class="x-tag x-tag--pink">个人负责项目</span>
+                      <p>Z世代希腊酸奶，莫兰迪＋荧光，Just Have Fun。</p>
+                    </div>
+                  </article>
+                  <article class="x-card" id="w4">
+                    <div class="x-card__media"><img src="job/p19.jpg" alt="龍尊轩 瓷器设计" width="1733" height="975" loading="lazy" /></div>
+                    <div class="x-card__meta">
+                      <h3>龍尊轩 <small>Noble Dragon · 2024</small></h3>
+                      <span class="x-tag">个人负责项目</span>
+                      <p>宋式极简 × 粤派精奢。</p>
+                    </div>
+                  </article>
+                  <article class="x-card" id="w5">
+                    <div class="x-card__media"><img src="job/p23.jpg" alt="HERA赫她 品牌视觉" width="1733" height="975" loading="lazy" /></div>
+                    <div class="x-card__meta">
+                      <h3>HERA赫她 <small>HERA · 2025</small></h3>
+                      <span class="x-tag x-tag--pink">个人负责项目</span>
+                      <p>科技美肤，「水核力场」。</p>
+                    </div>
+                  </article>
+                  <article class="x-card" id="w6">
+                    <div class="x-card__media"><img src="job/p27.jpg" alt="留芳茶社 品牌视觉" width="1733" height="975" loading="lazy" /></div>
+                    <div class="x-card__meta">
+                      <h3>留芳茶社 <small>Taizhou Brunch · 2025</small></h3>
+                      <span class="x-tag">个人负责项目</span>
+                      <p>Taizhou Brunch 茶社品牌视觉。</p>
+                    </div>
+                  </article>
+                  <article class="x-card" id="w7">
+                    <div class="x-card__media"><img src="job/p31.jpg" alt="美味美锅 IP 形象" width="1733" height="975" loading="lazy" /></div>
+                    <div class="x-card__meta">
+                      <h3>美味美锅 <small>Brand + IP</small></h3>
+                      <span class="x-tag x-tag--pink">个人负责项目</span>
+                      <p>品牌 + IP 形象设计。</p>
+                    </div>
+                  </article>
+                </div>
+                <div class="x-hs__foot" aria-hidden="true">
+                  <span class="x-label">滚动或拖拽，横向浏览</span>
+                  <div class="x-hs__bar"><i id="x-prog"></i></div>
+                  <span class="x-hs__count x-num" id="x-count">01 / 07</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="x-sec x-wrap x-numsec" id="index" aria-labelledby="index-h">
+            <div class="x-numeral" aria-hidden="true"><span data-n="02">02</span></div>
+            <div class="x-head">
+              <h2 class="x-h2 x-glitch" id="index-h" data-text="Index">Index</h2>
+              <p class="x-label">全部 11 项。悬停预览，点击品牌项目跳到作品</p>
+            </div>
+            <ul class="x-list" id="x-list">
+              <li class="x-row x-fade" style="--d:0"><a class="x-row__in" href="#w1"><span class="x-row__name">椰知卿<small>Coconut Flavor</small></span><span class="x-row__kind">品牌全案</span><span class="x-row__year x-num">2024</span></a><span class="x-row__pv"><img src="job/p7.jpg" alt="椰知卿 品牌摄影" width="1733" height="975" loading="lazy" /></span></li>
+              <li class="x-row x-fade" style="--d:1"><a class="x-row__in" href="#w2"><span class="x-row__name">龍面馆<small>Dragon Noodles Academy</small></span><span class="x-row__kind">品牌全案</span><span class="x-row__year x-num">2025</span></a><span class="x-row__pv"><img src="job/p12.jpg" alt="龍面馆 菜单设计" width="1733" height="975" loading="lazy" /></span></li>
+              <li class="x-row x-fade" style="--d:2"><a class="x-row__in" href="#w3"><span class="x-row__name">伽乐酸奶<small>GALA Yogurt</small></span><span class="x-row__kind">品牌全案</span><span class="x-row__year x-num">2024</span></a><span class="x-row__pv"><img src="job/p16.jpg" alt="伽乐酸奶 视觉系统" width="1733" height="975" loading="lazy" /></span></li>
+              <li class="x-row x-fade" style="--d:3"><a class="x-row__in" href="#w4"><span class="x-row__name">龍尊轩<small>Noble Dragon</small></span><span class="x-row__kind">品牌全案</span><span class="x-row__year x-num">2024</span></a><span class="x-row__pv"><img src="job/p20.jpg" alt="龍尊轩 海报" width="1733" height="975" loading="lazy" /></span></li>
+              <li class="x-row x-fade" style="--d:4"><a class="x-row__in" href="#w5"><span class="x-row__name">HERA赫她<small>Tech Skincare</small></span><span class="x-row__kind">品牌全案</span><span class="x-row__year x-num">2025</span></a><span class="x-row__pv"><img src="job/p24.jpg" alt="HERA赫她 视觉延展" width="1733" height="975" loading="lazy" /></span></li>
+              <li class="x-row x-fade" style="--d:5"><a class="x-row__in" href="#w6"><span class="x-row__name">留芳茶社<small>Taizhou Brunch</small></span><span class="x-row__kind">品牌全案</span><span class="x-row__year x-num">2025</span></a><span class="x-row__pv"><img src="job/p28.jpg" alt="留芳茶社 视觉延展" width="1733" height="975" loading="lazy" /></span></li>
+              <li class="x-row x-fade" style="--d:6"><a class="x-row__in" href="#w7"><span class="x-row__name">美味美锅<small>Brand + IP</small></span><span class="x-row__kind">品牌 + IP</span><span class="x-row__year x-num">—</span></a></li>
+              <li class="x-row x-fade" style="--d:7"><div class="x-row__in"><span class="x-row__name">字体设计<small>Typeface</small></span><span class="x-row__kind">Font</span><span class="x-row__year">合集</span></div><span class="x-row__pv"><img src="job/p33.jpg" alt="字体设计作品" width="1733" height="975" loading="lazy" /></span></li>
+              <li class="x-row x-fade" style="--d:8"><div class="x-row__in"><span class="x-row__name">版式设计<small>Layout</small></span><span class="x-row__kind">Graphic</span><span class="x-row__year">合集</span></div><span class="x-row__pv"><img src="job/p35.jpg" alt="版式设计作品" width="1733" height="975" loading="lazy" /></span></li>
+              <li class="x-row x-fade" style="--d:9"><div class="x-row__in"><span class="x-row__name">线上设计<small>Digital</small></span><span class="x-row__kind">Online</span><span class="x-row__year">合集</span></div><span class="x-row__pv"><img src="job/p38.jpg" alt="线上设计作品" width="1733" height="975" loading="lazy" /></span></li>
+              <li class="x-row x-fade" style="--d:10"><div class="x-row__in"><span class="x-row__name">插画主视觉<small>Illustration</small></span><span class="x-row__kind">Illustration</span><span class="x-row__year">合集</span></div><span class="x-row__pv"><img src="job/p41.jpg" alt="插画主视觉作品" width="1733" height="975" loading="lazy" /></span></li>
+            </ul>
+          </section>
+
+          <section class="x-sec x-wrap x-numsec" id="about" aria-labelledby="about-h">
+            <div class="x-numeral" aria-hidden="true"><span data-n="03">03</span></div>
+            <div class="x-head">
+              <h2 class="x-h2 x-glitch" id="about-h" data-text="About">About</h2>
+              <p class="x-label">品牌 / 字体 / 平面 / IP / 插画</p>
+            </div>
+            <div class="x-about">
+              <div>
+                <p class="x-lead x-lines">我做全案品牌视觉：从策略定位，到超级符号，再到每一处应用延展。深耕餐饮行业，十年一线经验。</p>
+                <ul class="x-skills x-rv" style="--d:1" aria-label="擅长">
+                  <li>品牌设计</li><li>字体设计</li><li>平面设计</li><li>IP设计</li><li>插画设计</li>
+                </ul>
+              </div>
+              <dl class="x-soft x-rv" style="--d:2" aria-label="软件">
+                <div><dt>平面</dt><dd>PS <span>/</span> AI <span>/</span> ID <span>/</span> LR</dd></div>
+                <div><dt>建模</dt><dd>C4D <span>/</span> SU <span>/</span> Blender</dd></div>
+                <div><dt>影像</dt><dd>AE <span>/</span> PR</dd></div>
+              </dl>
+            </div>
+          </section>
+
+          <section class="x-sec x-wrap x-numsec" id="exp" aria-labelledby="exp-h">
+            <div class="x-numeral" aria-hidden="true"><span data-n="04">04</span></div>
+            <div class="x-head">
+              <h2 class="x-h2 x-glitch" id="exp-h" data-text="Experience">Experience</h2>
+              <p class="x-label x-num">2015 — 2025</p>
+            </div>
+            <ol class="x-exp">
+              <li class="x-rv"><time class="x-when x-num" datetime="2021-04/2025-03">2021.04 — 2025.03</time><h3>上海聿言室内设计工程有限公司</h3><p>主管设计师</p></li>
+              <li class="x-rv" style="--d:1"><time class="x-when x-num" datetime="2017-05/2021-03">2017.05 — 2021.03</time><h3>上海华墨展览服务有限公司</h3><p>平面设计师</p></li>
+              <li class="x-rv" style="--d:2"><time class="x-when x-num" datetime="2016-03/2017-04">2016.03 — 2017.04</time><h3>河南红马广告有限公司</h3><p>平面设计</p></li>
+              <li class="x-rv" style="--d:3"><time class="x-when x-num" datetime="2015-07/2016-03">2015.07 — 2016.03</time><h3>河南中美有机农业有限公司</h3><p>平面设计专员</p></li>
+              <li class="x-rv is-edu" style="--d:4"><span class="x-when">教育 Education</span><h3>郑州大学（网络教育）</h3><p>计算机网络技术</p></li>
+              <li class="x-rv is-edu" style="--d:5"><span class="x-when">教育 Education</span><h3>河南新华电脑学院（中专）</h3><p>广告设计与制作</p></li>
+            </ol>
+          </section>
+
+          <section class="x-sec x-wrap" aria-label="关键数字">
+            <div class="x-counts" id="x-counts">
+              <div class="x-count x-rv"><p class="x-count__fig"><span data-count="10">10</span><small>年</small></p><p>设计经验</p></div>
+              <div class="x-count x-rv" style="--d:1"><p class="x-count__fig"><span data-count="7">7</span><small>个</small></p><p>品牌全案</p></div>
+              <div class="x-count x-rv" style="--d:2"><p class="x-count__fig"><span data-count="5">5</span><small>大</small></p><p>设计方向</p></div>
+            </div>
+          </section>
+
+          <section class="x-contact x-wrap" id="contact" aria-labelledby="contact-h">
+            <h2 class="x-label" id="contact-h">下一步：邮件联系，或索取完整作品集</h2>
+            <a class="x-big x-glitch" data-text="Let's work" href="mailto:shiqiangqiang96@163.com?subject=面试邀约%20—%20石强强">Let's work<span class="x-arrow" aria-hidden="true">→</span></a>
+            <div class="x-contact__grid">
+              <a class="x-plain" href="mailto:shiqiangqiang96@163.com"><span class="x-label">邮箱</span><b>shiqiangqiang96@163.com</b></a>
+              <a class="x-plain" href="tel:+8617621419257"><span class="x-label">电话</span><b class="x-num">176 2141 9257</b></a>
+              <div class="x-btns">
+                <a class="x-btn" href="mailto:shiqiangqiang96@163.com?subject=面试邀约%20—%20石强强">邮件联系</a>
+                <a class="x-btn x-btn--ghost" href="mailto:shiqiangqiang96@163.com?subject=索取完整作品集%20—%20石强强">下载作品集</a>
+                <button class="x-btn x-btn--ghost x-copy" type="button" data-copy="shiqiangqiang96@163.com">复制邮箱</button>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <footer class="x-foot x-wrap">
+          <p class="x-foot__name" aria-hidden="true">Shi Qiangqiang</p>
+          <div class="x-foot__row">
+            <p class="x-label">© 2026 石强强 · Shi Qiangqiang</p>
+            <p class="x-motif" aria-hidden="true">+-×÷=∞</p>
+            <a class="x-label" href="#top">回到顶部 ↑</a>
+          </div>
+        </footer>
+        <div class="x-case" id="x-case" role="dialog" aria-modal="true" aria-labelledby="x-case-t" hidden>
+          <div class="x-case__bar">
+            <span class="x-num x-label" id="x-case-n">01 / 07</span>
+            <button class="x-case__btn x-mag" type="button" id="x-case-x" aria-label="关闭案例">Close ✕</button>
+          </div>
+          <div class="x-case__stage" id="x-case-stage"></div>
+          <div class="x-case__foot">
+            <div class="x-case__meta"><h2 id="x-case-t"></h2><p id="x-case-d"></p></div>
+            <div class="x-case__nav">
+              <button class="x-case__btn x-mag" type="button" id="x-case-prev" aria-label="上一个案例">← Prev</button>
+              <button class="x-case__btn x-mag" type="button" id="x-case-next" aria-label="下一个案例">Next →</button>
+            </div>
+          </div>
+        </div>
+        <div class="x-toast" id="x-toast" role="status" aria-live="polite"></div>
+        <div class="x-cursor" id="x-cursor" aria-hidden="true"></div>
+        <div class="x-ring" id="x-ring" aria-hidden="true"><div class="x-ring__in"><span id="x-ring-t"></span></div></div>
+      </div>
     </div>
-  </header>
+    <script src="job/hark.js"></script>
+    <script>
+      (function () {
+        "use strict";
+        var doc = document, root = doc.documentElement, W = window;
+        var reduce = W.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        var fine = W.matchMedia("(hover: hover) and (pointer: fine)").matches;
+        var $ = function (s) { return doc.querySelector(s); };
+        var $$ = function (s) { return [].slice.call(doc.querySelectorAll(s)); };
+        var clamp = function (v, a, b) { return v < a ? a : v > b ? b : v; };
 
-  <main id="main">
-    <section id="top" class="hero-stage hero-craft">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">Craft Portfolio &nbsp;·&nbsp; Hiring</p>
-          <h1 class="hero-display hero-display-name">石强强</h1>
-          <p class="hero-role">品牌视觉架构师</p>
-          <p class="motif" aria-hidden="true">+ &nbsp; − &nbsp; × &nbsp; ÷ &nbsp; = &nbsp; ∞</p>
-          <p class="lead craft-line">
-            用作品说话：系统、字体、平面、IP、插画——<br />
-            从策略到落地的全链路视觉能力。
-          </p>
-          <p class="hero-name">阿志 · AZHI</p>
-          <p class="hero-actions">
-            <a class="btn btn-primary" href="#works">看作品</a>
-            <a class="btn btn-ghost" href="#experience">看经历</a>
-          </p>
-          <p class="hero-tagline">Systems · Type · Range · Evidence</p>
-        </div>
-        <figure class="hero-visual-large">
-          <img
-            src="assets/p-02.jpg"
-            alt="品牌视觉架构概念版式"
-            width="720"
-            height="960"
-            loading="eager"
-            decoding="async"
-          />
-        </figure>
-      </div>
-    </section>
+        /* split letters: aria stays on the h1, letters are aria-hidden */
+        var n = 0;
+        $$("[data-split]").forEach(function (el) {
+          var t = el.textContent; el.textContent = "";
+          for (var i = 0; i < t.length; i++) {
+            var s = doc.createElement("span"); s.className = "x-ch";
+            s.textContent = t[i] === " " ? "\u00a0" : t[i];
+            s.style.setProperty("--i", n++);
+            el.appendChild(s);
+          }
+        });
 
-    <section id="works" class="section wrap section-craft-gallery" aria-labelledby="works-heading">
-      <div class="section-head">
-        <p class="section-kicker">Selected Work</p>
-        <h2 id="works-heading">作品 · 能力佐证</h2>
-        <p class="section-desc">
-          代表项目直接证明范围与完成度。点击进入独立项目页查看画面与说明。
-        </p>
-      </div>
+        /* layout: true viewport width (no scrollbar overflow) and fitted display type */
+        var site = $("#x-site"), hero = $("#x-hero"), giant = $(".x-giant"), big = $(".x-big"), footName = $(".x-foot__name");
+        function fit(el, measureEls, avail, max) {
+          el.style.fontSize = "100px";
+          var w = 0; measureEls.forEach(function (m) { w = Math.max(w, m.offsetWidth); });
+          if (w) el.style.fontSize = Math.min(max, 100 * avail / w) + "px";
+        }
+        function layout() {
+          site.style.setProperty("--x-vw", root.clientWidth + "px");
+          var pad = parseFloat(getComputedStyle(giant.parentNode).paddingLeft) || 20;
+          var avail = root.clientWidth - pad * 2;
+          fit(giant, $$(".x-giant .x-line"), avail, 260);
+          fit(big, [big], avail, 280);
+          fit(footName, [footName], avail, 400);
+        }
+        layout();
 
-      <ul class="work-grid is-magazine is-craft">
-        <li class="work-card">
-          <a class="work-card-link" href="works/yezhiqing.html">
-            <div class="work-card-media">
-              <img src="assets/w-09.jpg" alt="" width="800" height="600" loading="lazy" decoding="async" />
-            </div>
-            <div class="work-card-overlay">
-              <p class="card-meta">品牌识别 · 2024</p>
-              <h3>椰知卿</h3>
-              <p class="work-card-excerpt">
-                自然美学主义食研所。以椰为经纬编织都市诗意栖居；「椰细胞再生计划」传递有温度的生活方式。
-              </p>
-              <p class="card-tags"><span>品牌系统</span><span>餐饮</span><span>识别</span></p>
-              <p class="work-card-cta">查看项目 →</p>
-            </div>
-          </a>
-        </li>
-        <li class="work-card">
-          <a class="work-card-link" href="works/longmianguan.html">
-            <div class="work-card-media">
-              <img src="assets/w-10.jpg" alt="" width="800" height="600" loading="lazy" decoding="async" />
-            </div>
-            <div class="work-card-overlay">
-              <p class="card-meta">品牌识别 · 2025</p>
-              <h3>龍面馆</h3>
-              <p class="work-card-excerpt">
-                香港鲜熬私房面。新鲜制作、开放式厨房；在传统中菜中融入创意，重新演绎经典。
-              </p>
-              <p class="card-tags"><span>品牌</span><span>包装</span><span>延展</span></p>
-              <p class="work-card-cta">查看项目 →</p>
-            </div>
-          </a>
-        </li>
-        <li class="work-card">
-          <a class="work-card-link" href="works/galayogurt.html">
-            <div class="work-card-media">
-              <img src="assets/w-14.jpg" alt="" width="800" height="600" loading="lazy" decoding="async" />
-            </div>
-            <div class="work-card-overlay">
-              <p class="card-meta">包装 / 视觉 · 2024</p>
-              <h3>伽乐酸奶</h3>
-              <p class="work-card-excerpt">
-                Z 世代高蛋白希腊酸奶。莫兰迪与荧光色块碰撞，解构几何跃动于极简包装。
-              </p>
-              <p class="card-tags"><span>包装</span><span>消费品牌</span><span>平面</span></p>
-              <p class="work-card-cta">查看项目 →</p>
-            </div>
-          </a>
-        </li>
-        <li class="work-card">
-          <a class="work-card-link" href="works/longzunxuan.html">
-            <div class="work-card-media">
-              <img src="assets/w-19.jpg" alt="" width="800" height="600" loading="lazy" decoding="async" />
-            </div>
-            <div class="work-card-overlay">
-              <p class="card-meta">字体 / 符号 · 2024</p>
-              <h3>龍尊轩</h3>
-              <p class="work-card-excerpt">
-                新派东方美学粤宴。「宋式极简骨骼 × 粤派精奢肌理」，纤细宋体构筑古典叙事。
-              </p>
-              <p class="card-tags"><span>字体</span><span>超级符号</span><span>高端餐饮</span></p>
-              <p class="work-card-cta">查看项目 →</p>
-            </div>
-          </a>
-        </li>
-      </ul>
+        /* letter scramble on the name */
+        var GLY = "ABCDEFGHIJKLMNOPQRSTUVWXYZ+-×÷=∞#&", chs = $$(".x-giant .x-ch"), scrambling = false;
+        function scramble() {
+          if (reduce || scrambling) return; scrambling = true;
+          var orig = chs.map(function (c) { return c.textContent; }), start = performance.now(), fr = 0;
+          chs.forEach(function (c) { c.style.width = c.offsetWidth + "px"; c.style.textAlign = "center"; });
+          (function step(now) {
+            var done = 0, swap = fr++ % 3 === 0;
+            chs.forEach(function (c, i) {
+              if (orig[i] === "\u00a0" || now >= start + 380 + i * 60) { c.textContent = orig[i]; done++; }
+              else if (swap && now > start + i * 20) c.textContent = GLY[Math.floor(Math.random() * GLY.length)];
+            });
+            if (done < chs.length) requestAnimationFrame(step);
+            else { chs.forEach(function (c) { c.style.width = ""; c.style.textAlign = ""; }); scrambling = false; }
+          })(start);
+        }
+        function revealHero() {
+          if (hero.classList.contains("is-loaded")) return;
+          hero.classList.add("is-loaded"); scramble();
+          setTimeout(function () { hero.classList.add("is-settled"); }, reduce ? 600 : 1700);
+        }
+        if (fine) giant.addEventListener("pointerenter", function () { if (hero.classList.contains("is-settled")) scramble(); });
 
-      <div class="works-upcoming">
-        <h3>更多作品 · 待上传</h3>
-        <ul class="upcoming-grid">
-          <li>
-            <a class="upcoming-card" href="works/hera.html">
-              <span class="uc-meta">品牌识别 · 2025</span>
-              <h4>HERA 赫她</h4>
-              <span class="uc-note">待上传</span>
-            </a>
-          </li>
-          <li>
-            <a class="upcoming-card" href="works/liufang.html">
-              <span class="uc-meta">品牌识别 · 2025</span>
-              <h4>留芳茶社</h4>
-              <span class="uc-note">待上传</span>
-            </a>
-          </li>
-          <li>
-            <a class="upcoming-card" href="works/meiweimeiguo.html">
-              <span class="uc-meta">品牌识别 · 2022</span>
-              <h4>美味美锅</h4>
-              <span class="uc-note">待上传</span>
-            </a>
-          </li>
-          <li>
-            <a class="upcoming-card" href="works/font-design.html">
-              <span class="uc-meta">Font Design</span>
-              <h4>字体设计</h4>
-              <span class="uc-note">待上传</span>
-            </a>
-          </li>
-          <li>
-            <a class="upcoming-card" href="works/layout-design.html">
-              <span class="uc-meta">Layout Design</span>
-              <h4>版式设计</h4>
-              <span class="uc-note">待上传</span>
-            </a>
-          </li>
-          <li>
-            <a class="upcoming-card" href="works/illustration.html">
-              <span class="uc-meta">Illustration / IP</span>
-              <h4>插画 / IP</h4>
-              <span class="uc-note">待上传</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
+        /* preloader: 000 to 100 on real progress (eager images + fonts), then the curtain opens */
+        (function () {
+          var pre = $("#x-pre"), preN = $("#x-pre-n"), preBar = $("#x-pre-bar"), done = false;
+          var imgs = $$("img").filter(function (im) { return im.getAttribute("loading") !== "lazy"; });
+          var total = imgs.length + 1, got = 0, shown = 0, t0 = performance.now(), minT = 1300;
+          var bump = function () { got++; };
+          imgs.forEach(function (im) { if (im.complete) got++; else { im.addEventListener("load", bump, { once: true }); im.addEventListener("error", bump, { once: true }); } });
+          if (doc.fonts && doc.fonts.ready) doc.fonts.ready.then(bump, bump); else got++;
+          function finish() {
+            if (done) return; done = true;
+            preN.textContent = "100"; preBar.style.transform = "scaleX(1)";
+            pre.classList.add("is-done");
+            setTimeout(revealHero, reduce ? 0 : 420);
+            setTimeout(function () { pre.classList.add("is-gone"); }, reduce ? 350 : 1400);
+          }
+          setTimeout(finish, 6000);
+          if (reduce) { finish(); return; }
+          (function tick(now) {
+            if (done) return;
+            var el = now - t0, target = Math.min(got / total, el / minT);
+            if (el > 4500) target = 1;
+            shown += (target - shown) * .12; if (target - shown < .004) shown = target;
+            preN.textContent = ("00" + Math.round(shown * 100)).slice(-3);
+            preBar.style.transform = "scaleX(" + shown.toFixed(3) + ")";
+            if (shown >= 1) setTimeout(finish, 160); else requestAnimationFrame(tick);
+          })(t0);
+        })();
 
-    <section id="skills" class="section wrap about" aria-labelledby="skills-heading">
-      <div class="section-head">
-        <p class="section-kicker">Range</p>
-        <h2 id="skills-heading">能力 · 工具 · 教育</h2>
-        <p class="section-desc">覆盖品牌 / 字体 / 平面 / IP / 插画；工具与教育背景如下。</p>
-      </div>
-      <div class="about-grid">
-        <div class="about-block">
-          <h3>擅长领域</h3>
-          <ul class="chip-list">
-            <li>品牌设计</li>
-            <li>字体设计</li>
-            <li>平面设计</li>
-            <li>IP 设计</li>
-            <li>插画设计</li>
-          </ul>
-        </div>
-        <div class="about-block">
-          <h3>工具</h3>
-          <dl class="tool-list">
-            <div>
-              <dt>平面</dt>
-              <dd>PS / AI / ID / LR</dd>
-            </div>
-            <div>
-              <dt>建模</dt>
-              <dd>C4D / SU / Blender</dd>
-            </div>
-            <div>
-              <dt>影像</dt>
-              <dd>AE / PR</dd>
-            </div>
-          </dl>
-        </div>
-        <div class="about-block">
-          <h3>教育</h3>
-          <ul class="edu-list">
-            <li>
-              <strong>河南新华电脑学院</strong>
-              <span>广告设计与制作</span>
-            </li>
-            <li>
-              <strong>郑州大学 · 网络教育</strong>
-              <span>计算机网络技术</span>
-            </li>
-          </ul>
-        </div>
-        <div class="about-block about-focus">
-          <h3>定位</h3>
-          <p>品牌视觉架构师 · 设计印刷落地</p>
-          <p class="muted">系统搭建与落地执行并重；可投入团队协作。</p>
-        </div>
-      </div>
-    </section>
+        /* hero shader: domain-warped contour field, rendered at reduced resolution, paused off-screen */
+        var cv = $("#x-shader"), gl = null;
+        try { gl = cv.getContext("webgl", { antialias: false, alpha: false, powerPreference: "low-power", preserveDrawingBuffer: false }); } catch (e) { gl = null; }
+        var shader = { visible: true, running: false, mx: .5, my: .4, tx: .5, ty: .4, sc: 0, ts: 0, scale: Math.min(W.devicePixelRatio || 1, 1) * .55, t0: performance.now(), slow: 0, frames: 0 };
+        if (gl) {
+          var vs = "attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}";
+          var fs = [
+            "#ifdef GL_FRAGMENT_PRECISION_HIGH\nprecision highp float;\n#else\nprecision mediump float;\n#endif\nuniform vec2 r;uniform float t;uniform vec2 m;uniform float sc;",
+            "float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}",
+            "float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1.,0.)),f.x),mix(h(i+vec2(0.,1.)),h(i+vec2(1.,1.)),f.x),f.y);}",
+            "float fbm(vec2 p){float v=0.,a=.5;for(int i=0;i<5;i++){v+=a*n(p);p=p*2.03+vec2(1.7,9.2);a*=.5;}return v;}",
+            "void main(){vec2 uv=gl_FragCoord.xy/r;vec2 p=(gl_FragCoord.xy-.5*r)/r.y;vec2 mm=(m*r-.5*r)/r.y;",
+            "p*=1.+sc*.8;p.y+=sc*.6;float d=length(p-mm);p+=(p-mm)*.35*exp(-d*3.5);",
+            "vec2 q=vec2(fbm(p*1.4+t*.05),fbm(p*1.4+vec2(5.2,1.3)-t*.04));",
+            "vec2 s=vec2(fbm(p*1.4+3.*q+vec2(1.7,9.2)+t*.07),fbm(p*1.4+3.*q+vec2(8.3,2.8)-t*.05));",
+            "float f=fbm(p*1.4+3.2*s);float c=abs(fract(f*9.)-.5);float ln=smoothstep(.09,.0,c);",
+            "vec3 g=vec3(.776,1.,.239),k=vec3(1.,.18,.533);vec3 col=mix(g,k,smoothstep(.38,.72,s.x))*ln*(.25+1.1*f*f);",
+            "col+=k*.22*exp(-d*5.)+g*.05*smoothstep(.55,.9,f);",
+            "col*=smoothstep(1.25,.25,length((uv-.5)*vec2(1.2,1.)));col+=(h(uv*61.7+fract(t*.37))-.5)*.035;",
+            "gl_FragColor=vec4(col,1.);}"
+          ].join("");
+          var mk = function (type, src) { var sh = gl.createShader(type); gl.shaderSource(sh, src); gl.compileShader(sh); return gl.getShaderParameter(sh, gl.COMPILE_STATUS) ? sh : null; };
+          var v = mk(gl.VERTEX_SHADER, vs), f = mk(gl.FRAGMENT_SHADER, fs), pr = gl.createProgram();
+          if (v && f) {
+            gl.attachShader(pr, v); gl.attachShader(pr, f); gl.linkProgram(pr);
+          }
+          if (!v || !f || !gl.getProgramParameter(pr, gl.LINK_STATUS)) { gl = null; }
+          else {
+            gl.useProgram(pr);
+            var buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+            gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
+            var loc = gl.getAttribLocation(pr, "p"); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+            var uR = gl.getUniformLocation(pr, "r"), uT = gl.getUniformLocation(pr, "t"), uM = gl.getUniformLocation(pr, "m"), uS = gl.getUniformLocation(pr, "sc");
+            var sizeGL = function () {
+              cv.width = Math.max(2, Math.round(cv.clientWidth * shader.scale)); cv.height = Math.max(2, Math.round(cv.clientHeight * shader.scale));
+              gl.viewport(0, 0, cv.width, cv.height);
+            };
+            var draw = function (now) {
+              shader.mx += (shader.tx - shader.mx) * .06; shader.my += (shader.ty - shader.my) * .06;
+              shader.sc += (shader.ts - shader.sc) * .08;
+              gl.uniform2f(uR, cv.width, cv.height); gl.uniform1f(uT, (now - shader.t0) / 1000); gl.uniform2f(uM, shader.mx, shader.my); gl.uniform1f(uS, shader.sc);
+              gl.drawArrays(gl.TRIANGLES, 0, 3);
+            };
+            var last = 0;
+            var loop = function (now) {
+              if (!shader.visible || doc.hidden) { shader.running = false; return; }
+              if (last) { if (now - last > 28) shader.slow++; shader.frames++; }
+              last = now;
+              if (shader.frames === 90 && shader.slow > 40 && shader.scale > .3) { shader.scale = .3; sizeGL(); }
+              draw(now); requestAnimationFrame(loop);
+            };
+            shader.start = function () { if (reduce) { draw(shader.t0 + 4000); return; } if (!shader.running) { shader.running = true; last = 0; requestAnimationFrame(loop); } };
+            shader.resize = function () { sizeGL(); if (reduce || !shader.running) draw(shader.t0 + 4000); };
+            sizeGL(); shader.start(); cv.classList.add("is-live");
+            doc.addEventListener("visibilitychange", function () { if (!doc.hidden && shader.visible) shader.start(); });
+          }
+        }
+        /* fallback when WebGL is missing or fails: drifting 2D glow field on a fresh canvas */
+        if (!gl) (function () {
+          var c2 = cv.cloneNode(false); cv.parentNode.replaceChild(c2, cv); cv = c2;
+          var ctx = cv.getContext("2d"); if (!ctx) return;
+          var blobs = [[.22, .35, "198,255,61"], [.72, .5, "255,46,136"], [.5, .82, "198,255,61"]];
+          var size = function () { cv.width = Math.max(2, Math.round(cv.clientWidth / 6)); cv.height = Math.max(2, Math.round(cv.clientHeight / 6)); };
+          var draw = function (now) {
+            var t = (now - shader.t0) / 1000, w = cv.width, h = cv.height;
+            shader.mx += (shader.tx - shader.mx) * .06; shader.my += (shader.ty - shader.my) * .06; shader.sc += (shader.ts - shader.sc) * .08;
+            ctx.globalCompositeOperation = "source-over"; ctx.fillStyle = "#000"; ctx.fillRect(0, 0, w, h);
+            ctx.globalCompositeOperation = "lighter";
+            blobs.forEach(function (b, i) {
+              var x = (b[0] + Math.sin(t * .3 + i * 2) * .12 + (shader.mx - .5) * .25 * (i + 1) / 2) * w;
+              var y = (b[1] + Math.cos(t * .25 + i) * .1 - shader.sc * .45 + (.5 - shader.my) * .2) * h;
+              var rad = Math.max(w, h) * (.38 + .08 * Math.sin(t * .5 + i));
+              var g = ctx.createRadialGradient(x, y, 0, x, y, rad);
+              g.addColorStop(0, "rgba(" + b[2] + ",.32)"); g.addColorStop(1, "rgba(" + b[2] + ",0)");
+              ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
+            });
+          };
+          var loop = function (now) { if (!shader.visible || doc.hidden) { shader.running = false; return; } draw(now); requestAnimationFrame(loop); };
+          shader.start = function () { if (reduce) { draw(shader.t0 + 4000); return; } if (!shader.running) { shader.running = true; requestAnimationFrame(loop); } };
+          shader.resize = function () { size(); if (reduce || !shader.running) draw(shader.t0 + 4000); };
+          size(); shader.start(); cv.classList.add("is-live");
+          doc.addEventListener("visibilitychange", function () { if (!doc.hidden && shader.visible) shader.start(); });
+        })();
+        if (!reduce) {
+          hero.addEventListener("pointermove", function (e) { var b = hero.getBoundingClientRect(); shader.tx = (e.clientX - b.left) / b.width; shader.ty = 1 - (e.clientY - b.top) / b.height; }, { passive: true });
+          W.addEventListener("scroll", function () { shader.ts = clamp(W.scrollY / (hero.offsetHeight || 1), 0, 1); }, { passive: true });
+        }
 
-    <section id="experience" class="section wrap" aria-labelledby="exp-heading">
-      <div class="section-head">
-        <p class="section-kicker">Experience</p>
-        <h2 id="exp-heading">经历</h2>
-        <p class="section-desc">完整职业轨迹（由近及远）。</p>
-      </div>
-      <ol class="timeline">
-        <li class="timeline-item">
-          <div class="timeline-when">2025.03 — 至今</div>
-          <div class="timeline-body">
-            <h3>品牌视觉架构师</h3>
-            <p class="timeline-org">独立执业 / 设计印刷落地</p>
-            <p>全案品牌视觉与餐饮、消费品牌项目；策略定位、超级符号与应用延展。</p>
-          </div>
-        </li>
-        <li class="timeline-item">
-          <div class="timeline-when">2021.04 — 2025.03</div>
-          <div class="timeline-body">
-            <h3>主管设计师</h3>
-            <p class="timeline-org">上海聿言室内设计工程有限公司</p>
-          </div>
-        </li>
-        <li class="timeline-item">
-          <div class="timeline-when">2017.05 — 2021.03</div>
-          <div class="timeline-body">
-            <h3>平面设计师</h3>
-            <p class="timeline-org">上海华墨展览服务有限公司</p>
-          </div>
-        </li>
-        <li class="timeline-item">
-          <div class="timeline-when">2016.03 — 2017.04</div>
-          <div class="timeline-body">
-            <h3>平面设计</h3>
-            <p class="timeline-org">河南红马广告有限公司</p>
-          </div>
-        </li>
-        <li class="timeline-item">
-          <div class="timeline-when">2015.07 — 2016.03</div>
-          <div class="timeline-body">
-            <h3>平面设计专员</h3>
-            <p class="timeline-org">河南中美有机农业有限公司</p>
-          </div>
-        </li>
-      </ol>
-    </section>
+        /* pinned horizontal gallery: measure once per resize, write transform only */
+        var hs = $("#x-hs"), pin = $("#x-pin"), track = $("#x-track"), prog = $("#x-prog"), countEl = $("#x-count"), hsNum = $("#x-hs-num");
+        var cards = $$(".x-card"), wide = W.matchMedia("(min-width: 800px) and (min-height: 560px)");
+        var G = { on: false, dist: 0, top: 0, cur: 0, target: 0, raf: 0, idx: -1, offs: [] };
+        function measureHs() {
+          G.on = wide.matches && !reduce;
+          hs.classList.toggle("x-hs--native", !G.on);
+          track.style.transform = "";
+          G.pad = cards[0].offsetLeft;
+          if (!G.on) { hs.style.height = ""; return; }
+          G.dist = Math.max(0, track.scrollWidth - root.clientWidth);
+          hs.style.height = (G.dist + W.innerHeight) + "px";
+          G.top = hs.getBoundingClientRect().top + W.scrollY;
+          G.offs = cards.map(function (c) { return c.offsetLeft; });
+          G.pad = cards[0].offsetLeft;
+        }
+        function renderHs() {
+          G.raf = 0;
+          G.cur += (G.target - G.cur) * (reduce ? 1 : .16);
+          if (Math.abs(G.target - G.cur) < .4) G.cur = G.target;
+          var skew = clamp((G.cur - G.target) * .012, -7, 7);
+          track.style.transform = "translate3d(" + (-G.cur).toFixed(1) + "px,0,0) skewX(" + skew.toFixed(2) + "deg)";
+          var q = G.dist ? G.cur / G.dist : 0;
+          prog.style.transform = "scaleX(" + q.toFixed(4) + ")";
+          hsNum.style.setProperty("--p", q.toFixed(4));
+          var i = 0; for (var k = 0; k < G.offs.length; k++) if (G.offs[k] - G.pad <= G.cur + root.clientWidth * .35) i = k;
+          if (i !== G.idx) { G.idx = i; countEl.textContent = "0" + (i + 1) + " / 0" + cards.length; }
+          if (G.cur !== G.target) G.raf = requestAnimationFrame(renderHs);
+        }
+        function onScroll() {
+          if (!G.on) return;
+          G.target = clamp(W.scrollY - G.top, 0, G.dist);
+          if (!G.raf) G.raf = requestAnimationFrame(renderHs);
+        }
+        W.addEventListener("scroll", onScroll, { passive: true });
+        function relayout() { layout(); measureHs(); if (shader.resize) shader.resize(); onScroll(); }
+        var rT; W.addEventListener("resize", function () { clearTimeout(rT); rT = setTimeout(relayout, 120); });
+        W.addEventListener("load", relayout);
+        if (doc.fonts && doc.fonts.ready) doc.fonts.ready.then(relayout);
+        measureHs(); onScroll();
 
-    <section id="contact" class="section wrap contact" aria-labelledby="contact-heading">
-      <div class="section-head">
-        <p class="section-kicker">Contact</p>
-        <h2 id="contact-heading">联系</h2>
-        <p class="section-desc">面向招聘与 HR：意向沟通、面试约谈，欢迎邮件或电话。</p>
-      </div>
-      <p class="contact-intro">
-        可邮件说明岗位与期望沟通时间；作品页链接可直接转发作参考。
-      </p>
-      <ul class="contact-list">
-        <li>
-          <span class="contact-label">邮箱</span>
-          <a href="mailto:shiqiangqiang96@163.com">shiqiangqiang96@163.com</a>
-        </li>
-        <li>
-          <span class="contact-label">电话</span>
-          <a href="tel:+8617621419257">176 2141 9257</a>
-        </li>
-      </ul>
-      <p class="contact-cta-row">
-        <a class="btn btn-primary" href="mailto:shiqiangqiang96@163.com?subject=招聘沟通-石强强">发送邮件</a>
-        <a class="btn btn-ghost" href="#works">再看作品</a>
-      </p>
-    </section>
-  </main>
+        /* index rows jump to their card in the gallery */
+        $$(".x-row__in[href^='#w']").forEach(function (a) {
+          a.addEventListener("click", function (e) {
+            var card = doc.getElementById(a.getAttribute("href").slice(1)); if (!card) return;
+            e.preventDefault();
+            var beh = reduce ? "auto" : "smooth";
+            if (G.on) W.scrollTo({ top: G.top + clamp(card.offsetLeft - G.pad, 0, G.dist), behavior: beh });
+            else { W.scrollTo({ top: hs.getBoundingClientRect().top + W.scrollY - 80, behavior: beh }); pin.scrollTo({ left: card.offsetLeft - G.pad, behavior: beh }); }
+          });
+        });
 
-  <footer class="site-footer">
-    <div class="wrap footer-inner">
-      <p>© <span id="year"></span> 阿志 · 石强强</p>
-      <nav class="face-switch" aria-label="站点版本切换">
-        <a href="index.html">合作版</a>
-        <span class="face-switch-sep" aria-hidden="true">/</span>
-        <span class="face-switch-current" aria-current="page">求职版</span>
-      </nav>
-      <p class="footer-motif" aria-hidden="true">+ − × ÷ = ∞</p>
-    </div>
-  </footer>
+        /* pointer: custom cursor + index reveal, one spring loop that stops when settled */
+        if (fine) {
+          var cur = $("#x-cursor"), ring = $("#x-ring"), ringT = $("#x-ring-t");
+          var P = { x: -100, y: -100, rx: -100, ry: -100, vx: 0, vy: 0, px: -100, py: -100, pvx: 0, pvy: 0, raf: 0, row: null, seen: false };
+          root.classList.add("has-cursor"); site.classList.add("has-reveal");
+          var stiff = .2, damp = .62;
+          var tick = function () {
+            P.raf = 0;
+            if (reduce) { P.rx = P.x; P.ry = P.y; P.px = P.x; P.py = P.y; }
+            else {
+              P.vx = (P.vx + (P.x - P.rx) * stiff) * damp; P.vy = (P.vy + (P.y - P.ry) * stiff) * damp; P.rx += P.vx; P.ry += P.vy;
+              P.pvx = (P.pvx + (P.x - P.px) * .09) * .72; P.pvy = (P.pvy + (P.y - P.py) * .09) * .72; P.px += P.pvx; P.py += P.pvy;
+            }
+            ring.style.transform = "translate3d(" + P.rx.toFixed(1) + "px," + P.ry.toFixed(1) + "px,0)";
+            if (P.row) {
+              var pv = P.row.querySelector(".x-row__pv");
+              if (pv) {
+                var w = pv.offsetWidth || 360, hgt = w * 9 / 16;
+                var x = clamp(P.px + 28, 8, W.innerWidth - w - 8), y = clamp(P.py - hgt / 2, 8, W.innerHeight - hgt - 8);
+                pv.style.transform = "translate3d(" + x.toFixed(1) + "px," + y.toFixed(1) + "px,0) rotate(" + clamp(P.pvx * .25, -6, 6).toFixed(2) + "deg)";
+              }
+            }
+            var moving = Math.abs(P.x - P.rx) + Math.abs(P.y - P.ry) + Math.abs(P.x - P.px) + Math.abs(P.y - P.py) > .5;
+            if (moving && !reduce) P.raf = requestAnimationFrame(tick);
+          };
+          var kick = function () { if (!P.raf) P.raf = requestAnimationFrame(tick); };
+          doc.addEventListener("pointermove", function (e) {
+            if (e.pointerType !== "mouse") return;
+            P.x = e.clientX; P.y = e.clientY;
+            if (!P.seen) { P.seen = true; P.rx = P.px = P.x; P.ry = P.py = P.y; }
+            cur.style.transform = "translate3d(" + P.x + "px," + P.y + "px,0)";
+            cur.classList.remove("is-gone"); ring.classList.remove("is-gone");
+            kick();
+          }, { passive: true });
+          doc.addEventListener("pointerover", function (e) {
+            var t = e.target.closest ? e.target : e.target.parentElement;
+            if (!t) return;
+            var media = t.closest(".x-card__media"), trk = t.closest("#x-track"), link = t.closest("a, button");
+            var mail = t.closest("a[href^='mailto:']"), copy = t.closest("[data-copy]");
+            var label = media ? "VIEW" : trk ? "DRAG" : copy ? "COPY" : mail ? "MAIL" : "";
+            ring.classList.toggle("is-label", !!label);
+            if (label) ringT.textContent = label;
+            ring.classList.toggle("is-link", !!link && !label);
+          });
+          root.addEventListener("pointerleave", function () { cur.classList.add("is-gone"); ring.classList.add("is-gone"); });
+          $$(".x-row").forEach(function (row) {
+            row.addEventListener("pointerenter", function () { P.row = row; row.classList.add("is-on"); kick(); });
+            row.addEventListener("pointerleave", function () { row.classList.remove("is-on"); if (P.row === row) P.row = null; });
+          });
+          /* keyboard focus shows the preview beside the row, no pointer needed */
+          $$(".x-row__in[href]").forEach(function (a) {
+            a.addEventListener("focus", function () {
+              var row = a.parentNode, pv = row.querySelector(".x-row__pv"); if (!pv) return;
+              var b = row.getBoundingClientRect(), w = pv.offsetWidth, hgt = w * 9 / 16;
+              pv.style.transform = "translate3d(" + (W.innerWidth - w - 40) + "px," + clamp(b.top + b.height / 2 - hgt / 2, 8, W.innerHeight - hgt - 8) + "px,0)";
+            });
+          });
+          W.addEventListener("scroll", function () { if (P.row) kick(); }, { passive: true });
+        }
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
+        /* masked reveals: words of display headings, lines of the lead */
+        $$(".x-h2").forEach(function (h) {
+          var words = h.textContent.trim().split(/\s+/); h.textContent = "";
+          words.forEach(function (w, i) {
+            var m = doc.createElement("span"), s = doc.createElement("span");
+            m.className = "x-mk"; s.textContent = w; s.style.setProperty("--k", i); m.appendChild(s); h.appendChild(m);
+            if (i < words.length - 1) h.appendChild(doc.createTextNode(" "));
+          });
+        });
+        $$(".x-lines").forEach(function (p) {
+          var text = p.textContent;
+          if (reduce || !("IntersectionObserver" in W)) { p.classList.add("is-split", "is-in"); return; }
+          var o = new IntersectionObserver(function (es) {
+            if (!es[0].isIntersecting) return; o.disconnect();
+            p.textContent = "";
+            var spans = Array.prototype.map.call(text, function (ch) { var s = doc.createElement("span"); s.textContent = ch; p.appendChild(s); return s; });
+            var lines = [], top = null;
+            spans.forEach(function (s) { var t = s.offsetTop; if (top === null || Math.abs(t - top) > 4) { lines.push(""); top = t; } lines[lines.length - 1] += s.textContent; });
+            p.textContent = "";
+            lines.forEach(function (l, i) {
+              var m = doc.createElement("span"), s = doc.createElement("span");
+              m.className = "x-mk x-mk--line"; s.textContent = l; s.style.setProperty("--k", i); m.appendChild(s); p.appendChild(m);
+            });
+            p.classList.add("is-split");
+            requestAnimationFrame(function () { requestAnimationFrame(function () { p.classList.add("is-in"); }); });
+            setTimeout(function () { p.textContent = text; }, 1300 + lines.length * 90);
+          }, { threshold: .3 });
+          o.observe(p);
+        });
+
+        /* magnetic buttons */
+        if (fine && !reduce) $$(".x-btn, .x-bar__cta, .x-case__btn").forEach(function (b) {
+          var tx = 0, ty = 0; b.classList.add("x-mag");
+          b.addEventListener("pointermove", function (e) {
+            var r = b.getBoundingClientRect();
+            tx = (e.clientX - (r.left - tx + r.width / 2)) * .3; ty = (e.clientY - (r.top - ty + r.height / 2)) * .4;
+            b.classList.add("is-mag"); b.style.translate = tx.toFixed(1) + "px " + ty.toFixed(1) + "px";
+          });
+          b.addEventListener("pointerleave", function () { tx = ty = 0; b.classList.remove("is-mag"); b.style.translate = ""; });
+        });
+
+        /* drag to scroll the gallery (mouse; touch already swipes natively) */
+        var D = { on: false, moved: false, x: 0, s: 0 };
+        track.addEventListener("pointerdown", function (e) {
+          if (e.pointerType !== "mouse" || e.button !== 0) return;
+          e.preventDefault(); D.on = true; D.moved = false; D.x = e.clientX; D.s = G.on ? W.scrollY : pin.scrollLeft;
+        });
+        W.addEventListener("pointermove", function (e) {
+          if (!D.on) return;
+          var dx = e.clientX - D.x;
+          if (!D.moved && Math.abs(dx) > 6) { D.moved = true; hs.classList.add("is-drag"); root.style.scrollBehavior = "auto"; pin.style.scrollSnapType = "none"; }
+          if (!D.moved) return;
+          if (G.on) W.scrollTo(0, D.s - dx * 1.4); else pin.scrollLeft = D.s - dx;
+        }, { passive: true });
+        W.addEventListener("pointerup", function () {
+          if (!D.on) return; D.on = false; hs.classList.remove("is-drag"); root.style.scrollBehavior = ""; pin.style.scrollSnapType = "";
+          if (D.moved) setTimeout(function () { D.moved = false; }, 0);
+        });
+        track.addEventListener("click", function (e) { if (D.moved) { e.preventDefault(); e.stopPropagation(); } }, true);
+
+        /* RGB split + ripple on work images, one shared SVG filter, only while hovered */
+        if (fine && !reduce) {
+          var fN = $("#x-rgb-n"), fD = $("#x-rgb-d"), fR = $("#x-rgb-r"), fB = $("#x-rgb-b");
+          var R = { el: null, a: 0, to: 0, raf: 0, lx: 0, v: 0 };
+          var rgbTick = function (now) {
+            R.raf = 0; R.a += (R.to - R.a) * .08; R.v *= .9;
+            var t = now / 1000, sh = R.a * 5 + Math.min(R.v * .15, 8);
+            fN.setAttribute("baseFrequency", (.006 + .004 * Math.sin(t * 1.3)).toFixed(4) + " " + (.02 + .012 * Math.cos(t * .9)).toFixed(4));
+            fD.setAttribute("scale", (R.a * 24 + Math.min(R.v, 40)).toFixed(1));
+            fR.setAttribute("dx", sh.toFixed(1)); fB.setAttribute("dx", (-sh).toFixed(1));
+            if (R.to === 0 && R.a < .01 && R.v < .5) { if (R.el) R.el.style.filter = ""; R.el = null; return; }
+            R.raf = requestAnimationFrame(rgbTick);
+          };
+          $$(".x-card__media").forEach(function (m) {
+            var im = m.querySelector("img");
+            m.addEventListener("pointerenter", function (e) {
+              if (e.pointerType !== "mouse") return;
+              if (R.el && R.el !== im) R.el.style.filter = "";
+              R.el = im; im.style.filter = "url(#x-rgb)"; R.a = Math.max(R.a, .9); R.to = .15; R.lx = e.clientX;
+              if (!R.raf) R.raf = requestAnimationFrame(rgbTick);
+            });
+            m.addEventListener("pointermove", function (e) { R.v = Math.min(60, R.v + Math.abs(e.clientX - R.lx) * .5); R.lx = e.clientX; });
+            m.addEventListener("pointerleave", function () { R.to = 0; });
+          });
+        }
+
+        /* fullscreen case overlay with next / prev */
+        var cs = $("#x-case"), csStage = $("#x-case-stage"), csT = $("#x-case-t"), csD = $("#x-case-d"), csN = $("#x-case-n");
+        var csX = $("#x-case-x"), csP = $("#x-case-prev"), csNx = $("#x-case-next"), csBtns = [csX, csP, csNx];
+        var C = { i: 0, open: false, opener: null, hideT: 0, sx: null };
+        function fillCase(i, dir) {
+          C.i = (i + cards.length) % cards.length;
+          var c = cards[C.i];
+          csStage.textContent = "";
+          if (dir && !reduce) csStage.classList.add(dir > 0 ? "is-in-r" : "is-in-l");
+          [].forEach.call(c.querySelectorAll(".x-card__media img"), function (im) {
+            var k = im.cloneNode(true); k.removeAttribute("loading"); k.style.filter = ""; csStage.appendChild(k);
+          });
+          csT.innerHTML = c.querySelector("h3").innerHTML;
+          csD.textContent = c.querySelector(".x-card__meta p").textContent;
+          csN.textContent = "0" + (C.i + 1) + " / 0" + cards.length;
+          if (dir) { void csStage.offsetWidth; csStage.classList.remove("is-in-r", "is-in-l"); }
+        }
+        function openCase(i, opener) {
+          clearTimeout(C.hideT); C.opener = opener || null;
+          fillCase(i, 0); cs.hidden = false; void cs.offsetWidth;
+          cs.classList.add("is-open"); root.style.overflow = "hidden"; C.open = true;
+          csX.focus({ preventScroll: true });
+        }
+        function closeCase() {
+          if (!C.open) return; C.open = false;
+          cs.classList.remove("is-open"); root.style.overflow = "";
+          C.hideT = setTimeout(function () { cs.hidden = true; }, reduce ? 0 : 720);
+          if (G.on) { root.style.scrollBehavior = "auto"; W.scrollTo(0, G.top + clamp(cards[C.i].offsetLeft - G.pad, 0, G.dist)); root.style.scrollBehavior = ""; }
+          else pin.scrollLeft = cards[C.i].offsetLeft - (G.pad || 0);
+          var back = cards[C.i].querySelector(".x-card__media");
+          if (back) back.focus({ preventScroll: true });
+        }
+        cards.forEach(function (c, i) {
+          var m = c.querySelector(".x-card__media"), name = c.querySelector("h3").firstChild.textContent.trim();
+          m.setAttribute("tabindex", "0"); m.setAttribute("role", "button"); m.setAttribute("aria-label", "查看案例：" + name);
+          m.addEventListener("click", function () { openCase(i, m); });
+          m.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openCase(i, m); } });
+        });
+        csX.addEventListener("click", closeCase);
+        csP.addEventListener("click", function () { fillCase(C.i - 1, -1); });
+        csNx.addEventListener("click", function () { fillCase(C.i + 1, 1); });
+        doc.addEventListener("keydown", function (e) {
+          if (!C.open) return;
+          if (e.key === "Escape") { e.preventDefault(); closeCase(); }
+          else if (e.key === "ArrowRight") fillCase(C.i + 1, 1);
+          else if (e.key === "ArrowLeft") fillCase(C.i - 1, -1);
+          else if (e.key === "Tab") {
+            var k = csBtns.indexOf(doc.activeElement), nx = e.shiftKey ? (k <= 0 ? csBtns.length - 1 : k - 1) : (k === -1 || k === csBtns.length - 1 ? 0 : k + 1);
+            e.preventDefault(); csBtns[nx].focus();
+          }
+        });
+        csStage.addEventListener("pointerdown", function (e) { C.sx = e.clientX; });
+        csStage.addEventListener("pointerup", function (e) { if (C.sx === null) return; var dx = e.clientX - C.sx; C.sx = null; if (Math.abs(dx) > 50) fillCase(C.i + (dx < 0 ? 1 : -1), dx < 0 ? 1 : -1); });
+
+        /* copy email + toast */
+        var toast = $("#x-toast"), toastT = 0;
+        function showToast(msg) { toast.textContent = msg; toast.classList.add("is-on"); clearTimeout(toastT); toastT = setTimeout(function () { toast.classList.remove("is-on"); }, 2400); }
+        $$("[data-copy]").forEach(function (b) {
+          b.addEventListener("click", function () {
+            var v = b.getAttribute("data-copy");
+            var ok = function () { showToast("邮箱已复制：" + v); };
+            var legacy = function () {
+              var ta = doc.createElement("textarea"), r = false;
+              ta.value = v; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.top = "0"; ta.style.opacity = "0";
+              doc.body.appendChild(ta); ta.select();
+              try { r = doc.execCommand("copy"); } catch (err) { r = false; }
+              doc.body.removeChild(ta);
+              if (r) ok(); else showToast("请手动复制：" + v);
+            };
+            if (navigator.clipboard && W.isSecureContext) navigator.clipboard.writeText(v).then(ok, legacy); else legacy();
+          });
+        });
+
+        /* LET'S WORK: letters stretch as the section scrolls in, and bulge around the pointer */
+        var stWrap = doc.createElement("span"), stL = [], contactSec = $("#contact");
+        stWrap.className = "x-st-w";
+        if (big.firstChild && big.firstChild.nodeType === 3) {
+          Array.prototype.forEach.call(big.firstChild.textContent, function (ch) {
+            var s = doc.createElement("span"); s.className = "x-st"; s.textContent = ch === " " ? "\u00a0" : ch; stWrap.appendChild(s); stL.push(s);
+          });
+          big.replaceChild(stWrap, big.firstChild);
+          big.setAttribute("aria-label", "Let's work，发邮件给石强强");
+        }
+        var ST = { px: null, S: stL.map(function () { return .4; }) };
+        if (fine) {
+          big.addEventListener("pointermove", function (e) { ST.px = e.clientX; });
+          big.addEventListener("pointerleave", function () { ST.px = null; });
+        }
+
+        /* one loop: scroll velocity drives the marquee and the stretch; section numerals scrub */
+        var numSecs = $$(".x-numsec"), mqEl = $("#x-marquees"), mqT = $$(".x-marquee__track");
+        if (reduce) numSecs.forEach(function (s) { s.style.setProperty("--p", 1); });
+        else {
+          mqEl.classList.add("is-js");
+          var V = { y: W.scrollY, v: 0, dir: 1, last: 0, pos: [0, 0], first: true };
+          (function frame(now) {
+            var dt = Math.min(50, V.last ? now - V.last : 16); V.last = now;
+            var y = W.scrollY, dy = y - V.y; V.y = y;
+            V.v += (dy - V.v) * .2;
+            if (Math.abs(V.v) > 1) V.dir = V.v > 0 ? 1 : -1;
+            var vh = W.innerHeight;
+            if (!mqEl.classList.contains("is-paused")) {
+              var sp = (.06 + Math.min(Math.abs(V.v), 80) * .012) * dt;
+              mqT.forEach(function (t, i) {
+                var half = t.scrollWidth / 2 || 1;
+                V.pos[i] = (((V.pos[i] + V.dir * (i ? -.8 : 1) * sp) % half) + half) % half;
+                t.style.transform = "translate3d(" + (-V.pos[i]).toFixed(1) + "px,0,0)";
+              });
+            }
+            if (dy || V.first) {
+              numSecs.forEach(function (s) {
+                var r = s.getBoundingClientRect(); if (r.bottom < -vh || r.top > vh * 2) return;
+                s.style.setProperty("--p", clamp((vh * .8 - r.top) / (r.height || 1), 0, 1).toFixed(3));
+              });
+            }
+            if (stL.length) {
+              var cr = contactSec.getBoundingClientRect();
+              if (cr.top < vh && cr.bottom > 0 || V.first) {
+                var base = (1 - clamp((vh - cr.top) / (vh * .55), 0, 1)) * .4, fs = parseFloat(big.style.fontSize) || 100;
+                var cx = ST.px === null ? null : stL.map(function (s) { var b = s.getBoundingClientRect(); return b.left + b.width / 2; });
+                stL.forEach(function (s, i) {
+                  var to = base + (cx ? .5 * Math.exp(-Math.pow((cx[i] - ST.px) / (fs * .7), 2)) : 0);
+                  var nv = ST.S[i] + (to - ST.S[i]) * .14;
+                  if (Math.abs(nv - ST.S[i]) > .001 || V.first) { ST.S[i] = nv; s.style.transform = "scaleY(" + (1 + nv).toFixed(3) + ")"; }
+                });
+              }
+            }
+            V.first = false;
+            requestAnimationFrame(frame);
+          })(performance.now());
+        }
+
+        /* visibility: reveals, glitch once, counters, pausing loops, nav state */
+        if (!("IntersectionObserver" in W)) { $$(".x-rv, .x-fade, .x-h2").forEach(function (el) { el.classList.add("is-in"); }); return; }
+        var io = new IntersectionObserver(function (es) {
+          es.forEach(function (e) {
+            if (!e.isIntersecting) return;
+            var el = e.target; io.unobserve(el);
+            if (el.classList.contains("x-glitch") && !reduce) { el.classList.add("is-glitch"); setTimeout(function () { el.classList.remove("is-glitch"); }, 450); }
+            el.classList.add("is-in");
+          });
+        }, { threshold: .15, rootMargin: "0px 0px -6% 0px" });
+        $$(".x-rv, .x-fade, .x-h2.x-glitch, .x-big").forEach(function (el) { io.observe(el); });
+
+        var counts = $("#x-counts");
+        if (!reduce) {
+          $$("[data-count]").forEach(function (el) { el.textContent = "0"; });
+          new IntersectionObserver(function (es, o) {
+            if (!es[0].isIntersecting) return; o.disconnect();
+            $$("[data-count]").forEach(function (el, j) {
+              var to = +el.getAttribute("data-count"), start = performance.now() + j * 90;
+              (function step(now) { var k = clamp((now - start) / 1300, 0, 1); el.textContent = Math.round(to * (1 - Math.pow(1 - k, 4))); if (k < 1) requestAnimationFrame(step); })(start);
+            });
+          }, { threshold: .4 }).observe(counts);
+        }
+
+        new IntersectionObserver(function (es) {
+          es.forEach(function (e) {
+            e.target.classList.toggle("is-paused", !e.isIntersecting);
+            if (e.target === hero) { shader.visible = e.isIntersecting; if (e.isIntersecting && shader.start) shader.start(); }
+          });
+        }).observe(hero);
+        var mq = $("#x-marquees");
+        new IntersectionObserver(function (es) { mq.classList.toggle("is-paused", !es[0].isIntersecting); }).observe(mq);
+
+        var cardIO = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("is-near"); cardIO.unobserve(e.target); } }); }, { root: null, rootMargin: "0px 10% 0px 10%" });
+        cards.forEach(function (c) { cardIO.observe(c); });
+
+        var navLinks = $$(".x-bar nav a");
+        var navIO = new IntersectionObserver(function (es) {
+          es.forEach(function (e) {
+            if (!e.isIntersecting) return;
+            navLinks.forEach(function (a) { if (a.getAttribute("href") === "#" + e.target.id) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current"); });
+          });
+        }, { rootMargin: "-45% 0px -50% 0px" });
+        ["works", "index", "about", "exp", "contact"].forEach(function (id) { var s = doc.getElementById(id); if (s) navIO.observe(s); });
+      })();
+    </script>
+  </body>
 </html>
