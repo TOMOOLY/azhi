@@ -8,21 +8,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&family=Figtree:wght@400;600&family=Noto+Sans+SC:wght@400;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;900&family=Figtree:wght@400;600&family=Noto+Sans+SC:wght@400;900&display=swap"
     />
     <link rel="stylesheet" href="home/hark.css" />
     <link rel="stylesheet" href="home/hark-hero.css" />
     <style>
       :root {
-        --x-bone: #f7f9fa; --x-ink: #1f3038; --x-dfg: #f7f9fa; --x-taupe: #b9c5cb; --x-taupe-t: #5d6b72;
-        --x-hl: #ecf0f2; --x-hld: #2a3e47; --x-blue: #0d7480; --x-accent-ink: #fff;
+        --x-bone: #f7f9fa; --x-hl: #ecf0f2; --x-ink: #1f3038; --x-taupe-t: #5d6b72; --x-blue: #0d7480;
+        --x-dfg: #f7f9fa; --x-taupe: #b9c5cb; --x-cyan: #5fc2cc; --x-hld: #2a3e47; --x-accent-ink: #fff;
         --x-g: clamp(16px, 4vw, 48px);
         --x-r: 6px;
         --x-serif: "League Spartan", "Noto Sans SC", "PingFang SC", sans-serif;
-        --x-it: "Figtree", "Noto Sans SC", "PingFang SC", sans-serif;
-        --x-lab: "Figtree", "Noto Sans SC", "PingFang SC", sans-serif;
         --x-sans: "Figtree", "Noto Sans SC", "PingFang SC", system-ui, sans-serif;
-        --x-t1: 13px; --x-t2: 17px; --x-t3: 22px; --x-t4: clamp(32px, 4.5vw, 64px); --x-t5: clamp(56px, 10vw, 160px);
+        --x-t1: 13px; --x-t2: 17px; --x-t3: 21px; --x-t35: 27px; --x-t4: clamp(32px, 4.5vw, 52px);
         --x-spring: cubic-bezier(.2, 1.25, .3, 1);
         --x-ease: cubic-bezier(.7, 0, .2, 1);
       }
@@ -30,251 +28,149 @@
       .x-page { max-width: none; padding: 0; display: block; gap: 0; }
       .x-page img { display: block; max-width: 100%; }
       .x-page a { color: inherit; }
-      .x-lab { font: 500 12px/1.4 var(--x-lab); letter-spacing: .08em; text-transform: uppercase; font-variant-numeric: tabular-nums; }
-      .x-it { font-family: var(--x-it); font-style: italic; font-weight: 300; }
+      .x-page :focus-visible { outline: 2px solid var(--x-blue); outline-offset: 2px; border-radius: var(--x-r); }
+      .x-dark :focus-visible, .x-head.is-dark :focus-visible { outline-color: var(--x-cyan); }
+      .x-lab { font: 600 var(--x-t1)/1.4 var(--x-sans); letter-spacing: .06em; text-transform: uppercase; font-variant-numeric: tabular-nums; }
       .x-wrap { max-width: 1680px; margin: 0 auto; padding-inline: var(--x-g); position: relative; }
-      .x-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: clamp(12px, 1.6vw, 24px); }
-      .x-sec { position: relative; padding-block: clamp(80px, 12vw, 168px); padding-inline: clamp(16px, 4vw, 48px); }
+      .x-sec .x-wrap { padding-inline: 0; }
+      .x-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: clamp(16px, 2vw, 24px); }
+      .x-sec { position: relative; padding-block: clamp(64px, 10vw, 128px); padding-inline: var(--x-g); }
       .x-light { background: var(--x-bone); color: var(--x-ink); }
-      .x-dark { background: var(--x-ink); color: var(--x-dfg); padding-inline: clamp(16px, 4vw, 48px); }
-      .x-light { --x-taupe: #5d6b72; }
-      .x-dark { --x-taupe: #b9c5cb; --x-taupe-t: #b9c5cb; }
-      .x-sec > * { position: relative; z-index: 1; }
-      .x-h2 { font: 900 clamp(34px, 5vw, 76px)/1.12 var(--x-serif); margin: 0; letter-spacing: -.01em; }
-      .x-sechead { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; margin-bottom: clamp(40px, 6vw, 88px); }
-      .x-sechead .x-it { font-size: clamp(18px, 1.8vw, 24px); color: var(--x-taupe); }
-      .x-light .x-sechead .x-it { color: var(--x-taupe-t); }
-      .x-num { color: var(--x-blue); }
+      .x-surface { background: var(--x-hl); color: var(--x-ink); }
+      .x-dark { background: var(--x-ink); color: var(--x-dfg); }
+      .x-h2 { font: 900 var(--x-t4)/1.1 var(--x-serif); margin: 0; letter-spacing: 0; }
+      .x-sechead { grid-column: 1 / -1; margin-bottom: clamp(32px, 5vw, 56px); }
+      .x-sub { margin: 16px 0 0; max-width: 68ch; color: var(--x-taupe-t); }
 
       /* header */
-      .x-head { position: sticky; top: 0; z-index: 50; background: var(--x-bone); color: var(--x-ink); transition: background .4s, color .4s; }
+      .x-head { z-index: 50; background: var(--x-bone); color: var(--x-ink); }
       .x-head.is-dark { background: var(--x-ink); color: var(--x-dfg); }
       .x-head .x-wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 64px; }
-      .x-logo { font: 900 20px/1 var(--x-serif); text-decoration: none; white-space: nowrap; }
-      .x-logo sup { font: 500 10px var(--x-lab); }
-      .x-logo span { font: 600 13px var(--x-lab); letter-spacing: .14em; margin-left: 6px; }
-      .x-navl { display: flex; gap: clamp(16px, 2.4vw, 36px); list-style: none; margin: 0; padding: 0; }
-      .x-navl a { text-decoration: none; font: 500 15px/44px var(--x-sans); display: block; }
+      .x-logo { display: inline-flex; align-items: center; min-height: 44px; font: 900 var(--x-t3)/1.1 var(--x-serif); letter-spacing: 0; text-decoration: none; white-space: nowrap; }
+      .x-logo sup, .x-logo span { font: 600 var(--x-t1)/1.4 var(--x-sans); letter-spacing: .06em; }
+      .x-logo span { margin-left: 8px; }
+      .x-navl { display: flex; gap: clamp(16px, 2.4vw, 40px); list-style: none; margin: 0; padding: 0; }
+      .x-navl a { display: block; text-decoration: none; font: 400 var(--x-t2)/44px var(--x-sans); }
       .x-navl a:hover { color: var(--x-blue); }
+      .x-head.is-dark .x-navl a:hover { color: var(--x-cyan); }
       .x-open { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
-      .x-open i { width: 8px; height: 8px; border-radius: 50%; background: var(--x-blue); }
+      .x-open i { display: none; }
 
-      /* hero */
-      .x-hero { padding-block: clamp(40px, 6vw, 88px) clamp(56px, 7vw, 104px); }
-      .x-hero .x-grid { align-items: end; row-gap: 40px; }
-      .x-hero__copy { grid-column: 1 / 8; padding-bottom: 8px; }
-      .x-h1 { font: 900 clamp(46px, 7.4vw, 128px)/1.06 var(--x-serif); margin: 0 0 32px; letter-spacing: -.02em; }
-      .x-line { display: block; overflow: hidden; padding-bottom: .04em; }
-      .x-line > span { display: block; transform: translateY(105%); transition: transform 1.1s var(--x-spring); }
-      .is-in .x-line > span, .x-line.is-in > span { transform: none; }
-      .x-line:nth-child(2) > span { transition-delay: .08s; } .x-line:nth-child(3) > span { transition-delay: .16s; }
-      .x-hero__en { font-size: clamp(20px, 2vw, 30px); margin: 0 0 40px; color: var(--x-taupe-t); }
-      .x-ctas { display: flex; gap: 28px; align-items: center; flex-wrap: wrap; }
-      .x-btn { display: inline-flex; align-items: center; gap: 14px; min-height: 52px; padding: 0 26px; background: var(--x-ink); color: var(--x-bone) !important; text-decoration: none; font: 600 17px var(--x-sans); border-radius: 6px; transition: background .3s; }
-      .x-btn:hover { background: var(--x-blue); }
-      .x-btn b { font: 400 18px var(--x-lab); transition: transform .4s var(--x-spring); }
-      .x-btn:hover b { transform: translateX(4px); }
-      .x-dark .x-btn { background: var(--x-dfg); color: var(--x-ink) !important; }
-      .x-dark .x-btn:hover { background: var(--x-blue); color: #fff !important; }
-      .x-tlink { font: 500 15px var(--x-sans); text-underline-offset: 6px; text-decoration-thickness: 1px; }
-      .x-hero__stack { grid-column: 8 / 13; }
-      .x-stack { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: var(--x-hl); }
-      .x-stack.x-look img { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; opacity: 1; z-index: 0; }
-      .x-stack.x-look img.is-on { z-index: 1; }
-      .x-cap { display: flex; justify-content: space-between; gap: 16px; padding-top: 0; margin-top: 24px; }
-      .x-cap .x-num { min-width: 4.5em; }
-
-      /* marquee */
-      .x-marq { overflow-x: auto; overscroll-behavior-x: contain; background: var(--x-hl); padding: 22px clamp(16px, 4vw, 48px); scrollbar-width: thin; }
-      .x-marq__track { display: flex; width: max-content; }
-      .x-marq__track span[aria-hidden="true"] { display: none; }
-      .x-marq__track span { font: 700 clamp(26px, 3vw, 44px)/1 var(--x-serif); white-space: nowrap; padding-right: 48px; display: inline-flex; align-items: baseline; gap: 14px; }
-      .x-marq__track em { font: italic 300 .6em var(--x-it); color: var(--x-taupe-t); }
-
-
-      .x-look { display: block; overflow: hidden; cursor: none; background: var(--x-hld); padding: 0; border: 0; width: 100%; }
-      .x-light .x-look { background: var(--x-hl); }
+      /* image buttons (other creations) */
+      .x-look { display: block; width: 100%; padding: 0; border: 0; border-radius: var(--x-r); overflow: hidden; background: var(--x-hl); cursor: zoom-in; }
       .x-look img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; transition: transform 1.2s var(--x-ease); }
       .x-look:hover img { transform: scale(1.04); }
-      .x-rev { clip-path: inset(100% 0 0 0); transition: clip-path 1.3s var(--x-ease); }
-      .x-rev.is-in { clip-path: inset(0 0 0 0); }
+      @media (hover: hover) and (pointer: fine) { .x-look { cursor: none; } }
 
-      /* index table */
-      .x-table { width: 100%; border-collapse: collapse; grid-column: 1 / -1; font-variant-numeric: tabular-nums; }
-      .x-table th { text-align: left; font: 500 12px var(--x-lab); letter-spacing: .08em; text-transform: uppercase; color: var(--x-taupe-t); padding: 0 16px 14px 0; border-bottom: 1px solid var(--x-ink); }
-      .x-table td { padding: 20px 16px 20px 0; border-bottom: 1px solid var(--x-hl); vertical-align: baseline; transition: color .25s; }
-      .x-table tbody tr { cursor: pointer; transition: background .25s; }
-      .x-table tbody tr:hover, .x-table tbody tr:focus-visible { background: var(--x-blue); color: #fff; outline: none; }
-      .x-table tbody tr:hover td, .x-table tbody tr:focus-visible td { color: #fff; border-color: var(--x-blue); }
-      .x-table td:first-child { padding-left: 12px; font: 500 14px var(--x-lab); color: var(--x-blue); width: 4.5em; }
-      .x-table td.x-tb { font: 700 clamp(20px, 2vw, 28px)/1.3 var(--x-serif); }
-      .x-table td.x-tb em { font: italic 300 .62em var(--x-it); margin-left: 10px; opacity: .7; }
-      .x-table td.x-tm { font: 500 14px var(--x-lab); }
-      .x-table td.x-td { color: var(--x-taupe-t); font-size: 15px; }
-      .x-prev { position: fixed; left: 0; top: 0; width: 320px; aspect-ratio: 16 / 9; object-fit: cover; pointer-events: none; z-index: 60; display: none; transform: translate(-50%, -50%) scale(.9); transition: opacity .25s, transform .4s var(--x-spring); }
-      .x-prev.is-on { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+      /* index: project rows, thumbnails reuse the #work strip */
+      .x-rows { grid-column: 1 / -1; list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+      .x-row { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); column-gap: clamp(16px, 2vw, 24px); align-items: center; background: var(--x-bone); border-radius: var(--x-r); padding: 24px; }
+      .x-row h3 { font: 900 var(--x-t3)/1.25 var(--x-serif); margin: 0; letter-spacing: 0; }
+      .x-row h3 span { display: block; margin-top: 4px; font: 400 var(--x-t1)/1.4 var(--x-sans); color: var(--x-taupe-t); }
+      .x-row p { margin: 8px 0 0; max-width: 40ch; font-size: 16px; color: var(--x-taupe-t); }
+      .x-row .x-strip__row { margin-right: 0; }
+      .x-page .x-row .x-strip__img img { height: 120px; }
 
-      /* archive */
-      .x-chips { display: flex; gap: 8px; flex-wrap: wrap; }
-      .x-chip { font: 500 14px var(--x-sans); min-height: 44px; padding: 0 18px; border-radius: 6px; border: 0; background: var(--x-hld); color: var(--x-dfg); cursor: pointer; transition: background .25s, color .25s, border-color .25s; }
-      .x-chip:hover { border-color: var(--x-dfg); }
-      .x-chip.is-on { background: var(--x-dfg); color: var(--x-ink); border-color: var(--x-dfg); }
-      .x-chip sup { font: 600 13px var(--x-lab); margin-left: 4px; }
-      .x-mas { columns: 3 300px; column-gap: clamp(12px, 1.6vw, 20px); }
-      .x-mas .x-w { break-inside: avoid; margin-bottom: clamp(12px, 1.6vw, 20px); position: relative; }
-      .x-mas .x-w:nth-child(5n+2) img { aspect-ratio: 4 / 5; }
-      .x-mas .x-w:nth-child(7n+4) img { aspect-ratio: 1 / 1; }
-      .x-mas .x-w.is-hid { display: none; }
-      .x-w__cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 14px 12px; display: flex; justify-content: space-between; gap: 10px; color: #fff; background: rgba(31, 48, 56, .72); opacity: 0; transform: translateY(8px); transition: opacity .3s, transform .4s var(--x-spring); text-align: left; }
-      .x-w__cap b { font: 700 16px var(--x-serif); }
-      .x-w:hover .x-w__cap, .x-w:focus-visible .x-w__cap { opacity: 1; transform: none; }
+      /* archive: brand · category · year */
+      .x-arch { grid-column: 1 / 10; }
+      .x-arch table { font: 400 16px/1.5 var(--x-sans); }
+      .x-arch th, .x-arch td { border: 0; padding: 8px 16px; vertical-align: middle; }
+      .x-arch thead th { font: 600 var(--x-t1)/1.4 var(--x-sans); letter-spacing: .06em; color: var(--x-taupe-t); padding-block: 0 8px; }
+      .x-arch tbody th { font-weight: 400; }
+      .x-arch tbody tr:nth-child(odd) > * { background: var(--x-hl); }
+      .x-arch tbody tr > :first-child { border-radius: var(--x-r) 0 0 var(--x-r); }
+      .x-arch tbody tr > :last-child { border-radius: 0 var(--x-r) var(--x-r) 0; }
+      .x-arch td:last-child, .x-arch th:last-child { width: 5em; text-align: right; font-variant-numeric: tabular-nums; }
+      .x-arch td { color: var(--x-taupe-t); }
+      .x-arch button { display: inline-flex; flex-wrap: wrap; align-items: baseline; column-gap: 8px; min-height: 44px; padding: 10px 0; border: 0; background: none; font: 600 var(--x-t2)/1.3 var(--x-sans); color: var(--x-ink); text-align: left; cursor: pointer; text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 4px; }
+      .x-arch button:hover { color: var(--x-blue); text-decoration-color: currentColor; }
+      .x-arch button small { display: inline; margin: 0; font: 400 var(--x-t1)/1.4 var(--x-sans); color: var(--x-taupe-t); }
 
-      /* band */
-      .x-band { background: var(--x-blue); color: #fff; padding-block: clamp(96px, 14vw, 200px); padding-inline: clamp(16px, 4vw, 48px); }
-      .x-band p { font: 900 clamp(36px, 6.2vw, 104px)/1.18 var(--x-serif); margin: 0; grid-column: 1 / -1; letter-spacing: -.01em; }
-      .x-band .x-lab { font-size: 13px; margin-top: 40px; display: block; }
+      /* credo */
+      .x-credo__t { grid-column: 1 / -1; margin: 0; max-width: 16em; font: 900 clamp(32px, 5vw, 64px)/1.2 var(--x-serif); letter-spacing: 0; }
+      .x-credo .x-lab { grid-column: 1 / -1; margin-top: 24px; color: var(--x-taupe-t); }
 
-      /* salon */
-      .x-salon { row-gap: clamp(40px, 6vw, 96px); align-items: start; }
-      .x-salon figure { margin: 0; }
-      .x-salon figcaption { display: grid; grid-template-columns: auto 1fr; gap: 4px 16px; padding-top: 14px; }
-      .x-salon figcaption b { font: 700 20px var(--x-serif); }
-      .x-salon figcaption .x-it { color: var(--x-taupe); font-size: 17px; align-self: center; }
-      .x-salon figcaption .x-lab { grid-column: 1 / -1; color: var(--x-taupe); }
-      .x-s1 { grid-column: 1 / 8; } .x-s2 { grid-column: 9 / 13; margin-top: 18vh !important; }
-      .x-s3 { grid-column: 2 / 6; } .x-s4 { grid-column: 7 / 13; margin-top: -8vh !important; }
-      .x-s2 img, .x-s3 img { aspect-ratio: 4 / 5; }
+      /* other creations */
+      .x-other { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px clamp(16px, 2vw, 24px); }
+      .x-other figure { margin: 0; }
+      .x-other figcaption { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 8px; margin-top: 16px; }
+      .x-other figcaption b { font: 900 var(--x-t3)/1.25 var(--x-serif); }
+      .x-other figcaption span, .x-other figcaption small { color: var(--x-taupe-t); font-size: 16px; }
+      .x-other figcaption small { flex-basis: 100%; margin-top: 4px; font-size: 15px; }
 
       /* method */
-      .x-steps { grid-column: 1 / -1; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: clamp(12px, 1.6vw, 24px); }
-      .x-steps li { background: var(--x-hl); padding: 24px; }
-      .x-steps li:nth-child(2) { margin-top: 64px; } .x-steps li:nth-child(3) { margin-top: 128px; } .x-steps li:nth-child(4) { margin-top: 192px; }
-      .x-steps b { display: block; font: 400 clamp(56px, 6vw, 96px)/1 var(--x-lab); color: var(--x-blue); font-variant-numeric: tabular-nums; letter-spacing: -.04em; margin-bottom: 28px; }
-      .x-steps h3 { font: 900 clamp(24px, 2.2vw, 34px)/1.25 var(--x-serif); margin: 0 0 10px; }
-      .x-steps p { margin: 0; color: var(--x-taupe-t); }
+      .x-steps { grid-column: 1 / -1; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+      .x-steps li { background: var(--x-bone); border-radius: var(--x-r); padding: 24px; }
+      .x-steps h3 { font: 900 var(--x-t35)/1.2 var(--x-serif); margin: 0 0 8px; letter-spacing: 0; }
+      .x-steps p { margin: 0; font-size: 16px; color: var(--x-taupe-t); }
 
       /* services */
-      .x-svc { grid-column: 4 / 13; list-style: none; margin: 0; padding: 0; }
-      .x-svc > li { display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: baseline; padding: 24px; background: var(--x-hld); margin-bottom: 8px; transition: padding .5s var(--x-spring), color .3s; }
-      .x-svc > li:hover { padding-left: 14px; }
-      .x-svc h3 { font: 700 clamp(24px, 2.6vw, 40px)/1.25 var(--x-serif); margin: 0; }
-      .x-svc .x-it { color: var(--x-taupe); font-size: 18px; text-align: right; }
-      .x-svc small { display: block; font: 400 15px var(--x-sans); color: var(--x-taupe); margin-top: 8px; }
-      .x-svcnote { grid-column: 1 / 4; color: var(--x-taupe); margin: 0; align-self: start; font-size: 15px; max-width: 18em; }
+      .x-grid.x-svcgrid { align-items: start; }
+      .x-svchead { grid-column: 1 / 5; position: sticky; top: 96px; }
+      .x-svchead .x-sub { max-width: 28ch; }
+      .x-svc { grid-column: 5 / -1; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+      .x-svc li { background: var(--x-hl); border-radius: var(--x-r); padding: 24px; }
+      .x-svc li:first-child { grid-column: 1 / -1; }
+      .x-svc h3 { font: 900 var(--x-t3)/1.25 var(--x-serif); margin: 0; letter-spacing: 0; }
+      .x-svc p { margin: 4px 0 0; font-size: 16px; color: var(--x-taupe-t); }
 
-      /* facts */
-      .x-facts { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: clamp(12px, 1.6vw, 24px); }
-      .x-fact { background: var(--x-hl); padding: 24px; }
-      .x-fact b { display: block; font: 900 clamp(48px, 6vw, 96px)/1 var(--x-serif); margin-bottom: 18px; font-variant-numeric: tabular-nums; }
-      .x-fact b small { font: 500 max(13px, 0.28em) var(--x-sans); display: inline-block; margin-left: 6px; }
-      .x-fact p { margin: 0; color: var(--x-taupe-t); }
-      .x-about { grid-column: 1 / 8; font: 700 clamp(20px, 2vw, 28px)/1.6 var(--x-serif); margin: 0 0 clamp(48px, 6vw, 88px); }
+      /* about */
+      .x-about { grid-column: 1 / 8; margin: 0; max-width: 34em; font: 400 var(--x-t3)/1.6 var(--x-sans); }
+      .x-facts { grid-column: 9 / -1; display: grid; gap: 8px; align-content: start; }
+      .x-fact { background: var(--x-bone); border-radius: var(--x-r); padding: 24px; }
+      .x-fact b { display: block; font: 900 clamp(40px, 5vw, 64px)/1 var(--x-serif); letter-spacing: 0; font-variant-numeric: tabular-nums; }
+      .x-fact b small { margin-left: 4px; font: 600 var(--x-t2)/1 var(--x-sans); }
+      .x-fact p { margin: 8px 0 0; color: var(--x-taupe-t); }
 
-      /* contact */
-      .x-contact { padding-block: clamp(96px, 14vw, 200px) 40px; padding-inline: clamp(16px, 4vw, 48px); }
-      .x-contact h2 { grid-column: 1 / -1; font: 900 clamp(64px, 15vw, 260px)/1 var(--x-serif); margin: 0 0 48px; letter-spacing: -.03em; }
-      .x-contact .x-ctas { grid-column: 1 / -1; margin-bottom: clamp(96px, 12vw, 160px); }
-      .x-mail { font: italic 300 clamp(22px, 2.6vw, 36px) var(--x-it); text-decoration: none; }
-      .x-mail:hover { color: var(--x-blue); }
-      .x-foot { grid-column: 1 / -1; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-top: 24px; padding-top: 24px; color: var(--x-taupe); }
-      .x-foot a { text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
+      /* contact: the one dark band */
+      .x-sec.x-contact { padding-bottom: 40px; }
+      .x-contact h2 { grid-column: 1 / -1; margin: 0 0 40px; font: 900 clamp(48px, 10vw, 128px)/1.05 var(--x-serif); letter-spacing: 0; }
+      .x-cta { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 32px; }
+      .x-page a.x-btn { display: inline-flex; align-items: center; min-height: 52px; padding: 0 24px; border-radius: var(--x-r); background: var(--x-blue); color: var(--x-accent-ink); font: 600 var(--x-t2)/1.2 var(--x-sans); text-decoration: none; transition: background .2s; }
+      .x-page a.x-btn:hover { background: #0b5f69; }
+      .x-mail { display: inline-flex; align-items: center; min-height: 44px; font-size: var(--x-t3); text-underline-offset: 6px; text-decoration-thickness: 1px; overflow-wrap: anywhere; }
+      .x-mail:hover { color: var(--x-cyan); }
+      .x-cfacts { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 24px 48px; margin: clamp(48px, 8vw, 96px) 0 0; padding: 0; list-style: none; }
+      .x-cfacts b { display: block; font: 900 var(--x-t35)/1.2 var(--x-serif); }
+      .x-cfacts span { font-size: 15px; color: var(--x-taupe); }
+      .x-foot { grid-column: 1 / -1; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 24px; margin-top: clamp(64px, 10vw, 128px); color: var(--x-taupe); }
+      .x-foot a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; min-width: 44px; text-decoration: none; }
+      .x-foot a:hover { color: var(--x-cyan); }
 
       /* lightbox */
       .x-lb { position: fixed; inset: 0; z-index: 90; background: rgba(31, 48, 56, .97); color: var(--x-dfg); display: none; grid-template-rows: auto 1fr auto; }
       .x-lb.is-open { display: grid; }
       .x-lb__top, .x-lb__bot { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 12px var(--x-g); }
-      .x-lb__top b { font: 700 20px var(--x-serif); } .x-lb__top em { font: italic 300 17px var(--x-it); color: var(--x-taupe); margin-left: 10px; }
+      .x-lb__top b { font: 900 var(--x-t3)/1.1 var(--x-serif); }
+      .x-lb__top em { margin-left: 8px; font: 400 var(--x-t2)/1.4 var(--x-sans); color: var(--x-taupe); }
       .x-lb__stage { display: flex; align-items: center; justify-content: center; min-height: 0; padding: 0 var(--x-g); }
       .x-lb__stage img { max-width: 100%; max-height: 100%; object-fit: contain; }
-      .x-lb button { background: var(--x-hld); border: 0; color: var(--x-dfg); border-radius: 6px; min-width: 52px; min-height: 52px; font: 400 18px var(--x-lab); cursor: pointer; }
-      .x-lb button:hover { background: var(--x-blue); border-color: var(--x-blue); color: #fff; }
+      .x-lb button { display: inline-flex; align-items: center; justify-content: center; min-width: 52px; min-height: 52px; border: 0; border-radius: var(--x-r); background: var(--x-hld); color: var(--x-dfg); font: 400 var(--x-t2) var(--x-sans); cursor: pointer; }
+      .x-lb button:hover { background: var(--x-blue); color: var(--x-accent-ink); }
+      .x-lb :focus-visible { outline: 2px solid var(--x-cyan); outline-offset: 2px; }
 
       /* cursor */
       .x-cur { position: fixed; left: 0; top: 0; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%; background: var(--x-blue); color: #fff; z-index: 100; pointer-events: none; display: none; align-items: center; justify-content: center; font: 700 0px var(--x-serif); transition: width .45s var(--x-spring), height .45s var(--x-spring), margin .45s var(--x-spring), font-size .3s; }
-      .x-cur.is-big { width: 76px; height: 76px; margin: -38px 0 0 -38px; font-size: 20px; }
+      .x-cur.is-big { width: 76px; height: 76px; margin: -38px 0 0 -38px; font-size: var(--x-t3); }
       @media (hover: hover) and (pointer: fine) { .x-cur { display: flex; } }
-      @media not all and (hover: hover) { .x-look { cursor: pointer; } }
 
       @media (max-width: 960px) {
         .x-navl { display: none; }
-        .x-hero__copy, .x-hero__stack { grid-column: 1 / -1; }
-        .x-stack { aspect-ratio: 4 / 3; }
-        .x-table thead { display: none; }
-        .x-table tr { display: grid; grid-template-columns: 3.5em 1fr auto; border-bottom: 1px solid var(--x-hl); padding: 16px 0; }
-        .x-table td { border: 0; padding: 0 8px 0 0; }
-        .x-table td.x-tb { grid-column: 2; } .x-table td.x-tm:nth-child(4) { grid-column: 3; grid-row: 1; }
-        .x-table td.x-tm:nth-child(3) { grid-column: 2; font-size: 13px; color: var(--x-taupe-t); }
-        .x-table td.x-td { grid-column: 2 / -1; padding-top: 4px; }
-        .x-table td:first-child { padding-left: 0; }
-        .x-s1, .x-s2, .x-s3, .x-s4 { grid-column: 1 / -1; margin-top: 0 !important; }
-        .x-s2, .x-s3 { grid-column: 3 / -1; } .x-s3 { grid-column: 1 / 11; }
-        .x-steps, .x-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 48px; }
-        .x-steps li { margin-top: 0 !important; }
-        .x-svc, .x-svcnote, .x-about { grid-column: 1 / -1; }
-        .x-svcnote { margin-bottom: 32px; }
-        .x-svc > li { grid-template-columns: 3em 1fr; } .x-svc .x-it { grid-column: 2; text-align: left; }
+        .x-row { grid-template-columns: minmax(0, 1fr); row-gap: 16px; }
+        .x-arch, .x-about, .x-facts, .x-svchead, .x-svc { grid-column: 1 / -1; }
+        .x-svchead { position: static; margin-bottom: 32px; }
+        .x-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 40px; }
+        .x-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       }
       @media (max-width: 560px) {
-        .x-open { font-size: 13px; }
         .x-logo span { display: none; }
-        .x-steps, .x-facts { grid-template-columns: minmax(0, 1fr); }
-        .x-mas { columns: 2 140px; }
+        .x-row { padding: 16px; }
+        .x-page .x-row .x-strip__img img { height: 96px; }
+        .x-other, .x-steps, .x-svc, .x-facts { grid-template-columns: minmax(0, 1fr); }
+        .x-arch th, .x-arch td { padding-inline: 8px; }
+        .x-arch td:last-child, .x-arch th:last-child { width: auto; }
         .x-lb__bot { padding-bottom: 20px; }
       }
-      /* accessibility fixes */
-      .x-dark .x-svc > li::before, .x-dark .x-num, .x-dark .x-mail:hover { color: #5fc2cc; }
-      .x-logo { display: inline-flex; align-items: center; min-height: 44px; }
-      .x-logo sup, .x-chip sup { font-size: 13px; }
-      .x-open, .x-open.x-lab { font-size: 13px !important; }
-      .x-tlink, .x-mail { display: inline-flex; align-items: center; min-height: 44px; }
-      .x-foot a { min-width: 44px; justify-content: center; }
-
-      /* redesign stage 1: type */
-      .x-h1 { font: 900 var(--x-t5)/.95 var(--x-serif); letter-spacing: -.04em; }
-      .x-h2, .x-band p, .x-fact b { font: 900 var(--x-t4)/.95 var(--x-serif); letter-spacing: -.04em; }
-      .x-contact h2 { font: 900 var(--x-t5)/.95 var(--x-serif); letter-spacing: -.04em; }
-      .x-steps h3, .x-svc h3, .x-table td.x-tb, .x-salon figcaption b, .x-lb__top b, .x-marq__track span, .x-logo { font-family: var(--x-serif); font-weight: 900; font-size: var(--x-t3); line-height: 1.1; letter-spacing: -.04em; }
-      .x-about { font: 900 var(--x-t3)/1.4 var(--x-serif); }
-      .x-it, .x-mail, .x-table td.x-tb em, .x-marq__track em, .x-lb__top em { font-family: var(--x-it); font-style: normal; font-weight: 400; letter-spacing: 0; }
-      .x-it, .x-salon figcaption .x-it, .x-svc .x-it, .x-sechead .x-it, .x-lb__top em { font-size: var(--x-t2); }
-      .x-hero__en, .x-mail { font-size: var(--x-t3); }
-      .x-table td.x-tb em, .x-marq__track em { font-size: var(--x-t1); }
-      .x-lab, .x-table th, .x-table td:first-child, .x-table td.x-tm, .x-logo sup, .x-logo span, .x-chip sup, .x-band .x-lab, .x-open { font: 600 var(--x-t1)/1.4 var(--x-lab); letter-spacing: .06em; }
-      .x-navl a { font: 400 var(--x-t2)/44px var(--x-sans); }
-      .x-btn, .x-btn b, .x-tlink, .x-chip, .x-table td.x-td, .x-w__cap b, .x-svc small, .x-svcnote, .x-lb button { font-family: var(--x-sans); font-size: var(--x-t2); }
-      .x-btn, .x-chip { font-weight: 600; }
-      .x-fact b small { font: 600 max(13px, 0.28em) var(--x-sans); display: inline-block; letter-spacing: 0; }
-      .x-cur.is-big { font-size: var(--x-t3); }
-
-      /* redesign stage 1: decorative numbers off */
-      .x-cap .x-num, .x-steps b { display: none; }
-      .x-svc > li { grid-template-columns: 1fr auto; }
-
-      /* redesign stage 1: no hairlines, filled tiles, one radius */
-      .x-head, .x-head.is-dark, .x-cap, .x-foot { border: 0; }
-      .x-head.is-dark .x-navl a:hover { color: #5fc2cc; }
-      .x-steps li, .x-fact { border: 0; background: var(--x-hl); padding: 24px; border-radius: var(--x-r); }
-      .x-svc > li, .x-svc > li:last-child { border: 0; background: var(--x-hld); padding: 24px; border-radius: var(--x-r); margin-bottom: 8px; }
-      .x-svc > li:hover { padding-left: 36px; }
-      .x-mail { border: 0; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; }
-      .x-chip { border: 0; background: var(--x-hld); }
-      .x-chip:hover { background: #34505c; }
-      .x-chip.is-on { background: var(--x-dfg); color: var(--x-ink); }
-      .x-lb button { border: 0; background: var(--x-hld); display: inline-flex; align-items: center; justify-content: center; }
-      .x-lb button:hover { background: var(--x-blue); color: var(--x-accent-ink); }
-      .x-btn, .x-chip, .x-lb button, .x-look, .x-stack, .x-prev, .x-w, .x-w__cap { border-radius: var(--x-r); }
-      .x-look, .x-w { overflow: hidden; }
-
-      /* redesign stage 1: section rhythm */
-      .x-sec, .x-sec.x-hero, .x-sec.x-contact, .x-band { padding-block: clamp(56px, 8vw, 112px); padding-inline: clamp(16px, 4vw, 48px); }
-      .x-sec .x-wrap, .x-band .x-wrap { padding-inline: 0; }
-
-      /* redesign stage 1: content visible without JS */
-      .x-line { overflow: visible; }
-      .x-line > span { transform: none; transition: none; }
-      .x-rev { clip-path: none; }
-      .x-prev { opacity: 1; display: none; }
-      .x-prev.is-on { display: block; }
 
       /* stage 2A: specimen wall hero */
       .x-head { position: fixed; top: 0; left: 0; right: 0; transition: background .4s, color .4s, transform .35s var(--x-ease); }
@@ -355,15 +251,9 @@
         .x-strip.is-enter { animation: none; }
       }
 
-      @media (max-width: 960px) {
-        .x-svc > li { grid-template-columns: 1fr; }
-        .x-svc .x-it { grid-column: 1; }
-      }
       @media (prefers-reduced-motion: reduce) {
-        .x-line > span { transform: none; transition: none; }
-        .x-rev { clip-path: none; transition: none; }
-        .x-stack img { transition: opacity .01s; transform: none !important; }
-        *, *::before, *::after { transition-duration: .01ms !important; }
+        .x-look img { transition: none; transform: none !important; }
+        *, *::before, *::after { transition-duration: .01ms !important; scroll-behavior: auto !important; }
       }
     </style>
   </head>
@@ -484,96 +374,122 @@
           </div>
         </section>
 
-        <section class="x-sec x-light" id="index" data-tone="light">
+        <section class="x-sec x-surface" id="index" data-tone="light">
           <div class="x-wrap x-grid">
-            <div class="x-sechead"><h2 class="x-h2 x-rise"><span class="x-line"><span>全部 14 个品牌。</span></span></h2><span class="x-it">Index. Hover to preview, click to open</span></div>
-            <table class="x-table">
-              <thead><tr><th scope="col" style="padding-left:12px">No.</th><th scope="col">品牌</th><th scope="col">行业</th><th scope="col">年份</th><th scope="col">内容</th></tr></thead>
-              <tbody id="xrows"></tbody>
-            </table>
+            <div class="x-sechead"><h2 class="x-h2">更多项目。</h2><p class="x-sub">精选之外的 8 个品牌，点图片看大图。</p></div>
+            <ul class="x-rows" id="xrows">
+              <li class="x-row" data-b="6">
+                <div><h3>兰香记<span>Lanxiangji</span></h3><p>面食，两稿：手绘厨师IP / 山水风物插画</p></div>
+                <div class="x-strip__row">
+                  <button type="button" class="x-strip__img"><img src="home/lanxiangji-12.jpg" alt="兰香记 作品 1" width="1418" height="798" loading="lazy" /></button>
+                  <button type="button" class="x-strip__img"><img src="home/lanxiangji-16.jpg" alt="兰香记 作品 2" width="1418" height="798" loading="lazy" /></button>
+                  <button type="button" class="x-strip__img"><img src="home/lanxiangji-18.jpg" alt="兰香记 作品 3" width="1418" height="798" loading="lazy" /></button>
+                  <button type="button" class="x-strip__img"><img src="home/lanxiangji-26.jpg" alt="兰香记 作品 4" width="1418" height="798" loading="lazy" /></button>
+                  <button type="button" class="x-strip__img"><img src="home/lanxiangji-32.jpg" alt="兰香记 作品 5" width="1418" height="798" loading="lazy" /></button>
+                </div>
+              </li>
+              <li class="x-row" data-b="7">
+                <div><h3>笨小六<span>Benxiaoliu</span></h3><p>下饭湘菜，门头与店内空间</p></div>
+                <div class="x-strip__row">
+                  <button type="button" class="x-strip__img"><img src="home/benxiaoliu-1.jpg" alt="笨小六 作品 1" width="1600" height="848" loading="lazy" /></button>
+                  <button type="button" class="x-strip__img"><img src="home/benxiaoliu-3.jpg" alt="笨小六 作品 2" width="1600" height="848" loading="lazy" /></button>
+                  <button type="button" class="x-strip__img"><img src="home/benxiaoliu-13.jpg" alt="笨小六 作品 3" width="1600" height="848" loading="lazy" /></button>
+                </div>
+              </li>
+              <li class="x-row" data-b="8">
+                <div><h3>椰知卿<span>Coconut Flavor</span></h3><p>自然美学主义食研所，以椰为经纬</p></div>
+                <div class="x-strip__row">
+                  <button type="button" class="x-strip__img"><img src="home/p6.jpg" alt="椰知卿 作品 1" width="1733" height="975" loading="lazy" /></button>
+                  <button type="button" class="x-strip__img"><img src="home/p7.jpg" alt="椰知卿 作品 2" width="1733" height="975" loading="lazy" /></button>
+                  <button type="button" class="x-strip__img"><img src="home/p8.jpg" alt="椰知卿 作品 3" width="1733" height="975" loading="lazy" /></button>
+                </div>
+              </li>
+              <li class="x-row" data-b="9">
+                <div><h3>龍面馆<span>Dragon Noodles Academy</span></h3><p>香港鲜熬私房面，即叫即拉</p></div>
+                <div class="x-strip__row">
+                  <button type="button" class="x-strip__img"><img src="home/p11.jpg" alt="龍面馆 作品 1" width="1733" height="975" loading="lazy" /></button>
+                  <button type="button" class="x-strip__img"><img src="home/p12.jpg" alt="龍面馆 作品 2" width="1733" height="975" loading="lazy" /></button>
+                </div>
+              </li>
+              <li class="x-row" data-b="10">
+                <div><h3>伽乐酸奶<span>GALA Yogurt</span></h3><p>Z世代高蛋白希腊酸奶 Just Have Fun</p></div>
+                <div class="x-strip__row">
+                  <button type="button" class="x-strip__img"><img src="home/p15.jpg" alt="伽乐酸奶 作品 1" width="1733" height="975" loading="lazy" /></button>
+                  <button type="button" class="x-strip__img"><img src="home/p16.jpg" alt="伽乐酸奶 作品 2" width="1733" height="975" loading="lazy" /></button>
+                </div>
+              </li>
+              <li class="x-row" data-b="12">
+                <div><h3>HERA赫她<span>HERA</span></h3><p>科技美肤「水核力场」</p></div>
+                <div class="x-strip__row">
+                  <button type="button" class="x-strip__img"><img src="home/p23.jpg" alt="HERA赫她 作品 1" width="1733" height="975" loading="lazy" /></button>
+                  <button type="button" class="x-strip__img"><img src="home/p24.jpg" alt="HERA赫她 作品 2" width="1733" height="975" loading="lazy" /></button>
+                </div>
+              </li>
+              <li class="x-row" data-b="13">
+                <div><h3>留芳茶社<span>Liufang Tea House</span></h3><p>茶饮 / 早茶</p></div>
+                <div class="x-strip__row">
+                  <button type="button" class="x-strip__img"><img src="home/p27.jpg" alt="留芳茶社 作品 1" width="1733" height="975" loading="lazy" /></button>
+                  <button type="button" class="x-strip__img"><img src="home/p28.jpg" alt="留芳茶社 作品 2" width="1733" height="975" loading="lazy" /></button>
+                </div>
+              </li>
+              <li class="x-row" data-b="14">
+                <div><h3>美味美锅<span>Meiwei Meiguo</span></h3><p>火锅，品牌 + IP</p></div>
+                <div class="x-strip__row">
+                  <button type="button" class="x-strip__img"><img src="home/p31.jpg" alt="美味美锅 作品" width="1733" height="975" loading="lazy" /></button>
+                </div>
+              </li>
+            </ul>
           </div>
-          <img class="x-prev" id="xprev" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" aria-hidden="true" />
         </section>
-        <section class="x-sec x-dark" id="archive" data-tone="dark">
-          <div class="x-wrap">
-            <div class="x-sechead"><h2 class="x-h2 x-rise"><span class="x-line"><span>档案馆：每一张图。</span></span></h2>
-              <div class="x-chips" role="group" aria-label="按行业筛选">
-                <button class="x-chip is-on" data-f="all" aria-pressed="true">全部</button><button class="x-chip" data-f="餐饮" aria-pressed="false">餐饮</button><button class="x-chip" data-f="茶饮咖啡" aria-pressed="false">茶饮咖啡</button><button class="x-chip" data-f="快消饮品" aria-pressed="false">快消饮品</button><button class="x-chip" data-f="美业" aria-pressed="false">美业</button><button class="x-chip" data-f="文旅空间" aria-pressed="false">文旅空间</button>
-              </div>
+
+        <section class="x-sec x-light" id="archive" data-tone="light">
+          <div class="x-wrap x-grid">
+            <div class="x-sechead"><h2 class="x-h2">全部 14 个品牌。</h2><p class="x-sub">档案馆：品牌、品类与年份一览，点品牌名看大图。</p></div>
+            <div class="x-arch">
+              <table>
+                <thead><tr><th scope="col">品牌</th><th scope="col">品类</th><th scope="col">年份</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row"><button type="button" data-arch="1">空杯计划<small>Kongbei Coffee</small></button></th><td>茶饮咖啡</td><td></td></tr>
+                  <tr><th scope="row"><button type="button" data-arch="2">百老汇小镇<small>Broadway Town</small></button></th><td>文旅空间</td><td>2023</td></tr>
+                  <tr><th scope="row"><button type="button" data-arch="3">稻成酸菜鱼<small>dab-pa</small></button></th><td>餐饮</td><td></td></tr>
+                  <tr><th scope="row"><button type="button" data-arch="4">牛小丫<small>NIUXIAOYA</small></button></th><td>餐饮</td><td></td></tr>
+                  <tr><th scope="row"><button type="button" data-arch="5">灵感杯子<small>Muse Cup</small></button></th><td>茶饮咖啡</td><td></td></tr>
+                  <tr><th scope="row"><button type="button" data-arch="6">兰香记<small>Lanxiangji</small></button></th><td>餐饮</td><td></td></tr>
+                  <tr><th scope="row"><button type="button" data-arch="7">笨小六<small>Benxiaoliu</small></button></th><td>餐饮</td><td></td></tr>
+                  <tr><th scope="row"><button type="button" data-arch="8">椰知卿<small>Coconut Flavor</small></button></th><td>餐饮</td><td>2024</td></tr>
+                  <tr><th scope="row"><button type="button" data-arch="9">龍面馆<small>Dragon Noodles Academy</small></button></th><td>餐饮</td><td>2025</td></tr>
+                  <tr><th scope="row"><button type="button" data-arch="10">伽乐酸奶<small>GALA Yogurt</small></button></th><td>快消饮品</td><td>2024</td></tr>
+                  <tr><th scope="row"><button type="button" data-arch="11">龍尊轩<small>Noble Dragon</small></button></th><td>餐饮</td><td>2024</td></tr>
+                  <tr><th scope="row"><button type="button" data-arch="12">HERA赫她<small>HERA</small></button></th><td>美业</td><td>2025</td></tr>
+                  <tr><th scope="row"><button type="button" data-arch="13">留芳茶社<small>Liufang Tea House</small></button></th><td>茶饮咖啡</td><td>2025</td></tr>
+                  <tr><th scope="row"><button type="button" data-arch="14">美味美锅<small>Meiwei Meiguo</small></button></th><td>餐饮</td><td></td></tr>
+                </tbody>
+              </table>
             </div>
-            <div class="x-mas" id="xmas">
-              <button class="x-look x-w" data-b="1"><img src="home/kongbei-21.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="1"><img src="home/kongbei-24.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="1"><img src="home/kongbei-34.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="1"><img src="home/kongbei-39.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="1"><img src="home/kongbei-57.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="1"><img src="home/kongbei-62.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="2"><img src="home/broadway-10.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="2"><img src="home/broadway-12.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="2"><img src="home/broadway-15.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="2"><img src="home/broadway-24.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="2"><img src="home/broadway-41.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="2"><img src="home/broadway-45.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="3"><img src="home/daocheng-1.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="3"><img src="home/daocheng-7.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="3"><img src="home/daocheng-83.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="4"><img src="home/niuxiaoya-1.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="4"><img src="home/niuxiaoya-11.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="4"><img src="home/niuxiaoya-15.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="4"><img src="home/niuxiaoya-20.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="4"><img src="home/niuxiaoya-29.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="5"><img src="home/musecup-4.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="5"><img src="home/musecup-11.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="5"><img src="home/musecup-13.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="5"><img src="home/musecup-14.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="5"><img src="home/musecup-30.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="5"><img src="home/musecup-32.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="6"><img src="home/lanxiangji-12.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="6"><img src="home/lanxiangji-16.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="6"><img src="home/lanxiangji-18.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="6"><img src="home/lanxiangji-26.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="6"><img src="home/lanxiangji-32.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="7"><img src="home/benxiaoliu-1.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="7"><img src="home/benxiaoliu-3.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="7"><img src="home/benxiaoliu-13.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="8"><img src="home/p6.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="8"><img src="home/p7.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="8"><img src="home/p8.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="9"><img src="home/p11.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="9"><img src="home/p12.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="10"><img src="home/p15.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="10"><img src="home/p16.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="11"><img src="home/p19.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="11"><img src="home/p20.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="12"><img src="home/p23.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="12"><img src="home/p24.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="13"><img src="home/p27.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="13"><img src="home/p28.jpg" alt="" loading="lazy" /></button>
-              <button class="x-look x-w" data-b="14"><img src="home/p31.jpg" alt="" loading="lazy" /></button>
+          </div>
+        </section>
+        <section class="x-sec x-surface x-credo" aria-label="设计信条" data-tone="light">
+          <div class="x-wrap x-grid">
+            <p class="x-credo__t">符号先于装饰，系统胜于风格。</p>
+            <span class="x-lab">Symbol before ornament · System over style</span>
+          </div>
+        </section>
+
+        <section class="x-sec x-light" id="other" data-tone="light">
+          <div class="x-wrap x-grid">
+            <div class="x-sechead"><h2 class="x-h2">品牌之外的造物。</h2><p class="x-sub">Other creations</p></div>
+            <div class="x-other">
+              <figure><button type="button" class="x-look" data-g="other" data-cap="字体设计 Type design"><img src="home/p33.jpg" alt="字体设计作品" width="1733" height="975" loading="lazy" /></button><figcaption><b>字体设计</b><span>Type design</span><small>字形与标题字</small></figcaption></figure>
+              <figure><button type="button" class="x-look" data-g="other" data-cap="版式设计 Layout"><img src="home/p35.jpg" alt="版式设计作品" width="1733" height="975" loading="lazy" /></button><figcaption><b>版式设计</b><span>Layout</span><small>平面与编排</small></figcaption></figure>
+              <figure><button type="button" class="x-look" data-g="other" data-cap="线上设计 Digital"><img src="home/p38.jpg" alt="线上设计作品" width="1733" height="975" loading="lazy" /></button><figcaption><b>线上设计</b><span>Digital</span><small>线上视觉</small></figcaption></figure>
+              <figure><button type="button" class="x-look" data-g="other" data-cap="插画 Illustration"><img src="home/p41.jpg" alt="插画作品" width="1733" height="975" loading="lazy" /></button><figcaption><b>插画</b><span>Illustration</span><small>手绘与插画</small></figcaption></figure>
             </div>
           </div>
         </section>
 
-        <section class="x-band" aria-label="设计信条">
+        <section class="x-sec x-surface" id="method" data-tone="light">
           <div class="x-wrap x-grid">
-            <p class="x-rise"><span class="x-line"><span>符号先于装饰，</span></span><span class="x-line"><span>系统胜于风格。</span></span></p>
-            <span class="x-lab" style="grid-column:1/-1">Symbol before ornament · System over style</span>
-          </div>
-        </section>
-
-        <section class="x-sec x-dark" id="other" data-tone="dark">
-          <div class="x-wrap x-grid x-salon">
-            <div class="x-sechead"><h2 class="x-h2 x-rise"><span class="x-line"><span>品牌之外的造物。</span></span></h2><span class="x-it">Other creations</span></div>
-            <figure class="x-s1"><button class="x-look x-rev" data-g="other" data-cap="字体设计 Type design"><img src="home/p33.jpg" alt="字体设计作品" loading="lazy" /></button><figcaption><b>字体设计</b><span class="x-it">Type design</span><span class="x-lab">Cat. A · 字形与标题字</span></figcaption></figure>
-            <figure class="x-s2" data-par=".06"><button class="x-look x-rev" data-g="other" data-cap="版式设计 Layout"><img src="home/p35.jpg" alt="版式设计作品" loading="lazy" /></button><figcaption><b>版式设计</b><span class="x-it">Layout</span><span class="x-lab">Cat. B · 平面与编排</span></figcaption></figure>
-            <figure class="x-s3"><button class="x-look x-rev" data-g="other" data-cap="线上设计 Digital"><img src="home/p38.jpg" alt="线上设计作品" loading="lazy" /></button><figcaption><b>线上设计</b><span class="x-it">Digital</span><span class="x-lab">Cat. C · 线上视觉</span></figcaption></figure>
-            <figure class="x-s4" data-par=".04"><button class="x-look x-rev" data-g="other" data-cap="插画 Illustration"><img src="home/p41.jpg" alt="插画作品" loading="lazy" /></button><figcaption><b>插画</b><span class="x-it">Illustration</span><span class="x-lab">Cat. D · 手绘与插画</span></figcaption></figure>
-          </div>
-        </section>
-
-        <section class="x-sec x-light" id="method" data-tone="light">
-          <div class="x-wrap x-grid">
-            <div class="x-sechead"><h2 class="x-h2 x-rise"><span class="x-line"><span>四步，从洞察到落地。</span></span></h2><span class="x-it">Method</span></div>
+            <div class="x-sechead"><h2 class="x-h2">四步，从洞察到落地。</h2><p class="x-sub">Method</p></div>
             <ol class="x-steps">
               <li><h3>策略定位</h3><p>洞察行业与竞品，找准差异。</p></li>
               <li><h3>超级符号</h3><p>提炼一个能被一眼记住的符号。</p></li>
@@ -583,45 +499,46 @@
           </div>
         </section>
 
-        <section class="x-sec x-dark" id="services" data-tone="dark">
-          <div class="x-wrap x-grid">
-            <div class="x-sechead"><h2 class="x-h2 x-rise"><span class="x-line"><span>我们做的七件事。</span></span></h2><span class="x-it">Services</span></div>
-            <p class="x-svcnote">从一个符号到一家门店，从屏幕到印刷厂，同一支团队负责到底。</p>
+        <section class="x-sec x-light" id="services" data-tone="light">
+          <div class="x-wrap x-grid x-svcgrid">
+            <div class="x-svchead"><h2 class="x-h2">我们做的七件事。</h2><p class="x-sub">Services · 从一个符号到一家门店，从屏幕到印刷厂，同一支团队负责到底。</p></div>
             <ul class="x-svc">
-              <li><h3>品牌全案<small>策略定位 · 超级符号 · 视觉系统</small></h3><span class="x-it">Full brand identity</span></li>
-              <li><h3>字体设计</h3><span class="x-it">Typeface &amp; lettering</span></li>
-              <li><h3>平面与版式设计</h3><span class="x-it">Graphic &amp; layout</span></li>
-              <li><h3>IP 形象设计</h3><span class="x-it">Character IP</span></li>
-              <li><h3>插画设计</h3><span class="x-it">Illustration</span></li>
-              <li><h3>空间与门头设计</h3><span class="x-it">Space &amp; storefront</span></li>
-              <li><h3>设计到印刷落地</h3><span class="x-it">Design to print</span></li>
+              <li><h3>品牌全案</h3><p>Full brand identity · 策略定位 · 超级符号 · 视觉系统</p></li>
+              <li><h3>字体设计</h3><p>Typeface &amp; lettering</p></li>
+              <li><h3>平面与版式设计</h3><p>Graphic &amp; layout</p></li>
+              <li><h3>IP 形象设计</h3><p>Character IP</p></li>
+              <li><h3>插画设计</h3><p>Illustration</p></li>
+              <li><h3>空间与门头设计</h3><p>Space &amp; storefront</p></li>
+              <li><h3>设计到印刷落地</h3><p>Design to print</p></li>
             </ul>
           </div>
         </section>
 
-        <section class="x-sec x-light" id="about" data-tone="light">
+        <section class="x-sec x-surface" id="about" data-tone="light">
           <div class="x-wrap x-grid">
-            <div class="x-sechead"><h2 class="x-h2 x-rise"><span class="x-line"><span>关于造物设。</span></span></h2><span class="x-it">About the studio</span></div>
+            <div class="x-sechead"><h2 class="x-h2">关于造物设。</h2><p class="x-sub">About the studio</p></div>
             <p class="x-about">造物设是一间品牌设计工作室。我们相信，一个好品牌应该像一件被认真做出来的物：有符号，有系统，经得起反复使用。</p>
             <div class="x-facts">
-              <div class="x-fact"><b>2015<small>年起</small></b><p>持续为品牌造物</p></div>
               <div class="x-fact"><b>14<small>个</small></b><p>品牌案例</p></div>
-              <div class="x-fact"><b>餐饮</b><p>行业垂直解决方案</p></div>
               <div class="x-fact"><b>3D</b><p>三维与动态 · C4D · Blender · AE</p></div>
             </div>
           </div>
         </section>
 
-        <section class="x-dark x-sec x-contact" id="contact" data-tone="dark">
+        <section class="x-sec x-dark x-contact" id="contact" data-tone="dark">
           <div class="x-wrap x-grid">
-            <h2 class="x-rise"><span class="x-line"><span>一起造物。</span></span></h2>
-            <div class="x-ctas">
-              <a class="x-btn" href="mailto:shiqiangqiang96@163.com">开始一个项目 <b>→</b></a>
+            <h2>一起造物。</h2>
+            <div class="x-cta">
+              <a class="x-btn" href="mailto:shiqiangqiang96@163.com">开始一个项目</a>
               <a class="x-mail" href="mailto:shiqiangqiang96@163.com">shiqiangqiang96@163.com</a>
             </div>
+            <ul class="x-cfacts">
+              <li><b>2015年起</b><span>持续为品牌造物</span></li>
+              <li><b>餐饮</b><span>行业垂直解决方案</span></li>
+            </ul>
             <footer class="x-foot x-lab">
               <span>© 2026 造物设 ZAOWU DESIGN</span>
-              <span class="x-open"><i></i>接受新项目 2026</span>
+              <span>接受新项目 2026</span>
               <a href="#top">回到顶部 ↑</a>
             </footer>
           </div>
@@ -657,32 +574,6 @@
         var pad = function (i) { return (i < 10 ? "0" : "") + i; };
         var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-        // marquee + table from data
-        var m = "", rows = "";
-        for (var i = 1; i < B.length; i++) {
-          m += "<span>" + B[i].n + "<em>" + B[i].en + "</em></span>";
-          rows += '<tr tabindex="0" data-b="' + i + '"><td>' + pad(i) + '</td><td class="x-tb">' + B[i].n + "<em>" + B[i].en + '</em></td><td class="x-tm">' + B[i].c + '</td><td class="x-tm">' + (B[i].y || "·") + '</td><td class="x-td">' + B[i].d + "</td></tr>";
-        }
-        var mq = $("#xmarq"); if (mq) mq.innerHTML = m + m.replace(/<span>/g, '<span aria-hidden="true">');
-        var xr = $("#xrows"); if (xr) xr.innerHTML = rows;
-
-        // archive: label and categorise
-        var works = $$("#xmas .x-w");
-        works.forEach(function (w) {
-          var b = B[+w.dataset.b]; w.dataset.c = b.c;
-          w.setAttribute("aria-label", "查看 " + b.n + " 大图");
-          $("img", w).alt = b.n + " " + b.en + " 作品";
-          w.insertAdjacentHTML("beforeend", '<span class="x-w__cap"><b>' + b.n + '</b><span class="x-lab">' + b.c + "</span></span>");
-        });
-        $$(".x-chip").forEach(function (c) {
-          var f = c.dataset.f, n = f === "all" ? works.length : works.filter(function (w) { return w.dataset.c === f; }).length;
-          c.insertAdjacentHTML("beforeend", "<sup>" + n + "</sup>");
-          c.addEventListener("click", function () {
-            $$(".x-chip").forEach(function (o) { o.classList.toggle("is-on", o === c); o.setAttribute("aria-pressed", o === c); });
-            works.forEach(function (w) { w.classList.toggle("is-hid", f !== "all" && w.dataset.c !== f); });
-          });
-        });
-
         // lightbox
         var lb = $("#xlb"), li = $("#xlbi"), list = [], at = 0, last = null;
         function show() {
@@ -696,16 +587,18 @@
         }
         function close() { lb.classList.remove("is-open"); d.body.style.overflow = ""; if (last) last.focus(); }
         function step(k) { at = (at + k + list.length) % list.length; show(); }
+        // every brand's images live in a #work strip or an #index row
         function brand(b) {
-          var x = B[b];
-          return works.filter(function (w) { return w.dataset.b == b; }).map(function (w) { return { src: $("img", w).getAttribute("src"), t: pad(+b) + "  " + x.n, e: x.en + " · " + x.c }; });
+          var x = B[+b], seen = {};
+          return $$('[data-b="' + b + '"] .x-strip__img img').filter(function (im) {
+            var s = im.getAttribute("src"); if (seen[s]) return false; seen[s] = 1; return true;
+          }).map(function (im) { return { src: im.getAttribute("src"), t: x.n, e: x.en + " · " + x.d }; });
         }
-        works.forEach(function (w) { w.addEventListener("click", function () { var s = works.filter(function (o) { return o.dataset.b === w.dataset.b; }); open(brand(w.dataset.b), s.indexOf(w)); }); });
-        $$("[data-open]").forEach(function (el) { el.addEventListener("click", function () {
-          var b = el.dataset.open, on = $("img.is-on", el); if (on) b = on.dataset.b;
-          var l = brand(b), src = ($("img.is-on", el) || $("img", el)).getAttribute("src"), k = 0;
-          l.forEach(function (o, j) { if (o.src === src) k = j; }); open(l, k);
-        }); });
+        $$("#xrows .x-row").forEach(function (row) {
+          var b = row.dataset.b;
+          $$(".x-strip__img", row).forEach(function (btn, k) { btn.addEventListener("click", function () { open(brand(b), k); }); });
+        });
+        $$("[data-arch]").forEach(function (btn) { btn.addEventListener("click", function () { open(brand(btn.dataset.arch), 0); }); });
         var other = $$("[data-g=other]");
         other.forEach(function (el, j) { el.addEventListener("click", function () {
           open(other.map(function (o) { var c = o.dataset.cap.split(" "); return { src: $("img", o).getAttribute("src"), t: c[0], e: c.slice(1).join(" ") }; }), j);
@@ -718,37 +611,14 @@
           else if (e.key === "Tab") { var f = $$("button", lb), i0 = f.indexOf(d.activeElement); e.preventDefault(); f[(i0 + (e.shiftKey ? -1 : 1) + f.length) % f.length].focus(); }
         });
 
-        // table rows: preview + open
-        var pv = $("#xprev"), fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-        $$("#xrows tr").forEach(function (tr) {
-          var b = tr.dataset.b, first = works.filter(function (w) { return w.dataset.b === b; })[0];
-          tr.addEventListener("click", function () { open(brand(b), 0); });
-          tr.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(brand(b), 0); } });
-          if (fine) {
-            tr.addEventListener("mouseenter", function () { pv.src = $("img", first).getAttribute("src"); pv.classList.add("is-on"); });
-            tr.addEventListener("mouseleave", function () { pv.classList.remove("is-on"); });
-          }
-        });
-
         // cursor
-        var cur = $("#xcur"), cx = 0, cy = 0;
+        var cur = $("#xcur");
         d.addEventListener("mousemove", function (e) {
-          cx = e.clientX; cy = e.clientY;
-          cur.style.transform = "translate(" + cx + "px," + cy + "px)";
-          pv.style.left = cx + 190 + "px"; pv.style.top = cy + "px";
+          cur.style.transform = "translate(" + e.clientX + "px," + e.clientY + "px)";
           var t = e.target.closest ? e.target.closest(".x-look, .x-strip__img") : null;
           cur.classList.toggle("is-big", !!t);
         });
         d.addEventListener("mouseleave", function () { cur.style.transform = "translate(-99px,-99px)"; });
-
-        // hero stack
-        var imgs = $$("#xstack img"), hi = 0;
-        function cap() { var b = +imgs[hi].dataset.b, cn = $("#xcapn"), ct = $("#xcapt"); if (cn) cn.textContent = pad(b) + "/14"; if (ct) ct.textContent = B[b].n + " · " + B[b].c; }
-        if (imgs.length && !reduce) setInterval(function () { imgs[hi].classList.remove("is-on"); hi = (hi + 1) % imgs.length; imgs[hi].classList.add("is-on"); cap(); }, 4500);
-
-        // reveals
-        var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } }); }, { rootMargin: "0px 0px -8% 0px" });
-        $$(".x-rise, .x-rev").forEach(function (el) { io.observe(el); });
 
         // featured strips: lightbox, filters, entrance
         var strips = $$("#xstrips .x-strip"), empty = $("#xfwempty");
@@ -797,13 +667,12 @@
           strips.forEach(function (s) { io3.observe(s); });
         }
 
-        // header tone + parallax
-        var head = $("#xhead"), hero = $("#hero"), tones = $$("[data-tone]"), par = $$("[data-par]"), ticking = false;
+        // header tone
+        var head = $("#xhead"), hero = $("#hero"), tones = $$("[data-tone]"), ticking = false;
         function frame() {
           ticking = false; var tone = "light";
           tones.forEach(function (s) { var r = s.getBoundingClientRect(); if (r.top <= 64 && r.bottom > 64) tone = s.dataset.tone; });
           if (head) { head.classList.toggle("is-dark", tone === "dark"); head.classList.toggle("is-hid", !!hero && hero.getBoundingClientRect().bottom > 64); }
-          if (!reduce) par.forEach(function (el) { var r = el.getBoundingClientRect(), off = (r.top + r.height / 2 - innerHeight / 2) * -parseFloat(el.dataset.par); el.style.translate = "0 " + off.toFixed(1) + "px"; });
         }
         addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }, { passive: true });
         frame();
