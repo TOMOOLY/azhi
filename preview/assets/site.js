@@ -5,9 +5,34 @@
   var nav = document.querySelector("[data-nav]");
   var toggle = document.querySelector("[data-nav-toggle]");
   var links = document.getElementById("nav-links");
-  function onScroll() { if (nav) nav.classList.toggle("is-scrolled", window.scrollY > 8); }
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
+  /* nav tone step once the page has scrolled: observe a sentinel instead of polling scroll */
+  var sentinel = document.querySelector("[data-nav-sentinel]");
+  if (nav && sentinel && "IntersectionObserver" in window) {
+    new IntersectionObserver(function (en) { nav.classList.toggle("is-scrolled", !en[0].isIntersecting); }).observe(sentinel);
+  }
+
+  /* cover logo wall: a visible pause control (WCAG 2.2.2) and no animation while off screen */
+  var cover = document.querySelector("[data-cover]");
+  var pause = document.querySelector("[data-wall-pause]");
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+  if (cover && pause && !reduce.matches) {
+    pause.hidden = false;
+    var label = pause.querySelector("[data-wall-pause-label]");
+    var paused = false;
+    try { paused = localStorage.getItem("zw-wall-paused") === "1"; } catch (e) {}
+    function setPaused(v) {
+      paused = v;
+      cover.classList.toggle("is-paused", v);
+      pause.setAttribute("aria-pressed", v ? "true" : "false");
+      label.textContent = v ? "继续滚动" : "暂停滚动";
+      try { localStorage.setItem("zw-wall-paused", v ? "1" : "0"); } catch (e) {}
+    }
+    setPaused(paused);
+    pause.addEventListener("click", function () { setPaused(!paused); });
+  }
+  if (cover && "IntersectionObserver" in window) {
+    new IntersectionObserver(function (en) { cover.classList.toggle("is-off", !en[0].isIntersecting); }).observe(cover);
+  }
   function setOpen(open) {
     toggle.setAttribute("aria-expanded", open ? "true" : "false");
     links.classList.toggle("is-open", open);
