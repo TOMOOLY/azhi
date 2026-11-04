@@ -1,5 +1,5 @@
 /* 造物设 preview — modelled on vokie.com, dark theme. Near-black page, tone-stepped surfaces
-   (no borders/shadows), warm off-white ink, one terracotta accent, one light CTA band.
+   (no borders/shadows), warm off-white ink, one terracotta accent, one dark CTA band (all black).
    Measured pairs (WCAG, check_contrast.py):
    ink #f3efe9 on page #050607 17.70 · alt #0b0c0e 17.08 · card #141518 15.94 · raise #1c1e22 14.57
    muted #a8a29b on page 8.02 · alt 7.74 · card 7.22 · raise 6.60
@@ -22,11 +22,11 @@
   --accent-text: #d98c5f;
   --well: #141518;
   --hover-pill: #ffffff;
-  /* light CTA band */
-  --band-bg: #fdfaf7;
-  --band-ink: #1b1b1b;
-  --band-muted: #6b6560;
-  --band-accent: #9c4f25;
+  /* CTA band, all-black theme */
+  --band-bg: #0b0c0e;
+  --band-ink: #f3efe9;
+  --band-muted: #a8a29b;
+  --band-accent: #d98c5f;
 
   --sans: "MiSans", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
   --mono: "Geist Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
@@ -63,9 +63,9 @@ h1, h2, h3 { font-weight: 520; text-wrap: balance; }
 p { text-wrap: pretty; }
 button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
 :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 6px; }
-.band :focus-visible { outline-color: var(--page); }
+.band :focus-visible { outline-color: var(--ink); }
 ::selection { background: var(--accent); color: var(--page); }
-.band ::selection { background: var(--band-ink); color: var(--band-bg); }
+.band ::selection { background: var(--accent); color: var(--page); }
 
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .skip {
@@ -108,8 +108,8 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .btn-quiet { background: transparent; color: var(--ink); border: 1px solid var(--ink); } /* taste-skill-ignore: outlined secondary pill keeps one filled button per view */
 .btn-quiet:hover { background: var(--card); }
 .btn-sm { min-height: var(--tap); padding: 0 18px; font-size: 0.9375rem; }
-.btn-light, .band .btn { background: var(--page); color: var(--ink); }
-.btn-light:hover, .band .btn:hover { background: var(--band-ink); }
+.btn-light, .band .btn { background: var(--ink); color: var(--page); }
+.btn-light:hover, .band .btn:hover { background: #ffffff; }
 .tlink {
   display: inline-flex; align-items: center; gap: 6px; min-height: var(--tap);
   font-weight: 520; text-decoration: underline; text-underline-offset: 0.3em; text-decoration-thickness: 1px;
