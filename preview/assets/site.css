@@ -140,19 +140,62 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .nav-toggle[aria-expanded="true"] .bar:nth-of-type(2) { transform: translateY(3.75px) rotate(45deg); }
 .nav-toggle[aria-expanded="true"] .bar:nth-of-type(3) { transform: translateY(-3.75px) rotate(-45deg); }
 
-/* ——— hero ——— */
+/* ——— hero / home cover ——— */
 .hero { padding: clamp(4.5rem, 3rem + 6vw, 8.5rem) 0 clamp(2rem, 1rem + 3vw, 4rem); }
 .hero-in { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 28px; }
 .h1-hero { margin-top: 4px; }
 .hero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
 .hero-sub { color: var(--muted); font-size: 1.125rem; line-height: 1.8; }
-.hero-shots {
-  margin-top: clamp(3.5rem, 2rem + 5vw, 6rem);
-  display: grid; grid-template-columns: 1fr 1.35fr 1fr; gap: clamp(12px, 2vw, 24px); align-items: center;
+
+/* cover: wall of the designer's logos + 字体设计, rows drifting in alternating directions.
+   Worst case contrast (wall mark at full opacity under a text box) is held up by the veil;
+   measured with marks forced to 1.0 — see check in the build notes. */
+.cover {
+  position: relative; isolation: isolate; overflow: hidden; overflow: clip;
+  min-height: calc(100vh - var(--nav-h)); min-height: calc(100svh - var(--nav-h));
+  display: grid; place-items: center; padding: clamp(3rem, 8vh, 6rem) 0; background: var(--page);
 }
-.shot { border-radius: var(--r-card); overflow: hidden; background: var(--well); }
-.shot img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
-.shot-c img { aspect-ratio: 16 / 10; }
+.wall {
+  position: absolute; inset: 0; z-index: -2;
+  display: flex; flex-direction: column; justify-content: space-evenly; padding: 1.5vh 0;
+}
+.wall-row { flex: none; }
+.wall-track { display: flex; align-items: center; width: max-content; }
+.wall-track img {
+  flex: none; height: var(--h); width: auto; max-width: calc(var(--h) * 3.4); object-fit: contain;
+  margin-right: var(--gap); opacity: .18; transition: opacity .35s ease;
+}
+.wall-logo { --h: clamp(48px, 2.4rem + 3.2vw, 92px); --gap: clamp(36px, 1.5rem + 3.5vw, 88px); }
+.wall-type { --h: clamp(28px, 1.2rem + 2.4vw, 62px); --gap: clamp(32px, 1.25rem + 3vw, 80px); }
+.wall-type img { opacity: .16; }
+.cover-veil {
+  position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(ellipse 58% 48% at 50% 50%, rgba(5,6,7,.95) 0%, rgba(5,6,7,.92) 55%, rgba(5,6,7,.55) 82%, rgba(5,6,7,.12) 100%),
+    linear-gradient(to bottom, var(--page) 0%, rgba(5,6,7,0) 12%, rgba(5,6,7,0) 88%, var(--page) 100%);
+}
+.cover-in { position: relative; pointer-events: none; }
+.cover-in .hero-in { pointer-events: auto; }
+@media (max-width: 720px) {
+  .cover-veil {
+    background:
+      radial-gradient(ellipse 92% 36% at 50% 50%, rgba(5,6,7,.94) 0%, rgba(5,6,7,.9) 55%, rgba(5,6,7,.5) 82%, rgba(5,6,7,.08) 100%),
+      linear-gradient(to bottom, var(--page) 0%, rgba(5,6,7,0) 6%, rgba(5,6,7,0) 94%, var(--page) 100%);
+  }
+}
+@keyframes wall-left { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-50%, 0, 0); } }
+@keyframes wall-right { from { transform: translate3d(-50%, 0, 0); } to { transform: translate3d(0, 0, 0); } }
+@media (prefers-reduced-motion: no-preference) {
+  .wall-track { will-change: transform; animation: wall-left var(--dur, 120s) linear infinite; }
+  .r1 .wall-track, .r3 .wall-track, .r5 .wall-track, .r7 .wall-track { animation-name: wall-right; }
+  .r1 { --dur: 150s; } .r2 { --dur: 115s; } .r3 { --dur: 175s; }
+  .r4 { --dur: 130s; } .r5 { --dur: 160s; } .r6 { --dur: 105s; }
+  .r7 { --dur: 140s; } .r8 { --dur: 120s; }
+}
+@media (hover: hover) and (pointer: fine) {
+  .wall-row:hover .wall-track { animation-play-state: paused; }
+  .wall-track img:hover { opacity: 1; }
+}
 
 /* ——— sections ——— */
 .sec { padding: var(--sec) 0; }
@@ -329,8 +372,6 @@ html:not(.js) .tabs, .tabs:not(.is-ready) { grid-template-columns: 1fr; }
   .tab { flex: none; width: auto; }
   .tabs-deliver .tablist { flex-direction: column; overflow: visible; }
   .tabs-deliver .tab { width: 100%; }
-  .hero-shots { grid-template-columns: 1fr 1fr; }
-  .shot-c { grid-column: 1 / -1; order: -1; }
   .turn { grid-template-columns: 1fr 1fr; }
   .turn-mid { grid-column: 1 / -1; grid-row: 2; }
   .incl li { grid-template-columns: 1fr; gap: 2px; }
