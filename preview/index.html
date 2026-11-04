@@ -1,219 +1,395 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="造物设：品牌视觉架构。给值得被记住的餐饮与消费品牌：识别、字体、包装、IP、插画与导视。" />
-  <meta name="theme-color" content="#000000" />
-  <title>造物设 · zaowu design</title>
-  <script>document.documentElement.className += " js";</script>
+  <title>造物设 · 品牌视觉架构</title>
+  <meta name="description" content="造物设：从策略定位、超级符号到包装、门头与印刷落地，一套能长期使用的品牌视觉系统。" />
+  <meta name="theme-color" content="#fdfaf7" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;500&family=Noto+Sans+SC:wght@400;500&display=swap" />
-  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500&display=swap" />
-  <link rel="stylesheet" href="editorial.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/misans@4.0.0/lib/Normal/MiSans-Regular.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/misans@4.0.0/lib/Normal/MiSans-Medium.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/misans@4.0.0/lib/Normal/MiSans-Semibold.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&amp;display=swap" />
+  <link rel="stylesheet" href="assets/site.css" />
+  <script>document.documentElement.classList.add("js");</script>
 </head>
-<body class="editorial" id="top">
-  <a class="skip-link" href="#main">跳到主要内容</a>
-
-  <header class="ed-topbar is-on-dark">
-    <div class="ed-topbar-inner">
-      <div class="ed-brand-cluster">
-        <a class="ed-wordmark" href="index.html" aria-label="造物设，回到首页">
-          <span class="ed-wordmark-cn">造物设</span>
-          <span class="ed-wordmark-en">zaowu design</span>
-        </a>
-        <span class="ed-status">可接单</span>
-        <span class="ed-year">2026</span>
-      </div>
-      <p class="ed-featured">品牌设计</p>
-      <button class="ed-nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">
-        <span class="ed-nav-toggle-bar"></span>
-        <span class="ed-nav-toggle-bar"></span>
-        <span class="sr-only">菜单</span>
-      </button>
-      <nav class="ed-nav" id="site-nav" data-nav aria-label="主导航">
-        <a href="works/">Works</a>
-        <a href="service.html">Service</a>
-        <a href="about.html">About</a>
-        <a href="journal.html">Journal</a>
-        <a href="contact.html">Contact</a>
-        <a class="ed-nav-action" href="mailto:shiqiangqiang96@163.com?subject=%E9%80%A0%E7%89%A9%E8%AE%BE%20%C2%B7%20%E9%A1%B9%E7%9B%AE%E5%92%A8%E8%AF%A2"><span>开始项目</span></a>
+<body class="is-home">
+  <a class="skip" href="#main">跳到主要内容</a>
+  <header class="nav" data-nav>
+    <div class="nav-in">
+      <a class="brand" href="./" aria-label="造物设 首页"><span class="brand-cn">造物设</span><span class="brand-en" aria-hidden="true">ZAOWU</span></a>
+      <nav class="nav-links" id="nav-links" aria-label="主导航">
+        <ul>
+          <li><a href="#work">作品</a></li>
+          <li><a href="#method">方法</a></li>
+          <li><a href="#services">服务</a></li>
+          <li><a href="#about">关于</a></li>
+        </ul>
+        <a class="nav-2nd" href="faq/">常见问题</a>
       </nav>
+      <a class="btn btn-sm nav-cta" href="mailto:shiqiangqiang96@163.com?subject=%E9%80%A0%E7%89%A9%E8%AE%BE%20%C2%B7%20%E9%A1%B9%E7%9B%AE%E5%92%A8%E8%AF%A2" data-nav-cta>开始项目</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" data-nav-toggle>
+        <span class="sr">打开菜单</span><span class="bar" aria-hidden="true"></span><span class="bar" aria-hidden="true"></span>
+      </button>
     </div>
   </header>
-  <a class="ed-to-top" href="#top" data-to-top aria-label="回到顶部">↑</a>
 
   <main id="main">
-    <section class="ed-hero" data-nav-dark aria-labelledby="hero-title">
-      <h1 class="ed-hero-name" id="hero-title" aria-label="ZAOWU 造物设">
-        <span class="ed-hero-en" aria-hidden="true">ZAOWU</span>
-        <span class="ed-hero-cn" aria-hidden="true">造物设</span>
-      </h1>
-      <p class="ed-hero-lines">
-        <span class="ed-hero-line">视觉设计 / 品牌设计</span>
-        <span class="ed-hero-line">为渴望被记住的品牌而设计</span>
-      </p>
-      <div class="ed-hero-actions">
-        <a class="ed-button is-on-dark" href="mailto:shiqiangqiang96@163.com?subject=%E9%80%A0%E7%89%A9%E8%AE%BE%20%C2%B7%20%E9%A1%B9%E7%9B%AE%E5%92%A8%E8%AF%A2">开始项目 <span class="ed-arrow" aria-hidden="true">→</span></a>
+    <section class="hero" data-own-cta>
+      <div class="wrap hero-in">
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span>造物设 · 品牌视觉架构</p>
+        <h1 class="h1 h1-hero"><span>你只管经营</span><span class="soft">品牌交给造物设</span></h1>
+        <div class="hero-actions">
+          <a class="btn" href="mailto:shiqiangqiang96@163.com?subject=%E9%80%A0%E7%89%A9%E8%AE%BE%20%C2%B7%20%E9%A1%B9%E7%9B%AE%E5%92%A8%E8%AF%A2">开始项目</a>
+          <a class="btn btn-quiet" href="#work">看作品 <span aria-hidden="true">↓</span></a>
+        </div>
+        <p class="hero-sub">从策略定位、超级符号到包装、门头与印刷落地，<br />一套能长期使用的品牌视觉系统。</p>
       </div>
-      <div class="ed-hero-bottom">
-        <span>上海 · 中国 <time data-clock>--:--</time></span>
-        <span class="ed-hero-scroll" aria-hidden="true">Scroll</span>
-      </div>
-    </section>
-
-    <section class="ed-selected" aria-labelledby="selected-heading">
-      <div class="ed-section-head" data-reveal>
-        <h2 class="ed-label" id="selected-heading">精选作品</h2>
-        <a class="ed-text-link" href="works/">全部 15 个项目 →</a>
-      </div>
-      <ul class="ed-selected-grid">
-        <li class="ed-selected-card" data-reveal>
-          <a href="works/dao-cheng-suan-cai-yu.html">
-            <figure><img src="assets/works/dao-cheng-suan-cai-yu/01.jpg" alt="" width="640" height="800" loading="lazy" decoding="async" /></figure>
-            <div class="ed-card-meta"><strong>稻成酸菜魚</strong><span>餐饮</span></div>
-          </a>
-        </li>
-        <li class="ed-selected-card" data-reveal>
-          <a href="works/niu-xiao-ya.html">
-            <figure><img src="assets/works/niu-xiao-ya/01.jpg" alt="" width="640" height="800" loading="lazy" decoding="async" /></figure>
-            <div class="ed-card-meta"><strong>牛小丫</strong><span>餐饮</span></div>
-          </a>
-        </li>
-        <li class="ed-selected-card" data-reveal>
-          <a href="works/broadway-town.html">
-            <figure><img src="assets/works/broadway-town/01.jpg" alt="" width="640" height="800" loading="lazy" decoding="async" /></figure>
-            <div class="ed-card-meta"><strong>百老汇小镇</strong><span>地产</span></div>
-          </a>
-        </li>
-        <li class="ed-selected-card" data-reveal>
-          <a href="works/muse-cup.html">
-            <figure><img src="assets/works/muse-cup/01.jpg" alt="" width="640" height="800" loading="lazy" decoding="async" /></figure>
-            <div class="ed-card-meta"><strong>灵感杯子</strong><span>餐饮</span></div>
-          </a>
-        </li>
-      </ul>
-    </section>
-
-    <section class="ed-about-strip" aria-labelledby="about-heading" data-reveal>
-      <div>
-        <h2 class="ed-label" id="about-heading">关于我</h2>
-        <p class="ed-about-strip-note">常驻中国。好想法所在之处，都愿协作。</p>
-      </div>
-      <div>
-        <p class="ed-statement">我是造物设，做品牌视觉架构：给餐饮与消费品牌找一套能被记住的视觉语言。从定位、超级符号到字体、包装、IP 与导视，把零散的设计收成可以反复使用的系统。</p>
-        <a class="ed-text-link" href="about.html">了解更多 →</a>
-      </div>
-      <figure class="ed-about-strip-figure">
-        <img src="assets/w-09.jpg" alt="椰知卿品牌的包装与场景应用" width="480" height="640" loading="lazy" decoding="async" />
-      </figure>
-    </section>
-
-    <section class="ed-services" data-nav-dark aria-labelledby="services-heading">
-      <div class="ed-split" data-reveal>
-        <h2 class="ed-label is-dim" id="services-heading">我能带来什么</h2>
-        <p class="ed-statement">六种方式，帮品牌有意识地出场。可单选，也可组合成完整视觉系统。</p>
-      </div>
-      <ul class="ed-services-grid">
-        <li data-reveal>
-          <h3 class="ed-service-title">品牌识别</h3>
-          <p class="ed-service-body">标志、字体、色彩与规范，给品牌一张清晰的脸。</p>
-          <p class="ed-service-tags">标志设计 · 字体 · 色彩系统 · 品牌规范</p>
-        </li>
-        <li data-reveal>
-          <h3 class="ed-service-title">包装设计</h3>
-          <p class="ed-service-body">结构与平面包装，把品牌带到货架上。</p>
-          <p class="ed-service-tags">结构设计 · 标签系统 · 礼盒 · 零售呈现</p>
-        </li>
-        <li data-reveal>
-          <h3 class="ed-service-title">IP 与吉祥物</h3>
-          <p class="ed-service-body">让人记住的角色与符号，用于菜单、杯套与活动。</p>
-          <p class="ed-service-tags">角色设计 · 吉祥物 · 贴纸 · 动态素材</p>
-        </li>
-        <li data-reveal>
-          <h3 class="ed-service-title">插画</h3>
-          <p class="ed-service-body">为餐饮、文化与产品故事定制插画语言。</p>
-          <p class="ed-service-tags">编辑插画 · 图案 · 主视觉 · 点缀插画</p>
-        </li>
-        <li data-reveal>
-          <h3 class="ed-service-title">导视与环境图形</h3>
-          <p class="ed-service-body">让空间可读的导视与环境视觉。</p>
-          <p class="ed-service-tags">店招 · 室内 · 菜单板 · 空间字体</p>
-        </li>
-        <li data-reveal>
-          <h3 class="ed-service-title">数字与编辑设计</h3>
-          <p class="ed-service-body">网站、画册与印刷物料，保持系统一致。</p>
-          <p class="ed-service-tags">网站 · 画册 · 菜单 · 社交素材</p>
-        </li>
-      </ul>
-      <div class="ed-split">
-        <span></span>
-        <a class="ed-text-link" href="service.html">看业务详情 →</a>
+      <div class="wrap hero-shots">
+        <figure class="shot shot-l"><img src="assets/img/muse-cup/01.jpg" alt="灵感杯子 主视觉" width="1600" height="900" loading="lazy" decoding="async" /></figure>
+        <figure class="shot shot-c"><img src="assets/img/dao-cheng/07.jpg" alt="稻成酸菜鱼 黑猫超级符号" width="1418" height="798" loading="eager" decoding="async" /></figure>
+        <figure class="shot shot-r"><img src="assets/img/kong-bei-ji-hua/02.jpg" alt="空杯计划 杯套包装" width="1600" height="900" loading="lazy" decoding="async" /></figure>
       </div>
     </section>
 
-    <section class="ed-trusted" aria-labelledby="trusted-heading" data-reveal>
-      <div class="ed-split">
-        <h2 class="ed-label" id="trusted-heading">合作过的品牌</h2>
-        <div>
-          <p class="ed-statement">有幸一起打磨过的主理人、工作室与餐厅。</p>
-          <div class="ed-trusted-layout">
-            <img class="ed-trusted-photo" data-trusted-photo src="assets/works/dao-cheng-suan-cai-yu/01.jpg" alt="稻成酸菜魚 作品" width="400" height="400" loading="lazy" />
-            <ul class="ed-trusted-names">
-            <li><a href="works/dao-cheng-suan-cai-yu.html" data-trusted-name data-photo="assets/works/dao-cheng-suan-cai-yu/01.jpg" class="is-active">稻成酸菜魚</a></li>
-            <li><a href="works/niu-xiao-ya.html" data-trusted-name data-photo="assets/works/niu-xiao-ya/01.jpg">牛小丫</a></li>
-            <li><a href="works/kong-bei-ji-hua.html" data-trusted-name data-photo="assets/works/kong-bei-ji-hua/01.jpg">空杯计划</a></li>
-            <li><a href="works/muse-cup.html" data-trusted-name data-photo="assets/works/muse-cup/01.jpg">灵感杯子</a></li>
-            <li><a href="works/liu-fang-cha-she.html" data-trusted-name data-photo="assets/works/liu-fang-cha-she/01.jpg">留芳茶社</a></li>
-            <li><a href="works/longmianguan.html" data-trusted-name data-photo="assets/works/long-mian-guan/01.jpg">龍麵館</a></li>
-            <li><a href="works/longzunxuan.html" data-trusted-name data-photo="assets/works/long-zun-xuan/01.jpg">龍尊軒</a></li>
-            <li><a href="works/broadway-town.html" data-trusted-name data-photo="assets/works/broadway-town/01.jpg">百老汇小镇</a></li>
-            </ul>
+    <section class="sec" aria-labelledby="h-01">
+      <div class="wrap">
+        <div class="ch-head">
+          <p class="ch-label"><span class="ch-num">01</span> / 从想法到落地</p>
+          <h2 class="h2" id="h-01"><span>先想清楚，再画出来。</span><span class="soft">剩下的交给系统</span></h2>
+          <p class="lead">不用先想好要什么风格，从品牌要解决的问题说起。</p>
+        </div>
+        <ul class="grid4">
+          <li class="vcard">
+            <h3 class="h3">策略定位</h3>
+            <figure class="vcard-img"><img src="assets/img/dao-cheng/02.jpg" alt="稻成酸菜鱼 手绘品牌故事" width="1600" height="900" loading="lazy" decoding="async" /></figure>
+            <p class="muted">先弄清品牌在品类里要被怎样记住，再决定画什么。</p>
+          </li>
+          <li class="vcard">
+            <h3 class="h3">超级符号</h3>
+            <figure class="vcard-img"><img src="assets/img/dao-cheng/07.jpg" alt="稻成酸菜鱼 黑猫超级符号" width="1418" height="798" loading="lazy" decoding="async" /></figure>
+            <p class="muted">提炼一个一眼能认出的符号，作为整套系统的起点。</p>
+          </li>
+          <li class="vcard">
+            <h3 class="h3">系统延展</h3>
+            <figure class="vcard-img"><img src="assets/img/niu-xiao-ya/03.jpg" alt="牛小丫 字体规范" width="1600" height="1029" loading="lazy" decoding="async" /></figure>
+            <p class="muted">把字体、色彩、图形整理成规范，后续物料有章可循。</p>
+          </li>
+          <li class="vcard">
+            <h3 class="h3">落地交付</h3>
+            <figure class="vcard-img"><img src="assets/img/broadway-town/04.jpg" alt="百老汇小镇 户外广告" width="1600" height="900" loading="lazy" decoding="async" /></figure>
+            <p class="muted">从设计一路跟到包装、门头与印刷落地。</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="sec sec-inter" aria-labelledby="h-inter">
+      <div class="wrap inter">
+        <p class="ch-label" id="h-inter">不止于好看</p>
+        <p class="statement"><span class="soft">做出来的不只是一张 logo，</span>而是一套门店、包装、线上都能反复调用的品牌资产。</p>
+      </div>
+    </section>
+
+    <section class="sec sec-alt" id="work" aria-labelledby="h-02">
+      <div class="wrap">
+        <div class="ch-head">
+          <p class="ch-label"><span class="ch-num">02</span> / 精选案例</p>
+          <h2 class="h2" id="h-02"><span>一个品牌，</span><span class="soft">一套能被记住的样子</span></h2>
+          <p class="lead">选一个品牌，看它的识别怎样落到包装、物料与空间。</p>
+        </div>
+        <div class="tabs tabs-case" data-tabs>
+          <div class="tablist" data-tablist aria-label="精选案例" hidden>
+            <button class="tab" type="button" id="case-t0" data-tab="case-p0"><span class="tab-name">稻成酸菜鱼</span><span class="tab-meta">2024</span></button>
+            <button class="tab" type="button" id="case-t1" data-tab="case-p1"><span class="tab-name">空杯计划</span><span class="tab-meta">2023.07</span></button>
+            <button class="tab" type="button" id="case-t2" data-tab="case-p2"><span class="tab-name">百老汇小镇</span><span class="tab-meta">2023.06.29</span></button>
+            <button class="tab" type="button" id="case-t3" data-tab="case-p3"><span class="tab-name">兰香记</span><span class="tab-meta">2021</span></button>
+            <button class="tab" type="button" id="case-t4" data-tab="case-p4"><span class="tab-name">灵感杯子 Muse Cup</span><span class="tab-meta">精选</span></button>
+            <button class="tab" type="button" id="case-t5" data-tab="case-p5"><span class="tab-name">牛小丫</span><span class="tab-meta">精选</span></button>
+          </div>
+          <div class="panels">
+          <div class="panel" id="case-p0" data-panel>
+            <article class="case">
+              <figure class="case-main"><img src="assets/img/dao-cheng/07.jpg" alt="稻成酸菜鱼 黑猫超级符号" width="1418" height="798" loading="lazy" decoding="async" /></figure>
+              <div class="case-side">
+                <h3 class="h3">稻成酸菜鱼</h3>
+                <dl class="facts"><div><dt>年份</dt><dd>2024</dd></div><div><dt>画面</dt><dd>品牌视觉节选</dd></div></dl>
+                <ul class="case-thumbs"><li><img src="assets/img/dao-cheng/08.jpg" alt="稻成酸菜鱼 品牌设计手册封面" width="1418" height="798" loading="lazy" decoding="async" /></li><li><img src="assets/img/dao-cheng/01.jpg" alt="稻成酸菜鱼 封面" width="1600" height="900" loading="lazy" decoding="async" /></li><li><img src="assets/img/dao-cheng/02.jpg" alt="稻成酸菜鱼 手绘品牌故事" width="1600" height="900" loading="lazy" decoding="async" /></li></ul>
+                <a class="tlink" href="works/dao-cheng/">查看 稻成酸菜鱼 案例 <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
+          </div>
+          <div class="panel" id="case-p1" data-panel>
+            <article class="case">
+              <figure class="case-main"><img src="assets/img/kong-bei-ji-hua/02.jpg" alt="空杯计划 杯套包装" width="1600" height="900" loading="lazy" decoding="async" /></figure>
+              <div class="case-side">
+                <h3 class="h3">空杯计划</h3>
+                <dl class="facts"><div><dt>年份</dt><dd>2023.07</dd></div><div><dt>画面</dt><dd>品牌视觉节选</dd></div></dl>
+                <ul class="case-thumbs"><li><img src="assets/img/kong-bei-ji-hua/01.jpg" alt="空杯计划 封面" width="1600" height="900" loading="lazy" decoding="async" /></li><li><img src="assets/img/kong-bei-ji-hua/03.jpg" alt="空杯计划 帆布袋与标志系统" width="1600" height="900" loading="lazy" decoding="async" /></li><li><img src="assets/img/kong-bei-ji-hua/04.jpg" alt="空杯计划 海报" width="1600" height="900" loading="lazy" decoding="async" /></li></ul>
+                <a class="tlink" href="works/kong-bei-ji-hua/">查看 空杯计划 案例 <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
+          </div>
+          <div class="panel" id="case-p2" data-panel>
+            <article class="case">
+              <figure class="case-main"><img src="assets/img/broadway-town/04.jpg" alt="百老汇小镇 户外广告" width="1600" height="900" loading="lazy" decoding="async" /></figure>
+              <div class="case-side">
+                <h3 class="h3">百老汇小镇</h3>
+                <dl class="facts"><div><dt>年份</dt><dd>2023.06.29</dd></div><div><dt>画面</dt><dd>品牌视觉节选</dd></div></dl>
+                <ul class="case-thumbs"><li><img src="assets/img/broadway-town/01.jpg" alt="百老汇小镇 字标" width="1600" height="900" loading="lazy" decoding="async" /></li><li><img src="assets/img/broadway-town/02.jpg" alt="百老汇小镇 图形演化" width="1600" height="900" loading="lazy" decoding="async" /></li><li><img src="assets/img/broadway-town/03.jpg" alt="百老汇小镇 色彩" width="1600" height="900" loading="lazy" decoding="async" /></li></ul>
+                <a class="tlink" href="works/broadway-town/">查看 百老汇小镇 案例 <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
+          </div>
+          <div class="panel" id="case-p3" data-panel>
+            <article class="case">
+              <figure class="case-main"><img src="assets/img/lan-xiang-ji/01.jpg" alt="兰香记 品牌画面 1" width="1418" height="798" loading="lazy" decoding="async" /></figure>
+              <div class="case-side">
+                <h3 class="h3">兰香记</h3>
+                <dl class="facts"><div><dt>年份</dt><dd>2021</dd></div><div><dt>画面</dt><dd>品牌视觉节选</dd></div></dl>
+                <ul class="case-thumbs"><li><img src="assets/img/lan-xiang-ji/02.jpg" alt="兰香记 品牌画面 2" width="1418" height="798" loading="lazy" decoding="async" /></li><li><img src="assets/img/lan-xiang-ji/03.jpg" alt="兰香记 品牌画面 3" width="1418" height="798" loading="lazy" decoding="async" /></li><li><img src="assets/img/lan-xiang-ji/04.jpg" alt="兰香记 品牌画面 4" width="1418" height="798" loading="lazy" decoding="async" /></li></ul>
+                <a class="tlink" href="works/lan-xiang-ji/">查看 兰香记 案例 <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
+          </div>
+          <div class="panel" id="case-p4" data-panel>
+            <article class="case">
+              <figure class="case-main"><img src="assets/img/muse-cup/01.jpg" alt="灵感杯子 主视觉" width="1600" height="900" loading="lazy" decoding="async" /></figure>
+              <div class="case-side">
+                <h3 class="h3">灵感杯子 Muse Cup</h3>
+                <dl class="facts"><div><dt>年份</dt><dd>—</dd></div><div><dt>画面</dt><dd>品牌视觉节选</dd></div></dl>
+                <ul class="case-thumbs"><li><img src="assets/img/muse-cup/02.jpg" alt="灵感杯子 标志演化" width="1600" height="900" loading="lazy" decoding="async" /></li><li><img src="assets/img/muse-cup/03.jpg" alt="灵感杯子 色彩情绪板" width="1600" height="900" loading="lazy" decoding="async" /></li><li><img src="assets/img/muse-cup/04.jpg" alt="灵感杯子 名片与集点卡" width="1600" height="900" loading="lazy" decoding="async" /></li></ul>
+                <a class="tlink" href="works/muse-cup/">查看 灵感杯子 Muse Cup 案例 <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
+          </div>
+          <div class="panel" id="case-p5" data-panel>
+            <article class="case">
+              <figure class="case-main"><img src="assets/img/niu-xiao-ya/01.jpg" alt="牛小丫 封面" width="1600" height="1029" loading="lazy" decoding="async" /></figure>
+              <div class="case-side">
+                <h3 class="h3">牛小丫</h3>
+                <dl class="facts"><div><dt>年份</dt><dd>—</dd></div><div><dt>画面</dt><dd>品牌视觉节选</dd></div></dl>
+                <ul class="case-thumbs"><li><img src="assets/img/niu-xiao-ya/02.jpg" alt="牛小丫 标准色来源" width="1600" height="1029" loading="lazy" decoding="async" /></li><li><img src="assets/img/niu-xiao-ya/03.jpg" alt="牛小丫 字体规范" width="1600" height="1029" loading="lazy" decoding="async" /></li><li><img src="assets/img/niu-xiao-ya/04.jpg" alt="牛小丫 标准标志" width="1600" height="1029" loading="lazy" decoding="async" /></li></ul>
+                <a class="tlink" href="works/niu-xiao-ya/">查看 牛小丫 案例 <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
+          </div>
+          </div>
+        </div>
+        <p class="sec-more"><a class="tlink" href="works/">全部作品 <span aria-hidden="true">→</span></a></p>
+      </div>
+    </section>
+
+    <section class="sec" id="method" aria-labelledby="h-03">
+      <div class="wrap">
+        <div class="ch-head">
+          <p class="ch-label"><span class="ch-num">03</span> / 合作方式</p>
+          <h2 class="h2" id="h-03"><span>从第一封信，</span><span class="soft">到印刷落地</span></h2>
+          <p class="lead">合作按四步推进，前一步确认后再进入下一步。</p>
+        </div>
+        <ol class="grid4 steps">
+          <li class="step">
+            <p class="step-num">01</p>
+            <h3 class="h3">沟通需求</h3>
+            <p class="muted">来信或电话，聊清楚品牌现状与这次要解决的问题。</p>
+            <figure class="step-img"><img src="assets/img/dao-cheng/02.jpg" alt="稻成酸菜鱼 手绘品牌故事" width="1600" height="900" loading="lazy" decoding="async" /></figure>
+          </li>
+          <li class="step">
+            <p class="step-num">02</p>
+            <h3 class="h3">策略与符号</h3>
+            <p class="muted">确定定位方向，提炼品牌的超级符号。</p>
+            <figure class="step-img"><img src="assets/img/muse-cup/02.jpg" alt="灵感杯子 标志演化" width="1600" height="900" loading="lazy" decoding="async" /></figure>
+          </li>
+          <li class="step">
+            <p class="step-num">03</p>
+            <h3 class="h3">系统延展</h3>
+            <p class="muted">把符号延展成字体、色彩、图形与应用规范。</p>
+            <figure class="step-img"><img src="assets/img/broadway-town/06.jpg" alt="百老汇小镇 Town 标志结构" width="1600" height="900" loading="lazy" decoding="async" /></figure>
+          </li>
+          <li class="step">
+            <p class="step-num">04</p>
+            <h3 class="h3">落地交付</h3>
+            <p class="muted">输出交付文件，并跟进包装、门头与印刷落地。</p>
+            <figure class="step-img"><img src="assets/img/broadway-town/05.jpg" alt="百老汇小镇 楼层导视" width="1600" height="900" loading="lazy" decoding="async" /></figure>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="sec sec-alt" aria-labelledby="h-04">
+      <div class="wrap">
+        <div class="ch-head">
+          <p class="ch-label"><span class="ch-num">04</span> / 一个品牌，多种交付</p>
+          <h2 class="h2" id="h-04"><span>一个品牌，</span><span class="soft">多种交付</span></h2>
+          <p class="lead">同一套系统，延展到手册、包装与空间。</p>
+        </div>
+        <div class="tabs tabs-deliver" data-tabs>
+          <div class="tablist" data-tablist aria-label="交付类型" hidden>
+            <button class="tab" type="button" id="deliver-t0" data-tab="deliver-p0"><span class="tab-num">01</span><span class="tab-body"><span class="tab-name">品牌手册与 VI</span><span class="tab-desc">标志、字体、色彩与应用规范，整理成一本可以照着执行的手册。</span></span></button>
+            <button class="tab" type="button" id="deliver-t1" data-tab="deliver-p1"><span class="tab-num">02</span><span class="tab-body"><span class="tab-name">包装与物料</span><span class="tab-desc">杯套、袋装、海报与周边，让品牌在柜台和货架上被认出来。</span></span></button>
+            <button class="tab" type="button" id="deliver-t2" data-tab="deliver-p2"><span class="tab-num">03</span><span class="tab-body"><span class="tab-name">空间与门头</span><span class="tab-desc">门头、店内图形与导视，把识别带进真实的门店。</span></span></button>
+          </div>
+          <div class="panels">
+          <div class="panel" id="deliver-p0" data-panel>
+            <div class="deliver">
+              <h3 class="h3 deliver-h">品牌手册与 VI</h3>
+              <p class="muted deliver-d">标志、字体、色彩与应用规范，整理成一本可以照着执行的手册。</p>
+              <figure class="deliver-img"><img src="assets/img/dao-cheng/08.jpg" alt="稻成酸菜鱼 品牌设计手册封面" width="1418" height="798" loading="lazy" decoding="async" /></figure>
+            </div>
+          </div>
+          <div class="panel" id="deliver-p1" data-panel>
+            <div class="deliver">
+              <h3 class="h3 deliver-h">包装与物料</h3>
+              <p class="muted deliver-d">杯套、袋装、海报与周边，让品牌在柜台和货架上被认出来。</p>
+              <figure class="deliver-img"><img src="assets/img/kong-bei-ji-hua/02.jpg" alt="空杯计划 杯套包装" width="1600" height="900" loading="lazy" decoding="async" /></figure>
+            </div>
+          </div>
+          <div class="panel" id="deliver-p2" data-panel>
+            <div class="deliver">
+              <h3 class="h3 deliver-h">空间与门头</h3>
+              <p class="muted deliver-d">门头、店内图形与导视，把识别带进真实的门店。</p>
+              <figure class="deliver-img"><img src="assets/img/brands/ben-xiao-liu.jpg" alt="笨小六 门头设计" width="1600" height="848" loading="lazy" decoding="async" /></figure>
+            </div>
+          </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="ed-cta" aria-labelledby="cta-heading" data-reveal>
-      <div class="ed-split">
-        <h2 class="ed-label" id="cta-heading">开始项目</h2>
-        <div class="ed-cta-body">
-          <p class="ed-statement">值得被记住的品牌？说说你在做什么，看看我们是否合适。</p>
-          <div class="ed-actions">
-            <a class="ed-button" href="mailto:shiqiangqiang96@163.com?subject=%E9%80%A0%E7%89%A9%E8%AE%BE%20%C2%B7%20%E9%A1%B9%E7%9B%AE%E5%92%A8%E8%AF%A2">写信开始项目 <span class="ed-arrow" aria-hidden="true">→</span></a>
-            <a class="ed-text-link" href="contact.html">或填写项目表单</a>
+    <section class="sec" id="services" aria-labelledby="h-05">
+      <div class="wrap">
+        <div class="ch-head">
+          <p class="ch-label"><span class="ch-num">05</span> / 服务</p>
+          <h2 class="h2" id="h-05"><span>能做的事，</span><span class="soft">都围绕品牌</span></h2>
+          <p class="lead">可以单独找一项，也可以从品牌全案开始。</p>
+        </div>
+        <ul class="grid4 svcs">
+          <li class="svc">
+            <p class="step-num">01</p>
+            <h3 class="h3">品牌全案</h3>
+            <p class="muted">策略定位、超级符号与视觉系统放在一起考虑。</p>
+          </li>
+          <li class="svc">
+            <p class="step-num">02</p>
+            <h3 class="h3">字体设计</h3>
+            <p class="muted">标题字与品牌专用字，用在招牌、菜单和包装上。</p>
+          </li>
+          <li class="svc">
+            <p class="step-num">03</p>
+            <h3 class="h3">平面与版式</h3>
+            <p class="muted">海报、菜单、画册与日常物料的版面。</p>
+          </li>
+          <li class="svc">
+            <p class="step-num">04</p>
+            <h3 class="h3">IP 形象</h3>
+            <p class="muted">能出现在包装、门店和线上的品牌角色。</p>
+          </li>
+          <li class="svc">
+            <p class="step-num">05</p>
+            <h3 class="h3">插画</h3>
+            <p class="muted">为品牌故事与包装定制的插画。</p>
+          </li>
+          <li class="svc">
+            <p class="step-num">06</p>
+            <h3 class="h3">空间与门头</h3>
+            <p class="muted">门头、店内图形与导视。</p>
+          </li>
+          <li class="svc">
+            <p class="step-num">07</p>
+            <h3 class="h3">设计到印刷落地</h3>
+            <p class="muted">从设计文件一路跟到印刷成品。</p>
+          </li>
+          <li class="svc">
+            <p class="step-num">08</p>
+            <h3 class="h3">三维与动态（C4D · Blender · AE）</h3>
+            <p class="muted">三维场景与动态画面。</p>
+          </li>
+        </ul>
+        <p class="sec-more"><a class="tlink" href="services/">服务详情 <span aria-hidden="true">→</span></a></p>
+      </div>
+    </section>
+
+    <section class="sec sec-alt" id="about" aria-labelledby="h-06">
+      <div class="wrap">
+        <div class="ch-head">
+          <p class="ch-label"><span class="ch-num">06</span> / 关于</p>
+          <h2 class="h2" id="h-06"><span>品牌视觉架构师</span><span class="soft">石强强</span></h2>
+          <p class="lead">造物设由石强强主理，做品牌视觉架构。</p>
+        </div>
+        <div class="about">
+          <figure class="about-img"><img src="assets/img/about/portfolio-cover.jpg" alt="石强强作品集封面" width="1600" height="900" loading="lazy" decoding="async" /></figure>
+          <div class="about-body">
+            <dl class="facts facts-lg">
+              <div><dt>起步</dt><dd>2015年起</dd></div>
+              <div><dt>专注</dt><dd>餐饮行业垂直解决方案</dd></div>
+              <div><dt>主理</dt><dd>品牌视觉架构师 石强强</dd></div>
+            </dl>
+            <a class="tlink" href="about/">了解造物设 <span aria-hidden="true">→</span></a>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="sec" aria-labelledby="h-07">
+      <div class="wrap">
+        <div class="ch-head">
+          <p class="ch-label"><span class="ch-num">07</span> / 合作前说清楚</p>
+          <h2 class="h2" id="h-07"><span>开始之前，</span><span class="soft">先把边界说清楚</span></h2>
+          <p class="lead">一个品牌项目通常包含下面这些部分；具体范围按你的需求来定。</p>
+        </div>
+        <ul class="incl">
+          <li><span class="inc-k">策略</span><span class="muted">定位方向与品牌要被记住的那一点。</span></li>
+          <li><span class="inc-k">符号</span><span class="muted">品牌的超级符号与标志。</span></li>
+          <li><span class="inc-k">系统</span><span class="muted">字体、色彩、图形与应用规范。</span></li>
+          <li><span class="inc-k">交付文件</span><span class="muted">可直接使用的设计源文件与规范。</span></li>
+          <li><span class="inc-k">印刷跟进</span><span class="muted">包装与物料的印刷落地跟进。</span></li>
+        </ul>
+        <p class="trust-note">网站上不公开报价与排期，来信说明需求后再沟通确认。</p>
+        <p class="sec-more"><a class="tlink" href="mailto:shiqiangqiang96@163.com">写信询问 <span aria-hidden="true">→</span></a></p>
+      </div>
+    </section>
+    <section class="band" aria-labelledby="band-title" data-own-cta>
+      <div class="wrap band-in">
+        <p class="eyebrow eyebrow-dark">造物设 · 品牌视觉架构</p>
+        <h2 class="band-title" id="band-title">现在，开始一个项目</h2>
+        <p class="band-sub">说说你的品牌和想解决的问题，从第一封信开始。</p>
+        <a class="btn btn-light" href="mailto:shiqiangqiang96@163.com?subject=%E9%80%A0%E7%89%A9%E8%AE%BE%20%C2%B7%20%E9%A1%B9%E7%9B%AE%E5%92%A8%E8%AF%A2">开始项目</a>
+        <p class="band-small"><a href="mailto:shiqiangqiang96@163.com">shiqiangqiang96@163.com</a> · <a href="tel:+8617621419257">176 2141 9257</a></p>
       </div>
     </section>
   </main>
-
-  <footer class="ed-site-footer" data-nav-dark>
-    <div class="ed-site-footer-main">
-      <p class="ed-footer-name" aria-hidden="true"><span>zaowu</span><span>造物设</span></p>
-      <div class="ed-footer-side">
-        <div>
-          <p class="ed-label">邮箱</p>
-          <a class="ed-footer-email" href="mailto:shiqiangqiang96@163.com?subject=%E9%80%A0%E7%89%A9%E8%AE%BE%20%C2%B7%20%E9%A1%B9%E7%9B%AE%E5%92%A8%E8%AF%A2">shiqiangqiang96@163.com</a>
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <p class="foot-name">造物设</p>
+          <p class="foot-line">品牌属于你，系统交给造物设。</p>
+          <p class="foot-meta">© 2026 造物设 · 石强强 · 使用 MiSans 字体</p>
         </div>
-        <div>
-          <p class="ed-label">电话</p>
-          <a class="ed-footer-email" href="tel:+8617621419257">176 2141 9257</a>
-        </div>
-        <nav class="ed-footer-nav" aria-label="页脚导航">
-          <a href="works/">Works</a> <a href="service.html">Service</a> <a href="about.html">About</a> <a href="journal.html">Journal</a> <a href="contact.html">Contact</a>
+        <nav class="foot-col" aria-label="网站地图">
+          <p class="foot-h">网站</p>
+          <ul>
+            <li><a href="works/">作品</a></li>
+            <li><a href="#method">方法</a></li>
+            <li><a href="services/">服务</a></li>
+            <li><a href="about/">关于</a></li>
+            <li><a href="faq/">常见问题</a></li>
+          </ul>
         </nav>
+        <div class="foot-col">
+          <p class="foot-h">联系</p>
+          <ul>
+            <li><a href="mailto:shiqiangqiang96@163.com">shiqiangqiang96@163.com</a></li>
+            <li><a href="tel:+8617621419257">176 2141 9257</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <div class="ed-foot-bar">
-      <span>中国 · GMT+8 <span data-clock>--:--</span></span>
-      <span>© <span data-year>2026</span> 造物设 · 石强强</span>
-      <span>为值得被记住的品牌而作</span>
+      <p class="foot-mark" aria-hidden="true"><span>造</span><span>物</span><span>设</span></p>
     </div>
   </footer>
-
-  <script src="editorial.js"></script>
+  <script src="assets/site.js" defer></script>
 </body>
 </html>
