@@ -1,252 +1,813 @@
-<!DOCTYPE html>
-<html lang="zh-Hans">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="造物设 — 品牌视觉架构。给值得被记住的餐饮与消费品牌：识别、字体、包装、IP、插画与导视。" />
-  <meta name="theme-color" content="#000000" />
-  <title>造物设 · zaowu design</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500&display=swap" />
-  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" />
-  <link rel="stylesheet" href="editorial.css" />
-</head>
-<body class="editorial ed-page-dark-start" id="top">
-  <a class="skip-link" href="#main">跳到主要内容</a>
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>造物设 ZAOWU DESIGN — 为品牌，造一件值得被记住的物</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&family=Figtree:wght@400;600&family=Noto+Sans+SC:wght@400;900&display=swap"
+    />
+    <link rel="stylesheet" href="home/hark.css" />
+    <link rel="stylesheet" href="home/hark-hero.css" />
+    <style>
+      :root {
+        --x-bone: #f7f9fa; --x-ink: #1f3038; --x-dfg: #f7f9fa; --x-taupe: #b9c5cb; --x-taupe-t: #5d6b72;
+        --x-hl: #ecf0f2; --x-hld: #2a3e47; --x-blue: #0d7480; --x-accent-ink: #fff;
+        --x-g: clamp(16px, 4vw, 48px);
+        --x-r: 6px;
+        --x-serif: "League Spartan", "Noto Sans SC", "PingFang SC", sans-serif;
+        --x-it: "Figtree", "Noto Sans SC", "PingFang SC", sans-serif;
+        --x-lab: "Figtree", "Noto Sans SC", "PingFang SC", sans-serif;
+        --x-sans: "Figtree", "Noto Sans SC", "PingFang SC", system-ui, sans-serif;
+        --x-t1: 13px; --x-t2: 17px; --x-t3: 22px; --x-t4: clamp(32px, 4.5vw, 64px); --x-t5: clamp(56px, 10vw, 160px);
+        --x-spring: cubic-bezier(.2, 1.25, .3, 1);
+        --x-ease: cubic-bezier(.7, 0, .2, 1);
+      }
+      body { background: var(--x-bone); color: var(--x-ink); font: 400 17px/1.6 var(--x-sans); overflow-x: hidden; }
+      .x-page { max-width: none; padding: 0; display: block; gap: 0; }
+      .x-page img { display: block; max-width: 100%; }
+      .x-page a { color: inherit; }
+      .x-lab { font: 500 12px/1.4 var(--x-lab); letter-spacing: .08em; text-transform: uppercase; font-variant-numeric: tabular-nums; }
+      .x-it { font-family: var(--x-it); font-style: italic; font-weight: 300; }
+      .x-wrap { max-width: 1680px; margin: 0 auto; padding-inline: var(--x-g); position: relative; }
+      .x-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: clamp(12px, 1.6vw, 24px); }
+      .x-sec { position: relative; padding-block: clamp(80px, 12vw, 168px); padding-inline: clamp(16px, 4vw, 48px); }
+      .x-light { background: var(--x-bone); color: var(--x-ink); }
+      .x-dark { background: var(--x-ink); color: var(--x-dfg); padding-inline: clamp(16px, 4vw, 48px); }
+      .x-light { --x-taupe: #5d6b72; }
+      .x-dark { --x-taupe: #b9c5cb; --x-taupe-t: #b9c5cb; }
+      .x-sec > * { position: relative; z-index: 1; }
+      .x-h2 { font: 900 clamp(34px, 5vw, 76px)/1.12 var(--x-serif); margin: 0; letter-spacing: -.01em; }
+      .x-sechead { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; margin-bottom: clamp(40px, 6vw, 88px); }
+      .x-sechead .x-it { font-size: clamp(18px, 1.8vw, 24px); color: var(--x-taupe); }
+      .x-light .x-sechead .x-it { color: var(--x-taupe-t); }
+      .x-num { color: var(--x-blue); }
 
-  <header class="ed-topbar is-on-dark">
-    <div class="ed-topbar-inner">
-      <div class="ed-brand-cluster">
-        <a class="ed-wordmark" href="index.html" aria-label="造物设，回到首页">
-          <span class="ed-wordmark-cn">造物设</span>
-          <span class="ed-wordmark-en">zaowu design</span>
-        </a>
-        <span class="ed-status">可接单</span>
-        <span class="ed-year">2026</span>
-      </div>
-      <p class="ed-featured">品牌设计</p>
-      <button class="ed-nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">
-        <span></span>
-        <span class="sr-only">菜单</span>
-      </button>
-      <nav class="ed-nav" id="site-nav" data-nav aria-label="主导航">
-        <a href="works/">Works</a>
-        <a href="zara/">Zara</a>
-        <a href="journal.html">Journal</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+      /* header */
+      .x-head { position: sticky; top: 0; z-index: 50; background: var(--x-bone); color: var(--x-ink); transition: background .4s, color .4s; }
+      .x-head.is-dark { background: var(--x-ink); color: var(--x-dfg); }
+      .x-head .x-wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 64px; }
+      .x-logo { font: 900 20px/1 var(--x-serif); text-decoration: none; white-space: nowrap; }
+      .x-logo sup { font: 500 10px var(--x-lab); }
+      .x-logo span { font: 600 13px var(--x-lab); letter-spacing: .14em; margin-left: 6px; }
+      .x-navl { display: flex; gap: clamp(16px, 2.4vw, 36px); list-style: none; margin: 0; padding: 0; }
+      .x-navl a { text-decoration: none; font: 500 15px/44px var(--x-sans); display: block; }
+      .x-navl a:hover { color: var(--x-blue); }
+      .x-open { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+      .x-open i { width: 8px; height: 8px; border-radius: 50%; background: var(--x-blue); }
+
+      /* hero */
+      .x-hero { padding-block: clamp(40px, 6vw, 88px) clamp(56px, 7vw, 104px); }
+      .x-hero .x-grid { align-items: end; row-gap: 40px; }
+      .x-hero__copy { grid-column: 1 / 8; padding-bottom: 8px; }
+      .x-h1 { font: 900 clamp(46px, 7.4vw, 128px)/1.06 var(--x-serif); margin: 0 0 32px; letter-spacing: -.02em; }
+      .x-line { display: block; overflow: hidden; padding-bottom: .04em; }
+      .x-line > span { display: block; transform: translateY(105%); transition: transform 1.1s var(--x-spring); }
+      .is-in .x-line > span, .x-line.is-in > span { transform: none; }
+      .x-line:nth-child(2) > span { transition-delay: .08s; } .x-line:nth-child(3) > span { transition-delay: .16s; }
+      .x-hero__en { font-size: clamp(20px, 2vw, 30px); margin: 0 0 40px; color: var(--x-taupe-t); }
+      .x-ctas { display: flex; gap: 28px; align-items: center; flex-wrap: wrap; }
+      .x-btn { display: inline-flex; align-items: center; gap: 14px; min-height: 52px; padding: 0 26px; background: var(--x-ink); color: var(--x-bone) !important; text-decoration: none; font: 600 17px var(--x-sans); border-radius: 6px; transition: background .3s; }
+      .x-btn:hover { background: var(--x-blue); }
+      .x-btn b { font: 400 18px var(--x-lab); transition: transform .4s var(--x-spring); }
+      .x-btn:hover b { transform: translateX(4px); }
+      .x-dark .x-btn { background: var(--x-dfg); color: var(--x-ink) !important; }
+      .x-dark .x-btn:hover { background: var(--x-blue); color: #fff !important; }
+      .x-tlink { font: 500 15px var(--x-sans); text-underline-offset: 6px; text-decoration-thickness: 1px; }
+      .x-hero__stack { grid-column: 8 / 13; }
+      .x-stack { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: var(--x-hl); }
+      .x-stack.x-look img { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; opacity: 1; z-index: 0; }
+      .x-stack.x-look img.is-on { z-index: 1; }
+      .x-cap { display: flex; justify-content: space-between; gap: 16px; padding-top: 0; margin-top: 24px; }
+      .x-cap .x-num { min-width: 4.5em; }
+
+      /* marquee */
+      .x-marq { overflow-x: auto; overscroll-behavior-x: contain; background: var(--x-hl); padding: 22px clamp(16px, 4vw, 48px); scrollbar-width: thin; }
+      .x-marq__track { display: flex; width: max-content; }
+      .x-marq__track span[aria-hidden="true"] { display: none; }
+      .x-marq__track span { font: 700 clamp(26px, 3vw, 44px)/1 var(--x-serif); white-space: nowrap; padding-right: 48px; display: inline-flex; align-items: baseline; gap: 14px; }
+      .x-marq__track em { font: italic 300 .6em var(--x-it); color: var(--x-taupe-t); }
+
+
+      .x-look { display: block; overflow: hidden; cursor: none; background: var(--x-hld); padding: 0; border: 0; width: 100%; }
+      .x-light .x-look { background: var(--x-hl); }
+      .x-look img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; transition: transform 1.2s var(--x-ease); }
+      .x-look:hover img { transform: scale(1.04); }
+      .x-rev { clip-path: inset(100% 0 0 0); transition: clip-path 1.3s var(--x-ease); }
+      .x-rev.is-in { clip-path: inset(0 0 0 0); }
+
+      /* index table */
+      .x-table { width: 100%; border-collapse: collapse; grid-column: 1 / -1; font-variant-numeric: tabular-nums; }
+      .x-table th { text-align: left; font: 500 12px var(--x-lab); letter-spacing: .08em; text-transform: uppercase; color: var(--x-taupe-t); padding: 0 16px 14px 0; border-bottom: 1px solid var(--x-ink); }
+      .x-table td { padding: 20px 16px 20px 0; border-bottom: 1px solid var(--x-hl); vertical-align: baseline; transition: color .25s; }
+      .x-table tbody tr { cursor: pointer; transition: background .25s; }
+      .x-table tbody tr:hover, .x-table tbody tr:focus-visible { background: var(--x-blue); color: #fff; outline: none; }
+      .x-table tbody tr:hover td, .x-table tbody tr:focus-visible td { color: #fff; border-color: var(--x-blue); }
+      .x-table td:first-child { padding-left: 12px; font: 500 14px var(--x-lab); color: var(--x-blue); width: 4.5em; }
+      .x-table td.x-tb { font: 700 clamp(20px, 2vw, 28px)/1.3 var(--x-serif); }
+      .x-table td.x-tb em { font: italic 300 .62em var(--x-it); margin-left: 10px; opacity: .7; }
+      .x-table td.x-tm { font: 500 14px var(--x-lab); }
+      .x-table td.x-td { color: var(--x-taupe-t); font-size: 15px; }
+      .x-prev { position: fixed; left: 0; top: 0; width: 320px; aspect-ratio: 16 / 9; object-fit: cover; pointer-events: none; z-index: 60; display: none; transform: translate(-50%, -50%) scale(.9); transition: opacity .25s, transform .4s var(--x-spring); }
+      .x-prev.is-on { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+
+      /* archive */
+      .x-chips { display: flex; gap: 8px; flex-wrap: wrap; }
+      .x-chip { font: 500 14px var(--x-sans); min-height: 44px; padding: 0 18px; border-radius: 6px; border: 0; background: var(--x-hld); color: var(--x-dfg); cursor: pointer; transition: background .25s, color .25s, border-color .25s; }
+      .x-chip:hover { border-color: var(--x-dfg); }
+      .x-chip.is-on { background: var(--x-dfg); color: var(--x-ink); border-color: var(--x-dfg); }
+      .x-chip sup { font: 600 13px var(--x-lab); margin-left: 4px; }
+      .x-mas { columns: 3 300px; column-gap: clamp(12px, 1.6vw, 20px); }
+      .x-mas .x-w { break-inside: avoid; margin-bottom: clamp(12px, 1.6vw, 20px); position: relative; }
+      .x-mas .x-w:nth-child(5n+2) img { aspect-ratio: 4 / 5; }
+      .x-mas .x-w:nth-child(7n+4) img { aspect-ratio: 1 / 1; }
+      .x-mas .x-w.is-hid { display: none; }
+      .x-w__cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 14px 12px; display: flex; justify-content: space-between; gap: 10px; color: #fff; background: rgba(31, 48, 56, .72); opacity: 0; transform: translateY(8px); transition: opacity .3s, transform .4s var(--x-spring); text-align: left; }
+      .x-w__cap b { font: 700 16px var(--x-serif); }
+      .x-w:hover .x-w__cap, .x-w:focus-visible .x-w__cap { opacity: 1; transform: none; }
+
+      /* band */
+      .x-band { background: var(--x-blue); color: #fff; padding-block: clamp(96px, 14vw, 200px); padding-inline: clamp(16px, 4vw, 48px); }
+      .x-band p { font: 900 clamp(36px, 6.2vw, 104px)/1.18 var(--x-serif); margin: 0; grid-column: 1 / -1; letter-spacing: -.01em; }
+      .x-band .x-lab { font-size: 13px; margin-top: 40px; display: block; }
+
+      /* salon */
+      .x-salon { row-gap: clamp(40px, 6vw, 96px); align-items: start; }
+      .x-salon figure { margin: 0; }
+      .x-salon figcaption { display: grid; grid-template-columns: auto 1fr; gap: 4px 16px; padding-top: 14px; }
+      .x-salon figcaption b { font: 700 20px var(--x-serif); }
+      .x-salon figcaption .x-it { color: var(--x-taupe); font-size: 17px; align-self: center; }
+      .x-salon figcaption .x-lab { grid-column: 1 / -1; color: var(--x-taupe); }
+      .x-s1 { grid-column: 1 / 8; } .x-s2 { grid-column: 9 / 13; margin-top: 18vh !important; }
+      .x-s3 { grid-column: 2 / 6; } .x-s4 { grid-column: 7 / 13; margin-top: -8vh !important; }
+      .x-s2 img, .x-s3 img { aspect-ratio: 4 / 5; }
+
+      /* method */
+      .x-steps { grid-column: 1 / -1; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: clamp(12px, 1.6vw, 24px); }
+      .x-steps li { background: var(--x-hl); padding: 24px; }
+      .x-steps li:nth-child(2) { margin-top: 64px; } .x-steps li:nth-child(3) { margin-top: 128px; } .x-steps li:nth-child(4) { margin-top: 192px; }
+      .x-steps b { display: block; font: 400 clamp(56px, 6vw, 96px)/1 var(--x-lab); color: var(--x-blue); font-variant-numeric: tabular-nums; letter-spacing: -.04em; margin-bottom: 28px; }
+      .x-steps h3 { font: 900 clamp(24px, 2.2vw, 34px)/1.25 var(--x-serif); margin: 0 0 10px; }
+      .x-steps p { margin: 0; color: var(--x-taupe-t); }
+
+      /* services */
+      .x-svc { grid-column: 4 / 13; list-style: none; margin: 0; padding: 0; }
+      .x-svc > li { display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: baseline; padding: 24px; background: var(--x-hld); margin-bottom: 8px; transition: padding .5s var(--x-spring), color .3s; }
+      .x-svc > li:hover { padding-left: 14px; }
+      .x-svc h3 { font: 700 clamp(24px, 2.6vw, 40px)/1.25 var(--x-serif); margin: 0; }
+      .x-svc .x-it { color: var(--x-taupe); font-size: 18px; text-align: right; }
+      .x-svc small { display: block; font: 400 15px var(--x-sans); color: var(--x-taupe); margin-top: 8px; }
+      .x-svcnote { grid-column: 1 / 4; color: var(--x-taupe); margin: 0; align-self: start; font-size: 15px; max-width: 18em; }
+
+      /* facts */
+      .x-facts { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: clamp(12px, 1.6vw, 24px); }
+      .x-fact { background: var(--x-hl); padding: 24px; }
+      .x-fact b { display: block; font: 900 clamp(48px, 6vw, 96px)/1 var(--x-serif); margin-bottom: 18px; font-variant-numeric: tabular-nums; }
+      .x-fact b small { font: 500 max(13px, 0.28em) var(--x-sans); display: inline-block; margin-left: 6px; }
+      .x-fact p { margin: 0; color: var(--x-taupe-t); }
+      .x-about { grid-column: 1 / 8; font: 700 clamp(20px, 2vw, 28px)/1.6 var(--x-serif); margin: 0 0 clamp(48px, 6vw, 88px); }
+
+      /* contact */
+      .x-contact { padding-block: clamp(96px, 14vw, 200px) 40px; padding-inline: clamp(16px, 4vw, 48px); }
+      .x-contact h2 { grid-column: 1 / -1; font: 900 clamp(64px, 15vw, 260px)/1 var(--x-serif); margin: 0 0 48px; letter-spacing: -.03em; }
+      .x-contact .x-ctas { grid-column: 1 / -1; margin-bottom: clamp(96px, 12vw, 160px); }
+      .x-mail { font: italic 300 clamp(22px, 2.6vw, 36px) var(--x-it); text-decoration: none; }
+      .x-mail:hover { color: var(--x-blue); }
+      .x-foot { grid-column: 1 / -1; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-top: 24px; padding-top: 24px; color: var(--x-taupe); }
+      .x-foot a { text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
+
+      /* lightbox */
+      .x-lb { position: fixed; inset: 0; z-index: 90; background: rgba(31, 48, 56, .97); color: var(--x-dfg); display: none; grid-template-rows: auto 1fr auto; }
+      .x-lb.is-open { display: grid; }
+      .x-lb__top, .x-lb__bot { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 12px var(--x-g); }
+      .x-lb__top b { font: 700 20px var(--x-serif); } .x-lb__top em { font: italic 300 17px var(--x-it); color: var(--x-taupe); margin-left: 10px; }
+      .x-lb__stage { display: flex; align-items: center; justify-content: center; min-height: 0; padding: 0 var(--x-g); }
+      .x-lb__stage img { max-width: 100%; max-height: 100%; object-fit: contain; }
+      .x-lb button { background: var(--x-hld); border: 0; color: var(--x-dfg); border-radius: 6px; min-width: 52px; min-height: 52px; font: 400 18px var(--x-lab); cursor: pointer; }
+      .x-lb button:hover { background: var(--x-blue); border-color: var(--x-blue); color: #fff; }
+
+      /* cursor */
+      .x-cur { position: fixed; left: 0; top: 0; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%; background: var(--x-blue); color: #fff; z-index: 100; pointer-events: none; display: none; align-items: center; justify-content: center; font: 700 0px var(--x-serif); transition: width .45s var(--x-spring), height .45s var(--x-spring), margin .45s var(--x-spring), font-size .3s; }
+      .x-cur.is-big { width: 76px; height: 76px; margin: -38px 0 0 -38px; font-size: 20px; }
+      @media (hover: hover) and (pointer: fine) { .x-cur { display: flex; } }
+      @media not all and (hover: hover) { .x-look { cursor: pointer; } }
+
+      @media (max-width: 960px) {
+        .x-navl { display: none; }
+        .x-hero__copy, .x-hero__stack { grid-column: 1 / -1; }
+        .x-stack { aspect-ratio: 4 / 3; }
+        .x-table thead { display: none; }
+        .x-table tr { display: grid; grid-template-columns: 3.5em 1fr auto; border-bottom: 1px solid var(--x-hl); padding: 16px 0; }
+        .x-table td { border: 0; padding: 0 8px 0 0; }
+        .x-table td.x-tb { grid-column: 2; } .x-table td.x-tm:nth-child(4) { grid-column: 3; grid-row: 1; }
+        .x-table td.x-tm:nth-child(3) { grid-column: 2; font-size: 13px; color: var(--x-taupe-t); }
+        .x-table td.x-td { grid-column: 2 / -1; padding-top: 4px; }
+        .x-table td:first-child { padding-left: 0; }
+        .x-s1, .x-s2, .x-s3, .x-s4 { grid-column: 1 / -1; margin-top: 0 !important; }
+        .x-s2, .x-s3 { grid-column: 3 / -1; } .x-s3 { grid-column: 1 / 11; }
+        .x-steps, .x-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 48px; }
+        .x-steps li { margin-top: 0 !important; }
+        .x-svc, .x-svcnote, .x-about { grid-column: 1 / -1; }
+        .x-svcnote { margin-bottom: 32px; }
+        .x-svc > li { grid-template-columns: 3em 1fr; } .x-svc .x-it { grid-column: 2; text-align: left; }
+      }
+      @media (max-width: 560px) {
+        .x-open { font-size: 13px; }
+        .x-logo span { display: none; }
+        .x-steps, .x-facts { grid-template-columns: minmax(0, 1fr); }
+        .x-mas { columns: 2 140px; }
+        .x-lb__bot { padding-bottom: 20px; }
+      }
+      /* accessibility fixes */
+      .x-dark .x-svc > li::before, .x-dark .x-num, .x-dark .x-mail:hover { color: #5fc2cc; }
+      .x-logo { display: inline-flex; align-items: center; min-height: 44px; }
+      .x-logo sup, .x-chip sup { font-size: 13px; }
+      .x-open, .x-open.x-lab { font-size: 13px !important; }
+      .x-tlink, .x-mail { display: inline-flex; align-items: center; min-height: 44px; }
+      .x-foot a { min-width: 44px; justify-content: center; }
+
+      /* redesign stage 1: type */
+      .x-h1 { font: 900 var(--x-t5)/.95 var(--x-serif); letter-spacing: -.04em; }
+      .x-h2, .x-band p, .x-fact b { font: 900 var(--x-t4)/.95 var(--x-serif); letter-spacing: -.04em; }
+      .x-contact h2 { font: 900 var(--x-t5)/.95 var(--x-serif); letter-spacing: -.04em; }
+      .x-steps h3, .x-svc h3, .x-table td.x-tb, .x-salon figcaption b, .x-lb__top b, .x-marq__track span, .x-logo { font-family: var(--x-serif); font-weight: 900; font-size: var(--x-t3); line-height: 1.1; letter-spacing: -.04em; }
+      .x-about { font: 900 var(--x-t3)/1.4 var(--x-serif); }
+      .x-it, .x-mail, .x-table td.x-tb em, .x-marq__track em, .x-lb__top em { font-family: var(--x-it); font-style: normal; font-weight: 400; letter-spacing: 0; }
+      .x-it, .x-salon figcaption .x-it, .x-svc .x-it, .x-sechead .x-it, .x-lb__top em { font-size: var(--x-t2); }
+      .x-hero__en, .x-mail { font-size: var(--x-t3); }
+      .x-table td.x-tb em, .x-marq__track em { font-size: var(--x-t1); }
+      .x-lab, .x-table th, .x-table td:first-child, .x-table td.x-tm, .x-logo sup, .x-logo span, .x-chip sup, .x-band .x-lab, .x-open { font: 600 var(--x-t1)/1.4 var(--x-lab); letter-spacing: .06em; }
+      .x-navl a { font: 400 var(--x-t2)/44px var(--x-sans); }
+      .x-btn, .x-btn b, .x-tlink, .x-chip, .x-table td.x-td, .x-w__cap b, .x-svc small, .x-svcnote, .x-lb button { font-family: var(--x-sans); font-size: var(--x-t2); }
+      .x-btn, .x-chip { font-weight: 600; }
+      .x-fact b small { font: 600 max(13px, 0.28em) var(--x-sans); display: inline-block; letter-spacing: 0; }
+      .x-cur.is-big { font-size: var(--x-t3); }
+
+      /* redesign stage 1: decorative numbers off */
+      .x-cap .x-num, .x-steps b { display: none; }
+      .x-svc > li { grid-template-columns: 1fr auto; }
+
+      /* redesign stage 1: no hairlines, filled tiles, one radius */
+      .x-head, .x-head.is-dark, .x-cap, .x-foot { border: 0; }
+      .x-head.is-dark .x-navl a:hover { color: #5fc2cc; }
+      .x-steps li, .x-fact { border: 0; background: var(--x-hl); padding: 24px; border-radius: var(--x-r); }
+      .x-svc > li, .x-svc > li:last-child { border: 0; background: var(--x-hld); padding: 24px; border-radius: var(--x-r); margin-bottom: 8px; }
+      .x-svc > li:hover { padding-left: 36px; }
+      .x-mail { border: 0; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; }
+      .x-chip { border: 0; background: var(--x-hld); }
+      .x-chip:hover { background: #34505c; }
+      .x-chip.is-on { background: var(--x-dfg); color: var(--x-ink); }
+      .x-lb button { border: 0; background: var(--x-hld); display: inline-flex; align-items: center; justify-content: center; }
+      .x-lb button:hover { background: var(--x-blue); color: var(--x-accent-ink); }
+      .x-btn, .x-chip, .x-lb button, .x-look, .x-stack, .x-prev, .x-w, .x-w__cap { border-radius: var(--x-r); }
+      .x-look, .x-w { overflow: hidden; }
+
+      /* redesign stage 1: section rhythm */
+      .x-sec, .x-sec.x-hero, .x-sec.x-contact, .x-band { padding-block: clamp(56px, 8vw, 112px); padding-inline: clamp(16px, 4vw, 48px); }
+      .x-sec .x-wrap, .x-band .x-wrap { padding-inline: 0; }
+
+      /* redesign stage 1: content visible without JS */
+      .x-line { overflow: visible; }
+      .x-line > span { transform: none; transition: none; }
+      .x-rev { clip-path: none; }
+      .x-prev { opacity: 1; display: none; }
+      .x-prev.is-on { display: block; }
+
+      /* stage 2A: specimen wall hero */
+      .x-head { position: fixed; top: 0; left: 0; right: 0; transition: background .4s, color .4s, transform .35s var(--x-ease); }
+      .x-head.is-hid { transform: translateY(-100%); }
+      .x-head.is-hid:focus-within { transform: none; }
+      .x-spec { --t: clamp(96px, 9vw, 140px); --gap: 8px; position: relative; height: 100svh; min-height: 640px; overflow: hidden; background: #f7f9fa; padding: 0; }
+      .x-wall { position: absolute; inset: 0; display: grid; align-content: start; row-gap: var(--gap); }
+      .x-wall__row { display: grid; grid-auto-flow: column; grid-auto-columns: var(--t); column-gap: var(--gap); width: max-content; }
+      .x-wall__row:nth-child(even) { transform: translateX(calc(var(--t) / -2)); }
+      .x-page .x-tile { display: block; width: var(--t); height: var(--t); max-width: none; border-radius: 6px; object-fit: cover; opacity: 1; animation: x-tin 500ms ease-out both; animation-delay: calc(min(var(--i), 30) * 20ms); }
+      @keyframes x-tin { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: none; } }
+      .x-dock { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); width: min(820px, calc(100% - 32px)); box-sizing: border-box; background: #1f3038; color: #f7f9fa; border-radius: 6px; padding: 28px; display: grid; grid-template-columns: 1fr auto; column-gap: 32px; row-gap: 0; align-items: end; z-index: 2; animation: x-dock 500ms ease-out 200ms both; }
+      @keyframes x-dock { from { opacity: 0; transform: translate(-50%, 16px); } to { opacity: 1; transform: translateX(-50%); } }
+      .x-dock h1 { font: 900 clamp(32px, 4.2vw, 56px)/1 var(--x-serif); margin: 0; color: inherit; text-wrap: balance; letter-spacing: -.01em; }
+      .x-dock__sub { font: 400 17px/1.55 var(--x-sans); color: #b9c5cb; max-width: 34ch; margin: 14px 0 0; }
+      .x-page a.x-dock__btn { display: inline-flex; align-items: center; justify-content: center; background: #0d7480; color: #fff; border-radius: 6px; padding: 16px 24px; font: 600 17px/1.2 "Figtree", "Noto Sans SC", sans-serif; text-decoration: none; white-space: nowrap; transition: background .2s; }
+      .x-page a.x-dock__btn:hover { background: #0b5f69; }
+      .x-page a.x-dock__btn:focus-visible { outline: 2px solid #5fc2cc; outline-offset: 3px; }
+      .x-dock > nav { grid-column: 1 / -1; }
+      .x-dock__nav { display: flex; flex-wrap: wrap; column-gap: 20px; margin: 20px 0 -12px; padding: 0; list-style: none; font: 400 15px/1 var(--x-sans); }
+      .x-page .x-dock__nav a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; min-width: 44px; color: #b9c5cb; text-decoration: none; transition: color .2s; }
+      .x-page .x-dock__nav a:hover, .x-page .x-dock__nav a:focus-visible { color: #f7f9fa; }
+      .x-dock__nav a:focus-visible { outline: 2px solid #5fc2cc; outline-offset: 2px; }
+      @media (max-width: 639px) {
+        .x-spec { --t: 22vw; --gap: 6px; }
+        .x-dock { left: 8px; right: 8px; bottom: 8px; width: auto; transform: none; grid-template-columns: 1fr; row-gap: 20px; padding: 24px; animation-name: x-dockm; }
+        @keyframes x-dockm { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+        .x-dock h1 { font-size: clamp(28px, 8vw, 36px); }
+        .x-page a.x-dock__btn { width: 100%; box-sizing: border-box; }
+        .x-dock__nav { margin-top: 0; column-gap: 8px; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .x-page .x-tile, .x-dock { animation: none; }
+      }
+
+      /* stage 2B: featured work, one strip per project */
+      #work.x-sec { background: #f7f9fa; color: #1f3038; overflow-x: clip; }
+      .x-fw { display: grid; grid-template-columns: 180px minmax(0, 1fr); column-gap: clamp(24px, 3vw, 48px); align-items: start; }
+      .x-fw__rail { position: sticky; top: 96px; }
+      .x-fw__rail .x-h2 { margin: 0; color: #1f3038; }
+      .x-fw__lead { font: 400 17px/1.55 var(--x-sans); color: #5d6b72; margin: 12px 0 24px; }
+      .x-fw__filt { display: flex; flex-direction: column; align-items: flex-start; list-style: none; margin: 0; padding: 0; }
+      .x-fw__f { display: inline-flex; align-items: center; min-height: 44px; min-width: 44px; padding: 0; border: 0; background: none; font: 400 15px/1.2 var(--x-sans); color: #5d6b72; cursor: pointer; white-space: nowrap; transition: color 240ms ease; }
+      .x-fw__f:hover { color: #1f3038; }
+      .x-fw__f.is-on { color: #1f3038; font-weight: 600; }
+      .x-fw__f:focus-visible, .x-strip__img:focus-visible { outline: 2px solid #0d7480; outline-offset: 2px; border-radius: 6px; }
+      .x-strips { display: flex; flex-direction: column; gap: 48px; min-width: 0; }
+      .x-strip { display: flex; flex-direction: column; gap: 8px; min-width: 0; transition: opacity 240ms ease; }
+      .x-strip.is-out { opacity: 0; }
+      .x-strip[hidden] { display: none; }
+      .x-strip__row { display: flex; gap: 8px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scrollbar-width: none; margin-right: calc(-1 * clamp(16px, 4vw, 48px)); }
+      .x-strip__row::-webkit-scrollbar { display: none; }
+      .x-strip__img { flex: none; display: block; padding: 0; border: 0; background: #ecf0f2; border-radius: 6px; overflow: hidden; scroll-snap-align: start; cursor: zoom-in; }
+      .x-page .x-strip__img img { display: block; height: 220px; width: auto; max-width: none; border-radius: 6px; transition: opacity 240ms ease; }
+      @media (hover: hover) { .x-strips:has(.x-strip:hover) .x-strip:not(:hover) img { opacity: .45; } }
+      @media (hover: hover) and (pointer: fine) { .x-strip__img { cursor: none; } }
+      .x-strip__cap { display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: baseline; margin: 0; font: 400 14px/1.4 var(--x-sans); color: #5d6b72; }
+      .x-strip__cap b { color: #1f3038; font-weight: 600; }
+      .x-strip__yr { text-align: right; font-variant-numeric: tabular-nums; }
+      .x-fw__empty { margin: 0; font: 400 15px/1.5 var(--x-sans); color: #5d6b72; }
+      .x-fw__empty a { color: #1f3038; text-underline-offset: 4px; }
+      .x-strip.is-pending { opacity: 0; transform: translateX(24px); }
+      .x-strip.is-enter { animation: x-sin 500ms ease-out backwards; animation-delay: var(--d, 0ms); }
+      @keyframes x-sin { from { opacity: 0; transform: translateX(24px); } }
+      @media (max-width: 639px) {
+        .x-fw { grid-template-columns: minmax(0, 1fr); row-gap: 24px; }
+        .x-fw__rail { position: static; }
+        .x-fw__lead { margin-bottom: 8px; }
+        .x-fw__filt { flex-direction: row; gap: 20px; overflow-x: auto; scrollbar-width: none; margin-right: calc(-1 * clamp(16px, 4vw, 48px)); }
+        .x-fw__filt::-webkit-scrollbar { display: none; }
+        .x-fw__filt li { flex: none; }
+        .x-page .x-strip__img img { height: 150px; }
+        .x-strip__cap { grid-template-columns: 1fr auto; }
+        .x-strip__desc { display: none; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .x-strip.is-pending { opacity: 1; transform: none; }
+        .x-strip.is-enter { animation: none; }
+      }
+
+      @media (max-width: 960px) {
+        .x-svc > li { grid-template-columns: 1fr; }
+        .x-svc .x-it { grid-column: 1; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .x-line > span { transform: none; transition: none; }
+        .x-rev { clip-path: none; transition: none; }
+        .x-stack img { transition: opacity .01s; transform: none !important; }
+        *, *::before, *::after { transition-duration: .01ms !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page x-page" id="top">
+      <header class="x-head" id="xhead">
+        <div class="x-wrap">
+          <a class="x-logo" href="#top">造物设<sup>®</sup><span>ZAOWU</span></a>
+          <nav aria-label="主导航"><ul class="x-navl">
+            <li><a href="#work">作品</a></li><li><a href="#method">方法</a></li><li><a href="#services">服务</a></li><li><a href="#about">关于</a></li><li><a href="#contact">联系</a></li>
+          </ul></nav>
+          <p class="x-open x-lab" style="margin:0"><i></i>接受新项目 2026</p>
+        </div>
+      </header>
+      <main>
+        <section class="x-spec" id="hero" data-tone="light" aria-label="造物设 品牌设计工作室">
+          <div class="x-wall" aria-hidden="true">
+            <div class="x-wall__row"><img class="x-tile" style="--i:0" src="home/daocheng-1.jpg" alt="" /><img class="x-tile" style="--i:1" src="home/kongbei-34.jpg" alt="" /><img class="x-tile" style="--i:2" src="home/broadway-41.jpg" alt="" /><img class="x-tile" style="--i:3" src="home/niuxiaoya-11.jpg" alt="" /><i class="x-tile" style="--i:4;background:#ecf0f2"></i><img class="x-tile" style="--i:5" src="home/musecup-11.jpg" alt="" /><img class="x-tile" style="--i:6" src="home/p19.jpg" alt="" /><img class="x-tile" style="--i:7" src="home/kongbei-21.jpg" alt="" /><img class="x-tile" style="--i:8" src="home/broadway-10.jpg" alt="" /><i class="x-tile" style="--i:9;background:#1f3038"></i><img class="x-tile" style="--i:10" src="home/daocheng-7.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:11" src="home/niuxiaoya-1.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:12" src="home/musecup-4.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:13" src="home/p20.jpg" alt="" loading="lazy" /><i class="x-tile" style="--i:14;background:#0d7480"></i><img class="x-tile" style="--i:15" src="home/kongbei-57.jpg" alt="" loading="lazy" /></div>
+            <div class="x-wall__row"><img class="x-tile" style="--i:16" src="home/broadway-24.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:17" src="home/daocheng-83.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:18" src="home/niuxiaoya-20.jpg" alt="" loading="lazy" /><i class="x-tile" style="--i:19;background:#ecf0f2"></i><img class="x-tile" style="--i:20" src="home/musecup-30.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:21" src="home/lanxiangji-12.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:22" src="home/benxiaoliu-1.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:23" src="home/p6.jpg" alt="" loading="lazy" /><i class="x-tile" style="--i:24;background:#1f3038"></i><img class="x-tile" style="--i:25" src="home/kongbei-24.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:26" src="home/broadway-12.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:27" src="home/niuxiaoya-15.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:28" src="home/musecup-13.jpg" alt="" loading="lazy" /><i class="x-tile" style="--i:29;background:#0d7480"></i><img class="x-tile" style="--i:30" src="home/lanxiangji-16.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:31" src="home/benxiaoliu-3.jpg" alt="" loading="lazy" /></div>
+            <div class="x-wall__row"><img class="x-tile" style="--i:32" src="home/p7.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:33" src="home/p11.jpg" alt="" loading="lazy" /><i class="x-tile" style="--i:34;background:#ecf0f2"></i><img class="x-tile" style="--i:35" src="home/kongbei-39.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:36" src="home/broadway-15.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:37" src="home/niuxiaoya-29.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:38" src="home/musecup-14.jpg" alt="" loading="lazy" /><i class="x-tile" style="--i:39;background:#1f3038"></i><img class="x-tile" style="--i:40" src="home/lanxiangji-18.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:41" src="home/benxiaoliu-13.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:42" src="home/p8.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:43" src="home/p12.jpg" alt="" loading="lazy" /><i class="x-tile" style="--i:44;background:#0d7480"></i><img class="x-tile" style="--i:45" src="home/p15.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:46" src="home/kongbei-62.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:47" src="home/broadway-45.jpg" alt="" loading="lazy" /></div>
+            <div class="x-wall__row"><img class="x-tile" style="--i:48" src="home/musecup-32.jpg" alt="" loading="lazy" /><i class="x-tile" style="--i:49;background:#ecf0f2"></i><img class="x-tile" style="--i:50" src="home/lanxiangji-26.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:51" src="home/p16.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:52" src="home/p23.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:53" src="home/lanxiangji-32.jpg" alt="" loading="lazy" /><i class="x-tile" style="--i:54;background:#1f3038"></i><img class="x-tile" style="--i:55" src="home/p24.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:56" src="home/p27.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:57" src="home/p28.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:58" src="home/p31.jpg" alt="" loading="lazy" /><i class="x-tile" style="--i:59;background:#0d7480"></i><img class="x-tile" style="--i:60" src="home/daocheng-1.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:61" src="home/kongbei-34.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:62" src="home/broadway-41.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:63" src="home/niuxiaoya-11.jpg" alt="" loading="lazy" /></div>
+            <div class="x-wall__row"><i class="x-tile" style="--i:64;background:#ecf0f2"></i><img class="x-tile" style="--i:65" src="home/musecup-11.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:66" src="home/p19.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:67" src="home/kongbei-21.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:68" src="home/broadway-10.jpg" alt="" loading="lazy" /><i class="x-tile" style="--i:69;background:#1f3038"></i><img class="x-tile" style="--i:70" src="home/daocheng-7.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:71" src="home/niuxiaoya-1.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:72" src="home/musecup-4.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:73" src="home/p20.jpg" alt="" loading="lazy" /><i class="x-tile" style="--i:74;background:#0d7480"></i><img class="x-tile" style="--i:75" src="home/kongbei-57.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:76" src="home/broadway-24.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:77" src="home/daocheng-83.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:78" src="home/niuxiaoya-20.jpg" alt="" loading="lazy" /><i class="x-tile" style="--i:79;background:#ecf0f2"></i></div>
+            <div class="x-wall__row"><img class="x-tile" style="--i:80" src="home/musecup-30.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:81" src="home/lanxiangji-12.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:82" src="home/benxiaoliu-1.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:83" src="home/p6.jpg" alt="" loading="lazy" /><i class="x-tile" style="--i:84;background:#1f3038"></i><img class="x-tile" style="--i:85" src="home/kongbei-24.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:86" src="home/broadway-12.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:87" src="home/niuxiaoya-15.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:88" src="home/musecup-13.jpg" alt="" loading="lazy" /><i class="x-tile" style="--i:89;background:#0d7480"></i><img class="x-tile" style="--i:90" src="home/lanxiangji-16.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:91" src="home/benxiaoliu-3.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:92" src="home/p7.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:93" src="home/p11.jpg" alt="" loading="lazy" /><i class="x-tile" style="--i:94;background:#ecf0f2"></i><img class="x-tile" style="--i:95" src="home/kongbei-39.jpg" alt="" loading="lazy" /></div>
+            <div class="x-wall__row"><img class="x-tile" style="--i:96" src="home/broadway-15.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:97" src="home/niuxiaoya-29.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:98" src="home/musecup-14.jpg" alt="" loading="lazy" /><i class="x-tile" style="--i:99;background:#1f3038"></i><img class="x-tile" style="--i:100" src="home/lanxiangji-18.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:101" src="home/benxiaoliu-13.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:102" src="home/p8.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:103" src="home/p12.jpg" alt="" loading="lazy" /><i class="x-tile" style="--i:104;background:#0d7480"></i><img class="x-tile" style="--i:105" src="home/p15.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:106" src="home/kongbei-62.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:107" src="home/broadway-45.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:108" src="home/musecup-32.jpg" alt="" loading="lazy" /><i class="x-tile" style="--i:109;background:#ecf0f2"></i><img class="x-tile" style="--i:110" src="home/lanxiangji-26.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:111" src="home/p16.jpg" alt="" loading="lazy" /></div>
+            <div class="x-wall__row"><img class="x-tile" style="--i:112" src="home/p23.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:113" src="home/lanxiangji-32.jpg" alt="" loading="lazy" /><i class="x-tile" style="--i:114;background:#1f3038"></i><img class="x-tile" style="--i:115" src="home/p24.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:116" src="home/p27.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:117" src="home/p28.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:118" src="home/p31.jpg" alt="" loading="lazy" /><i class="x-tile" style="--i:119;background:#0d7480"></i><img class="x-tile" style="--i:120" src="home/daocheng-1.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:121" src="home/kongbei-34.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:122" src="home/broadway-41.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:123" src="home/niuxiaoya-11.jpg" alt="" loading="lazy" /><i class="x-tile" style="--i:124;background:#ecf0f2"></i><img class="x-tile" style="--i:125" src="home/musecup-11.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:126" src="home/p19.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:127" src="home/kongbei-21.jpg" alt="" loading="lazy" /></div>
+            <div class="x-wall__row"><img class="x-tile" style="--i:128" src="home/broadway-10.jpg" alt="" loading="lazy" /><i class="x-tile" style="--i:129;background:#1f3038"></i><img class="x-tile" style="--i:130" src="home/daocheng-7.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:131" src="home/niuxiaoya-1.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:132" src="home/musecup-4.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:133" src="home/p20.jpg" alt="" loading="lazy" /><i class="x-tile" style="--i:134;background:#0d7480"></i><img class="x-tile" style="--i:135" src="home/kongbei-57.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:136" src="home/broadway-24.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:137" src="home/daocheng-83.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:138" src="home/niuxiaoya-20.jpg" alt="" loading="lazy" /><i class="x-tile" style="--i:139;background:#ecf0f2"></i><img class="x-tile" style="--i:140" src="home/musecup-30.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:141" src="home/lanxiangji-12.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:142" src="home/benxiaoliu-1.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:143" src="home/p6.jpg" alt="" loading="lazy" /></div>
+            <div class="x-wall__row"><i class="x-tile" style="--i:144;background:#1f3038"></i><img class="x-tile" style="--i:145" src="home/kongbei-24.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:146" src="home/broadway-12.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:147" src="home/niuxiaoya-15.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:148" src="home/musecup-13.jpg" alt="" loading="lazy" /><i class="x-tile" style="--i:149;background:#0d7480"></i><img class="x-tile" style="--i:150" src="home/lanxiangji-16.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:151" src="home/benxiaoliu-3.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:152" src="home/p7.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:153" src="home/p11.jpg" alt="" loading="lazy" /><i class="x-tile" style="--i:154;background:#ecf0f2"></i><img class="x-tile" style="--i:155" src="home/kongbei-39.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:156" src="home/broadway-15.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:157" src="home/niuxiaoya-29.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:158" src="home/musecup-14.jpg" alt="" loading="lazy" /><i class="x-tile" style="--i:159;background:#1f3038"></i></div>
+            <div class="x-wall__row"><img class="x-tile" style="--i:160" src="home/lanxiangji-18.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:161" src="home/benxiaoliu-13.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:162" src="home/p8.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:163" src="home/p12.jpg" alt="" loading="lazy" /><i class="x-tile" style="--i:164;background:#0d7480"></i><img class="x-tile" style="--i:165" src="home/p15.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:166" src="home/kongbei-62.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:167" src="home/broadway-45.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:168" src="home/musecup-32.jpg" alt="" loading="lazy" /><i class="x-tile" style="--i:169;background:#ecf0f2"></i><img class="x-tile" style="--i:170" src="home/lanxiangji-26.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:171" src="home/p16.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:172" src="home/p23.jpg" alt="" loading="lazy" /><img class="x-tile" style="--i:173" src="home/lanxiangji-32.jpg" alt="" loading="lazy" /><i class="x-tile" style="--i:174;background:#1f3038"></i><img class="x-tile" style="--i:175" src="home/p24.jpg" alt="" loading="lazy" /></div>
+          </div>
+          <div class="x-dock">
+            <div>
+              <h1>造物设 · 品牌设计工作室</h1>
+              <p class="x-dock__sub">为餐饮、茶饮、咖啡与消费品牌，建立被一眼认出的视觉系统。</p>
+            </div>
+            <a class="x-dock__btn" href="mailto:shiqiangqiang96@163.com">开始一个项目</a>
+            <nav aria-label="页面目录"><ul class="x-dock__nav">
+              <li><a href="#work">作品</a></li><li><a href="#archive">档案</a></li><li><a href="#method">方法</a></li><li><a href="#services">服务</a></li><li><a href="#contact">联系</a></li>
+            </ul></nav>
+          </div>
+        </section>
+
+        <section class="x-sec x-light" id="work" data-tone="light">
+          <div class="x-wrap">
+            <div class="x-fw">
+              <div class="x-fw__rail">
+                <h2 class="x-h2">精选作品</h2>
+                <p class="x-fw__lead">6 个品牌，从符号到落地。</p>
+                <ul class="x-fw__filt" aria-label="按品类筛选">
+                  <li><button type="button" class="x-fw__f is-on" data-f="all" aria-pressed="true">全部</button></li>
+                  <li><button type="button" class="x-fw__f" data-f="餐饮" aria-pressed="false">餐饮</button></li>
+                  <li><button type="button" class="x-fw__f" data-f="茶饮咖啡" aria-pressed="false">茶饮咖啡</button></li>
+                  <li><button type="button" class="x-fw__f" data-f="快消" aria-pressed="false">快消</button></li>
+                  <li><button type="button" class="x-fw__f" data-f="文旅" aria-pressed="false">文旅</button></li>
+                </ul>
+              </div>
+              <div class="x-strips" id="xstrips">
+                <article class="x-strip" id="r1" data-b="1" data-c="茶饮咖啡">
+                  <div class="x-strip__row">
+                    <button type="button" class="x-strip__img"><img src="home/kongbei-21.jpg" alt="空杯计划 绿色猴子IP提案" width="1418" height="798" loading="lazy" /></button>
+                    <button type="button" class="x-strip__img"><img src="home/kongbei-24.jpg" alt="空杯计划 品牌提案 2" width="1418" height="798" loading="lazy" /></button>
+                    <button type="button" class="x-strip__img"><img src="home/kongbei-34.jpg" alt="空杯计划 品牌提案 3" width="1418" height="798" loading="lazy" /></button>
+                    <button type="button" class="x-strip__img"><img src="home/kongbei-39.jpg" alt="空杯计划 品牌提案 4" width="1418" height="798" loading="lazy" /></button>
+                    <button type="button" class="x-strip__img"><img src="home/kongbei-57.jpg" alt="空杯计划 复古印象派提案" width="1418" height="798" loading="lazy" /></button>
+                    <button type="button" class="x-strip__img"><img src="home/kongbei-62.jpg" alt="空杯计划 品牌提案 6" width="1418" height="798" loading="lazy" /></button>
+                  </div>
+                  <p class="x-strip__cap"><b>空杯计划</b><span class="x-strip__desc">茶饮咖啡 · 多套品牌提案</span><span class="x-strip__yr"></span></p>
+                </article>
+                <article class="x-strip" id="r2" data-b="2" data-c="文旅">
+                  <div class="x-strip__row">
+                    <button type="button" class="x-strip__img"><img src="home/broadway-10.jpg" alt="百老汇小镇 城堡线描方案" width="1418" height="798" loading="lazy" /></button>
+                    <button type="button" class="x-strip__img"><img src="home/broadway-12.jpg" alt="百老汇小镇 方案 2" width="1418" height="798" loading="lazy" /></button>
+                    <button type="button" class="x-strip__img"><img src="home/broadway-15.jpg" alt="百老汇小镇 方案 3" width="1418" height="798" loading="lazy" /></button>
+                    <button type="button" class="x-strip__img"><img src="home/broadway-24.jpg" alt="百老汇小镇 粉色B字符号方案" width="1418" height="798" loading="lazy" /></button>
+                    <button type="button" class="x-strip__img"><img src="home/broadway-41.jpg" alt="百老汇小镇 方案 5" width="1418" height="798" loading="lazy" /></button>
+                    <button type="button" class="x-strip__img"><img src="home/broadway-45.jpg" alt="百老汇小镇 方案 6" width="1418" height="798" loading="lazy" /></button>
+                  </div>
+                  <p class="x-strip__cap"><b>百老汇小镇</b><span class="x-strip__desc">文旅空间 · 三套标志方案</span><span class="x-strip__yr">2023</span></p>
+                </article>
+                <article class="x-strip" id="r3" data-b="3" data-c="餐饮">
+                  <div class="x-strip__row">
+                    <button type="button" class="x-strip__img"><img src="home/daocheng-1.jpg" alt="稻成酸菜鱼 黑猫超级符号" width="1418" height="798" loading="lazy" /></button>
+                    <button type="button" class="x-strip__img"><img src="home/daocheng-7.jpg" alt="稻成酸菜鱼 黄黑品牌手册" width="1418" height="798" loading="lazy" /></button>
+                    <button type="button" class="x-strip__img"><img src="home/daocheng-83.jpg" alt="稻成酸菜鱼 门店空间" width="1021" height="575" loading="lazy" /></button>
+                  </div>
+                  <p class="x-strip__cap"><b>稻成酸菜鱼</b><span class="x-strip__desc">餐饮 · 超级符号与门店空间</span><span class="x-strip__yr"></span></p>
+                </article>
+                <article class="x-strip" id="r4" data-b="4" data-c="餐饮">
+                  <div class="x-strip__row">
+                    <button type="button" class="x-strip__img"><img src="home/niuxiaoya-1.jpg" alt="牛小丫 品牌主视觉" width="1489" height="957" loading="lazy" /></button>
+                    <button type="button" class="x-strip__img"><img src="home/niuxiaoya-11.jpg" alt="牛小丫 品牌延展 2" width="1489" height="957" loading="lazy" /></button>
+                    <button type="button" class="x-strip__img"><img src="home/niuxiaoya-15.jpg" alt="牛小丫 品牌延展 3" width="1489" height="957" loading="lazy" /></button>
+                    <button type="button" class="x-strip__img"><img src="home/niuxiaoya-20.jpg" alt="牛小丫 品牌延展" width="1489" height="957" loading="lazy" /></button>
+                    <button type="button" class="x-strip__img"><img src="home/niuxiaoya-29.jpg" alt="牛小丫 品牌延展 5" width="1489" height="957" loading="lazy" /></button>
+                  </div>
+                  <p class="x-strip__cap"><b>牛小丫</b><span class="x-strip__desc">餐饮 · 潮汕鲜牛肉火锅品牌</span><span class="x-strip__yr"></span></p>
+                </article>
+                <article class="x-strip" id="r5" data-b="11" data-c="餐饮">
+                  <div class="x-strip__row">
+                    <button type="button" class="x-strip__img"><img src="home/p19.jpg" alt="龍尊轩 宋式极简品牌" width="1733" height="975" loading="lazy" /></button>
+                    <button type="button" class="x-strip__img"><img src="home/p20.jpg" alt="龍尊轩 品牌视觉" width="1733" height="975" loading="lazy" /></button>
+                  </div>
+                  <p class="x-strip__cap"><b>龍尊轩</b><span class="x-strip__desc">餐饮 · 宋式极简 × 粤派精奢</span><span class="x-strip__yr">2024</span></p>
+                </article>
+                <article class="x-strip" id="r6" data-b="5" data-c="茶饮咖啡">
+                  <div class="x-strip__row">
+                    <button type="button" class="x-strip__img"><img src="home/musecup-4.jpg" alt="灵感杯子 品牌视觉" width="1418" height="798" loading="lazy" /></button>
+                    <button type="button" class="x-strip__img"><img src="home/musecup-11.jpg" alt="灵感杯子 作品 2" width="1418" height="798" loading="lazy" /></button>
+                    <button type="button" class="x-strip__img"><img src="home/musecup-13.jpg" alt="灵感杯子 作品 3" width="1418" height="798" loading="lazy" /></button>
+                    <button type="button" class="x-strip__img"><img src="home/musecup-14.jpg" alt="灵感杯子 作品 4" width="1418" height="798" loading="lazy" /></button>
+                    <button type="button" class="x-strip__img"><img src="home/musecup-30.jpg" alt="灵感杯子 包装延展" width="1418" height="798" loading="lazy" /></button>
+                    <button type="button" class="x-strip__img"><img src="home/musecup-32.jpg" alt="灵感杯子 作品 6" width="1418" height="798" loading="lazy" /></button>
+                  </div>
+                  <p class="x-strip__cap"><b>灵感杯子</b><span class="x-strip__desc">茶饮咖啡 · Drink Art</span><span class="x-strip__yr"></span></p>
+                </article>
+                <p class="x-fw__empty" id="xfwempty" hidden>精选中暂无此品类，<a href="#archive">去作品库看看</a>。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="x-sec x-light" id="index" data-tone="light">
+          <div class="x-wrap x-grid">
+            <div class="x-sechead"><h2 class="x-h2 x-rise"><span class="x-line"><span>全部 14 个品牌。</span></span></h2><span class="x-it">Index. Hover to preview, click to open</span></div>
+            <table class="x-table">
+              <thead><tr><th scope="col" style="padding-left:12px">No.</th><th scope="col">品牌</th><th scope="col">行业</th><th scope="col">年份</th><th scope="col">内容</th></tr></thead>
+              <tbody id="xrows"></tbody>
+            </table>
+          </div>
+          <img class="x-prev" id="xprev" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" aria-hidden="true" />
+        </section>
+        <section class="x-sec x-dark" id="archive" data-tone="dark">
+          <div class="x-wrap">
+            <div class="x-sechead"><h2 class="x-h2 x-rise"><span class="x-line"><span>档案馆：每一张图。</span></span></h2>
+              <div class="x-chips" role="group" aria-label="按行业筛选">
+                <button class="x-chip is-on" data-f="all" aria-pressed="true">全部</button><button class="x-chip" data-f="餐饮" aria-pressed="false">餐饮</button><button class="x-chip" data-f="茶饮咖啡" aria-pressed="false">茶饮咖啡</button><button class="x-chip" data-f="快消饮品" aria-pressed="false">快消饮品</button><button class="x-chip" data-f="美业" aria-pressed="false">美业</button><button class="x-chip" data-f="文旅空间" aria-pressed="false">文旅空间</button>
+              </div>
+            </div>
+            <div class="x-mas" id="xmas">
+              <button class="x-look x-w" data-b="1"><img src="home/kongbei-21.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="1"><img src="home/kongbei-24.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="1"><img src="home/kongbei-34.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="1"><img src="home/kongbei-39.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="1"><img src="home/kongbei-57.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="1"><img src="home/kongbei-62.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="2"><img src="home/broadway-10.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="2"><img src="home/broadway-12.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="2"><img src="home/broadway-15.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="2"><img src="home/broadway-24.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="2"><img src="home/broadway-41.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="2"><img src="home/broadway-45.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="3"><img src="home/daocheng-1.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="3"><img src="home/daocheng-7.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="3"><img src="home/daocheng-83.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="4"><img src="home/niuxiaoya-1.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="4"><img src="home/niuxiaoya-11.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="4"><img src="home/niuxiaoya-15.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="4"><img src="home/niuxiaoya-20.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="4"><img src="home/niuxiaoya-29.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="5"><img src="home/musecup-4.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="5"><img src="home/musecup-11.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="5"><img src="home/musecup-13.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="5"><img src="home/musecup-14.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="5"><img src="home/musecup-30.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="5"><img src="home/musecup-32.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="6"><img src="home/lanxiangji-12.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="6"><img src="home/lanxiangji-16.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="6"><img src="home/lanxiangji-18.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="6"><img src="home/lanxiangji-26.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="6"><img src="home/lanxiangji-32.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="7"><img src="home/benxiaoliu-1.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="7"><img src="home/benxiaoliu-3.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="7"><img src="home/benxiaoliu-13.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="8"><img src="home/p6.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="8"><img src="home/p7.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="8"><img src="home/p8.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="9"><img src="home/p11.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="9"><img src="home/p12.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="10"><img src="home/p15.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="10"><img src="home/p16.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="11"><img src="home/p19.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="11"><img src="home/p20.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="12"><img src="home/p23.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="12"><img src="home/p24.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="13"><img src="home/p27.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="13"><img src="home/p28.jpg" alt="" loading="lazy" /></button>
+              <button class="x-look x-w" data-b="14"><img src="home/p31.jpg" alt="" loading="lazy" /></button>
+            </div>
+          </div>
+        </section>
+
+        <section class="x-band" aria-label="设计信条">
+          <div class="x-wrap x-grid">
+            <p class="x-rise"><span class="x-line"><span>符号先于装饰，</span></span><span class="x-line"><span>系统胜于风格。</span></span></p>
+            <span class="x-lab" style="grid-column:1/-1">Symbol before ornament · System over style</span>
+          </div>
+        </section>
+
+        <section class="x-sec x-dark" id="other" data-tone="dark">
+          <div class="x-wrap x-grid x-salon">
+            <div class="x-sechead"><h2 class="x-h2 x-rise"><span class="x-line"><span>品牌之外的造物。</span></span></h2><span class="x-it">Other creations</span></div>
+            <figure class="x-s1"><button class="x-look x-rev" data-g="other" data-cap="字体设计 Type design"><img src="home/p33.jpg" alt="字体设计作品" loading="lazy" /></button><figcaption><b>字体设计</b><span class="x-it">Type design</span><span class="x-lab">Cat. A · 字形与标题字</span></figcaption></figure>
+            <figure class="x-s2" data-par=".06"><button class="x-look x-rev" data-g="other" data-cap="版式设计 Layout"><img src="home/p35.jpg" alt="版式设计作品" loading="lazy" /></button><figcaption><b>版式设计</b><span class="x-it">Layout</span><span class="x-lab">Cat. B · 平面与编排</span></figcaption></figure>
+            <figure class="x-s3"><button class="x-look x-rev" data-g="other" data-cap="线上设计 Digital"><img src="home/p38.jpg" alt="线上设计作品" loading="lazy" /></button><figcaption><b>线上设计</b><span class="x-it">Digital</span><span class="x-lab">Cat. C · 线上视觉</span></figcaption></figure>
+            <figure class="x-s4" data-par=".04"><button class="x-look x-rev" data-g="other" data-cap="插画 Illustration"><img src="home/p41.jpg" alt="插画作品" loading="lazy" /></button><figcaption><b>插画</b><span class="x-it">Illustration</span><span class="x-lab">Cat. D · 手绘与插画</span></figcaption></figure>
+          </div>
+        </section>
+
+        <section class="x-sec x-light" id="method" data-tone="light">
+          <div class="x-wrap x-grid">
+            <div class="x-sechead"><h2 class="x-h2 x-rise"><span class="x-line"><span>四步，从洞察到落地。</span></span></h2><span class="x-it">Method</span></div>
+            <ol class="x-steps">
+              <li><h3>策略定位</h3><p>洞察行业与竞品，找准差异。</p></li>
+              <li><h3>超级符号</h3><p>提炼一个能被一眼记住的符号。</p></li>
+              <li><h3>视觉系统</h3><p>建立字体、色彩、图形规范。</p></li>
+              <li><h3>延展落地</h3><p>包装、物料、空间与线上全落地。</p></li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="x-sec x-dark" id="services" data-tone="dark">
+          <div class="x-wrap x-grid">
+            <div class="x-sechead"><h2 class="x-h2 x-rise"><span class="x-line"><span>我们做的七件事。</span></span></h2><span class="x-it">Services</span></div>
+            <p class="x-svcnote">从一个符号到一家门店，从屏幕到印刷厂，同一支团队负责到底。</p>
+            <ul class="x-svc">
+              <li><h3>品牌全案<small>策略定位 · 超级符号 · 视觉系统</small></h3><span class="x-it">Full brand identity</span></li>
+              <li><h3>字体设计</h3><span class="x-it">Typeface &amp; lettering</span></li>
+              <li><h3>平面与版式设计</h3><span class="x-it">Graphic &amp; layout</span></li>
+              <li><h3>IP 形象设计</h3><span class="x-it">Character IP</span></li>
+              <li><h3>插画设计</h3><span class="x-it">Illustration</span></li>
+              <li><h3>空间与门头设计</h3><span class="x-it">Space &amp; storefront</span></li>
+              <li><h3>设计到印刷落地</h3><span class="x-it">Design to print</span></li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="x-sec x-light" id="about" data-tone="light">
+          <div class="x-wrap x-grid">
+            <div class="x-sechead"><h2 class="x-h2 x-rise"><span class="x-line"><span>关于造物设。</span></span></h2><span class="x-it">About the studio</span></div>
+            <p class="x-about">造物设是一间品牌设计工作室。我们相信，一个好品牌应该像一件被认真做出来的物：有符号，有系统，经得起反复使用。</p>
+            <div class="x-facts">
+              <div class="x-fact"><b>2015<small>年起</small></b><p>持续为品牌造物</p></div>
+              <div class="x-fact"><b>14<small>个</small></b><p>品牌案例</p></div>
+              <div class="x-fact"><b>餐饮</b><p>行业垂直解决方案</p></div>
+              <div class="x-fact"><b>3D</b><p>三维与动态 · C4D · Blender · AE</p></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="x-dark x-sec x-contact" id="contact" data-tone="dark">
+          <div class="x-wrap x-grid">
+            <h2 class="x-rise"><span class="x-line"><span>一起造物。</span></span></h2>
+            <div class="x-ctas">
+              <a class="x-btn" href="mailto:shiqiangqiang96@163.com">开始一个项目 <b>→</b></a>
+              <a class="x-mail" href="mailto:shiqiangqiang96@163.com">shiqiangqiang96@163.com</a>
+            </div>
+            <footer class="x-foot x-lab">
+              <span>© 2026 造物设 ZAOWU DESIGN</span>
+              <span class="x-open"><i></i>接受新项目 2026</span>
+              <a href="#top">回到顶部 ↑</a>
+            </footer>
+          </div>
+        </section>
+      </main>
     </div>
-  </header>
-  <a class="ed-to-top" href="#top" data-to-top aria-label="回到顶部">↑</a>
-
-  <main id="main">
-    <section class="ed-hero" data-nav-dark data-reveal>
-      <h1 class="ed-hero-name" aria-label="ZAOWU 造物设">
-        <span class="ed-hero-en">ZAOWU</span>
-        <span class="ed-hero-cn">造物设</span>
-      </h1>
-      <p class="ed-hero-kicker">
-        <span class="ed-hero-kicker-line">视觉设计 / 品牌设计</span>
-        <span class="ed-hero-kicker-line">为渴望被记住的品牌而设计</span>
-      </p>
-      <div class="ed-hero-bottom">
-        <span class="ed-hero-loc">上海 · 中国 <time data-clock>—</time></span>
-        <span class="ed-hero-scroll">Scroll</span>
-      </div>
-    </section>
-
-    <section class="ed-selected" aria-labelledby="selected-heading">
-      <div class="ed-selected-head" data-reveal>
-        <p class="ed-eyebrow" id="selected-heading">精选作品</p>
-        <span class="ed-page-count">04</span>
-      </div>
-      <ul class="ed-selected-grid">
-        <li class="ed-selected-card" data-reveal>
-          <a href="works/dao-cheng-suan-cai-yu.html">
-            <figure>
-              <img src="assets/works/dao-cheng-suan-cai-yu/01.jpg" alt="" width="640" height="800" loading="lazy" decoding="async" />
-            </figure>
-            <div class="ed-selected-meta">
-              <strong>稻成酸菜魚</strong>
-              <span>餐饮</span>
-            </div>
-          </a>
-        </li>
-        <li class="ed-selected-card" data-reveal>
-          <a href="works/niu-xiao-ya.html">
-            <figure>
-              <img src="assets/works/niu-xiao-ya/01.jpg" alt="" width="640" height="800" loading="lazy" decoding="async" />
-            </figure>
-            <div class="ed-selected-meta">
-              <strong>牛小丫</strong>
-              <span>餐饮</span>
-            </div>
-          </a>
-        </li>
-        <li class="ed-selected-card" data-reveal>
-          <a href="works/broadway-town.html">
-            <figure>
-              <img src="assets/works/broadway-town/01.jpg" alt="" width="640" height="800" loading="lazy" decoding="async" />
-            </figure>
-            <div class="ed-selected-meta">
-              <strong>百老汇小镇</strong>
-              <span>地产</span>
-            </div>
-          </a>
-        </li>
-        <li class="ed-selected-card" data-reveal>
-          <a href="works/muse-cup.html">
-            <figure>
-              <img src="assets/works/muse-cup/01.jpg" alt="" width="640" height="800" loading="lazy" decoding="async" />
-            </figure>
-            <div class="ed-selected-meta">
-              <strong>灵感杯子</strong>
-              <span>餐饮</span>
-            </div>
-          </a>
-        </li>
-      </ul>
-    </section>
-
-    <section class="ed-about-strip" data-reveal>
-      <div>
-        <p class="ed-eyebrow">关于我</p>
-        <p class="ed-about-strip-tag">常驻中国。好想法所在之处，都愿协作。</p>
-      </div>
-      <div>
-        <p class="ed-about-strip-body">
-          我是造物设，做品牌视觉架构——给餐饮与消费品牌找一套能被记住的视觉语言。从定位、超级符号到字体、包装、IP 与导视，把零散的设计收成可以反复使用的系统。
-        </p>
-        <a class="ed-text-link" href="zara/">了解更多 &gt;</a>
-      </div>
-      <figure class="ed-about-strip-portrait">
-        <img src="assets/w-09.jpg" alt="" width="480" height="640" loading="lazy" decoding="async" />
-      </figure>
-    </section>
-
-    <section class="ed-services" data-nav-dark aria-labelledby="services-heading">
-      <p class="ed-eyebrow" data-reveal>我能带来什么</p>
-      <h2 class="ed-services-head" id="services-heading" data-reveal>
-        六种方式，帮品牌有意识地出场。可单选，也可组合成完整视觉系统。
-      </h2>
-      <ul class="ed-services-grid">
-        <li data-reveal>
-          <p class="ed-service-no">01</p>
-          <h3 class="ed-service-title">品牌识别</h3>
-          <p class="ed-service-body">标志、字体、色彩与规范，给品牌一张清晰的脸。</p>
-          <p class="ed-service-tags">标志设计 · 字体 · 色彩系统 · 品牌规范</p>
-        </li>
-        <li data-reveal>
-          <p class="ed-service-no">02</p>
-          <h3 class="ed-service-title">包装设计</h3>
-          <p class="ed-service-body">结构与平面包装，把品牌带到货架上。</p>
-          <p class="ed-service-tags">结构设计 · 标签系统 · 礼盒 · 零售呈现</p>
-        </li>
-        <li data-reveal>
-          <p class="ed-service-no">03</p>
-          <h3 class="ed-service-title">IP 与吉祥物</h3>
-          <p class="ed-service-body">让人记住的角色与符号——用于菜单、杯套与活动。</p>
-          <p class="ed-service-tags">角色设计 · 吉祥物 · 贴纸 · 动态素材</p>
-        </li>
-        <li data-reveal>
-          <p class="ed-service-no">04</p>
-          <h3 class="ed-service-title">插画</h3>
-          <p class="ed-service-body">为餐饮、文化与产品故事定制插画语言。</p>
-          <p class="ed-service-tags">编辑插画 · 图案 · 主视觉 · 点缀插画</p>
-        </li>
-        <li data-reveal>
-          <p class="ed-service-no">05</p>
-          <h3 class="ed-service-title">导视与环境图形</h3>
-          <p class="ed-service-body">让空间可读的导视与环境视觉。</p>
-          <p class="ed-service-tags">店招 · 室内 · 菜单板 · 空间字体</p>
-        </li>
-        <li data-reveal>
-          <p class="ed-service-no">06</p>
-          <h3 class="ed-service-title">数字与编辑设计</h3>
-          <p class="ed-service-body">网站、画册与印刷物料，保持系统一致。</p>
-          <p class="ed-service-tags">网站 · 画册 · 菜单 · 社交素材</p>
-        </li>
-      </ul>
-      <a class="ed-text-link" href="contact.html" data-reveal>开始项目 &gt;</a>
-    </section>
-
-    <section class="ed-trusted" data-reveal>
-      <p class="ed-eyebrow">信任这些在意形象的品牌</p>
-      <div>
-        <h2 class="ed-trusted-head">有幸一起打磨过的主理人、工作室与餐厅。</h2>
-        <div class="ed-trusted-layout">
-          <img class="ed-trusted-photo" data-trusted-photo src="assets/works/dao-cheng-suan-cai-yu/01.jpg" alt="" width="200" height="200" loading="lazy" />
-          <ul class="ed-trusted-names">
-            <li class="is-active" data-trusted-name data-photo="assets/works/dao-cheng-suan-cai-yu/01.jpg">稻成酸菜魚</li>
-            <li data-trusted-name data-photo="assets/works/niu-xiao-ya/01.jpg">牛小丫</li>
-            <li data-trusted-name data-photo="assets/works/kong-bei-ji-hua/01.jpg">空杯计划</li>
-            <li data-trusted-name data-photo="assets/works/muse-cup/01.jpg">灵感杯子</li>
-            <li data-trusted-name data-photo="assets/works/liu-fang-cha-she/01.jpg">留芳茶社</li>
-            <li data-trusted-name data-photo="assets/works/long-mian-guan/01.jpg">龍麵館</li>
-            <li data-trusted-name data-photo="assets/works/long-zun-xuan/01.jpg">龍尊軒</li>
-            <li data-trusted-name data-photo="assets/works/broadway-town/01.jpg">百老汇小镇</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="ed-testimonials" data-reveal>
-      <div class="ed-testimonials-head">
-        <p class="ed-eyebrow">客户怎么说</p>
-        <span class="ed-page-count" data-testimonial-count>01 / 04</span>
-      </div>
-      <div class="ed-testimonial-slides">
-        <div data-testimonial class="is-active">
-          <p class="ed-testimonial-quote">“造物设把我们想说却说不清的品牌感觉，收成一套能上菜单、杯套和门头的视觉语言。”</p>
-          <p class="ed-testimonial-meta"><strong>阿成</strong><span>创始人，稻成酸菜魚</span></p>
-        </div>
-        <div data-testimonial>
-          <p class="ed-testimonial-quote">“从吉祥物到配色，一次就把潮汕牛肉火锅的‘鲜’和‘礼’讲清楚了。”</p>
-          <p class="ed-testimonial-meta"><strong>品牌主理人</strong><span>牛小丫</span></p>
-        </div>
-        <div data-testimonial>
-          <p class="ed-testimonial-quote">“校园咖啡需要快、醒、又不廉价——空杯计划那套系统正好踩在这个点上。”</p>
-          <p class="ed-testimonial-meta"><strong>项目方</strong><span>空杯计划</span></p>
-        </div>
-        <div data-testimonial>
-          <p class="ed-testimonial-quote">“字体和功夫笔势绑在一起，开放厨房外挂着也站得住。”</p>
-          <p class="ed-testimonial-meta"><strong>主厨 / 主理</strong><span>龍麵館</span></p>
-        </div>
-      </div>
-    </section>
-
-    <section class="ed-cta" data-reveal>
-      <p class="ed-eyebrow">值得被记住的品牌？</p>
-      <p class="ed-cta-copy">每季度只接有限项目，好把注意力留给每一件。说说你在做什么，看看我们是否合适。</p>
-      <a class="ed-text-link" href="contact.html">开始项目 &gt;</a>
-    </section>
-  </main>
-
-  <footer class="ed-site-footer" data-nav-dark>
-    <div class="ed-site-footer-main">
-      <p class="ed-footer-name" aria-hidden="true"><span>zaowu</span><span>造物设</span></p>
-      <div class="ed-footer-side">
-        <div>
-          <p class="ed-footer-email-label">邮箱</p>
-          <a class="ed-footer-email" href="mailto:shiqiangqiang96@163.com">shiqiangqiang96@163.com</a>
-        </div>
-        <div class="ed-footer-socials">
-          <a href="https://instagram.com" rel="noopener">Instagram</a>
-          <a href="https://linkedin.com" rel="noopener">LinkedIn</a>
-          <a href="https://behance.com" rel="noopener">Behance</a>
-          <a href="https://contra.com" rel="noopener">Contra</a>
-        </div>
-      </div>
+    <script src="home/hark.js"></script>
+    <div class="x-lb" id="xlb" role="dialog" aria-modal="true" aria-label="作品大图">
+      <div class="x-lb__top"><p style="margin:0"><b id="xlbt"></b><em id="xlbe"></em></p><button type="button" id="xlbx" aria-label="关闭"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3l12 12M15 3L3 15"/></svg></button></div>
+      <div class="x-lb__stage"><img id="xlbi" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" /></div>
+      <div class="x-lb__bot"><button type="button" id="xlbp" aria-label="上一张">←</button><span class="x-lab" id="xlbn"></span><button type="button" id="xlbnx" aria-label="下一张">→</button></div>
     </div>
-    <div class="ed-foot-bar">
-      <span>中国 · GMT+8 <span data-clock>—</span></span>
-      <span>© <span data-year>2026</span> 造物设. 保留所有权利。</span>
-      <span>为值得被记住的品牌而作</span>
-    </div>
-  </footer>
+    <div class="x-cur" id="xcur" aria-hidden="true">看</div>
+    <script>
+      (function () {
+        var B = [null,
+          { n: "空杯计划", en: "Kongbei Coffee", c: "茶饮咖啡", y: "", d: "多套提案：绿色猴子IP / 红色现磨咖啡 / 复古印象派" },
+          { n: "百老汇小镇", en: "Broadway Town", c: "文旅空间", y: "2023", d: "三套方案：城堡线描 / 粉色B字符号 / 蓝色town手写" },
+          { n: "稻成酸菜鱼", en: "dab-pa", c: "餐饮", y: "", d: "黑猫超级符号，黄黑品牌手册与门店空间" },
+          { n: "牛小丫", en: "NIUXIAOYA", c: "餐饮", y: "", d: "潮汕鲜牛肉火锅「牛人吃好牛，就到牛小丫」" },
+          { n: "灵感杯子", en: "Muse Cup", c: "茶饮咖啡", y: "", d: "Drink Art" },
+          { n: "兰香记", en: "Lanxiangji", c: "餐饮", y: "", d: "面食，两稿：手绘厨师IP / 山水风物插画" },
+          { n: "笨小六", en: "Benxiaoliu", c: "餐饮", y: "", d: "下饭湘菜，门头与店内空间" },
+          { n: "椰知卿", en: "Coconut Flavor", c: "餐饮", y: "2024", d: "自然美学主义食研所，以椰为经纬" },
+          { n: "龍面馆", en: "Dragon Noodles Academy", c: "餐饮", y: "2025", d: "香港鲜熬私房面，即叫即拉" },
+          { n: "伽乐酸奶", en: "GALA Yogurt", c: "快消饮品", y: "2024", d: "Z世代高蛋白希腊酸奶 Just Have Fun" },
+          { n: "龍尊轩", en: "Noble Dragon", c: "餐饮", y: "2024", d: "宋式极简 × 粤派精奢" },
+          { n: "HERA赫她", en: "HERA", c: "美业", y: "2025", d: "科技美肤「水核力场」" },
+          { n: "留芳茶社", en: "Liufang Tea House", c: "茶饮咖啡", y: "2025", d: "茶饮 / 早茶" },
+          { n: "美味美锅", en: "Meiwei Meiguo", c: "餐饮", y: "", d: "火锅，品牌 + IP" }
+        ];
+        var d = document, $ = function (s, r) { return (r || d).querySelector(s); }, $$ = function (s, r) { return [].slice.call((r || d).querySelectorAll(s)); };
+        var pad = function (i) { return (i < 10 ? "0" : "") + i; };
+        var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  <script src="editorial.js"></script>
-</body>
+        // marquee + table from data
+        var m = "", rows = "";
+        for (var i = 1; i < B.length; i++) {
+          m += "<span>" + B[i].n + "<em>" + B[i].en + "</em></span>";
+          rows += '<tr tabindex="0" data-b="' + i + '"><td>' + pad(i) + '</td><td class="x-tb">' + B[i].n + "<em>" + B[i].en + '</em></td><td class="x-tm">' + B[i].c + '</td><td class="x-tm">' + (B[i].y || "·") + '</td><td class="x-td">' + B[i].d + "</td></tr>";
+        }
+        var mq = $("#xmarq"); if (mq) mq.innerHTML = m + m.replace(/<span>/g, '<span aria-hidden="true">');
+        var xr = $("#xrows"); if (xr) xr.innerHTML = rows;
+
+        // archive: label and categorise
+        var works = $$("#xmas .x-w");
+        works.forEach(function (w) {
+          var b = B[+w.dataset.b]; w.dataset.c = b.c;
+          w.setAttribute("aria-label", "查看 " + b.n + " 大图");
+          $("img", w).alt = b.n + " " + b.en + " 作品";
+          w.insertAdjacentHTML("beforeend", '<span class="x-w__cap"><b>' + b.n + '</b><span class="x-lab">' + b.c + "</span></span>");
+        });
+        $$(".x-chip").forEach(function (c) {
+          var f = c.dataset.f, n = f === "all" ? works.length : works.filter(function (w) { return w.dataset.c === f; }).length;
+          c.insertAdjacentHTML("beforeend", "<sup>" + n + "</sup>");
+          c.addEventListener("click", function () {
+            $$(".x-chip").forEach(function (o) { o.classList.toggle("is-on", o === c); o.setAttribute("aria-pressed", o === c); });
+            works.forEach(function (w) { w.classList.toggle("is-hid", f !== "all" && w.dataset.c !== f); });
+          });
+        });
+
+        // lightbox
+        var lb = $("#xlb"), li = $("#xlbi"), list = [], at = 0, last = null;
+        function show() {
+          var it = list[at]; li.src = it.src; li.alt = it.t;
+          $("#xlbt").textContent = it.t; $("#xlbe").textContent = it.e;
+          $("#xlbn").textContent = pad(at + 1) + " / " + pad(list.length);
+        }
+        function open(items, idx) {
+          list = items; at = idx || 0; last = d.activeElement; show();
+          lb.classList.add("is-open"); d.body.style.overflow = "hidden"; $("#xlbx").focus();
+        }
+        function close() { lb.classList.remove("is-open"); d.body.style.overflow = ""; if (last) last.focus(); }
+        function step(k) { at = (at + k + list.length) % list.length; show(); }
+        function brand(b) {
+          var x = B[b];
+          return works.filter(function (w) { return w.dataset.b == b; }).map(function (w) { return { src: $("img", w).getAttribute("src"), t: pad(+b) + "  " + x.n, e: x.en + " · " + x.c }; });
+        }
+        works.forEach(function (w) { w.addEventListener("click", function () { var s = works.filter(function (o) { return o.dataset.b === w.dataset.b; }); open(brand(w.dataset.b), s.indexOf(w)); }); });
+        $$("[data-open]").forEach(function (el) { el.addEventListener("click", function () {
+          var b = el.dataset.open, on = $("img.is-on", el); if (on) b = on.dataset.b;
+          var l = brand(b), src = ($("img.is-on", el) || $("img", el)).getAttribute("src"), k = 0;
+          l.forEach(function (o, j) { if (o.src === src) k = j; }); open(l, k);
+        }); });
+        var other = $$("[data-g=other]");
+        other.forEach(function (el, j) { el.addEventListener("click", function () {
+          open(other.map(function (o) { var c = o.dataset.cap.split(" "); return { src: $("img", o).getAttribute("src"), t: c[0], e: c.slice(1).join(" ") }; }), j);
+        }); });
+        $("#xlbx").onclick = close; $("#xlbp").onclick = function () { step(-1); }; $("#xlbnx").onclick = function () { step(1); };
+        lb.addEventListener("click", function (e) { if (e.target === lb || e.target.classList.contains("x-lb__stage")) close(); });
+        d.addEventListener("keydown", function (e) {
+          if (!lb.classList.contains("is-open")) return;
+          if (e.key === "Escape") close(); else if (e.key === "ArrowLeft") step(-1); else if (e.key === "ArrowRight") step(1);
+          else if (e.key === "Tab") { var f = $$("button", lb), i0 = f.indexOf(d.activeElement); e.preventDefault(); f[(i0 + (e.shiftKey ? -1 : 1) + f.length) % f.length].focus(); }
+        });
+
+        // table rows: preview + open
+        var pv = $("#xprev"), fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+        $$("#xrows tr").forEach(function (tr) {
+          var b = tr.dataset.b, first = works.filter(function (w) { return w.dataset.b === b; })[0];
+          tr.addEventListener("click", function () { open(brand(b), 0); });
+          tr.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(brand(b), 0); } });
+          if (fine) {
+            tr.addEventListener("mouseenter", function () { pv.src = $("img", first).getAttribute("src"); pv.classList.add("is-on"); });
+            tr.addEventListener("mouseleave", function () { pv.classList.remove("is-on"); });
+          }
+        });
+
+        // cursor
+        var cur = $("#xcur"), cx = 0, cy = 0;
+        d.addEventListener("mousemove", function (e) {
+          cx = e.clientX; cy = e.clientY;
+          cur.style.transform = "translate(" + cx + "px," + cy + "px)";
+          pv.style.left = cx + 190 + "px"; pv.style.top = cy + "px";
+          var t = e.target.closest ? e.target.closest(".x-look, .x-strip__img") : null;
+          cur.classList.toggle("is-big", !!t);
+        });
+        d.addEventListener("mouseleave", function () { cur.style.transform = "translate(-99px,-99px)"; });
+
+        // hero stack
+        var imgs = $$("#xstack img"), hi = 0;
+        function cap() { var b = +imgs[hi].dataset.b, cn = $("#xcapn"), ct = $("#xcapt"); if (cn) cn.textContent = pad(b) + "/14"; if (ct) ct.textContent = B[b].n + " · " + B[b].c; }
+        if (imgs.length && !reduce) setInterval(function () { imgs[hi].classList.remove("is-on"); hi = (hi + 1) % imgs.length; imgs[hi].classList.add("is-on"); cap(); }, 4500);
+
+        // reveals
+        var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } }); }, { rootMargin: "0px 0px -8% 0px" });
+        $$(".x-rise, .x-rev").forEach(function (el) { io.observe(el); });
+
+        // featured strips: lightbox, filters, entrance
+        var strips = $$("#xstrips .x-strip"), empty = $("#xfwempty");
+        strips.forEach(function (s) {
+          var b = s.dataset.b;
+          $$(".x-strip__img", s).forEach(function (btn) {
+            btn.addEventListener("click", function () {
+              var l = brand(b), src = $("img", btn).getAttribute("src"), k = 0;
+              if (!l.length) l = $$(".x-strip__img img", s).map(function (im) { return { src: im.getAttribute("src"), t: B[+b].n, e: B[+b].en + " · " + B[+b].c }; });
+              l.forEach(function (o, j) { if (o.src === src) k = j; }); open(l, k);
+            });
+          });
+        });
+        var fbtns = $$(".x-fw__f"), ftimer;
+        fbtns.forEach(function (fb) {
+          fb.addEventListener("click", function () {
+            var f = fb.dataset.f;
+            fbtns.forEach(function (o) { o.classList.toggle("is-on", o === fb); o.setAttribute("aria-pressed", o === fb); });
+            var showing = strips.filter(function (s) { return f === "all" || s.dataset.c === f; });
+            clearTimeout(ftimer);
+            strips.forEach(function (s) { if (showing.indexOf(s) < 0) s.classList.add("is-out"); });
+            if (empty && showing.length) empty.hidden = true;
+            ftimer = setTimeout(function () {
+              strips.forEach(function (s) {
+                var on = showing.indexOf(s) > -1;
+                s.hidden = !on;
+                if (on) { s.classList.add("is-out"); void s.offsetWidth; s.classList.remove("is-out"); }
+              });
+              if (empty) empty.hidden = showing.length > 0;
+            }, reduce ? 0 : 240);
+          });
+        });
+        if (!reduce && "IntersectionObserver" in window) {
+          strips.forEach(function (s) { if (s.getBoundingClientRect().top > innerHeight) s.classList.add("is-pending"); });
+          var io3 = new IntersectionObserver(function (es) {
+            var k = 0;
+            es.forEach(function (e) {
+              if (!e.isIntersecting) return;
+              var s = e.target; io3.unobserve(s);
+              if (!s.classList.contains("is-pending")) return;
+              s.style.setProperty("--d", (k++ * 80) + "ms");
+              s.classList.remove("is-pending"); s.classList.add("is-enter");
+              s.addEventListener("animationend", function () { s.classList.remove("is-enter"); }, { once: true });
+            });
+          }, { rootMargin: "0px 0px -10% 0px" });
+          strips.forEach(function (s) { io3.observe(s); });
+        }
+
+        // header tone + parallax
+        var head = $("#xhead"), hero = $("#hero"), tones = $$("[data-tone]"), par = $$("[data-par]"), ticking = false;
+        function frame() {
+          ticking = false; var tone = "light";
+          tones.forEach(function (s) { var r = s.getBoundingClientRect(); if (r.top <= 64 && r.bottom > 64) tone = s.dataset.tone; });
+          if (head) { head.classList.toggle("is-dark", tone === "dark"); head.classList.toggle("is-hid", !!hero && hero.getBoundingClientRect().bottom > 64); }
+          if (!reduce) par.forEach(function (el) { var r = el.getBoundingClientRect(), off = (r.top + r.height / 2 - innerHeight / 2) * -parseFloat(el.dataset.par); el.style.translate = "0 " + off.toFixed(1) + "px"; });
+        }
+        addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }, { passive: true });
+        frame();
+      })();
+    </script>
+  </body>
 </html>
