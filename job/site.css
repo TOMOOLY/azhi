@@ -1,5 +1,6 @@
-/* job.html · 门头 Signboard · v20261105b */
+/* job.html · 门头 Signboard · v20261105c */
 @font-face{font-family:"Chivo";src:url(fonts/chivo-latin.woff2) format("woff2");font-weight:100 900;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2190-2199,U+2212}
+@font-face{font-family:"Noto Sans SC";src:url(fonts/nsc-black.woff2) format("woff2");font-weight:900;font-style:normal;font-display:swap}
 
 :root{
   --ground:#F0F0EB;--ink:#141412;--y:#FFD400;--soot:#57574F;--concrete:#D6D6CE;--night:#141412;
@@ -181,6 +182,8 @@ html:not(.js) #copy{display:none}
 /* ---------- tablet ---------- */
 @media (max-width:1100px){
   .hero{grid-template-columns:1fr 1fr;grid-template-areas:"band band" "stage stage" "links rail" "facts tiles"}
+  .exp__body{grid-template-columns:1fr}
+  .exp__body .index__word,.exp__body .rows{grid-column:1;grid-row:auto}
 }
 @media (max-width:899px){
   .preview{display:none}
