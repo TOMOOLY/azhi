@@ -12,8 +12,8 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&family=Syne:wght@700;800&display=swap"
     />
-    <link rel="stylesheet" href="job/hark.css" />
-    <link rel="stylesheet" href="job/hark-hero.css" />
+    <link rel="stylesheet" href="job/hark.css?v=20261105d" />
+    <link rel="stylesheet" href="job/hark-hero.css?v=20261105d" />
     <script>document.documentElement.classList.add("js");</script>
     <style>
       :root {
@@ -288,23 +288,49 @@
       .x-mag { transition: transform .16s var(--x-out), color .2s ease, translate .6s var(--x-spring); }
       .x-mag.is-mag { transition: transform .16s var(--x-out), color .2s ease, translate .12s linear; }
 
-      /* case overlay */
-      .x-case { position: fixed; inset: 0; z-index: 90; background: var(--x-bg); color: var(--x-ink); display: grid; grid-template-rows: auto minmax(0, 1fr) auto; gap: 16px; padding: 14px var(--x-pad) 20px; clip-path: inset(100% 0 0 0); transition: clip-path .7s var(--x-inout); overscroll-behavior: contain; }
+      /* case overlay: multi-page work viewer */
+      .x-case { position: fixed; inset: 0; z-index: 90; background: var(--x-bg); color: var(--x-ink); display: grid; grid-template-rows: auto minmax(0, 1fr) auto auto; gap: 14px; padding: 14px var(--x-pad) max(20px, env(safe-area-inset-bottom)); clip-path: inset(100% 0 0 0); transition: clip-path .7s var(--x-inout); overscroll-behavior: contain; }
       .x-case[hidden] { display: none; }
       .x-case.is-open { clip-path: inset(0 0 0 0); }
       .x-case__bar, .x-case__foot { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-      .x-case__stage { position: relative; display: grid; place-items: center; min-height: 0; overflow: hidden; }
-      .x-case__stage img { grid-area: 1 / 1; max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; transition: transform .7s var(--x-out), opacity .4s ease; }
-      .x-case__stage .x-card__inset { position: static; grid-area: 1 / 1; width: 24%; max-height: none; justify-self: end; align-self: end; margin: 0 16px 16px 0; z-index: 1; }
-      .x-case__stage.is-in-r img { transform: translate3d(8%, 0, 0); opacity: 0; }
-      .x-case__stage.is-in-l img { transform: translate3d(-8%, 0, 0); opacity: 0; }
+      .x-case__bl { display: flex; align-items: center; gap: 14px; }
+      .x-case__stage { position: relative; display: grid; place-items: center; min-height: 0; overflow: hidden; touch-action: pan-y pinch-zoom; user-select: none; }
+      .x-case__stage > img { grid-area: 1 / 1; max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; -webkit-user-drag: none; transition: transform .5s var(--x-out), opacity .3s ease; }
+      .x-case__stage.is-in-r > img { transform: translate3d(4%, 0, 0); opacity: 0; transition: none; }
+      .x-case__stage.is-in-l > img { transform: translate3d(-4%, 0, 0); opacity: 0; transition: none; }
+      .x-case__stage[aria-busy="true"]::after { content: ""; grid-area: 1 / 1; width: 40px; height: 2px; background: var(--x-green); animation: x-case-load 1s ease-in-out infinite alternate; }
+      @keyframes x-case-load { from { transform: translate3d(-24px, 0, 0); } to { transform: translate3d(24px, 0, 0); } }
+      @media (hover: hover) and (pointer: fine) { .x-case__stage { cursor: e-resize; } .x-case__stage.is-left { cursor: w-resize; } }
+      .x-case__prog { height: 2px; background: var(--x-line); overflow: hidden; }
+      .x-case__prog i { display: block; height: 100%; background: var(--x-green); transform-origin: 0 50%; transform: scaleX(0); transition: transform .4s var(--x-out); }
+      .x-case__grid { position: absolute; inset: 0; z-index: 2; background: var(--x-bg); overflow-y: auto; overscroll-behavior: contain; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(46%, 220px), 1fr)); grid-auto-rows: max-content; gap: 10px; align-content: start; padding: 2px; cursor: auto; touch-action: auto; }
+      .x-case__grid[hidden] { display: none; }
+      .x-case__th { position: relative; display: block; min-height: 44px; padding: 0; background: var(--x-raise); border-radius: 2px; }
+      .x-case__th img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: contain; }
+      .x-case__th span { position: absolute; left: 6px; top: 6px; padding: 2px 6px; border-radius: 2px; background: rgba(0,0,0,.72); font-family: var(--x-display); font-weight: 700; font-size: 12px; line-height: 1.3; color: var(--x-ink); }
+      .x-case__th[aria-current="true"] { box-shadow: inset 0 0 0 2px var(--x-green); }
+      .x-case__meta { min-width: 0; }
       .x-case__meta h2 { font-size: clamp(24px, 3vw, 44px); font-weight: 600; line-height: 1.1; }
       .x-case__meta h2 small { font-family: var(--x-display); font-weight: 700; font-size: max(14px, .42em); color: var(--x-dim); margin-left: .6em; }
-      .x-case__meta p { color: var(--x-dim); font-size: 16px; margin-top: 6px; }
-      .x-case__btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; min-width: 48px; padding: 0 20px; border-radius: 999px; background: transparent; color: var(--x-ink); box-shadow: inset 0 0 0 1.5px var(--x-line); font-size: 15px; font-weight: 600; transition: background-color .2s ease, color .2s ease, translate .6s var(--x-spring); }
+      .x-case__meta p { color: var(--x-dim); font-size: 16px; margin-top: 6px; max-width: 60ch; }
+      .x-case__meta p:empty { display: none; }
+      .x-case__btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; min-width: 48px; padding: 0 20px; border-radius: 999px; background: transparent; color: var(--x-ink); box-shadow: inset 0 0 0 1.5px var(--x-line); font-size: 15px; font-weight: 600; white-space: nowrap; touch-action: manipulation; transition: background-color .2s ease, color .2s ease, translate .6s var(--x-spring); }
+      .x-site .x-case__btn:focus-visible, .x-site .x-case__th:focus-visible { border-radius: 999px; outline-offset: 3px; }
+      .x-site .x-case__th:focus-visible { border-radius: 4px; }
+      .x-case__btn--sm { min-height: 44px; min-width: 44px; padding: 0 16px; font-size: 14px; }
+      .x-case__btn[aria-expanded="true"] { background: var(--x-ink); color: var(--x-bg); box-shadow: none; }
       @media (hover: hover) and (pointer: fine) { .x-case__btn:hover { background: var(--x-green); color: #000; box-shadow: none; } }
-      .x-case__nav { display: flex; gap: 10px; }
-      @media (max-width: 640px) { .x-case__foot { flex-direction: column; align-items: stretch; } .x-case__nav .x-case__btn { flex: 1; } }
+      .x-case__nav { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+      .x-case__pg { min-width: 5.2em; text-align: center; font-family: var(--x-display); font-weight: 700; font-size: 15px; font-variant-numeric: tabular-nums; }
+      .x-sr { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+      @media (max-width: 640px) {
+        .x-case { gap: 12px; }
+        .x-case__foot { flex-direction: column; align-items: stretch; gap: 12px; }
+        .x-case__stage { margin-inline: calc(var(--x-pad) * -1); }
+        .x-case__meta h2 { font-size: 22px; }
+        .x-case__meta p { font-size: 14px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .x-case__nav .x-case__btn { flex: 1; }
+      }
 
       /* stretch + toast */
       .x-big { margin-top: .35em; }
@@ -331,8 +357,10 @@
         .js .x-mk > span { transform: none; }
         .x-numeral span, .x-hs__num { transform: none; }
         .x-case { transition: none; clip-path: none; }
-        .x-case__stage img, .x-toast { transition: opacity .2s ease; transform: none; }
-        .x-case__stage.is-in-r img, .x-case__stage.is-in-l img { transform: none; }
+        .x-case__stage > img, .x-toast { transition: opacity .2s ease; transform: none; }
+        .x-case__stage.is-in-r > img, .x-case__stage.is-in-l > img { transform: none; }
+        .x-case__prog i { transition: none; }
+        .x-case__stage[aria-busy="true"]::after { animation: none; opacity: .6; }
         .x-mag, .x-mag.is-mag { translate: none !important; }
       }
     </style>
@@ -418,7 +446,7 @@
                 <span class="x-hs__num" id="x-hs-num" data-n="01" aria-hidden="true">01</span>
                 <div class="x-head x-wrap">
                   <h2 class="x-h2 x-glitch" id="works-h" data-text="Selected Works">Selected Works</h2>
-                  <p class="x-label">14 个品牌项目 · 2021 — 2025</p>
+                  <p class="x-label">15 个品牌项目 · 2021 — 2025</p>
                 </div>
                 <div class="x-hs__track" id="x-track">
                   <article class="x-card" id="w-dao-cheng">
@@ -512,6 +540,13 @@
                       <p>品牌视觉与 IP 形象一体设计。</p>
                     </div>
                   </article>
+                  <article class="x-card" id="w-muman-moment">
+                    <div class="x-card__media"><img src="job/w-muman-moment-1.jpg" alt="Muman Moment 慕漫 标志与可颂" width="1600" height="900" loading="lazy" /></div>
+                    <div class="x-card__meta">
+                      <h3>Muman Moment <small>慕漫</small></h3>
+                      <span class="x-tag">LOGO 设计</span>
+                    </div>
+                  </article>
                   <article class="x-card" id="w-muse-cup">
                     <div class="x-card__media"><img src="job/w-muse-cup-1.jpg" alt="灵感杯子 门头灯箱" width="1600" height="900" loading="lazy" /></div>
                     <div class="x-card__meta">
@@ -540,7 +575,7 @@
                 <div class="x-hs__foot" aria-hidden="true">
                   <span class="x-label">滚动或拖拽，横向浏览</span>
                   <div class="x-hs__bar"><i id="x-prog"></i></div>
-                  <span class="x-hs__count x-num" id="x-count">01 / 14</span>
+                  <span class="x-hs__count x-num" id="x-count">01 / 15</span>
                 </div>
               </div>
             </div>
@@ -550,7 +585,7 @@
             <div class="x-numeral" aria-hidden="true"><span data-n="02">02</span></div>
             <div class="x-head">
               <h2 class="x-h2 x-glitch" id="index-h" data-text="Index">Index</h2>
-              <p class="x-label">全部 18 项。悬停预览，点击品牌项目直达作品</p>
+              <p class="x-label">全部 19 项。悬停预览，点击品牌项目直达作品</p>
             </div>
             <ul class="x-list" id="x-list">
               <li class="x-row x-fade" style="--d:0"><a class="x-row__in" href="#w-dao-cheng"><span class="x-row__name">稻成酸菜鱼<small>dab-pa</small></span><span class="x-row__kind">品牌重塑</span><span class="x-row__year x-num">2024</span></a><span class="x-row__pv"><img src="job/w-dao-cheng-2.jpg" alt="稻成酸菜鱼 物料：包装袋、集章卡与贴纸" width="1600" height="900" loading="lazy" /></span></li>
@@ -564,13 +599,14 @@
               <li class="x-row x-fade" style="--d:8"><a class="x-row__in" href="#w5"><span class="x-row__name">HERA赫她<small>Tech Skincare</small></span><span class="x-row__kind">品牌全案</span><span class="x-row__year x-num">2025</span></a><span class="x-row__pv"><img src="job/p24.jpg" alt="HERA赫她 视觉延展" width="1733" height="975" loading="lazy" /></span></li>
               <li class="x-row x-fade" style="--d:9"><a class="x-row__in" href="#w6"><span class="x-row__name">留芳茶社<small>Taizhou Brunch</small></span><span class="x-row__kind">品牌全案</span><span class="x-row__year x-num">2025</span></a><span class="x-row__pv"><img src="job/p28.jpg" alt="留芳茶社 视觉延展" width="1733" height="975" loading="lazy" /></span></li>
               <li class="x-row x-fade" style="--d:10"><a class="x-row__in" href="#w7"><span class="x-row__name">美味美锅<small>Brand + IP</small></span><span class="x-row__kind">品牌 + IP</span><span class="x-row__year x-num">—</span></a></li>
-              <li class="x-row x-fade" style="--d:11"><a class="x-row__in" href="#w-muse-cup"><span class="x-row__name">灵感杯子<small>Muse Cup</small></span><span class="x-row__kind">品牌识别</span><span class="x-row__year x-num">—</span></a><span class="x-row__pv"><img src="job/w-muse-cup-2.jpg" alt="灵感杯子 徽章与马克杯" width="1600" height="900" loading="lazy" /></span></li>
-              <li class="x-row x-fade" style="--d:12"><a class="x-row__in" href="#w-niu-xiao-ya"><span class="x-row__name">牛小丫<small>NIUXIAOYA</small></span><span class="x-row__kind">标志设计</span><span class="x-row__year x-num">—</span></a><span class="x-row__pv"><img src="job/w-niu-xiao-ya-2.jpg" alt="牛小丫 第二版海报" width="1600" height="900" loading="lazy" /></span></li>
-              <li class="x-row x-fade" style="--d:13"><a class="x-row__in" href="#w-ben-xiao-liu"><span class="x-row__name">笨小六<small>Benxiaoliu</small></span><span class="x-row__kind">门头与空间</span><span class="x-row__year x-num">—</span></a><span class="x-row__pv"><img src="job/w-ben-xiao-liu-2.jpg" alt="笨小六 店内空间" width="1600" height="900" loading="lazy" /></span></li>
-              <li class="x-row x-fade" style="--d:14"><div class="x-row__in"><span class="x-row__name">字体设计<small>Typeface</small></span><span class="x-row__kind">Font</span><span class="x-row__year">合集</span></div><span class="x-row__pv"><img src="job/p33.jpg" alt="字体设计作品" width="1733" height="975" loading="lazy" /></span></li>
-              <li class="x-row x-fade" style="--d:15"><div class="x-row__in"><span class="x-row__name">版式设计<small>Layout</small></span><span class="x-row__kind">Graphic</span><span class="x-row__year">合集</span></div><span class="x-row__pv"><img src="job/p35.jpg" alt="版式设计作品" width="1733" height="975" loading="lazy" /></span></li>
-              <li class="x-row x-fade" style="--d:16"><div class="x-row__in"><span class="x-row__name">线上设计<small>Digital</small></span><span class="x-row__kind">Online</span><span class="x-row__year">合集</span></div><span class="x-row__pv"><img src="job/p38.jpg" alt="线上设计作品" width="1733" height="975" loading="lazy" /></span></li>
-              <li class="x-row x-fade" style="--d:17"><div class="x-row__in"><span class="x-row__name">插画主视觉<small>Illustration</small></span><span class="x-row__kind">Illustration</span><span class="x-row__year">合集</span></div><span class="x-row__pv"><img src="job/p41.jpg" alt="插画主视觉作品" width="1733" height="975" loading="lazy" /></span></li>
+              <li class="x-row x-fade" style="--d:11"><a class="x-row__in" href="#w-muman-moment"><span class="x-row__name">Muman Moment<small>慕漫</small></span><span class="x-row__kind">LOGO 设计</span><span class="x-row__year x-num">—</span></a><span class="x-row__pv"><img src="job/g/muman/01.jpg" alt="Muman Moment 字标" width="1800" height="1012" loading="lazy" /></span></li>
+              <li class="x-row x-fade" style="--d:12"><a class="x-row__in" href="#w-muse-cup"><span class="x-row__name">灵感杯子<small>Muse Cup</small></span><span class="x-row__kind">品牌识别</span><span class="x-row__year x-num">—</span></a><span class="x-row__pv"><img src="job/w-muse-cup-2.jpg" alt="灵感杯子 徽章与马克杯" width="1600" height="900" loading="lazy" /></span></li>
+              <li class="x-row x-fade" style="--d:13"><a class="x-row__in" href="#w-niu-xiao-ya"><span class="x-row__name">牛小丫<small>NIUXIAOYA</small></span><span class="x-row__kind">标志设计</span><span class="x-row__year x-num">—</span></a><span class="x-row__pv"><img src="job/w-niu-xiao-ya-2.jpg" alt="牛小丫 第二版海报" width="1600" height="900" loading="lazy" /></span></li>
+              <li class="x-row x-fade" style="--d:14"><a class="x-row__in" href="#w-ben-xiao-liu"><span class="x-row__name">笨小六<small>Benxiaoliu</small></span><span class="x-row__kind">门头与空间</span><span class="x-row__year x-num">—</span></a><span class="x-row__pv"><img src="job/w-ben-xiao-liu-2.jpg" alt="笨小六 店内空间" width="1600" height="900" loading="lazy" /></span></li>
+              <li class="x-row x-fade" style="--d:15"><div class="x-row__in"><span class="x-row__name">字体设计<small>Typeface</small></span><span class="x-row__kind">Font</span><span class="x-row__year">合集</span></div><span class="x-row__pv"><img src="job/p33.jpg" alt="字体设计作品" width="1733" height="975" loading="lazy" /></span></li>
+              <li class="x-row x-fade" style="--d:16"><div class="x-row__in"><span class="x-row__name">版式设计<small>Layout</small></span><span class="x-row__kind">Graphic</span><span class="x-row__year">合集</span></div><span class="x-row__pv"><img src="job/p35.jpg" alt="版式设计作品" width="1733" height="975" loading="lazy" /></span></li>
+              <li class="x-row x-fade" style="--d:17"><div class="x-row__in"><span class="x-row__name">线上设计<small>Digital</small></span><span class="x-row__kind">Online</span><span class="x-row__year">合集</span></div><span class="x-row__pv"><img src="job/p38.jpg" alt="线上设计作品" width="1733" height="975" loading="lazy" /></span></li>
+              <li class="x-row x-fade" style="--d:18"><div class="x-row__in"><span class="x-row__name">插画主视觉<small>Illustration</small></span><span class="x-row__kind">Illustration</span><span class="x-row__year">合集</span></div><span class="x-row__pv"><img src="job/p41.jpg" alt="插画主视觉作品" width="1733" height="975" loading="lazy" /></span></li>
             </ul>
           </section>
 
@@ -642,26 +678,34 @@
             <a class="x-label" href="#top">回到顶部 ↑</a>
           </div>
         </footer>
-        <div class="x-case" id="x-case" role="dialog" aria-modal="true" aria-labelledby="x-case-t" hidden>
+        <div class="x-case" id="x-case" role="dialog" aria-modal="true" aria-labelledby="x-case-t" aria-describedby="x-case-live" hidden>
           <div class="x-case__bar">
-            <span class="x-num x-label" id="x-case-n">01 / 14</span>
-            <button class="x-case__btn x-mag" type="button" id="x-case-x" aria-label="关闭案例">Close ✕</button>
+            <div class="x-case__bl">
+              <span class="x-num x-label" id="x-case-n">01 / 15</span>
+              <button class="x-case__btn x-case__btn--sm" type="button" id="x-case-g" aria-expanded="false" aria-controls="x-case-grid" aria-label="All pages 全部页面">All ⊞</button>
+            </div>
+            <button class="x-case__btn x-mag" type="button" id="x-case-x" aria-label="Close 关闭">Close ✕</button>
           </div>
-          <div class="x-case__stage" id="x-case-stage"></div>
+          <div class="x-case__stage" id="x-case-stage" aria-busy="false">
+            <div class="x-case__grid" id="x-case-grid" role="group" aria-label="全部页面" hidden></div>
+          </div>
+          <div class="x-case__prog" aria-hidden="true"><i id="x-case-bar"></i></div>
           <div class="x-case__foot">
             <div class="x-case__meta"><h2 id="x-case-t"></h2><p id="x-case-d"></p></div>
             <div class="x-case__nav">
-              <button class="x-case__btn x-mag" type="button" id="x-case-prev" aria-label="上一个案例">← Prev</button>
-              <button class="x-case__btn x-mag" type="button" id="x-case-next" aria-label="下一个案例">Next →</button>
+              <button class="x-case__btn x-mag" type="button" id="x-case-prev" aria-label="Prev 上一页">← Prev</button>
+              <span class="x-case__pg x-num" id="x-case-pg" aria-hidden="true">01 / 01</span>
+              <button class="x-case__btn x-mag" type="button" id="x-case-next" aria-label="Next 下一页">Next →</button>
             </div>
           </div>
+          <p class="x-sr" id="x-case-live" aria-live="polite" aria-atomic="true"></p>
         </div>
         <div class="x-toast" id="x-toast" role="status" aria-live="polite"></div>
         <div class="x-cursor" id="x-cursor" aria-hidden="true"></div>
         <div class="x-ring" id="x-ring" aria-hidden="true"><div class="x-ring__in"><span id="x-ring-t"></span></div></div>
       </div>
     </div>
-    <script src="job/hark.js"></script>
+    <script src="job/hark.js?v=20261105d"></script>
     <script>
       (function () {
         "use strict";
@@ -1039,59 +1083,154 @@
           });
         }
 
-        /* fullscreen case overlay with next / prev */
+        /* multi-page work viewer: every page of a work, prev / next work at the ends */
+        function seq(base, n) { var o = []; for (var k = 1; k <= n; k++) o.push(base + pad2(k) + ".jpg"); return o; }
+        var GAL = {
+          "w-dao-cheng": seq("assets/img/case/dao-cheng/", 13),
+          "w-kong-bei-ji-hua": seq("assets/img/case/kong-bei-ji-hua/", 13),
+          "w-broadway-town": seq("assets/img/case/broadway-town/", 15),
+          "w-lan-xiang-ji": seq("assets/img/case/lan-xiang-ji/", 15),
+          "w1": ["job/p6.jpg", "job/p7.jpg", "job/p8.jpg", "assets/w-09.jpg"],
+          "w2": seq("assets/works/long-mian-guan/", 5).concat(["assets/w-10.jpg", "job/p11.jpg", "job/p12.jpg", "assets/w-13.jpg"]),
+          "w3": seq("job/g/gala/", 31),
+          "w4": seq("assets/works/long-zun-xuan/", 6).concat(["assets/w-18.jpg", "job/p19.jpg", "job/p20.jpg"]),
+          "w5": seq("job/g/hera/", 40),
+          "w6": seq("assets/works/liu-fang-cha-she/", 5).concat(["job/p27.jpg", "job/p28.jpg"]),
+          "w7": ["job/p31.jpg"],
+          "w-muman-moment": seq("job/g/muman/", 19),
+          "w-muse-cup": seq("assets/img/case/muse-cup/", 16),
+          "w-niu-xiao-ya": seq("assets/img/case/niu-xiao-ya/", 16),
+          "w-ben-xiao-liu": ["job/w-ben-xiao-liu-1.jpg", "job/w-ben-xiao-liu-2.jpg"]
+        };
         var cs = $("#x-case"), csStage = $("#x-case-stage"), csT = $("#x-case-t"), csD = $("#x-case-d"), csN = $("#x-case-n");
-        var csX = $("#x-case-x"), csP = $("#x-case-prev"), csNx = $("#x-case-next"), csBtns = [csX, csP, csNx];
-        var C = { i: 0, open: false, opener: null, hideT: 0, sx: null };
-        function fillCase(i, dir) {
-          C.i = (i + cards.length) % cards.length;
-          var c = cards[C.i];
-          csStage.textContent = "";
-          if (dir && !reduce) csStage.classList.add(dir > 0 ? "is-in-r" : "is-in-l");
-          [].forEach.call(c.querySelectorAll(".x-card__media img"), function (im) {
-            var k = im.cloneNode(true); k.removeAttribute("loading"); k.style.filter = ""; csStage.appendChild(k);
+        var csX = $("#x-case-x"), csP = $("#x-case-prev"), csNx = $("#x-case-next"), csG = $("#x-case-g"), csGrid = $("#x-case-grid");
+        var csPg = $("#x-case-pg"), csBar = $("#x-case-bar"), csLive = $("#x-case-live");
+        var C = { i: 0, p: 0, open: false, opener: null, hideT: 0, sx: null, sy: 0, tok: 0, img: null, cache: {} };
+        function pagesOf(i) {
+          var c = cards[i], g = GAL[c.id];
+          if (g && g.length) return g;
+          return [].map.call(c.querySelectorAll(".x-card__media img"), function (im) { return im.getAttribute("src"); });
+        }
+        function nameOf(i) { return cards[i].querySelector("h3").firstChild.textContent.trim(); }
+        function warm(src) { if (!src || C.cache[src]) return; var im = new Image(); im.decoding = "async"; im.src = src; C.cache[src] = im; }
+        function syncNav() {
+          var P = pagesOf(C.i), n = P.length, first = C.p === 0, last = C.p === n - 1;
+          csPg.textContent = pad2(C.p + 1) + " / " + pad2(n);
+          csBar.style.transform = "scaleX(" + ((C.p + 1) / n) + ")";
+          csP.textContent = first ? "← Prev work" : "← Prev";
+          csP.setAttribute("aria-label", first ? "Prev work 上一个作品：" + nameOf((C.i - 1 + cards.length) % cards.length) : "Prev 上一页");
+          csNx.textContent = last ? "Next work →" : "Next →";
+          csNx.setAttribute("aria-label", last ? "Next work 下一个作品：" + nameOf((C.i + 1) % cards.length) : "Next 下一页");
+          csLive.textContent = nameOf(C.i) + "，第 " + (C.p + 1) + " 页，共 " + n + " 页";
+          [].forEach.call(csGrid.children, function (b, k) { if (k === C.p) b.setAttribute("aria-current", "true"); else b.removeAttribute("aria-current"); });
+        }
+        function showPage(p, dir) {
+          var P = pagesOf(C.i), src = P[p], tok = ++C.tok, name = nameOf(C.i);
+          C.p = p; syncNav();
+          var im = new Image(); im.decoding = "async"; im.draggable = false;
+          im.alt = name + " 第 " + (p + 1) + " / " + P.length + " 页";
+          im.src = src;
+          csStage.setAttribute("aria-busy", "true");
+          var put = function () {
+            if (tok !== C.tok) return;
+            csStage.setAttribute("aria-busy", "false");
+            if (C.img) C.img.remove();
+            if (dir && !reduce) csStage.classList.add(dir > 0 ? "is-in-r" : "is-in-l");
+            csStage.insertBefore(im, csGrid); C.img = im;
+            if (dir && !reduce) { void im.offsetWidth; csStage.classList.remove("is-in-r", "is-in-l"); }
+          };
+          (im.decode ? im.decode() : Promise.resolve()).then(put, put);
+          warm(P[p + 1]); warm(P[p - 1]);
+        }
+        function buildGrid() {
+          var P = pagesOf(C.i), name = nameOf(C.i);
+          csGrid.textContent = "";
+          P.forEach(function (src, k) {
+            var b = doc.createElement("button"); b.type = "button"; b.className = "x-case__th";
+            b.setAttribute("aria-label", name + " 第 " + (k + 1) + " 页");
+            var t = doc.createElement("img"); t.src = src; t.alt = ""; t.loading = "lazy"; t.decoding = "async"; t.draggable = false;
+            var l = doc.createElement("span"); l.textContent = pad2(k + 1); l.setAttribute("aria-hidden", "true");
+            b.appendChild(t); b.appendChild(l);
+            b.addEventListener("click", function () { toggleGrid(false); showPage(k, k > C.p ? 1 : -1); csNx.focus({ preventScroll: true }); });
+            csGrid.appendChild(b);
           });
+        }
+        function toggleGrid(on) {
+          if (on && !csGrid.childElementCount) buildGrid();
+          csGrid.hidden = !on; csG.setAttribute("aria-expanded", on ? "true" : "false");
+          if (on) { syncNav(); var cur = csGrid.children[C.p]; if (cur) { cur.scrollIntoView({ block: "nearest" }); cur.focus({ preventScroll: true }); } }
+        }
+        function fillCase(i, dir, atEnd) {
+          C.i = (i + cards.length) % cards.length;
+          var c = cards[C.i], d = c.querySelector(".x-card__meta p");
           csT.innerHTML = c.querySelector("h3").innerHTML;
-          csD.textContent = c.querySelector(".x-card__meta p").textContent;
+          csD.textContent = d ? d.textContent : "";
           csN.textContent = pad2(C.i + 1) + " / " + pad2(cards.length);
-          if (dir) { void csStage.offsetWidth; csStage.classList.remove("is-in-r", "is-in-l"); }
+          csGrid.textContent = ""; toggleGrid(false);
+          showPage(atEnd ? pagesOf(C.i).length - 1 : 0, dir);
+        }
+        function step(d) {
+          var n = pagesOf(C.i).length, q = C.p + d;
+          if (q >= 0 && q < n) showPage(q, d);
+          else fillCase(C.i + d, d, d < 0);
         }
         function openCase(i, opener) {
           clearTimeout(C.hideT); C.opener = opener || null;
           fillCase(i, 0); cs.hidden = false; void cs.offsetWidth;
           cs.classList.add("is-open"); root.style.overflow = "hidden"; C.open = true;
-          csX.focus({ preventScroll: true });
+          csNx.focus({ preventScroll: true });
         }
         function closeCase() {
-          if (!C.open) return; C.open = false;
+          if (!C.open) return; C.open = false; C.tok++;
           cs.classList.remove("is-open"); root.style.overflow = "";
-          C.hideT = setTimeout(function () { cs.hidden = true; }, reduce ? 0 : 720);
+          C.hideT = setTimeout(function () { cs.hidden = true; if (C.img) { C.img.remove(); C.img = null; } csGrid.textContent = ""; }, reduce ? 0 : 720);
           if (G.on) { root.style.scrollBehavior = "auto"; W.scrollTo(0, G.top + clamp(cards[C.i].offsetLeft - G.pad, 0, G.dist)); root.style.scrollBehavior = ""; }
           else pin.scrollLeft = cards[C.i].offsetLeft - (G.pad || 0);
           var back = cards[C.i].querySelector(".x-card__media");
           if (back) back.focus({ preventScroll: true });
         }
         cards.forEach(function (c, i) {
-          var m = c.querySelector(".x-card__media"), name = c.querySelector("h3").firstChild.textContent.trim();
-          m.setAttribute("tabindex", "0"); m.setAttribute("role", "button"); m.setAttribute("aria-label", "查看案例：" + name);
+          var m = c.querySelector(".x-card__media"), n = pagesOf(i).length;
+          m.setAttribute("tabindex", "0"); m.setAttribute("role", "button"); m.setAttribute("aria-label", "查看作品：" + nameOf(i) + "（" + n + " 页）");
           m.addEventListener("click", function () { openCase(i, m); });
           m.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openCase(i, m); } });
         });
         csX.addEventListener("click", closeCase);
-        csP.addEventListener("click", function () { fillCase(C.i - 1, -1); });
-        csNx.addEventListener("click", function () { fillCase(C.i + 1, 1); });
+        csP.addEventListener("click", function () { step(-1); });
+        csNx.addEventListener("click", function () { step(1); });
+        csG.addEventListener("click", function () { toggleGrid(csGrid.hidden); });
+        function focusables() {
+          return [csG, csX].concat(csGrid.hidden ? [] : [].slice.call(csGrid.children), [csP, csNx]);
+        }
         doc.addEventListener("keydown", function (e) {
           if (!C.open) return;
-          if (e.key === "Escape") { e.preventDefault(); closeCase(); }
-          else if (e.key === "ArrowRight") fillCase(C.i + 1, 1);
-          else if (e.key === "ArrowLeft") fillCase(C.i - 1, -1);
+          if (e.key === "Escape") { e.preventDefault(); if (!csGrid.hidden) { toggleGrid(false); csG.focus(); } else closeCase(); }
           else if (e.key === "Tab") {
-            var k = csBtns.indexOf(doc.activeElement), nx = e.shiftKey ? (k <= 0 ? csBtns.length - 1 : k - 1) : (k === -1 || k === csBtns.length - 1 ? 0 : k + 1);
-            e.preventDefault(); csBtns[nx].focus();
+            var f = focusables(), k = f.indexOf(doc.activeElement), nx = e.shiftKey ? (k <= 0 ? f.length - 1 : k - 1) : (k === -1 || k === f.length - 1 ? 0 : k + 1);
+            e.preventDefault(); f[nx].focus();
+          }
+          else if (!csGrid.hidden) return;
+          else if (e.key === "ArrowRight") { e.preventDefault(); step(1); }
+          else if (e.key === "ArrowLeft") { e.preventDefault(); step(-1); }
+          else if (e.key === "Home") { e.preventDefault(); showPage(0, -1); }
+          else if (e.key === "End") { e.preventDefault(); showPage(pagesOf(C.i).length - 1, 1); }
+          else if (e.key === "PageDown") { e.preventDefault(); fillCase(C.i + 1, 1); }
+          else if (e.key === "PageUp") { e.preventDefault(); fillCase(C.i - 1, -1); }
+        });
+        csStage.addEventListener("pointerdown", function (e) { if (e.target.closest(".x-case__grid") || !e.isPrimary) return; C.sx = e.clientX; C.sy = e.clientY; });
+        csStage.addEventListener("pointercancel", function () { C.sx = null; });
+        csStage.addEventListener("pointerup", function (e) {
+          if (C.sx === null) return;
+          var dx = e.clientX - C.sx, dy = e.clientY - C.sy; C.sx = null;
+          if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) { step(dx < 0 ? 1 : -1); return; }
+          if (Math.abs(dx) < 8 && Math.abs(dy) < 8 && e.pointerType === "mouse") {
+            var r = csStage.getBoundingClientRect(); step(e.clientX < r.left + r.width / 3 ? -1 : 1);
           }
         });
-        csStage.addEventListener("pointerdown", function (e) { C.sx = e.clientX; });
-        csStage.addEventListener("pointerup", function (e) { if (C.sx === null) return; var dx = e.clientX - C.sx; C.sx = null; if (Math.abs(dx) > 50) fillCase(C.i + (dx < 0 ? 1 : -1), dx < 0 ? 1 : -1); });
+        csStage.addEventListener("pointermove", function (e) {
+          if (e.pointerType !== "mouse" || !csGrid.hidden) return;
+          var r = csStage.getBoundingClientRect(); csStage.classList.toggle("is-left", e.clientX < r.left + r.width / 3);
+        });
 
         /* copy email + toast */
         var toast = $("#x-toast"), toastT = 0;
